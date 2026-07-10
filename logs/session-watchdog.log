@@ -761,3 +761,25 @@
 [2026-07-09T00:56:12Z] Done reset=0 skipped=0 errors=0 lane_stalls=0 high=0 medium=0
 [2026-07-09T03:56:18Z] OK [agent-lane-stall] no CMO/HR stalled or recently interrupted lane sessions
 [2026-07-09T03:56:18Z] Done reset=0 skipped=0 errors=0 lane_stalls=0 high=0 medium=0
+[2026-07-09T06:55:55Z] RESET [cmo] b083a76d-05eb-4588-9c97-336c0d21e61c.trajectory.jsonl was 3MB -> archived to b083a76d-05eb-4588-9c97-336c0d21e61c.trajectory.20260709T065555Z.jsonl.gz
+[2026-07-09T06:56:18Z] OK [agent-lane-stall] no CMO/HR stalled or recently interrupted lane sessions
+[2026-07-09T06:56:19Z] Done reset=1 skipped=0 errors=0 lane_stalls=0 high=0 medium=0
+[2026-07-09T09:56:17Z] OK [agent-lane-stall] no CMO/HR stalled or recently interrupted lane sessions
+[2026-07-09T09:56:17Z] Done reset=0 skipped=0 errors=0 lane_stalls=0 high=0 medium=0
+[2026-07-09T12:56:19Z] RESET [cmo] 8476c734-f988-4668-ad64-426ba0533253-topic-7.trajectory.jsonl was 3MB -> archived to 8476c734-f988-4668-ad64-426ba0533253-topic-7.trajectory.20260709T125619Z.jsonl.gz
+[2026-07-09T12:56:37Z] ALERT [agent-lane-stall] findings=1 high=1 medium=0 report=/root/.openclaw/workspace/reports/agent-lane-stall-latest.md
+[2026-07-09T12:56:37Z] Done reset=1 skipped=0 errors=0 lane_stalls=1 high=1 medium=0
+[2026-07-09T15:55:47Z] RESET [hr] 56b78f88-83d0-4e4e-ba52-fad50a04fdd9-topic-9.trajectory.jsonl was 3MB -> archived to 56b78f88-83d0-4e4e-ba52-fad50a04fdd9-topic-9.trajectory.20260709T155547Z.jsonl.gz
+[2026-07-09T15:56:23Z] OK [agent-lane-stall] no CMO/HR stalled or recently interrupted lane sessions
+[2026-07-09T15:56:23Z] Done reset=1 skipped=0 errors=0 lane_stalls=0 high=0 medium=0
+[2026-07-09T18:56:19Z] OK [agent-lane-stall] no CMO/HR stalled or recently interrupted lane sessions
+[2026-07-09T18:56:19Z] Done reset=0 skipped=0 errors=0 lane_stalls=0 high=0 medium=0
+[2026-07-09T21:55:38Z] RESET [main] 0b523732-eca0-4401-a3a0-6c29a74d4ad0.trajectory.jsonl was 3MB -> archived to 0b523732-eca0-4401-a3a0-6c29a74d4ad0.trajectory.20260709T215538Z.jsonl.gz
+[2026-07-09T21:56:28Z] OK [agent-lane-stall] no CMO/HR stalled or recently interrupted lane sessions
+[2026-07-09T21:56:28Z] Done reset=1 skipped=0 errors=0 lane_stalls=0 high=0 medium=0
+[2026-07-10T00:55:33Z] RESET [main] 0b523732-eca0-4401-a3a0-6c29a74d4ad0.trajectory.jsonl was 4MB -> archived to 0b523732-eca0-4401-a3a0-6c29a74d4ad0.trajectory.20260710T005533Z.jsonl.gz
+[2026-07-10T00:55:39Z] RESET [main] 10c82ccf-206d-46d8-b946-d3c6966b08e3.trajectory.jsonl was 3MB -> archived to 10c82ccf-206d-46d8-b946-d3c6966b08e3.trajectory.20260710T005539Z.jsonl.gz
+[2026-07-10T00:56:21Z] OK [agent-lane-stall] no CMO/HR stalled or recently interrupted lane sessions
+[2026-07-10T00:56:21Z] Done reset=2 skipped=0 errors=0 lane_stalls=0 high=0 medium=0
+[2026-07-10T03:56:10Z] OK [agent-lane-stall] no CMO/HR stalled or recently interrupted lane sessions
+[2026-07-10T03:56:10Z] Done reset=0 skipped=0 errors=0 lane_stalls=0 high=0 medium=0

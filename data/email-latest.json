@@ -1,39 +1,285 @@
 {
   "status": "ok",
-  "scan_time": "2026-07-08T20:01:43.594392+03:00",
-  "total_scanned": 0,
+  "scan_time": "2026-07-09T20:01:01.165964+03:00",
+  "total_scanned": 40,
   "by_category": {
     "interview_invite": 0,
-    "recruiter_reach": 0,
-    "application_ack": 0,
+    "recruiter_reach": 3,
+    "application_ack": 4,
     "rejection": 0,
     "assessment": 0,
     "application_response": 0,
     "follow_up_needed": 0,
     "job_alert": 0,
-    "other": 0
+    "other": 35
   },
   "interview_invites": [],
-  "recruiter_messages": [],
-  "application_acks": [],
+  "recruiter_messages": [
+    {
+      "id": "364491",
+      "from": "MetLife Global Talent Acquisition <recruiting@metlifecareers.com>",
+      "subject": "Thank you for applying to the Head of Operations & Transformation, Gulf - Job ID:18753 role at MetLife!",
+      "date": "Thu, 9 Jul 2026 13:31:27 +0000",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 8,
+      "pipeline_match": "RAPP",
+      "confidence": 90,
+      "confidence_label": "high",
+      "evidence": [
+        "matched active pipeline company: RAPP",
+        "hiring sender context",
+        "hiring/application context",
+        "recruiter outreach classification",
+        "high priority score: 8"
+      ],
+      "why_actionable": "matched active pipeline company: RAPP | hiring sender context | hiring/application context | recruiter outreach classification"
+    },
+    {
+      "id": "364495",
+      "from": "flydubai <recruitment@flydubai.com>",
+      "subject": "Thank You For Your Application",
+      "date": "Thu, 9 Jul 2026 09:52:59 -0400 (EDT)",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 7,
+      "pipeline_match": "RAPP",
+      "confidence": 75,
+      "confidence_label": "medium",
+      "evidence": [
+        "matched active pipeline company: RAPP",
+        "hiring/application context",
+        "recruiter outreach classification",
+        "high priority score: 7"
+      ],
+      "why_actionable": "matched active pipeline company: RAPP | hiring/application context | recruiter outreach classification | high priority score: 7"
+    },
+    {
+      "id": "364500",
+      "from": "talabat mart <tmart@em.talabat.com>",
+      "subject": "=?UTF-8?B?2YPZhCDYp9mE2YTZiiDZgdmKINmG2YHYs9mDINio2K7YtdmF?=\r\n =?UTF-8?B?IDEwMNisINmF2YYg2LfZhNio2KfYqiDZhdin2LHYqg==?=",
+      "date": "Thu, 09 Jul 2026 14:14:58 +0000 (UTC)",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 6,
+      "pipeline_match": "talabat",
+      "confidence": 75,
+      "confidence_label": "medium",
+      "evidence": [
+        "matched active pipeline company: talabat",
+        "hiring/application context",
+        "recruiter outreach classification",
+        "high priority score: 6"
+      ],
+      "why_actionable": "matched active pipeline company: talabat | hiring/application context | recruiter outreach classification | high priority score: 6"
+    }
+  ],
+  "application_acks": [
+    {
+      "id": "364491",
+      "from": "MetLife Global Talent Acquisition <recruiting@metlifecareers.com>",
+      "subject": "Thank you for applying to the Head of Operations & Transformation, Gulf - Job ID:18753 role at MetLife!",
+      "date": "Thu, 9 Jul 2026 13:31:27 +0000",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 8,
+      "pipeline_match": "RAPP",
+      "confidence": 90,
+      "confidence_label": "high",
+      "evidence": [
+        "matched active pipeline company: RAPP",
+        "hiring sender context",
+        "hiring/application context",
+        "recruiter outreach classification",
+        "high priority score: 8"
+      ],
+      "why_actionable": "matched active pipeline company: RAPP | hiring sender context | hiring/application context | recruiter outreach classification"
+    },
+    {
+      "id": "364495",
+      "from": "flydubai <recruitment@flydubai.com>",
+      "subject": "Thank You For Your Application",
+      "date": "Thu, 9 Jul 2026 09:52:59 -0400 (EDT)",
+      "unread": true,
+      "priority": "HIGH",
+      "score": 7,
+      "pipeline_match": "RAPP",
+      "confidence": 75,
+      "confidence_label": "medium",
+      "evidence": [
+        "matched active pipeline company: RAPP",
+        "hiring/application context",
+        "recruiter outreach classification",
+        "high priority score: 7"
+      ],
+      "why_actionable": "matched active pipeline company: RAPP | hiring/application context | recruiter outreach classification | high priority score: 7"
+    },
+    {
+      "id": "364505",
+      "from": "edel.fa.sender@workflow.email.us-phoenix-1.ocs.oraclecloud.com",
+      "subject": "Your recent job application for Program Manager -Professional Services\r\n Saudi Arabia - 23471",
+      "date": "Thu, 09 Jul 2026 14:35:12 +0000 (UTC)",
+      "unread": true,
+      "priority": "LOW",
+      "score": 0,
+      "pipeline_match": null,
+      "confidence": 20,
+      "confidence_label": "very_low",
+      "evidence": [
+        "hiring/application context"
+      ],
+      "why_actionable": "not actionable: hiring/application context"
+    },
+    {
+      "id": "364508",
+      "from": "Mace Group <recruiting@jobalerts.macegroup.com>",
+      "subject": "Mace group job application",
+      "date": "Thu, 09 Jul 2026 14:42:36 +0000 (UTC)",
+      "unread": true,
+      "priority": "LOW",
+      "score": 1,
+      "pipeline_match": null,
+      "confidence": 35,
+      "confidence_label": "low",
+      "evidence": [
+        "hiring sender context",
+        "hiring/application context"
+      ],
+      "why_actionable": "not actionable: hiring sender context | hiring/application context"
+    }
+  ],
   "rejections": [],
   "assessments": [],
   "application_responses": [],
   "follow_ups_needed": [],
   "job_alerts": [],
-  "actionable_count": 0,
+  "actionable_count": 3,
   "hot_alerts": [],
-  "signals": [],
+  "signals": [
+    {
+      "company": "RAPP",
+      "signal": "recruiter_email",
+      "subject": "Thank you for applying to the Head of Operations & Transformation, Gulf - Job ID:18753 role at MetLife!",
+      "sender": "MetLife Global Talent Acquisition <recruiting@metlifecareers.com>",
+      "job_ids": [
+        "li-4430709777"
+      ],
+      "score": 8,
+      "timestamp": "2026-07-09T20:01:00.681487+03:00"
+    },
+    {
+      "company": "RAPP",
+      "signal": "recruiter_email",
+      "subject": "Thank You For Your Application",
+      "sender": "flydubai <recruitment@flydubai.com>",
+      "job_ids": [
+        "li-4430709777"
+      ],
+      "score": 7,
+      "timestamp": "2026-07-09T20:01:00.751648+03:00"
+    },
+    {
+      "company": "talabat",
+      "signal": "recruiter_email",
+      "subject": "=?UTF-8?B?2YPZhCDYp9mE2YTZiiDZgdmKINmG2YHYs9mDINio2K7YtdmF?=\r\n =?UTF-8?B?IDEwMNisINmF2YYg2LfZhNio2KfYqiDZhdin2LHYqg==?=",
+      "sender": "talabat mart <tmart@em.talabat.com>",
+      "job_ids": [
+        "linkedin_jobspy-li-4435435992",
+        "linkedin_jobspy-li-4432096930",
+        "linkedin_jobspy-li-4407693428",
+        "linkedin_jobspy-li-4416306146",
+        "linkedin-li-4415007377",
+        "linkedin_jobspy-li-4397262230",
+        "linkedin-li-4370418095",
+        "linkedin-li-4389537891",
+        "linkedin-li-4375708512"
+      ],
+      "score": 6,
+      "timestamp": "2026-07-09T20:01:00.859478+03:00"
+    }
+  ],
+  "pipeline_review_candidates": [
+    {
+      "timestamp": "2026-07-09T20:01:01.165986+03:00",
+      "review_type": "possible_recruiter_outreach",
+      "category": "recruiter_reach",
+      "email_id": "364491",
+      "subject": "Thank you for applying to the Head of Operations & Transformation, Gulf - Job ID:18753 role at MetLife!",
+      "from": "MetLife Global Talent Acquisition <recruiting@metlifecareers.com>",
+      "priority": "HIGH",
+      "pipeline_match": "RAPP",
+      "status": "needs_human_review"
+    },
+    {
+      "timestamp": "2026-07-09T20:01:01.165992+03:00",
+      "review_type": "possible_recruiter_outreach",
+      "category": "recruiter_reach",
+      "email_id": "364495",
+      "subject": "Thank You For Your Application",
+      "from": "flydubai <recruitment@flydubai.com>",
+      "priority": "HIGH",
+      "pipeline_match": "RAPP",
+      "status": "needs_human_review"
+    },
+    {
+      "timestamp": "2026-07-09T20:01:01.165995+03:00",
+      "review_type": "possible_recruiter_outreach",
+      "category": "recruiter_reach",
+      "email_id": "364500",
+      "subject": "=?UTF-8?B?2YPZhCDYp9mE2YTZiiDZgdmKINmG2YHYs9mDINio2K7YtdmF?=\r\n =?UTF-8?B?IDEwMNisINmF2YYg2LfZhNio2KfYqiDZhdin2LHYqg==?=",
+      "from": "talabat mart <tmart@em.talabat.com>",
+      "priority": "HIGH",
+      "pipeline_match": "talabat",
+      "status": "needs_human_review"
+    }
+  ],
   "llm_analysis": {
-    "actionable_emails": [],
+    "actionable_emails": [
+      {
+        "id": "364491",
+        "subject": "Thank you for applying to the Head of Operations & Transformation, Gulf - Job ID:18753 role at MetLife!",
+        "from": "MetLife Global Talent Acquisition <recruiting@metlifecareers.com>",
+        "date": "Thu, 9 Jul 2026 13:31:27 +0000",
+        "category": "recruiter_reach",
+        "urgency": "low",
+        "intent": "The sender is confirming receipt of Ahmed's application for the MetLife Head of Operations & Transformation, Gulf role.",
+        "action": "read_and_file",
+        "response_deadline": "when convenient",
+        "notes": "Automated acknowledgement; monitor status, no reply needed."
+      },
+      {
+        "id": "364495",
+        "subject": "Thank You For Your Application",
+        "from": "flydubai <recruitment@flydubai.com>",
+        "date": "Thu, 9 Jul 2026 09:52:59 -0400 (EDT)",
+        "category": "recruiter_reach",
+        "urgency": "low",
+        "intent": "The sender is confirming receipt of Ahmed's application for the Manager - Corporate PMO role at flydubai.",
+        "action": "read_and_file",
+        "response_deadline": "when convenient",
+        "notes": "Automated do-not-reply acknowledgement; file and track."
+      },
+      {
+        "id": "364500",
+        "subject": "\u0643\u0644 \u0627\u0644\u0644\u064a \u0641\u064a \u0646\u0641\u0633\u0643 \u0628\u062e\u0635\u0645 100\u062c \u0645\u0646 \u0637\u0644\u0628\u0627\u062a \u0645\u0627\u0631\u062a",
+        "from": "talabat mart <tmart@em.talabat.com>",
+        "date": "Thu, 09 Jul 2026 14:14:58 +0000 (UTC)",
+        "category": "recruiter_reach",
+        "urgency": "low",
+        "intent": "The sender is promoting a talabat mart discount, not presenting a recruiter opportunity.",
+        "action": "no_action",
+        "response_deadline": "when convenient",
+        "notes": "Marketing promo, not recruitment despite pattern match."
+      }
+    ],
     "summary": {
-      "total_actionable": 0,
+      "total_actionable": 3,
       "critical_count": 0,
       "requires_interview_prep": false,
       "requires_assessment": false,
       "recruiter_top_opportunities": [],
       "top_priority": null,
-      "daily_focus": "No email action needed from this batch."
+      "daily_focus": "No response is required today; track MetLife and flydubai applications and ignore the talabat promo."
     }
   }
 }

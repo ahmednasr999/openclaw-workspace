@@ -2,12 +2,12 @@
   "meta": {
     "agent": "jobs-source-indeed",
     "version": "1.0.0",
-    "generated_at": "2026-07-09T04:00:47.574395+03:00",
-    "duration_ms": 44531,
+    "generated_at": "2026-07-10T06:00:46.024192+03:00",
+    "duration_ms": 42890,
     "ttl_hours": 6,
     "status": "success",
     "error": null,
-    "run_id": "1f05450a",
+    "run_id": "32c93c66",
     "retries_used": 0,
     "data_freshness": "fresh"
   },
@@ -35,77 +35,26 @@
       "search_title": "PMO Director"
     },
     {
-      "id": "indeed-in-96852d250f70e171",
+      "id": "indeed-in-9028fc8555d8fd50",
       "source": "indeed",
-      "title": "Head of Operations & Transformation, Gulf",
-      "company": "MetLife",
+      "title": "Operations Director (Pharmaceutical & Healthcare Distribution)",
+      "company": "Arabian Ethicals Company",
       "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=96852d250f70e171",
-      "posted": "2026-07-06",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 30,
-      "match_keywords": [
-        "ai",
-        "vp",
-        "head of",
-        "gcc",
-        "uae",
-        "dubai"
-      ],
-      "raw_snippet": "### **General Information**\n\n**Location**\nDubai, United Arab Emirates\nWorking Schedule\nFull\\-Time\nWork Arrangement\nHybrid\nTravel Required\n10%\nRelocation Assistance Available\nNo\nPosted Date\n06\\-Jul\\-2026\nJob ID\n18753\n### **Description and Requirements**\n\n**Position**: **AVP, Head of Service, Operations \\& Transformation (Gulf / GCC)****Job Location: Dubai, United Arab Emirates (UAE hub supporting Qatar, Oman, Bahrain \\& Kuwait)** **The Role**: The Head of Service \\& Operations is responsible for ",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "PMO Director"
-    },
-    {
-      "id": "indeed-in-423ffc9560d984c6",
-      "source": "indeed",
-      "title": "Head of Operations & Transformation, Gulf",
-      "company": "MetLife",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=423ffc9560d984c6",
-      "posted": "2026-07-06",
-      "seniority": "Director",
-      "domain_match": true,
-      "keyword_score": 30,
-      "match_keywords": [
-        "ai",
-        "vp",
-        "head of",
-        "gcc",
-        "uae",
-        "dubai"
-      ],
-      "raw_snippet": "**Position**: **AVP, Head of Service, Operations \\& Transformation (Gulf / GCC)****Job Location: Dubai, United Arab Emirates (UAE hub supporting Qatar, Oman, Bahrain \\& Kuwait)** **The Role**: The Head of Service \\& Operations is responsible for end\\-to\\-end operational delivery across employee benefits and protection solutions, including implementation and onboarding, policy administration, billing, claims, collections and customer service. Products are expected to include, as applicable by mar",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "United Arab Emirates",
-      "search_title": "PMO Director"
-    },
-    {
-      "id": "indeed-in-6c4652968c7c4240",
-      "source": "indeed",
-      "title": "Policy Director, MENA",
-      "company": "GSMA",
-      "location": "Dubai, DU, AE",
-      "url": "https://ae.indeed.com/viewjob?jk=6c4652968c7c4240",
-      "posted": "2026-07-08",
+      "url": "https://ae.indeed.com/viewjob?jk=9028fc8555d8fd50",
+      "posted": "2026-07-09",
       "seniority": "C-Suite",
-      "domain_match": false,
-      "keyword_score": 20,
+      "domain_match": true,
+      "keyword_score": 16,
       "match_keywords": [
-        "ai",
+        "healthcare",
         "director",
-        "dubai",
-        "mena"
+        "uae"
       ],
-      "raw_snippet": "**Department:** MENA  \n\n**Team:** Policy \u2013 MENA region  \n\n**Location:** Dubai or Doha with homework flexibility  \n\n**Position type:** 12 month contract with view to renew; full\\-time\n\n**What the hiring manager says**\n\n *\u201cThe GSMA\u2019s MENA team is expanding and we have an exciting opportunity for a high\\-performing Policy Director to work with the MENA team to engage all stakeholders with GSMA programs and policy \\& technology orientated activities. The role entails a lot of travel, ability to work",
+      "raw_snippet": "**Company Description**  \n\nEstablished in 1977, Arabian Ethicals takes pride in being a top healthcare player in the UAE. As the exclusive representative and distributor of many multinational pharmaceutical, consumer, and veterinary products in the UAE, the Company serves over 2,000 pharmacies, 150 hospitals, 600 hypermarkets, supermarkets and specialty stores, in addition to more than 100 veterinary clinics and farms.\n\n **Job Description**  \n\nThis is a high\\-impact, cross\\-functional Director\\-",
       "relevant": true,
       "filter_reason": null,
       "search_country": "United Arab Emirates",
-      "search_title": "Program Director"
+      "search_title": "Director Digital Transformation"
     },
     {
       "id": "indeed-in-f73c5e246b29e570",
@@ -155,6 +104,53 @@
       "search_title": "Head of Digital Transformation"
     },
     {
+      "id": "indeed-in-6c4652968c7c4240",
+      "source": "indeed",
+      "title": "Policy Director, MENA",
+      "company": "GSMA",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=6c4652968c7c4240",
+      "posted": "2026-07-08",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 20,
+      "match_keywords": [
+        "ai",
+        "director",
+        "dubai",
+        "mena"
+      ],
+      "raw_snippet": "**Department:** MENA  \n\n**Team:** Policy \u2013 MENA region  \n\n**Location:** Dubai with homework flexibility  \n\n**Position type:** 12 month contract with view to renew; full\\-time\n\n**What the hiring manager says**\n\n *\u201cThe GSMA\u2019s MENA team is expanding and we have an exciting opportunity for a high\\-performing Policy Director to work with the MENA team to engage all stakeholders with GSMA programs and policy \\& technology orientated activities. The role entails a lot of travel, ability to work under p",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "Head of IT"
+    },
+    {
+      "id": "indeed-in-251b16fb4e621361",
+      "source": "indeed",
+      "title": "Director, Solution Consulting - MENA",
+      "company": "Workday",
+      "location": "Dubai, DU, AE",
+      "url": "https://ae.indeed.com/viewjob?jk=251b16fb4e621361",
+      "posted": "2026-07-09",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 23,
+      "match_keywords": [
+        "ai",
+        "director",
+        "mena",
+        "api",
+        "platform"
+      ],
+      "raw_snippet": "**Your work days are brighter here.**\n\nWe\u2019re obsessed with making hard work pay off, for our people, our customers, and the world around us. As a Fortune 500 company and a leading AI platform for managing people, money, and agents, we\u2019re shaping the future of work so teams can reach their potential and focus on what matters most. The minute you join, you\u2019ll feel it. Not just in the products we build, but in how we show up for each other. Our culture is rooted in integrity, empathy, and shared en",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "United Arab Emirates",
+      "search_title": "IT Director"
+    },
+    {
       "id": "indeed-in-ceaacbbe432baeb0",
       "source": "indeed",
       "title": "Director - Delivery - MEP",
@@ -196,80 +192,120 @@
       "search_title": "PMO Director"
     },
     {
-      "id": "indeed-in-dc61e4b9f82989e3",
-      "source": "indeed",
-      "title": "Project Director (Rail/Metro Station)",
-      "company": "Parsons",
-      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=dc61e4b9f82989e3",
-      "posted": "2026-07-08",
-      "seniority": "C-Suite",
-      "domain_match": true,
-      "keyword_score": 26,
-      "match_keywords": [
-        "ai",
-        "director",
-        "leadership",
-        "growth"
-      ],
-      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons is looking for an amazingly talented **Project Directo",
-      "relevant": true,
-      "filter_reason": null,
-      "search_country": "Saudi Arabia",
-      "search_title": "Program Director"
-    },
-    {
-      "id": "indeed-in-391653bdf67d291b",
+      "id": "indeed-in-0150073d00f3e050",
       "source": "indeed",
       "title": "Project Director",
-      "company": "Decima International",
+      "company": "AtkinsR\u00e9alis",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=391653bdf67d291b",
-      "posted": "2026-07-07",
+      "url": "https://sa.indeed.com/viewjob?jk=0150073d00f3e050",
+      "posted": "2026-07-09",
       "seniority": "C-Suite",
       "domain_match": true,
       "keyword_score": 20,
       "match_keywords": [
         "project management",
         "director",
-        "middle east"
+        "uae"
       ],
-      "raw_snippet": "Decima International is a professional services company, providing project management and controls services to clients in the United States and the Middle East. Our mission is to become the premier professional services provider across all industry sectors we are engaged in. To accomplish this, Decima International's founders established a simple yet powerful formula:\n\n\n\nApproach each client engagement as a **partnership**, create an environment that attracts the **most talented professionals** ",
+      "raw_snippet": "**Overview**\n------------\n\n\nAtkinsR\u00e9alis is seeking a Project Director to lead high end project in a remote site in UAE. This role will oversee design reviews, programme \\& project management and site supervision across a complex, multi\\-package programme involving mixed use assets.You will act as the single point of contact between internal and external delivery teams, ensuring strategic alignment, stakeholder coordination, and successful delivery of project objectives. The successful candidate",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
       "search_title": "Program Director"
     },
     {
-      "id": "indeed-in-d88f99cc6747bb82",
+      "id": "indeed-in-ed5fb25e06d6ac04",
       "source": "indeed",
-      "title": "Chief Technology Officer (CTO)",
-      "company": "Confidential",
+      "title": "Digital Infra Planning Director",
+      "company": "Mace Group",
       "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
-      "url": "https://sa.indeed.com/viewjob?jk=d88f99cc6747bb82",
-      "posted": "2026-07-06",
+      "url": "https://sa.indeed.com/viewjob?jk=ed5fb25e06d6ac04",
+      "posted": "2026-07-09",
       "seniority": "C-Suite",
       "domain_match": true,
-      "keyword_score": 26,
+      "keyword_score": 23,
       "match_keywords": [
         "ai",
-        "executive",
-        "leadership",
-        "saudi",
-        "platform"
+        "infrastructure",
+        "director",
+        "saudi"
       ],
-      "raw_snippet": "An AI\\-driven professional training and recruitment platform that connects Saudi graduates with global corporate opportunities and specialized skill certifications.\n\nJob Description\n\nYudimy Talent Hub is seeking a visionary and experienced **Chief Technology Officer (CTO)** to lead the company's technology strategy and innovation initiatives. As a key member of the executive leadership team, the CTO will oversee the development and implementation of scalable technology solutions that support our",
+      "raw_snippet": "Mace combines construction expertise with consultancy to unlock potential in every person or project and redefine the boundaries of ambition. Our values shape the way we consult and define the people we want to join us on our journey.\n\n  \n\n\n\n**The project:**\n\n\nThis is an opportunity to work on one of the largest programmes in Saudi Arabia. This unique project consists of major mixed\\-use development including sports facilities, entertainment, and arts along with all associated infrastructure.\n  ",
       "relevant": true,
       "filter_reason": null,
       "search_country": "Saudi Arabia",
-      "search_title": "Chief Technology Officer"
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-1e0d5775fc366eb1",
+      "source": "indeed",
+      "title": "Security Director",
+      "company": "Parsons",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=1e0d5775fc366eb1",
+      "posted": "2026-07-09",
+      "seniority": "C-Suite",
+      "domain_match": false,
+      "keyword_score": 20,
+      "match_keywords": [
+        "director",
+        "leadership",
+        "growth"
+      ],
+      "raw_snippet": "In a world of possibilities, pursue one with endless opportunities. Imagine Next!  \n\n\nAt Parsons, you can imagine a career where you thrive, work with exceptional people, and be yourself. Guided by our leadership vision of valuing people, embracing agility, and fostering growth, we cultivate an innovative culture that empowers you to achieve your full potential. Unleash your talent and redefine what\u2019s possible. **Job Description:**\n\n\nParsons are looking for an exceptionally talented **Security D",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-ada0c77048673d4d",
+      "source": "indeed",
+      "title": "Chief Aircraft Inspector",
+      "company": "Northrop Grumman",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=ada0c77048673d4d",
+      "posted": "2026-07-07",
+      "seniority": "C-Suite",
+      "domain_match": true,
+      "keyword_score": 6,
+      "match_keywords": [
+        "ai"
+      ],
+      "raw_snippet": "RELOCATION ASSISTANCE: No relocation assistance available\nCLEARANCE REQUIRED FOR START: Yes\nCLEARANCE TYPE: Secret\nTRAVEL: Yes, 100% of the Time**Description**\n---------------\n\n\nAt Northrop Grumman, our employees have incredible opportunities to work on revolutionary systems that impact people's lives around the world today, and for generations to come. Our pioneering and inventive spirit has enabled us to be at the forefront of many technological advancements in our nation's history \\- from the",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Program Director"
+    },
+    {
+      "id": "indeed-in-04b6343bb36dd65c",
+      "source": "indeed",
+      "title": "Head of Data",
+      "company": "WEbook.com",
+      "location": "\u0627\u0644\u0631\u064a\u0627\u0636, S01, SA",
+      "url": "https://sa.indeed.com/viewjob?jk=04b6343bb36dd65c",
+      "posted": "2026-07-09",
+      "seniority": "Director",
+      "domain_match": true,
+      "keyword_score": 13,
+      "match_keywords": [
+        "head of",
+        "saudi",
+        "platform"
+      ],
+      "raw_snippet": "Do you want to love what you do at work? Do you want to make a difference, an impact, transform peoples lives? Do you want to work with a team that believes in disrupting the normal, boring, and average?\n\n\nIf yes, then this is the job you're looking for ,webook.com is Saudi's \\#1 event ticketing and experience booking platforms in terms of technology, features, agility, revenue serving some of the largest mega events in the Kingdom surpassing over 2 billion sales.\n\n**Role Overview**\n\n\nOwn webook",
+      "relevant": true,
+      "filter_reason": null,
+      "search_country": "Saudi Arabia",
+      "search_title": "Head of Technology"
     }
   ],
   "kpi": {
     "searches_run": 20,
-    "results_per_search": 5.35,
-    "unique_jobs": 11,
-    "errors": 1
+    "results_per_search": 4.75,
+    "unique_jobs": 13,
+    "errors": 3
   },
   "recommendations": []
 }

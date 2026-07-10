@@ -499,6 +499,17 @@
 | 608 | 🆕 | Orange Antelopes | Head of Information Technology | Riyadh | — | 🆕 Discovered | Radar | 2026-07-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434844690) | — |
 | 609 | 🆕 | Rebel Recruiters | Head of Systems Engineering | Dubai | — | 🆕 Discovered | Radar | 2026-07-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4433938399) | — |
 | 610 | 🆕 | Monfi Digital Bank | Head of Digital Assets | Dubai | — | 🆕 Discovered | Radar | 2026-07-09 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434852979) | — |
+| 611 | 🆕 | Talents Tide | Head of Project Management | Dubai | — | 🆕 Discovered | Radar | 2026-07-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4436898887) | — |
+| 612 | 🆕 | Ignite Search and Selection | Senior Planning and Controls Director | Dubai | — | 🆕 Discovered | Radar | 2026-07-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434842562) | — |
+| 613 | 🆕 | Roads and Transport Authority | Buildings & Facilities Director (UAE Nationals Only) | Dubai | — | 🆕 Discovered | Radar | 2026-07-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434507297) | — |
+| 614 | 🆕 | Dubai Holding | Director - Projects - Dubai Holding Real Estate | Dubai | — | 🆕 Discovered | Radar | 2026-07-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4438619312) | — |
+| 615 | 🆕 | Alchemy Global Talent Solutions | Senior Transformation Director | Dubai | — | 🆕 Discovered | Radar | 2026-07-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4438660677) | — |
+| 616 | 🆕 | Eli Lilly and Company | TRANSFORMATION LEAD - INTERCONTINENTAL HUB | Dubai | — | 🆕 Discovered | Radar | 2026-07-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4438883173) | — |
+| 617 | 🆕 | UMO | Chief Financial Officer | Dubai | — | 🆕 Discovered | Radar | 2026-07-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4434839458) | — |
+| 618 | 🆕 | Mastercard | Vice President, Product Management, Authentication Products, EEMEA | Dubai | — | 🆕 Discovered | Radar | 2026-07-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435661784) | — |
+| 619 | 🆕 | CoinW | COO | Dubai | — | 🆕 Discovered | Radar | 2026-07-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4438607282) | — |
+| 620 | 🆕 | Robert Walters | Head of Strategy (Retail bank) | Dubai | — | 🆕 Discovered | Radar | 2026-07-10 | — | [LinkedIn](https://www.linkedin.com/jobs/view/4435670742) | — |
+
 
 
 

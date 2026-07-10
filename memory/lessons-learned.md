@@ -1650,3 +1650,11 @@ For email alerts, treat career-site `new job opportunities` messages as low/norm
 `scripts/auto-lessons-learned.py --all` reported 0 significant sessions because every July 8 session had fewer than 5 exchanges, but one skipped two-exchange Email Agent cron session still contained Ahmed's concrete correction that the previous response only acknowledged the cron task instead of completing it.
 ### Do differently
 After the auto-lessons script reports no significant sessions, run a bounded JSON-aware search over today's skipped session user messages for correction/failure phrases, then dedupe against existing lessons before deciding there is nothing to append.
+
+## 2026-07-09 - New Model Rollouts Need Codex Runtime Proof
+
+### Incident
+After `gpt-5.6-sol` appeared in official model info and Ahmed asked to switch all agents, OpenClaw/Codex Telegram turns failed with model errors including `gpt-5.6-sol is not supported when using Codex with a ChatGPT account` and later `requires a newer version of Codex`, producing visible `Something went wrong` replies.
+
+### Do differently
+Do not treat docs/catalog availability as enough to route all agents to a new model. First run a small probe through the exact OpenClaw + Codex + account path, then verify a real Telegram `/new` or ping reply. If the model error names ChatGPT-account support or Codex version, keep the previous stable model and treat it as a compatibility/update blocker, not a transient gateway failure.

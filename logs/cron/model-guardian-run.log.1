@@ -1,41 +1,89 @@
 
-[2026-07-08T06:15:01+03:00] START model-guardian-run: /usr/bin/python3 /root/.openclaw/workspace/scripts/model-guardian-run.py
+[2026-07-09T06:15:01+03:00] START model-guardian-run: /usr/bin/python3 /root/.openclaw/workspace/scripts/model-guardian-run.py
 INFO: OK: model-router default is GPT-5.5
-INFO: OK: usage probe succeeded on retry 2
-INFO: OK: Codex usage visible — 5h: 3% used, Week: 8% used
-INFO: OK: models status reports GPT-5.5 as configured default
-INFO: OK: latest guardian snapshot shows 92.0% weekly quota remaining
-INFO: ALL_OK
-INFO: SNAPSHOT: weekly=92.0% left, reset in 5d 22h
-NO_ALERTS
-[2026-07-08T06:15:31+03:00] END model-guardian-run: rc=0 duration=30s
-
-[2026-07-08T12:15:02+03:00] START model-guardian-run: /usr/bin/python3 /root/.openclaw/workspace/scripts/model-guardian-run.py
-INFO: OK: model-router default is GPT-5.5
-INFO: OK: Codex usage visible — 5h: 9% used, Week: 10% used
-INFO: OK: models status reports GPT-5.5 as configured default
-INFO: OK: latest guardian snapshot shows 90.0% weekly quota remaining
-INFO: ALL_OK
-INFO: SNAPSHOT: weekly=90.0% left, reset in 5d 16h
-NO_ALERTS
-[2026-07-08T12:15:14+03:00] END model-guardian-run: rc=0 duration=12s
-
-[2026-07-08T18:15:01+03:00] START model-guardian-run: /usr/bin/python3 /root/.openclaw/workspace/scripts/model-guardian-run.py
-INFO: OK: model-router default is GPT-5.5
-INFO: OK: Codex usage visible — 5h: 0% used, Week: 12% used
-INFO: OK: models status reports GPT-5.5 as configured default
-INFO: OK: latest guardian snapshot shows 88.0% weekly quota remaining
-INFO: ALL_OK
-INFO: SNAPSHOT: weekly=88.0% left, reset in 5d 10h
-NO_ALERTS
-[2026-07-08T18:15:13+03:00] END model-guardian-run: rc=0 duration=12s
-
-[2026-07-09T00:15:02+03:00] START model-guardian-run: /usr/bin/python3 /root/.openclaw/workspace/scripts/model-guardian-run.py
-INFO: OK: model-router default is GPT-5.5
-INFO: OK: Codex usage visible — 5h: 1% used, Week: 14% used
+INFO: OK: Codex usage visible — 5h: 3% used, Week: 14% used
 INFO: OK: models status reports GPT-5.5 as configured default
 INFO: OK: latest guardian snapshot shows 86.0% weekly quota remaining
 INFO: ALL_OK
-INFO: SNAPSHOT: weekly=86.0% left, reset in 5d 4h
+INFO: SNAPSHOT: weekly=86.0% left, reset in 4d 22h
 NO_ALERTS
-[2026-07-09T00:15:14+03:00] END model-guardian-run: rc=0 duration=12s
+[2026-07-09T06:15:13+03:00] END model-guardian-run: rc=0 duration=12s
+
+[2026-07-09T12:15:01+03:00] START model-guardian-run: /usr/bin/python3 /root/.openclaw/workspace/scripts/model-guardian-run.py
+INFO: OK: model-router default is GPT-5.5
+INFO: OK: Codex usage visible — 5h: 13% used, Week: 17% used
+INFO: OK: models status reports GPT-5.5 as configured default
+INFO: OK: latest guardian snapshot shows 83.0% weekly quota remaining
+INFO: ALL_OK
+INFO: SNAPSHOT: weekly=83.0% left, reset in 4d 16h
+NO_ALERTS
+[2026-07-09T12:15:13+03:00] END model-guardian-run: rc=0 duration=12s
+
+[2026-07-09T18:15:02+03:00] START model-guardian-run: /usr/bin/python3 /root/.openclaw/workspace/scripts/model-guardian-run.py
+INFO: OK: model-router default is GPT-5.5
+INFO: OK: usage probe succeeded on retry 2
+INFO: OK: Codex usage visible — 5h: 22% used, Week: 21% used
+INFO: OK: models status reports GPT-5.5 as configured default
+INFO: OK: latest guardian snapshot shows 79.0% weekly quota remaining
+INFO: ALL_OK
+INFO: SNAPSHOT: weekly=79.0% left, reset in 4d 10h
+NO_ALERTS
+[2026-07-09T18:15:25+03:00] END model-guardian-run: rc=0 duration=23s
+
+[2026-07-10T00:15:01+03:00] START model-guardian-run: /usr/bin/python3 /root/.openclaw/workspace/scripts/model-guardian-run.py
+INFO: OK: usage probe succeeded on retry 2
+INFO: OK: Codex usage visible — 5h: 8% used, Week: 23% used
+INFO: OK: latest guardian snapshot shows 77.0% weekly quota remaining
+INFO: FAIL: model-router default is 'openai/gpt-5.6-sol' — expected GPT-5.5; models status probe failed after retries: unexpected status model 'If unexpected, update PATH so `openclaw` points to the version you want, or reinstall the Gateway service from that same OpenClaw install.'
+INFO: SNAPSHOT: weekly=77.0% left, reset in 4d 4h
+DM_ALERT: Model Guardian alert: FAIL: model-router default is 'openai/gpt-5.6-sol' — expected GPT-5.5; models status probe failed after retries: unexpected status model 'If unexpected, update PATH so `openclaw` points to the version you want, or reinstall the Gateway service from that same OpenClaw install.'
+INFO: DM delivery OK: │
+◇  Doctor warnings ──────────────────────────────────────────────────────╮
+│                                                                        │
+│  - Left plugin install index in place because shared SQLite state has  │
+│    conflicting plugin install metadata for: codex, lossless-claw,      │
+│    tokenjuice                                                          │
+│                                                                        │
+├────────────────────────────────────────────────────────────────────────╯
+│
+◇  Config warnings ───────────────────────────────────────────────────────╮
+│                                                                         │
+│  - plugins.entries.codex: plugin codex: plugin requires plugin API      │
+│    >=2026.7.1-beta.2, but this host is 2026.6.10; skipping discovery    │
+│  - plugins.entries.moonshot: plugin moonshot: plugin requires plugin    │
+│    API >=2026.7.1-beta.2, but this host is 2026.6.10; skipping          │
+│    discovery                                                            │
+│  - plugins: plugin searxng-plugin: plugin requires plugin API           │
+│    >=2026.7.1-beta.2, but this host is 2026.6.10; skipping discovery    │
+│  - plugins: plugin tavily-plugin: plugin requires plugin API            │
+│    >=2026.7.1-beta.2, but this host is 2026.6.10; skipping discovery    │
+│  - plugins.entries.tokenjuice: plugin tokenjuice: plugin requires       │
+│    plugin API >=2026.7.1-beta.2, but this host is 2026.6.10; skipping   │
+│    discovery                                                            │
+│  - plugins.entries.tokenjuice: plugin not installed: tokenjuice —       │
+│    install the official external plugin with: openclaw plugins install  │
+│    @openclaw/tokenjuice                                                 │
+│  - plugins.entries.codex: plugin not installed: codex — install the     │
+│    official external plugin with: openclaw plugins install              │
+│    @openclaw/codex                                                      │
+│                                                                         │
+├─────────────────────────────────────────────────────────────────────────╯
+│
+◇  Doctor warnings ────────────────────────────────────────────────────────╮
+│                                                                          │
+│  - Left plugin install index in place because shared SQLite state has    │
+│    conflicting plugin install metadata for: codex, lossless-claw,        │
+│    tokenjuice                                                            │
+│  - Left migrated task registry sidecar in place because archive already  │
+│    exists: /root/.openclaw/tasks/runs.sqlite.migrated                    │
+│                                                                          │
+├──────────────────────────────────────────────────────────────────────────╯
+✅ Sent via telegram. Message ID: 61079
+
+Your OpenClaw config was written by version 2026.7.1-beta.2, but this command is running 2026.6.10.
+Check: `openclaw --version`, `which openclaw`, and `openclaw gateway status --deep`.
+If unexpected, update PATH so `openclaw` points to the version you want, or reinstall the Gateway service from that same OpenClaw install.
+[state-migrations] Legacy state migration warnings:
+- Left plugin install index in place because shared SQLite state has conflicting plugin install metadata for: codex, lossless-claw, tokenjuice
+- Left migrated task registry sidecar in place because archive already exists: /root/.openclaw/tasks/runs.sqlite.migrated
+[2026-07-10T00:15:32+03:00] END model-guardian-run: rc=0 duration=31s

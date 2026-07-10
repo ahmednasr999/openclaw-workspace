@@ -1,5 +1,28 @@
 # Active Tasks
 
+## 2026-07-10 - JobZoom application-package quality gate shadow rollout
+- Priority: high
+- Status: active, historical replay passed; live streak 0/3
+- Context: Ahmed approved upgrading JobZoom with the stronger validation and packaging controls from the Hermes workflow while keeping JobZoom as the single daily system.
+- Implemented:
+  - isolated shadow evaluator at `/root/.openclaw/workspace-jobzoom/scripts/jobzoom_quality_gate.py`
+  - additive `quality_gate_runs` and `quality_gate_decisions` tables in the canonical JobZoom database
+  - report, ZIP, manifest, CV text/page, applied-ledger, JD completeness, LinkedIn identity, eligibility, salary-potential, and exactly-once delivery-marker checks
+  - current-state old-package suppression for roles applied after the original run
+  - read-only promotion checker at `/root/.openclaw/workspace-jobzoom/scripts/jobzoom_quality_gate_acceptance.py`
+  - direct OS cron at 07:15 Cairo, after the unchanged 05:00 production run
+- Verification:
+  - five historical runs, 5-9 July, passed; 30 decisions evaluated
+  - 9 July shadow decision: 2 application-ready, 1 blocked at 82 due salary-floor evidence, 7 watchlist
+  - current-state 9 July replay: 10/10 excluded as already applied, 0 ready
+  - database integrity passed; jobs/applied/runs counts unchanged
+  - production daily runner, launcher, and safe-runner checksums match the pre-change backup
+  - clean-room restore from `/root/.openclaw/workspace-jobzoom/backups/quality-gate-20260710-031951` passed and was destroyed after verification
+- Next steps:
+  1. Collect three consecutive live shadow runs beginning with the 10 July 07:15 evaluation.
+  2. Run `python3 scripts/jobzoom_quality_gate_acceptance.py --required 3` in the JobZoom workspace.
+  3. Review current-versus-shadow decision differences before any production promotion. Do not auto-promote.
+
 ## 2026-06-17 - OpenClaw context-engineering improvement track
 - Priority: high
 - Status: open, first control artifacts created
