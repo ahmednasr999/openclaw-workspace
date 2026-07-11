@@ -29,18 +29,31 @@ echo $$ > "$LOCK_FILE"
 trap 'rm -f "$LOCK_FILE"' EXIT
 
 # ── Nothing to commit check ──
-# Stage tracked changes plus approved workspace areas; keep sensitive config excluded.
-git add -u 2>/dev/null || true
-for path in config scripts memory data logs media skills docs intel jobs-bank AGENTS.md MEMORY.md SOUL.md TOOLS.md .learnings; do
+# Stage source and explicitly approved non-secret config only. Runtime state
+# (data, logs, memory, sessions, archives, media, jobs, and databases) must
+# remain local and is deliberately excluded even when already tracked.
+if ! git diff --cached --quiet; then
+    log "ERROR: Git index already has staged changes; refusing to mix them into backup"
+    exit 1
+fi
+for path in \
+    scripts skills docs tests templates prompts cron-skills .github \
+    AGENTS.md TOOLS.md .gitignore \
+    config/root-crontab.managed \
+    config/tool-hooks.yaml \
+    config/tool-permissions.yaml; do
     [ -e "$path" ] && git add -- "$path" 2>/dev/null || true
 done
-git reset -q -- \
-    config/notion.json \
-    config/tavily.json \
-    config/huggingface.json \
-    config/google-ai-studio.json \
-    config/service-registry.md \
-    2>/dev/null || true
+
+# Refuse generated, backup, database, archive, and log artifacts even if one
+# appears beneath an approved source directory.
+while IFS= read -r -d '' path; do
+    case "$path" in
+        *.db|*.db-*|*.sqlite|*.sqlite3|*.log|*.jsonl|*.gz|*.zip|*.bak|*.backup|*.orig|*~)
+            git reset -q -- "$path" 2>/dev/null || true
+            ;;
+    esac
+done < <(git diff --cached --name-only -z)
 
 if ! git diff --cached --quiet; then
     log "Changes detected, committing..."

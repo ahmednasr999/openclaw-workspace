@@ -1002,19 +1002,14 @@ def fix_bloated_sessions(state):
         return False, f"Error: {str(e)[:80]}"
 
 def fix_stale_git(state):
-    """Fix B (Backups): Auto-commit if there are uncommitted changes."""
+    """Report stale Git state without committing runtime or private files."""
     try:
         result = subprocess.run(
             "cd /root/.openclaw/workspace && git status --porcelain",
             shell=True, capture_output=True, text=True, timeout=10
         )
         if result.stdout.strip():
-            # There are changes, auto-commit
-            subprocess.run(
-                'cd /root/.openclaw/workspace && git add -A && git commit -m "sie: auto-commit uncommitted changes"',
-                shell=True, capture_output=True, text=True, timeout=30
-            )
-            return True, "Auto-committed uncommitted workspace changes"
+            return False, "Uncommitted changes require reviewed source/config-only commit"
         return False, "No uncommitted changes"
     except Exception as e:
         return False, f"Error: {str(e)[:80]}"

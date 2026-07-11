@@ -653,26 +653,14 @@ def check_git():
         if changes == 0:
             check("Git Status", Result.OK, f"Clean (last commit {last_commit})")
         elif FIX_MODE and changes > 0:
-            # Auto-fix: commit data and log files
-            # Only auto-commit safe paths (data/, logs/, memory/, jobs-bank/)
-            safe_prefixes = ("data/", "logs/", "memory/", "jobs-bank/", "coordination/")
-            safe_files = [l[3:] for l in dirty_lines if any(l[3:].startswith(p) for p in safe_prefixes)]
-            unsafe_count = changes - len(safe_files)
-
-            if safe_files:
-                for f in safe_files:
-                    subprocess.run(["git", "add", f], capture_output=True, cwd=str(WORKSPACE))
-                subprocess.run(
-                    ["git", "commit", "-m", f"chore(auto): daily data commit ({len(safe_files)} files)"],
-                    capture_output=True, text=True, timeout=15,
-                    cwd=str(WORKSPACE)
-                )
-                fix_applied("Git Status", f"Auto-committed {len(safe_files)} data/log files")
-
-            if unsafe_count > 0:
-                check("Git Status", Result.FIXED, f"Committed {len(safe_files)} safe files, {unsafe_count} remaining")
-            else:
-                check("Git Status", Result.FIXED, f"Committed {len(safe_files)} files (last commit {last_commit})")
+            # Runtime state is not source code and may contain private or secret data.
+            # Never let a health-check repair create Git commits; repository changes
+            # require an explicit, reviewed source/config-only commit.
+            check(
+                "Git Status",
+                Result.WARN,
+                f"{changes} uncommitted files; auto-commit disabled (review required)",
+            )
         elif changes < 5:
             check("Git Status", Result.WARN, f"{changes} uncommitted files (last commit {last_commit})")
         else:
