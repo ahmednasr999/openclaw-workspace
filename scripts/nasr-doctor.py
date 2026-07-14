@@ -395,18 +395,20 @@ def check_composio_linkedin():
         return
 
     content = tools_md.read_text().lower()
-    signals = [
-        "linkedin posting uses composio",
-        "person urn:",
-        "for image posts",
-        "linkedin-auto-poster.py",
-        "linkedin_create_linked_in_post",
-    ]
-    found = [s for s in signals if s in content]
-    if len(found) >= 3:
+    documented = {
+        "Composio posting": "linkedin posting uses composio" in content,
+        "person URN": re.search(r"person\s+urn\b[^\n]*urn:li:person:", content) is not None,
+        "image s3key": "image posts" in content and "s3key" in content,
+    }
+    missing = [name for name, present in documented.items() if not present]
+    if not missing:
         check("LinkedIn (Composio)", Result.OK, "LinkedIn posting config documented")
     else:
-        check("LinkedIn (Composio)", Result.WARN, "LinkedIn config incomplete in TOOLS.md")
+        check(
+            "LinkedIn (Composio)",
+            Result.WARN,
+            f"LinkedIn config incomplete in TOOLS.md: missing {', '.join(missing)}",
+        )
 
 
 def check_linkedin_cookies():
