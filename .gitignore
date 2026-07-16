@@ -32,16 +32,22 @@ media/inbound/*.docx
 
 # Local-only state
 *.local.json
+/openclaw-workspace-state.json
+/openclaw-pair-qr-check.png
 
 # Local repo hygiene, generated outputs, and sensitive browser state
+/WORKSPACE_INDEX.md
 /.agents/
 /.notifications/
 /artifacts/
 /backups/
+/.cache/
 /cvs/
 /cookies/
 /config/*cookies*
-/*.bak-*
+*.bak
+*.bak-*
+*.orig
 /*.pptx
 /*.ppt
 
@@ -73,17 +79,16 @@ media/inbound/*.docx
 /email-inbox-last*.json
 /email-review-*/
 /lcm.db
-/*.db-shm
-/*.db-wal
 
 # Generated reports (local/runtime output)
 /reports/
 
-# Runtime logs
-logs/openclaw-backup.log
-logs/openclaw-*.log
-logs/cron/*.log
-logs/cron/status/*.json
+# Runtime logs and generated backup/export artifacts
+/logs/
+/data/backups/
+/data/cvs/
+*.db-shm
+*.db-wal
 
 # Generated CV exports
 output/cvs/

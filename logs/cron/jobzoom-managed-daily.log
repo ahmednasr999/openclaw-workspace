@@ -1,4 +1,0 @@
-
-[2026-07-10T05:00:01+03:00] START jobzoom-managed-daily: /root/.openclaw/workspace-jobzoom/scripts/jobzoom_daily_launch.sh
-JobZoom managed runner handshake OK: pid=1970275 log=/root/.openclaw/workspace-jobzoom/logs/jobzoom-managed-20260710-050001.log state=/root/.openclaw/workspace-jobzoom/data/jobzoom-managed-run.state
-[2026-07-10T05:00:02+03:00] END jobzoom-managed-daily: rc=0 duration=1s
