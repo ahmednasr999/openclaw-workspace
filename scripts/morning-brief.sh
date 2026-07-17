@@ -2,7 +2,9 @@
 # Morning Brief - Daily Job Pipeline Summary
 # Runs at 6 AM UTC (8 AM Cairo)
 
-export TAVILY_API_KEY="<redacted>"
+if [ -z "${TAVILY_API_KEY:-}" ]; then
+    export TAVILY_API_KEY="$(jq -r '.openclaw.skills.entries.tavily.apiKey // empty' /root/.openclaw/config/secrets.json)"
+fi
 DATE=$(date +%Y-%m-%d)
 TIME=$(date +"%I:%M %p")
 

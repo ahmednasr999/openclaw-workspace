@@ -30,7 +30,7 @@ Search 2: `"Head of PMO" OR "Director PMO" OR "Head of Technology" OR "Head of A
 Search 3: `VP Director "Digital Health" OR "HealthTech" OR "FinTech" executive GCC Dubai 2026`
 Search 4: `CTO COO "Chief Digital Officer" OR "General Manager" technology Riyadh Doha "Saudi Arabia" OR Qatar 2026`
 
-Use Tavily API key: <redacted>
+Use the `TAVILY_API_KEY` environment variable.
 Max 8 results per search.
 
 ---

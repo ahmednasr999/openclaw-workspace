@@ -28,7 +28,15 @@ const CHANNELS = [
 
 const WORKSPACE = "/root/.openclaw/workspace";
 const OUTPUT_FILE = path.join(WORKSPACE, "memory/knowledge/youtube-intelligence.md");
-const TAVILY_KEY = "<redacted>";
+const secretsPath = "/root/.openclaw/config/secrets.json";
+let TAVILY_KEY = process.env.TAVILY_API_KEY || "";
+if (!TAVILY_KEY) {
+  try {
+    TAVILY_KEY = JSON.parse(fs.readFileSync(secretsPath, "utf8")).openclaw.skills.entries.tavily.apiKey;
+  } catch (_error) {
+    TAVILY_KEY = "";
+  }
+}
 
 function searchChannel(channel) {
   try {

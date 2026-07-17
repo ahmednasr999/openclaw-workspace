@@ -18,7 +18,20 @@ import sys
 from datetime import datetime, timezone, timedelta
 
 PORT = 8789
-BOT_TOKEN = "<redacted>"
+
+
+def load_bot_token():
+    token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
+    if token:
+        return token
+    try:
+        with open(os.path.expanduser("~/.openclaw/config/secrets.json"), encoding="utf-8") as handle:
+            return json.load(handle)["openclaw"]["channels"]["telegram"]["botToken"]
+    except (OSError, KeyError, TypeError, json.JSONDecodeError):
+        return ""
+
+
+BOT_TOKEN = load_bot_token()
 CHAT_ID = "-1003882622947"  # Nasr Command Center group
 TOPIC_ID = 1  # General topic
 SYNC_TOKEN_FILE = "/root/.openclaw/workspace/.watchdog/calendar-sync-token.json"

@@ -6,7 +6,7 @@ Your job: find the top performing LinkedIn posts in Ahmed's niche this week, cro
 
 ## STEP 1 - SEARCH FOR TOP POSTS IN NICHE
 
-Use web_fetch and web_search (Tavily key: <redacted>) to find high-engagement LinkedIn posts from the past 7 days in these topics:
+Use web_fetch and web_search with `TAVILY_API_KEY` from the environment to find high-engagement LinkedIn posts from the past 7 days in these topics:
 
 Search 1: LinkedIn posts "digital transformation" GCC UAE executives high engagement 2026
 Search 2: LinkedIn posts "AI strategy" OR "artificial intelligence" PMO leaders Middle East viral 2026

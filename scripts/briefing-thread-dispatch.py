@@ -16,7 +16,20 @@ import json, os, sys, re, ssl, urllib.request
 
 WORKSPACE = os.path.expanduser("~/.openclaw/workspace")
 NOTION_CONFIG = f"{WORKSPACE}/config/notion.json"
-BOT_TOKEN = "<redacted>"
+
+
+def load_bot_token():
+    token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
+    if token:
+        return token
+    try:
+        with open(os.path.expanduser("~/.openclaw/config/secrets.json"), encoding="utf-8") as handle:
+            return json.load(handle)["openclaw"]["channels"]["telegram"]["botToken"]
+    except (OSError, KeyError, TypeError, json.JSONDecodeError):
+        return ""
+
+
+BOT_TOKEN = load_bot_token()
 CHAT_ID = "-1003882622947"
 ctx = ssl.create_default_context()
 
