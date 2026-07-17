@@ -90,3 +90,19 @@ Already addressed by 2026-03-21 section above. Both entries consolidated into th
 2. **Extend quality checks beyond copy.** The checklist should add a publish-readiness block for required image state, asset type, source of truth, payload length, final formatting, and post thesis alignment.
 3. **Stop on visual or payload uncertainty.** If the post requires an image and the approved asset is missing, stale, wrong-format, or semantically mismatched, the skill should return the blocker instead of producing a publish-ready claim.
 4. **Keep writing output draft-safe.** Unless the active publishing workflow has separately verified assets and target account, this skill should deliver only the final draft text, not imply that posting is complete.
+
+
+### 2026-06-13 - Weekly Skill Tune-Up
+
+**Audit basis:** Recent LinkedIn lessons from 2026-06-10 focus on visual quality and reliable media delivery. This skill is archived, but it still has an `eval/checklist.md` and can be pulled into old content flows, so the recommendation keeps it draft-safe and tightens visual/media handoff language.
+
+**Reviewed lessons:**
+- 2026-06-10, Hand-drawn LinkedIn Quality Floor.
+- 2026-06-10, Resend Generated Images Through Direct Telegram Photo Path After Media Failure.
+- 2026-06-02, Do Not Repair LinkedIn by Editing Cookies.
+
+**Improvement recommendation:**
+1. **Keep this archived writer draft-only by default.** It should produce copy and review notes, not imply publishing is complete unless the current active LinkedIn publishing workflow verifies account, media, and delivery.
+2. **Add a visual-quality floor to image-dependent posts.** When a post depends on a visual, require semantic alignment with the thesis and reject assets below the approved ROT hand-drawn quality floor: polished editorial sketchnote, warm paper texture, authentic lettering, strong whitespace, clean story flow, restrained orange accents, no sketch-filter look, and no crowded or overlapping elements.
+3. **Treat media delivery failure as resend-first.** If Ahmed sees `Media failed`, locate the generated image, verify size/dimensions, save a durable copy under `output/linkedin`, resend via direct Telegram photo path, and confirm `message_id` before regenerating or calling the asset lost.
+4. **Do not repair LinkedIn auth from this skill.** Any auth, cookie, or posting-lane issue belongs to the active LinkedIn publishing/engagement workflow, not the archived writer.
