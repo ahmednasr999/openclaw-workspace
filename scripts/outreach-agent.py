@@ -389,7 +389,7 @@ def search_profiles(company, role_query="recruiter OR HR OR talent acquisition")
     return _search_tavily(company, role_query)
 
 
-def call_llm(prompt, max_tokens=1000, model="openai-codex/gpt-5.5"):
+def call_llm(prompt, max_tokens=1000, model="openai/gpt-5.6-sol"):
     """Call LLM via OpenClaw gateway."""
     gateway_url = "http://127.0.0.1:18789/v1/chat/completions"
     payload = json.dumps({

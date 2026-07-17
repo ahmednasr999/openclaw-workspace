@@ -17,7 +17,7 @@ CONFIG_DIR = WORKSPACE / "config"
 
 # Gateway for LLM
 GATEWAY_URL = "http://127.0.0.1:18789/v1/chat/completions"
-MODEL = "openai-codex/gpt-5.5"
+MODEL = "openai/gpt-5.6-sol"
 
 # Search API keys
 TAVILY_KEY = os.environ.get("TAVILY_API_KEY")
@@ -50,6 +50,7 @@ TOPICS = [
 ]
 
 GCC_TERMS = "Saudi OR UAE OR Dubai OR Riyadh OR Qatar OR Bahrain OR Kuwait OR Oman OR GCC OR MENA"
+CANDIDATE_POOL_SIZE = 12
 
 # Priority authors - posts from these people get boosted
 PRIORITY_AUTHORS_FILE = CONFIG_DIR / "priority-authors.json"
@@ -94,9 +95,9 @@ Return ONLY a valid JSON array with this exact structure - no markdown fences, n
 ]
 """
 
-# GPT-5.5 for regular and priority comments.
-LLM_MODEL_DEFAULT = "openai-codex/gpt-5.5"
-LLM_MODEL_PREMIUM = "openai-codex/gpt-5.5"
+# GPT-5.6 Sol for regular and priority comments.
+LLM_MODEL_DEFAULT = "openai/gpt-5.6-sol"
+LLM_MODEL_PREMIUM = "openai/gpt-5.6-sol"
 LLM_TEMP = 0.7
 COMMENT_TRACKER_PATH = DATA_DIR / "comment-tracker.json"
 
@@ -605,7 +606,7 @@ def draft_comments(posts):
                 orig_idx = regular_posts[seq][0]
                 comment = c.get("comment", "").replace("\u2014", " - ").replace("\u2013", "-")
                 posts[orig_idx]["draft_comment"] = comment
-                posts[orig_idx]["model_used"] = "gpt-5.5"
+                posts[orig_idx]["model_used"] = "gpt-5.6-sol"
 
     drafted = sum(1 for p in posts if p.get("draft_comment"))
     print(f"  Drafted {drafted}/{len(posts)} comments")
@@ -649,7 +650,7 @@ def run_radar():
 
     for i, query in enumerate(queries, 1):
         print(f"  Search {i}/{len(queries)}...")
-        results = tavily_search(query, n=10)
+        results = tavily_search(query, n=15)
         posts = extract_linkedin_posts(results)
         print(f"    Found {len(posts)} LinkedIn posts")
         all_posts.extend(posts)
@@ -695,7 +696,7 @@ def run_radar():
 
     # Fast pre-screen: enrich top candidates with logged-out HTML (author names + comment counts)
     print("  Pre-screening posts from LinkedIn HTML...")
-    for p in unique[:15]:
+    for p in unique[:30]:
         author, content, comment_count = fetch_post_content(p["url"])
         if author != "Unknown":
             p["author"] = author
@@ -718,7 +719,7 @@ def run_radar():
     
     top = []
     for post in unique:
-        if len(top) >= 5:
+        if len(top) >= CANDIDATE_POOL_SIZE:
             break
         post_words = word_set(post.get("preview", "") + " " + post.get("title", ""))
         is_duplicate = False
@@ -736,12 +737,12 @@ def run_radar():
     if len(top) < 5:
         # Fill remaining with next best non-duplicate posts
         for post in unique:
-            if len(top) >= 5:
+            if len(top) >= CANDIDATE_POOL_SIZE:
                 break
             if post not in top:
                 top.append(post)
 
-    print(f"\n  Top 5 posts:")
+    print(f"\n  Top {len(top)} candidate posts:")
     for i, p in enumerate(top, 1):
         pri = " [PRIORITY]" if p.get("priority") else ""
         print(f"  #{i} PQS:{p['pqs']} | {p['author'][:25]} | {p['title'][:50]}{pri}")
@@ -786,7 +787,7 @@ def run_radar():
     tracker["last_radar_run"] = datetime.now(timezone.utc).isoformat()
     save_comment_tracker(tracker)
 
-    print(f"\n=== Done: {len(top)} posts + {drafted} draft comments saved ===")
+    print(f"\n=== Done: {len(top)} candidate posts + {drafted} draft comments saved ===")
 
 
 if __name__ == "__main__":

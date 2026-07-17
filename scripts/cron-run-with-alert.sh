@@ -48,6 +48,34 @@ EOF
   exit 0
 fi
 
+RESOURCE_GUARD="/root/.openclaw/workspace/scripts/resource-pressure-guard.py"
+if [[ -x "$RESOURCE_GUARD" ]]; then
+  GUARD_OUTPUT="$(/usr/bin/python3 "$RESOURCE_GUARD" check --task "$TASK" 2>&1)"
+  GUARD_RC=$?
+  if [[ $GUARD_RC -eq 75 ]]; then
+    END_ISO="$(date -Is)"
+    END_EPOCH="$(date +%s)"
+    DURATION=$((END_EPOCH - START_EPOCH))
+    printf '[%s] SKIP %s: resource pressure (%s)\n' "$END_ISO" "$TASK" "$GUARD_OUTPUT" >> "$LOG_PATH"
+    write_status <<EOF
+{
+  "task": "$TASK",
+  "status": "resource_blocked",
+  "returncode": 0,
+  "started_at": "$START_ISO",
+  "finished_at": "$END_ISO",
+  "duration_seconds": $DURATION,
+  "log_path": "$LOG_PATH",
+  "lock_path": "$LOCK_PATH",
+  "host": "$HOST"
+}
+EOF
+    exit 0
+  elif [[ $GUARD_RC -ne 0 ]]; then
+    printf '[%s] WARN %s: resource guard failed open rc=%s (%s)\n' "$(date -Is)" "$TASK" "$GUARD_RC" "$GUARD_OUTPUT" >> "$LOG_PATH"
+  fi
+fi
+
 printf '\n[%s] START %s: %s\n' "$START_ISO" "$TASK" "$*" >> "$LOG_PATH"
 "$@" >> "$LOG_PATH" 2>&1
 RC=$?

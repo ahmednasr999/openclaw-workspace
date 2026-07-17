@@ -143,7 +143,11 @@ def main() -> int:
         except Exception:
             pass
     print(f'Cron health report written: {REPORT} problems={len(problems)}')
-    return 1 if problems else 0
+    # Finding an unhealthy job is report data, not a failure of this reporting
+    # job itself. The detailed alert above already carries the finding. Keep
+    # the wrapper status green when the report was generated successfully so
+    # it does not emit a second, misleading "cron-health-report failed" alert.
+    return 0
 
 
 if __name__ == '__main__':

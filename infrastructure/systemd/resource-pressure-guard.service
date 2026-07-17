@@ -1,0 +1,14 @@
+[Unit]
+Description=NASR VPS resource-pressure guard
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/root/.openclaw/workspace/scripts/resource-pressure-monitor.sh
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7
+MemoryMax=96M
+TasksMax=32
+TimeoutStartSec=50

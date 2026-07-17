@@ -14,6 +14,7 @@ Any missing state, parse issue, or IMAP error fails open and runs email-agent.py
 from __future__ import annotations
 
 import copy
+import fcntl
 import imaplib
 import json
 import os
@@ -34,6 +35,8 @@ STATE_PATH = DATA_DIR / "email-state.json"
 GATE_STATE_PATH = DATA_DIR / "email-gate-state.json"
 SUMMARY_PATH = DATA_DIR / "email-summary.json"
 LATEST_PATH = DATA_DIR / "email-latest.json"
+LOCK_PATH = Path("/var/lock/openclaw/email-agent-global.lock")
+LOCK_WAIT_SECONDS = 180
 
 STATUS_FIELDS = ("MESSAGES", "UNSEEN", "UIDNEXT", "UIDVALIDITY")
 
@@ -194,6 +197,26 @@ def run_full_agent(args: list[str], reason: str) -> int:
     return proc.returncode
 
 
+def run_locked() -> int:
+    """Serialize push and polling scans so mailbox checkpoints cannot race."""
+    LOCK_PATH.parent.mkdir(parents=True, exist_ok=True)
+    deadline = time.monotonic() + LOCK_WAIT_SECONDS
+    with LOCK_PATH.open("a+") as lock_handle:
+        while True:
+            try:
+                fcntl.flock(lock_handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                break
+            except BlockingIOError:
+                if time.monotonic() >= deadline:
+                    print(f"email gate: lock timeout after {LOCK_WAIT_SECONDS}s", file=sys.stderr)
+                    return 75
+                time.sleep(1)
+        try:
+            return main()
+        finally:
+            fcntl.flock(lock_handle.fileno(), fcntl.LOCK_UN)
+
+
 def main() -> int:
     args = sys.argv[1:]
     dry_run = "--dry-run" in args
@@ -240,4 +263,4 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(run_locked())

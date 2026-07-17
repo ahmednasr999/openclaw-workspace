@@ -24,10 +24,10 @@ CRON_TZ=Africa/Cairo
 40 8 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh disk-health-check /var/lock/openclaw/disk-health-check.lock /root/.openclaw/workspace/logs/cron/disk-health-check.log /root/.openclaw/workspace/scripts/disk-health-check.sh
 
 # Owner: HR | Purpose: Lightweight job-market radar; JobZoom owns deep scan/scoring | Expected runtime: <20m
-0 6 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh job-radar /var/lock/openclaw/job-radar.lock /root/.openclaw/workspace/logs/cron/job-radar.log /root/.openclaw/workspace/scripts/job-radar.sh
+45 6 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh job-radar /var/lock/openclaw/job-radar.lock /root/.openclaw/workspace/logs/cron/job-radar.log /root/.openclaw/workspace/scripts/job-radar.sh
 
 # Owner: CEO Ops | Purpose: Morning briefing, staggered after job radar | Expected runtime: <20m
-10 6 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh morning-brief /var/lock/openclaw/morning-brief.lock /root/.openclaw/workspace/logs/cron/morning-brief.log /root/.openclaw/workspace/scripts/morning-brief.sh
+5 7 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh morning-brief /var/lock/openclaw/morning-brief.lock /root/.openclaw/workspace/logs/cron/morning-brief.log /root/.openclaw/workspace/scripts/morning-brief.sh
 
 # Owner: OpenClaw Core | Purpose: Clear stale agent context | Expected runtime: <2m
 */5 * * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh stale-context-maintenance /var/lock/openclaw/stale-context-maintenance.lock /root/.openclaw/workspace/logs/cron/stale-context-maintenance.log /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
@@ -52,7 +52,7 @@ CRON_TZ=Africa/Cairo
 30 10 * * 0 /root/.openclaw/workspace/scripts/cron-run-with-alert.sh backup-restore-smoke-test /var/lock/openclaw/backup-restore-smoke-test.lock /root/.openclaw/workspace/logs/cron/backup-restore-smoke-test.log /root/.openclaw/workspace/scripts/backup-restore-smoke-test.sh # weekly-backup-restore-smoke-test
 
 # Owner: OpenClaw Core | Purpose: Disk guard enforcement daily at 75 percent, auto safe cleanup | Expected runtime: <15m
-7 7 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh disk-guard /var/lock/openclaw/disk-guard.cron.lock /root/.openclaw/workspace/logs/cron/disk-guard-cron.log /usr/bin/python3 /root/.openclaw/workspace/scripts/direct-cron-runner.py disk-guard # direct-vps-disk-guard
+7 8 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh disk-guard /var/lock/openclaw/disk-guard.cron.lock /root/.openclaw/workspace/logs/cron/disk-guard-cron.log /usr/bin/python3 /root/.openclaw/workspace/scripts/direct-cron-runner.py disk-guard # direct-vps-disk-guard
 
 # Owner: CMO | Purpose: Approved 14-day LinkedIn post campaign, May 15-28 2026 only | Expected runtime: <15m
 
@@ -76,5 +76,11 @@ CRON_TZ=Africa/Cairo
 # Owner: CMO | Purpose: Ongoing Notion-approved LinkedIn daily publisher with visual | Expected runtime: <15m
 30 9 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh cmo-notion-linkedin-post /var/lock/openclaw/cmo-notion-linkedin-post.cron.lock /root/.openclaw/workspace/logs/cron/cmo-notion-linkedin-post-cron.log /usr/bin/python3 /root/.openclaw/workspace-cmo/scripts/post_scheduled_notion_linkedin.py # cmo-notion-linkedin-post
 
-# Owner: CEO Ops | Purpose: GPT-5.5 quota usage snapshots for Pro 20x vs 5x decision | Expected runtime: <5m
-15 0,6,12,18 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh model-guardian-run /var/lock/openclaw/model-guardian-run.lock /root/.openclaw/workspace/logs/cron/model-guardian-run.log /usr/bin/python3 /root/.openclaw/workspace/scripts/model-guardian-run.py # gpt55-quota-monitor
+# Owner: OpenClaw Core | Purpose: Weekly VPS disk report to Ahmed DM | Expected runtime: <5m
+35 9 * * 0 /root/.openclaw/workspace/scripts/cron-run-with-alert.sh weekly-vps-disk-report /var/lock/openclaw/weekly-vps-disk-report.lock /root/.openclaw/workspace/logs/cron/weekly-vps-disk-report.log /root/.openclaw/workspace/scripts/vps-disk-weekly-report.sh # weekly-vps-disk-report
+
+# Owner: HR/JobZoom | Purpose: Isolated application-package quality gate in shadow mode; no delivery changes | Expected runtime: <10m
+30 7 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh jobzoom-quality-gate-shadow /var/lock/openclaw/jobzoom-quality-gate-shadow.lock /root/.openclaw/workspace/logs/cron/jobzoom-quality-gate-shadow.log /root/.openclaw/workspace-jobzoom/scripts/jobzoom_quality_gate_shadow.sh # jobzoom-quality-gate-shadow
+
+# Owner: NASR | Purpose: Weekly quarantined skill discovery review; local reports only, no install or messaging | Expected runtime: <5m
+15 11 * * 0 CRON_RUNNER_NO_ALERT=1 /root/.openclaw/workspace/scripts/cron-run-with-alert.sh skill-discovery-pilot /var/lock/openclaw/skill-discovery-pilot.lock /root/.openclaw/workspace/logs/cron/skill-discovery-pilot.log /usr/bin/python3 /root/.openclaw/workspace/skills/skill-discovery-pilot/scripts/discover.py --config /root/.openclaw/workspace/config/skill-discovery-pilot.json --max-candidates 8 # weekly-skill-discovery-pilot

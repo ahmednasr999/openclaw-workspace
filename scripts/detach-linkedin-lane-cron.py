@@ -4,7 +4,7 @@ from pathlib import Path
 WORKSPACE=Path('/root/.openclaw/workspace')
 CID='bef6e2d8-fce7-44dc-acde-a76fbcb01a7e'
 for cmd in [
-    ['openclaw','cron','edit',CID,'--agent','cto','--clear-session-key','--model','openai-codex/gpt-5.5','--timeout-seconds','900'],
+    ['openclaw','cron','edit',CID,'--agent','cto','--clear-session-key','--model','openai/gpt-5.6-sol','--timeout-seconds','900'],
     ['openclaw','cron','show',CID],
     ['openclaw','cron','run',CID],
     ['openclaw','cron','show',CID],

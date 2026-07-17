@@ -79,7 +79,7 @@ Return a JSON object with this exact structure:
 }}
 </output_format>"""
 
-LLM_MODEL = "openai/gpt-5.5"
+LLM_MODEL = "openai/gpt-5.6-sol"
 LLM_TEMP = 0.1
 
 import imaplib
@@ -242,7 +242,7 @@ NOISE_SENDERS = [
     "mailchimp.com", "sendgrid.net", "convertkit.com", "beehiiv.com",
     "noreply@", "no-reply@", "notifications@", "news@", "newsletter@",
     "digest@", "updates@", "marketing@", "promo@", "offers@",
-    "newsletter.", "newsletters@", "mail.beehiiv.com",
+    "newsletter.", "newsletters.", "newsletters@", "mail.beehiiv.com",
     "mindstream.news", "newsletter.thepaypers.com", "arabianbusiness.com",
     "email.fintechfutures.com", "mail.theankler.com", "productschool.com",
     "workinpro.io",
@@ -305,6 +305,25 @@ def _keyword_tokens(text: str) -> list:
     return [t for t in re.findall(r'[a-z0-9]+', (text or '').lower()) if len(t) >= 4]
 
 
+def _contains_token_phrase(needle: str, haystack: str) -> bool:
+    """Match a name as complete adjacent tokens, preserving word boundaries.
+
+    Compact substring matching is unsafe for short pipeline aliases. For
+    example, company ``TP`` used to match the normalized boundary in
+    ``It - Pilot``. Token phrases still tolerate punctuation and whitespace
+    differences without joining unrelated neighboring words.
+    """
+    needle_tokens = re.findall(r'[a-z0-9]+', (needle or '').lower())
+    haystack_tokens = re.findall(r'[a-z0-9]+', (haystack or '').lower())
+    width = len(needle_tokens)
+    if not width or width > len(haystack_tokens):
+        return False
+    return any(
+        haystack_tokens[index:index + width] == needle_tokens
+        for index in range(len(haystack_tokens) - width + 1)
+    )
+
+
 @lru_cache(maxsize=1)
 def _get_active_pipeline_jobs():
     if not _pdb:
@@ -327,9 +346,6 @@ def _get_active_pipeline_jobs():
 def _match_pipeline_company(subject: str, from_addr: str, body: str = ""):
     sender_name, sender_email = parseaddr(from_addr or "")
     sender_domain = extract_domain(sender_email or from_addr or "")
-    subject_norm = _normalize_key(subject)
-    body_norm = _normalize_key(body[:4000])
-    sender_name_norm = _normalize_key(sender_name)
     sender_email_norm = (sender_email or "").strip().lower()
     sender_domain_norm = _normalize_key(sender_domain)
 
@@ -344,24 +360,24 @@ def _match_pipeline_company(subject: str, from_addr: str, body: str = ""):
         title = job.get("title") or ""
 
         company_norm = _normalize_key(company)
-        recruiter_name_norm = _normalize_key(recruiter_name)
-        recruiter_company_norm = _normalize_key(recruiter_company)
-        title_norm = _normalize_key(title)
-
         score = 0
         if recruiter_email and recruiter_email == sender_email_norm:
             score += 10
-        if recruiter_name_norm and recruiter_name_norm in sender_name_norm:
+        if _contains_token_phrase(recruiter_name, sender_name):
             score += 8
-        if company_norm and company_norm in subject_norm:
-            score += 8
-        elif company_norm and company_norm in body_norm:
-            score += 4
-        if recruiter_company_norm and recruiter_company_norm in subject_norm:
-            score += 6
-        elif recruiter_company_norm and recruiter_company_norm in body_norm:
-            score += 3
-        if title_norm and title_norm in subject_norm:
+        if _contains_token_phrase(company, subject):
+            # Short aliases such as TP are not distinctive enough alone.
+            # Give them only corroborating weight so a title or recruiter
+            # identity must also match before the pipeline threshold is met.
+            score += 8 if len(company_norm) >= 4 else 3
+        elif _contains_token_phrase(company, body[:4000]):
+            score += 4 if len(company_norm) >= 4 else 1
+        recruiter_company_norm = _normalize_key(recruiter_company)
+        if _contains_token_phrase(recruiter_company, subject):
+            score += 6 if len(recruiter_company_norm) >= 4 else 2
+        elif _contains_token_phrase(recruiter_company, body[:4000]):
+            score += 3 if len(recruiter_company_norm) >= 4 else 1
+        if _contains_token_phrase(title, subject):
             score += 3
 
         for token in _keyword_tokens(company) + _keyword_tokens(recruiter_company):
@@ -795,6 +811,11 @@ def assess_actionability(subject, from_addr, body, categories, score, pipeline_c
     if is_noise_sender(from_addr) or is_linkedin_noise(subject, from_addr) or is_job_alert(subject, from_addr, body):
         confidence = min(confidence, 25)
         evidence.append("noise/job-alert guard applied")
+    if "rejection" in categories:
+        # A rejection is important pipeline evidence, but it is not an urgent
+        # reply/interview action. Keep it reviewable without interrupting Ahmed.
+        confidence = min(confidence, 40)
+        evidence.append("rejection guard: pipeline update only, no immediate action")
 
     rules = load_feedback_rules()
     if any(sender_l and marker in sender_l for marker in rules["wrong_alert_senders"]):
@@ -809,7 +830,11 @@ def assess_actionability(subject, from_addr, body, categories, score, pipeline_c
 
     confidence = max(0, min(100, confidence))
     actionable_categories = {"interview_invite", "assessment", "application_response", "follow_up_needed", "recruiter_reach"}
-    actionable = bool(actionable_categories.intersection(categories)) and confidence >= MIN_ACTIONABLE_CONFIDENCE
+    actionable = (
+        "rejection" not in categories
+        and bool(actionable_categories.intersection(categories))
+        and confidence >= MIN_ACTIONABLE_CONFIDENCE
+    )
     why = " | ".join(evidence[:4]) if evidence else "no strong hiring evidence"
     return {
         "confidence": confidence,

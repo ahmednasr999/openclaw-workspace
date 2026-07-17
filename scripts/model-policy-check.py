@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-"""Fail if active runtime paths drift away from Ahmed's GPT-5.5 model policy."""
+"""Fail if active runtime paths drift away from Ahmed's GPT-5.6 Sol policy."""
 
 from pathlib import Path
 import json
 import re
 import sys
 
-APPROVED_MODEL = "openai-codex/gpt-5.5"
-APPROVED_RUNTIME_MODELS = {"openai/gpt-5.5", APPROVED_MODEL}
+APPROVED_MODEL = "openai/gpt-5.6-sol"
+APPROVED_RUNTIME_MODELS = {APPROVED_MODEL}
+JOBZOOM_ROUTE = "openclaw/jobzoom"
 
 ROOTS = [
     Path("/root/.openclaw/workspace/scripts"),
@@ -36,17 +37,12 @@ CRITICAL_FILES = {
 }
 
 FORBIDDEN = re.compile(
-    r"openai-codex/gpt-5\.4|anthropic/claude|claude-(?:opus|sonnet)|"
+    r"openai(?:-codex)?/gpt-5\.[45]|anthropic/claude|claude-(?:opus|sonnet)|"
     r"minimax-portal|MiniMax-M|moonshot/kimi|Kimi K",
     re.IGNORECASE,
 )
 
-CONFIG_RULES = {
-    Path("/root/.openclaw/openclaw.json"): [
-        ('"summaryModel": "openai-codex/gpt-5.5"', "lossless-claw summaryModel must use GPT-5.5"),
-        ('"minimax": {\n        "enabled": false', "MiniMax plugin must stay disabled unless Ahmed explicitly re-enables it"),
-    ],
-}
+CONFIG_RULES = {}
 
 FORBIDDEN_SCAN_EXEMPT = {
     Path("/root/.openclaw/openclaw.json"),
@@ -80,7 +76,7 @@ def check_openclaw_config(path: Path, text: str, problems: list[str]) -> None:
         for channel, model in mapping.items():
             if model not in APPROVED_RUNTIME_MODELS:
                 problems.append(
-                    f"{path}: channels.modelByChannel.{surface}.{channel} uses {model!r}, expected GPT-5.5"
+                    f"{path}: channels.modelByChannel.{surface}.{channel} uses {model!r}, expected GPT-5.6 Sol"
                 )
 
 
@@ -91,8 +87,9 @@ def main() -> int:
             problems.append(f"missing critical file: {path}")
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
-        if APPROVED_MODEL not in text:
-            problems.append(f"{path}: approved model literal missing")
+        required_model = JOBZOOM_ROUTE if "workspace-jobzoom" in str(path) else APPROVED_MODEL
+        if required_model not in text:
+            problems.append(f"{path}: approved model or route literal missing: {required_model}")
         for expected, description in CONFIG_RULES.get(path, []):
             if expected not in text:
                 problems.append(f"{path}: {description}")

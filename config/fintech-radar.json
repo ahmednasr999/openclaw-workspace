@@ -1,0 +1,41 @@
+{
+  "lookback_days": 3,
+  "max_items": 18,
+  "top_items": 8,
+  "daily_prompt": "prompts/fintech-radar-daily.md",
+  "content_output": {
+    "required": true,
+    "post_text_required": true,
+    "image_required": true,
+    "image_format": "PNG",
+    "image_dimensions": "1080x1350",
+    "visual_output_dir": "output/fintech-radar",
+    "telegram_media_dir": "/root/.openclaw/media/fintech-radar",
+    "style_reference": "media/inbound/234fe40d-96c3-4b4a-bf6f-dc1f75f91bbf.jpg",
+    "publish_automatically": false
+  },
+  "queries": [
+    {"category": "Capital", "query": "fintech funding OR raises OR Series OR investment"},
+    {"category": "Capital", "query": "fintech acquisition OR merger OR IPO OR venture debt"},
+    {"category": "Regulation", "query": "fintech regulation OR payments regulation OR open banking regulator"},
+    {"category": "Payments", "query": "payments fintech launch OR partnership OR expansion"},
+    {"category": "Digital Banking", "query": "digital bank neobank launch OR funding OR license"},
+    {"category": "Infrastructure", "query": "fintech infrastructure fraud identity stablecoin tokenization"},
+    {"category": "Leadership", "query": "fintech appoints CEO OR chief executive OR layoffs OR hiring"}
+  ],
+  "gcc_terms": [
+    "uae", "united arab emirates", "saudi", "saudi arabia", "qatar", "kuwait",
+    "bahrain", "oman", "gcc", "dubai", "abu dhabi", "riyadh", "jeddah", "doha", "manama", "muscat"
+  ],
+  "primary_domains": [
+    "bis.org", "imf.org", "worldbank.org", "ecb.europa.eu", "federalreserve.gov",
+    "bankofengland.co.uk", "europa.eu", "sec.gov", "fca.org.uk", "mas.gov.sg",
+    "hkma.gov.hk", "rbi.org.in", "centralbank.ae", "sama.gov.sa", "qcb.gov.qa",
+    "cbb.gov.bh", "cbk.gov.kw", "cbo.gov.om", "dfsa.ae", "adgm.com"
+  ],
+  "trusted_reporting_domains": [
+    "reuters.com", "bloomberg.com", "ft.com", "techcrunch.com", "finextra.com",
+    "fintechfutures.com", "thebanker.com", "americanbanker.com", "cnbc.com"
+  ],
+  "blocked_domains": ["linkedin.com", "facebook.com", "instagram.com", "tiktok.com", "youtube.com"]
+}

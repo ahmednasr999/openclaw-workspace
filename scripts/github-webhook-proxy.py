@@ -1,42 +1,40 @@
 #!/usr/bin/env python3
-"""GitHub Webhook Proxy - Verifies HMAC signature and forwards to OpenClaw hooks."""
+"""GitHub webhook proxy with HMAC verification and environment-backed secrets."""
 
 import hashlib
 import hmac
 import http.server
 import json
+import os
+import urllib.error
 import urllib.request
-import sys
+
 
 PORT = 8791
-WEBHOOK_SECRET = "cfb8500c0d6411e7ea4624649e1e62f1dd0508f5"
 HOOK_URL = "http://127.0.0.1:18789/hooks/github"
-HOOK_TOKEN = "<redacted>"
+WEBHOOK_SECRET = os.environ["GITHUB_WEBHOOK_SECRET"]
+HOOK_TOKEN = os.environ["OPENCLAW_HOOKS_TOKEN"]
 
 
 class Handler(http.server.BaseHTTPRequestHandler):
     def do_POST(self):
         content_length = int(self.headers.get("Content-Length", 0))
-        if content_length > 1_000_000:  # 1MB max
-            self.send_response(413)
+        if content_length <= 0 or content_length > 1_000_000:
+            self.send_response(413 if content_length > 1_000_000 else 400)
             self.end_headers()
             return
 
         body = self.rfile.read(content_length)
-
-        # Verify HMAC signature
         sig_header = self.headers.get("X-Hub-Signature-256", "")
-        if sig_header:
-            expected = "sha256=" + hmac.new(
-                WEBHOOK_SECRET.encode(), body, hashlib.sha256
-            ).hexdigest()
-            if not hmac.compare_digest(sig_header, expected):
-                print(f"[github-proxy] HMAC mismatch, rejecting", flush=True)
-                self.send_response(403)
-                self.end_headers()
-                return
+        expected = "sha256=" + hmac.new(
+            WEBHOOK_SECRET.encode(), body, hashlib.sha256
+        ).hexdigest()
+        if not sig_header or not hmac.compare_digest(sig_header, expected):
+            print("[github-proxy] missing or invalid HMAC signature", flush=True)
+            self.send_response(403)
+            self.end_headers()
+            return
 
-        # Parse and enrich payload with event type header
         event = self.headers.get("X-GitHub-Event", "unknown")
         try:
             payload = json.loads(body)
@@ -45,11 +43,8 @@ class Handler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             return
 
-        # Inject event type into payload for the template
         payload["_github_event"] = event
         payload["headers"] = {"x-github-event": event}
-
-        # Forward to OpenClaw hooks
         try:
             req = urllib.request.Request(
                 HOOK_URL,
@@ -63,25 +58,28 @@ class Handler(http.server.BaseHTTPRequestHandler):
             )
             with urllib.request.urlopen(req, timeout=15) as resp:
                 status = resp.status
-                resp_body = resp.read().decode()
-        except Exception as e:
-            print(f"[github-proxy] Forward failed: {e}", flush=True)
+                resp.read()
+            forwarded = 200 <= status < 300
+        except (urllib.error.URLError, TimeoutError, OSError) as exc:
+            print(f"[github-proxy] forward failed: {type(exc).__name__}", flush=True)
             status = 502
-            resp_body = str(e)
+            forwarded = False
 
         print(f"[github-proxy] {event} -> {status}", flush=True)
-        self.send_response(200)  # Always 200 to GitHub
+        self.send_response(200 if forwarded else 502)
         self.send_header("Content-Type", "application/json")
         self.end_headers()
-        self.wfile.write(json.dumps({"ok": True, "forwarded": status}).encode())
+        self.wfile.write(
+            json.dumps({"ok": forwarded, "forwarded_status": status}).encode()
+        )
 
     def log_message(self, format, *args):
-        pass  # Suppress default logging
+        pass
 
 
 if __name__ == "__main__":
     server = http.server.HTTPServer(("127.0.0.1", PORT), Handler)
-    print(f"[github-proxy] Listening on 127.0.0.1:{PORT}", flush=True)
+    print(f"[github-proxy] listening on 127.0.0.1:{PORT}", flush=True)
     try:
         server.serve_forever()
     except KeyboardInterrupt:

@@ -45,7 +45,7 @@ OPENCLAW_JSON = "/root/.openclaw/openclaw.json"
 GATEWAY_TOKEN = ""
 GATEWAY_PORT = 18789
 USE_GATEWAY = False
-APPROVED_CV_MODEL = "openai-codex/gpt-5.5"
+APPROVED_CV_MODEL = "openai/gpt-5.6-sol"
 GATEWAY_CHAT_MODEL = "openclaw/hr"
 
 # CV HTML template (from proven working CVs)

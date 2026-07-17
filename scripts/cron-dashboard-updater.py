@@ -55,6 +55,8 @@ LOG_PATHS = {
     "morning-brief.sh": "/root/.openclaw/workspace/logs/cron/morning-brief.log",
     "clear-stale-context-maintenance.py": "/root/.openclaw/workspace/logs/cron/stale-context-maintenance.log",
     "cron-watchdog-v3.sh": "/root/.openclaw/workspace/logs/cron/cron-watchdog-v3.log",
+    "session-watchdog": "/root/.openclaw/workspace/logs/session-watchdog.log",
+    "session-watchdog.sh": "/root/.openclaw/workspace/logs/session-watchdog.log",
     "cron-dashboard-updater.py": "/root/.openclaw/workspace/logs/cron/cron-dashboard-updater.log",
     "repo-maintainer-watch.py": "/root/.openclaw/workspace/logs/cron/repo-maintainer-watch.log",
     "run-briefing-pipeline.sh": "/var/log/briefing/cron.log",
@@ -239,13 +241,15 @@ class CronDashboardUpdater:
             with open(log_path, "r") as f:
                 content = "".join(f.readlines()[-50:])
 
-            # Check for common error patterns
+            # Check for common error patterns without treating healthy counters like errors=0 as failures.
             error_patterns = [
-                r"error",
-                r"failed",
-                r"exception",
-                r"traceback",
+                r"\berror\b",
+                r"\bfailed\b",
+                r"\bexception\b",
+                r"\btraceback\b",
                 r"exit code",
+                r"\berrors=[1-9][0-9]*\b",
+                r"\brc=[1-9][0-9]*\b",
             ]
             has_error = any(
                 re.search(pattern, content, re.IGNORECASE) for pattern in error_patterns

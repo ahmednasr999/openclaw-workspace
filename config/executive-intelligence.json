@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "timezone": "Africa/Cairo",
+  "max_brief_items": 10,
+  "max_per_source_type": 4,
+  "max_per_domain": 2,
+  "content_candidate_limit": 4,
+  "minimum_score": 48,
+  "minimum_content_score": 58,
+  "freshness_days": 21,
+  "source_weights": {
+    "rss": 14,
+    "fintech_radar": 12,
+    "daily_web": 8,
+    "company_intel": 12,
+    "x_signal": 9
+  },
+  "trusted_domains": [
+    "reuters.com",
+    "weforum.org",
+    "mckinsey.com",
+    "bcg.com",
+    "pwc.com",
+    "deloitte.com",
+    "mit.edu",
+    "sloanreview.mit.edu",
+    "g42.ai",
+    "gov.sa",
+    "gov.ae",
+    "vision2030.gov.sa",
+    "digitalhealth.net",
+    "healthcareittoday.com",
+    "fintechfutures.com",
+    "connectingtheDotsinfin.tech"
+  ],
+  "weak_domains": [
+    "breitbart.com",
+    "analyticsinsight.net",
+    "pressrelease.com",
+    "prnewswire.com",
+    "globenewswire.com",
+    "businesswire.com"
+  ],
+  "pillars": {
+    "AI execution and governance": [
+      "artificial intelligence", " ai ", "agent", "automation", "governance",
+      "model risk", "responsible ai", "workflow", "data standard"
+    ],
+    "PMO and decision discipline": [
+      "pmo", "project management", "program management", "portfolio",
+      "decision", "execution", "delivery", "operating model", "governance"
+    ],
+    "Healthcare transformation": [
+      "healthcare", "health tech", "healthtech", "hospital", "patient",
+      "clinical", "nhs", "digital health", "care delivery"
+    ],
+    "Fintech operations": [
+      "fintech", "payment", "banking", "stablecoin", "crypto", "remittance",
+      "financial services", "open banking", "digital bank"
+    ],
+    "GCC transformation leadership": [
+      "gcc", "gulf", "saudi", "uae", "qatar", "oman", "bahrain", "kuwait",
+      "riyadh", "jeddah", "dubai", "abu dhabi", "vision 2030", "middle east"
+    ]
+  }
+}

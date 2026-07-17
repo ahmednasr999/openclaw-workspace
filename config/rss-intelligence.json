@@ -11,5 +11,25 @@
     "Operation Excellence": "https://www.leanblog.org/feed/",
     "AI": "https://venturebeat.com/category/ai/feed/"
   },
+  "content_policy": {
+    "weekly_mix": {
+      "rss_informed": 4,
+      "evergreen_positioning": 2,
+      "personal_executive_insight": 1
+    },
+    "positioning_pillars": [
+      "AI execution and governance",
+      "PMO and decision discipline",
+      "Healthcare transformation",
+      "Fintech operations",
+      "GCC transformation leadership"
+    ],
+    "min_content_fit_score": 40,
+    "max_per_primary_pillar": 2,
+    "max_per_source": 2,
+    "max_per_angle": 1,
+    "freshness_days": 14,
+    "approval_required": true
+  },
   "state_file": "/root/.openclaw/workspace/data/rss-intelligence-state.json"
 }

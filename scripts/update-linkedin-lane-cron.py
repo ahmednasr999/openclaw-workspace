@@ -21,7 +21,7 @@ cmd = [
     '--message', message,
     '--agent', 'cto',
     '--clear-session-key',
-    '--model', 'openai-codex/gpt-5.5',
+    '--model', 'openai/gpt-5.6-sol',
     '--timeout-seconds', '300',
 ]
 print('$ ' + ' '.join(cmd[:5]) + ' ...', flush=True)

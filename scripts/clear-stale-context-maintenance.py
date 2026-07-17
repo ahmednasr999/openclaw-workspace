@@ -18,6 +18,7 @@ DEFAULT_DB = Path("/root/.openclaw/tasks/runs.sqlite")
 MIGRATED_DB = Path("/root/.openclaw/tasks/runs.sqlite.migrated")
 DEFAULT_TTL_MINUTES = 15
 TASK_KIND = "context_engine_turn_maintenance"
+TASK_RUNS_TABLE = "task_runs"
 
 
 def parse_args() -> argparse.Namespace:
@@ -29,14 +30,34 @@ def parse_args() -> argparse.Namespace:
     return p.parse_args()
 
 
+def has_table(db: Path, table: str) -> bool:
+    if not db.exists():
+        return False
+    try:
+        con = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
+        try:
+            row = con.execute(
+                "SELECT 1 FROM sqlite_schema WHERE type = 'table' AND name = ?",
+                (table,),
+            ).fetchone()
+            return row is not None
+        finally:
+            con.close()
+    except sqlite3.Error:
+        return False
+
+
 def main() -> int:
     args = parse_args()
     db = Path(args.db)
-    if db == DEFAULT_DB and not db.exists() and MIGRATED_DB.exists():
+    if db == DEFAULT_DB and not has_table(db, TASK_RUNS_TABLE) and has_table(MIGRATED_DB, TASK_RUNS_TABLE):
         db = MIGRATED_DB
         print(f"INFO using migrated task registry: {db}")
     if not db.exists():
         print(f"ERROR db not found: {db}", file=sys.stderr)
+        return 2
+    if not has_table(db, TASK_RUNS_TABLE):
+        print(f"ERROR db missing {TASK_RUNS_TABLE} table: {db}", file=sys.stderr)
         return 2
 
     ttl_ms = max(1, args.ttl_minutes) * 60 * 1000

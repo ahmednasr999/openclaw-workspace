@@ -9,6 +9,7 @@ from zoneinfo import ZoneInfo
 
 WORKSPACE = Path('/root/.openclaw/workspace')
 CHECK_SCRIPT = WORKSPACE / 'scripts' / 'model-guardian-check.py'
+USAGE_PROBE_SCRIPT = WORKSPACE / 'scripts' / 'model-guardian-usage-probe.py'
 USAGE_FILE = WORKSPACE / 'data' / 'model-guardian-usage.jsonl'
 STATE_FILE = WORKSPACE / 'data' / 'model-guardian-state.json'
 STATUS_CACHE = WORKSPACE / 'data' / 'model-guardian-status-cache.json'
@@ -16,11 +17,16 @@ CAIRO = ZoneInfo('Africa/Cairo')
 AHMED_DM_TARGET = '866838380'
 CEO_GENERAL_TARGET = '-1003882622947:10'
 TRANSIENT_FAILURE_THRESHOLD = 2
-CHECK_TIMEOUT_SECONDS = 140
-STATUS_PROBE_TIMEOUT_SECONDS = 30
+CHECK_TIMEOUT_SECONDS = 45
+STATUS_PROBE_TIMEOUT_SECONDS = 20
 CODEX_USAGE_PROVIDERS = {'openai', 'openai-codex'}
+CODEX_WEEKLY_WINDOW_LABELS = {'week', '168h'}
 
 HOOKS_ENV_FILE = Path('/root/.config/openclaw-hooks.env')
+
+
+class TransientProbeFailure(RuntimeError):
+    """A bounded status-probe failure that must not generate a hard alert."""
 
 
 def load_env_file(path: Path):
@@ -39,11 +45,13 @@ def load_env_file(path: Path):
 
 load_env_file(HOOKS_ENV_FILE)
 
+OPENCLAW_CLI = os.environ.get('MODEL_GUARDIAN_OPENCLAW_CLI', '/root/.nvm/versions/node/v22.22.0/bin/openclaw')
+
 
 def send_telegram(target: str, text: str) -> tuple[bool, str]:
     try:
         result = subprocess.run(
-            ['openclaw', 'message', 'send', '--channel', 'telegram', '--target', target, '--message', text],
+            [OPENCLAW_CLI, 'message', 'send', '--channel', 'telegram', '--target', target, '--message', text],
             capture_output=True,
             text=True,
             timeout=60,
@@ -94,7 +102,7 @@ def is_transient_probe_failure(text: str):
         return False
     if 'config invalid' in lower or 'problem:' in lower:
         return False
-    if is_abort or 'timed out' in lower or 'timeout:' in lower:
+    if is_abort or 'timed out' in lower or 'timeout:' in lower or 'transient:' in lower:
         return True
     return False
 
@@ -174,11 +182,26 @@ def extract_codex_usage():
     if STATUS_CACHE.exists():
         data = json.loads(STATUS_CACHE.read_text())
     else:
-        rc, stdout, stderr = run_subprocess(['openclaw', 'status', '--usage', '--json'], timeout=STATUS_PROBE_TIMEOUT_SECONDS)
+        rc, stdout, stderr = run_subprocess(
+            ['/usr/bin/python3', str(USAGE_PROBE_SCRIPT)],
+            timeout=STATUS_PROBE_TIMEOUT_SECONDS,
+        )
         mixed = stdout if stdout else stderr
-        if rc != 0 and not mixed.strip():
-            raise RuntimeError(f'openclaw status usage exited {rc} with no output')
-        data = parse_json_from_mixed_output(mixed)
+        if rc == 124:
+            raise TransientProbeFailure(
+                f'Codex quota-only probe timed out after {STATUS_PROBE_TIMEOUT_SECONDS}s'
+            )
+        if rc == 75 or mixed.lstrip().startswith('TRANSIENT:'):
+            raise TransientProbeFailure(mixed.strip() or 'Codex quota-only probe transient failure')
+        if not mixed.strip():
+            raise RuntimeError(f'Codex quota-only probe exited {rc} with no output')
+        try:
+            provider = parse_json_from_mixed_output(mixed)
+        except (ValueError, json.JSONDecodeError) as error:
+            raise RuntimeError(f'Codex quota-only probe returned unusable JSON: {error}') from error
+        if rc != 0:
+            raise RuntimeError(f'Codex quota-only probe exited {rc}')
+        data = {'usage': {'providers': [provider]}}
     usage = data.get('usage', {}) if isinstance(data, dict) else {}
     providers = usage.get('providers', []) if isinstance(usage, dict) else []
     provider = next((p for p in providers if p.get('provider') in CODEX_USAGE_PROVIDERS), None)
@@ -187,7 +210,14 @@ def extract_codex_usage():
     if provider.get('error'):
         raise RuntimeError(f"Codex usage provider error: {provider['error']}")
     windows = provider.get('windows') or []
-    week = next((w for w in windows if str(w.get('label', '')).lower() == 'week'), None)
+    week = next(
+        (
+            window
+            for window in windows
+            if str(window.get('label', '')).strip().lower() in CODEX_WEEKLY_WINDOW_LABELS
+        ),
+        None,
+    )
     if not week:
         raise RuntimeError('weekly Codex quota window missing from usage status')
     used = week.get('usedPercent')
@@ -243,6 +273,10 @@ def main():
     now_ms = int(now_utc.timestamp() * 1000)
 
     try:
+        if transient_probe_failure and not STATUS_CACHE.exists():
+            raise TransientProbeFailure(
+                'status cache unavailable after transient check probe failure'
+            )
         weekly_left, reset_at_ms = extract_codex_usage()
         weekly_left = round(weekly_left, 1)
         time_left = format_remaining(reset_at_ms - now_ms)
@@ -265,15 +299,15 @@ def main():
         burn_text = f'{daily_burn}% per day' if daily_burn is not None else 'n/a'
         if weekly_left < 15:
             ceo_alerts.append(
-                f"🚨 Model Guardian urgent quota alert: weekly GPT-5.5 quota is below 15% remaining ({weekly_left}% left, reset in {time_left}). Estimated burn rate: {burn_text}. Think: high may not be sustainable on Pro at this rate. Recommendation: temporarily switch Think to medium until the window resets."
+                f"🚨 Model Guardian urgent quota alert: weekly GPT-5.6 Sol quota is below 15% remaining ({weekly_left}% left, reset in {time_left}). Estimated burn rate: {burn_text}. Think: high may not be sustainable on Pro at this rate. Recommendation: temporarily switch Think to medium until the window resets."
             )
         elif weekly_left < 30:
             ceo_alerts.append(
-                f"⚠️ Model Guardian quota alert: weekly GPT-5.5 quota is below 30% remaining ({weekly_left}% left, reset in {time_left}). Estimated burn rate: {burn_text}. Think: high may be increasing burn rate. Review usage sustainability."
+                f"⚠️ Model Guardian quota alert: weekly GPT-5.6 Sol quota is below 30% remaining ({weekly_left}% left, reset in {time_left}). Estimated burn rate: {burn_text}. Think: high may be increasing burn rate. Review usage sustainability."
             )
     except Exception as e:
         reason = f'usage snapshot failed - {e}'
-        if is_transient_probe_failure(reason):
+        if isinstance(e, TransientProbeFailure) or is_transient_probe_failure(reason):
             if transient_probe_failure:
                 info.append(f'TRANSIENT_SUPPRESSED: usage snapshot skipped after check probe failure: {reason}')
             else:

@@ -27,7 +27,7 @@ COVERS_DIR = WORKSPACE / "covers"
 MEMORY_DIR = WORKSPACE / "memory"
 
 GATEWAY_URL = "http://127.0.0.1:18789/v1/chat/completions"
-GPT55_MODEL = "openai-codex/gpt-5.5"
+GPT56_MODEL = "openai/gpt-5.6-sol"
 
 MAX_COVERS_PER_DAY = 20
 COVER_LOG_FILE = DATA_DIR / "coverletter-autogen-log.jsonl"
@@ -51,7 +51,7 @@ def call_gpt55(prompt: str, timeout: int = 180) -> str | None:
     if token:
         headers["Authorization"] = f"Bearer {token}"
     payload = {
-        "model": GPT55_MODEL,
+        "model": GPT56_MODEL,
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.4,
         "max_tokens": 600,

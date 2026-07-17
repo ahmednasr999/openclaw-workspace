@@ -1,0 +1,28 @@
+{
+  "max_candidates": 8,
+  "lookback_days": 120,
+  "min_stars": 20,
+  "queries": [
+    "ai agent workflow",
+    "agent evaluation framework",
+    "openclaw skill automation"
+  ],
+  "relevance_terms": [
+    "agent",
+    "workflow",
+    "automation",
+    "evaluation",
+    "openclaw",
+    "mcp",
+    "job search",
+    "resume",
+    "linkedin",
+    "browser",
+    "research",
+    "knowledge",
+    "monitoring",
+    "security"
+  ],
+  "output_root": "data/skill-discovery-pilot",
+  "report_path": "reports/skill-discovery-pilot-latest.md"
+}

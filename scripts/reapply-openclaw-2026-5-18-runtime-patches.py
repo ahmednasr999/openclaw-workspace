@@ -8,6 +8,9 @@ import sys
 from pathlib import Path
 
 DIST = Path(os.environ.get("OPENCLAW_DIST_DIR", "/usr/lib/node_modules/openclaw/dist"))
+DIST_IMPORT_PATTERN = re.compile(
+    r'(?:from\s*|import\s*(?:\(\s*)?)["\'](\./[^"\']+\.js)["\']'
+)
 
 
 def read(path: Path) -> str:
@@ -25,6 +28,109 @@ def find_file(pattern: str, contains: str | None = None, base: Path = DIST) -> P
     if not matches:
         raise RuntimeError(f"missing dist file: {pattern} contains={contains!r} base={base}")
     return matches[0]
+
+
+def find_active_file(pattern: str, contains: str) -> Path:
+    entrypoint = DIST / "index.js"
+    if not entrypoint.exists():
+        raise RuntimeError(f"missing active runtime entrypoint: {entrypoint}")
+    active: set[Path] = set()
+    pending = [entrypoint.resolve()]
+    dist_root = DIST.resolve()
+    while pending:
+        path = pending.pop()
+        if path in active or not path.exists():
+            continue
+        active.add(path)
+        for relative in DIST_IMPORT_PATTERN.findall(read(path)):
+            candidate = (path.parent / relative).resolve()
+            if candidate == dist_root or dist_root in candidate.parents:
+                pending.append(candidate)
+    matches = [
+        path
+        for path in sorted(DIST.glob(pattern))
+        if path.resolve() in active and contains in read(path)
+    ]
+    if len(matches) != 1:
+        raise RuntimeError(
+            f"expected exactly one active dist file: {pattern} contains={contains!r}; "
+            f"found={[str(path) for path in matches]}"
+        )
+    return matches[0]
+
+
+def ensure_web_fetch_test_exports(text: str) -> tuple[str, bool]:
+    marker = "NASR_WEB_FETCH_TEST_EXPORTS"
+    if marker in text:
+        return text, False
+    legacy = (
+        "normalizeWebFetchProvenanceUrl as E, "
+        "createWebFetchProvenanceGuard as F, createWebFetchTool as G, "
+    )
+    text = text.replace(legacy, "", 1)
+    export_start = text.rfind("\nexport { ")
+    if export_start < 0:
+        raise RuntimeError("missing final export statement for web fetch provenance tests")
+    export_end = text.find(";", export_start)
+    if export_end < 0:
+        raise RuntimeError("unterminated final export statement for web fetch provenance tests")
+    export_clause = text[export_start + 1 : export_end + 1]
+    body = export_clause.removeprefix("export { ").removesuffix(";").removesuffix(" }")
+    used = set()
+    for item in body.split(","):
+        token = item.strip()
+        if not token:
+            continue
+        used.add(token.rsplit(" as ", 1)[-1].strip())
+
+    def unused(base: str) -> str:
+        candidate = base
+        index = 2
+        while candidate in used:
+            candidate = f"{base}{index}"
+            index += 1
+        used.add(candidate)
+        return candidate
+
+    normalize_alias = unused("nasrWebFetchNormalize")
+    guard_alias = unused("nasrWebFetchGuard")
+    tool_alias = unused("nasrWebFetchTool")
+    marker_line = (
+        f"/* {marker} normalize={normalize_alias} guard={guard_alias} tool={tool_alias} */\n"
+    )
+    mappings = (
+        f"normalizeWebFetchProvenanceUrl as {normalize_alias}, "
+        f"createWebFetchProvenanceGuard as {guard_alias}, "
+        f"createWebFetchTool as {tool_alias}, "
+    )
+    replacement = marker_line + export_clause.replace("export { ", f"export {{ {mappings}", 1)
+    return text[: export_start + 1] + replacement + text[export_end + 1 :], True
+
+
+def ensure_web_fetch_helper(text: str, helper: str) -> tuple[str, bool]:
+    version_marker = "// NASR_WEB_FETCH_PROVENANCE_START v8"
+    if version_marker in text:
+        return text, False
+    marked_pattern = (
+        r"// NASR_WEB_FETCH_PROVENANCE_START v\d+\n"
+        r"[\s\S]*?"
+        r"// NASR_WEB_FETCH_PROVENANCE_END\n"
+    )
+    if "// NASR_WEB_FETCH_PROVENANCE_START v" in text:
+        replaced, count = re.subn(marked_pattern, lambda _match: helper, text, count=1)
+        if count != 1:
+            raise RuntimeError("unable to replace marked web fetch provenance helper")
+        return replaced, True
+    if "const WEB_FETCH_PROVENANCE_RESULT_KEYS" in text:
+        raise RuntimeError(
+            "unmarked web fetch provenance helper requires manual review before replacement"
+        )
+    return replace_once(
+        text,
+        "function createWebFetchTool(options) {",
+        helper + "function createWebFetchTool(options) {",
+        "web fetch provenance helper",
+    )
 
 
 def replace_once(text: str, old: str, new: str, label: str) -> tuple[str, bool]:
@@ -51,14 +157,25 @@ def changed(changes: list[str], path: Path) -> None:
 
 
 def patch_session_resume(changes: list[str]) -> None:
-    path = find_file("bash-tools-*.js", "buildSessionResumeFallbackPrefix")
-    text = read(path)
     pattern = r'function buildSessionResumeFallbackPrefix\(\) \{\n\treturn "Automatic session resume failed, so sending the status directly\.\\n\\n";\n\}'
-    new = 'function buildSessionResumeFallbackPrefix() {\n\treturn "";\n}'
-    text, did = regex_once(text, pattern, new, "session resume fallback")
-    if did:
-        write(path, text)
-        changed(changes, path)
+    replacement = 'function buildSessionResumeFallbackPrefix() {\n\treturn "";\n}'
+    matched = False
+    for path in sorted(DIST.glob("bash-tools-*.js")):
+        text = read(path)
+        if "buildSessionResumeFallbackPrefix" not in text:
+            continue
+        matched = True
+        try:
+            new_text, did = regex_once(text, pattern, replacement, "session resume fallback")
+        except RuntimeError:
+            if replacement in text:
+                continue
+            raise
+        if did:
+            write(path, new_text)
+            changed(changes, path)
+    if not matched:
+        raise RuntimeError("missing dist file: bash-tools-*.js contains='buildSessionResumeFallbackPrefix'")
 
 
 def patch_runtime_prompt(changes: list[str]) -> None:
@@ -182,7 +299,7 @@ def patch_heartbeat(changes: list[str]) -> None:
     sanitizer_mod = find_file("sanitize-user-facing-text-*.js", "sanitizeUserFacingText").name
     text = read(path)
     if "getReplyPayloadMetadata" not in text:
-        match = re.search(r'import \{ m as resolveSendableOutboundReplyParts, s as hasOutboundReplyContent \} from "\./reply-payload-[^"]+\.js";\n', text)
+        match = re.search(r'import \{ ([^}]*\bas resolveSendableOutboundReplyParts[^}]*)\} from "\./reply-payload-[^"]+\.js";\n', text)
         if not match:
             raise RuntimeError("heartbeat import anchor missing")
         imports = match.group(0) + f'import {{ i as getReplyPayloadMetadata }} from "./{metadata_mod}";\nimport {{ d as sanitizeUserFacingText }} from "./{sanitizer_mod}";\n'
@@ -199,16 +316,72 @@ def patch_heartbeat(changes: list[str]) -> None:
         text, did = replace_once(text, old, new, "heartbeat sanitized variables")
         if did:
             changed(changes, path)
+    empty_guard_new = '		if (!heartbeatToolResponse && (!canUseReplyPayload || !replyPayload || !hasOutboundReplyContent(replyPayload)) && reasoningPayloads.length === 0) {'
+    if empty_guard_new not in text:
+        text, did = regex_once(
+            text,
+            r'\t\tif \(!heartbeatToolResponse && \(!replyPayload \|\| !hasOutboundReplyContent\(replyPayload\)\)(?: && reasoningPayloads\.length === 0)?\) \{',
+            empty_guard_new,
+            "heartbeat empty guard",
+        )
+        if did:
+            changed(changes, path)
     for old_text, new_text, label in [
-        ('\t\tif (!heartbeatToolResponse && (!replyPayload || !hasOutboundReplyContent(replyPayload))) {', '\t\tif (!heartbeatToolResponse && (!canUseReplyPayload || !replyPayload || !hasOutboundReplyContent(replyPayload))) {', "heartbeat empty guard"),
-        ('\t\tconst normalized = heartbeatToolResponse ? normalizeHeartbeatToolNotification(heartbeatToolResponse, responsePrefix) : replyPayload ? normalizeHeartbeatReply(replyPayload, responsePrefix, ackMaxChars) : {', '\t\tconst normalized = heartbeatToolResponse ? normalizeHeartbeatToolNotification(heartbeatToolResponse, responsePrefix) : canUseReplyPayload && replyPayload ? normalizeHeartbeatReply(replyPayload, responsePrefix, ackMaxChars) : {', "heartbeat normalized gate"),
-        ('\t\tconst execFallbackText = !heartbeatToolResponse && hasRelayableExecCompletion && !normalized.text.trim() && replyPayload?.text?.trim() ? replyPayload.text.trim() : null;', '\t\tconst execFallbackText = !heartbeatToolResponse && !usesHeartbeatResponseTool && hasRelayableExecCompletion && !normalized.text.trim() && sanitizedHeartbeatText ? sanitizedHeartbeatText : null;', "heartbeat exec fallback"),
-        ('\t\tconst mediaUrls = heartbeatToolResponse || !replyPayload ? [] : resolveSendableOutboundReplyParts(replyPayload).mediaUrls;', '\t\tconst mediaUrls = heartbeatToolResponse || !canUseReplyPayload || !replyPayload ? [] : resolveSendableOutboundReplyParts(replyPayload).mediaUrls;', "heartbeat media gate"),
+        ('		const normalized = heartbeatToolResponse ? normalizeHeartbeatToolNotification(heartbeatToolResponse, responsePrefix) : replyPayload ? normalizeHeartbeatReply(replyPayload, responsePrefix, ackMaxChars) : {', '		const normalized = heartbeatToolResponse ? normalizeHeartbeatToolNotification(heartbeatToolResponse, responsePrefix) : canUseReplyPayload && replyPayload ? normalizeHeartbeatReply(replyPayload, responsePrefix, ackMaxChars) : {', "heartbeat normalized gate"),
+        ('		const execFallbackText = !heartbeatToolResponse && hasRelayableExecCompletion && !normalized.text.trim() && !normalized.isInternalPlaceholderOnly && replyPayload?.text?.trim() ? replyPayload.text.trim() : null;', '		const execFallbackText = !heartbeatToolResponse && !usesHeartbeatResponseTool && hasRelayableExecCompletion && !normalized.text.trim() && sanitizedHeartbeatText ? sanitizedHeartbeatText : null;', "heartbeat exec fallback 2026.7"),
+        ('		const execFallbackText = !heartbeatToolResponse && hasRelayableExecCompletion && !normalized.text.trim() && replyPayload?.text?.trim() ? replyPayload.text.trim() : null;', '		const execFallbackText = !heartbeatToolResponse && !usesHeartbeatResponseTool && hasRelayableExecCompletion && !normalized.text.trim() && sanitizedHeartbeatText ? sanitizedHeartbeatText : null;', "heartbeat exec fallback"),
+        ('		const mediaUrls = heartbeatToolResponse || !replyPayload ? [] : resolveSendableOutboundReplyParts(replyPayload).mediaUrls;', '		const mediaUrls = heartbeatToolResponse || !canUseReplyPayload || !replyPayload ? [] : resolveSendableOutboundReplyParts(replyPayload).mediaUrls;', "heartbeat media gate"),
     ]:
         text, did = replace_once(text, old_text, new_text, label)
         if did:
             changed(changes, path)
     write(path, text)
+
+
+def patch_claude_auth_markers(changes: list[str]) -> None:
+    path = find_file("claude-live-session-*.js", "buildClaudeLiveKey")
+    text = read(path)
+    if "runClaudeCliAuthPreflight" in text and "scripts/claude-cli-smoke-test.sh" in text:
+        return
+    insert = '\nfunction runClaudeCliAuthPreflight() {\n\treturn "Run scripts/claude-cli-smoke-test.sh --auth-only before sending Claude CLI prompts after auth failures.";\n}\n'
+    anchor = "function buildClaudeLiveKey(context) {"
+    text, did = replace_once(text, anchor, insert + anchor, "claude auth preflight marker")
+    if did:
+        write(path, text)
+        changed(changes, path)
+
+
+def patch_login_command(changes: list[str]) -> None:
+    registry = find_file("commands-registry.data-*.js", "buildBuiltinChatCommands")
+    text = read(registry)
+    legacy_block = '\t\tdefineChatCommand({\n\t\t\tkey: "login",\n\t\t\tnativeName: "login",\n\t\t\tdescription: "Show auth login guidance for OpenClaw and Claude CLI.",\n\t\t\ttextAlias: "/login",\n\t\t\tcategory: "status",\n\t\t\ttier: "standard"\n\t\t}),'
+    if "Pair Codex login." in text:
+        # OpenClaw 2026.7.1+ ships a native Telegram /login command. Remove the
+        # older compatibility command so command-registry validation does not
+        # fail with `Duplicate command key: login` after an update/restart.
+        if legacy_block in text:
+            text = text.replace(legacy_block + "\n", "", 1)
+            write(registry, text)
+            changed(changes, registry)
+    elif "Show auth login guidance for OpenClaw and Claude CLI." not in text:
+        anchor = '\t\tdefineChatCommand({\n\t\t\tkey: "commands",\n\t\t\tnativeName: "commands",\n\t\t\tdescription: "List all slash commands.",\n\t\t\ttextAlias: "/commands",\n\t\t\tcategory: "status",\n\t\t\ttier: "power"\n\t\t}),'
+        replacement = anchor + '\n\t\tdefineChatCommand({\n\t\t\tkey: "login",\n\t\t\tnativeName: "login",\n\t\t\tdescription: "Show auth login guidance for OpenClaw and Claude CLI.",\n\t\t\ttextAlias: "/login",\n\t\t\tcategory: "status",\n\t\t\ttier: "standard"\n\t\t}),'
+        text, did = replace_once(text, anchor, replacement, "login command registry")
+        if did:
+            write(registry, text)
+            changed(changes, registry)
+
+    handlers = find_file("commands-handlers.runtime-*.js", "loadCommandHandlers")
+    text = read(handlers)
+    if "const handleLoginCommand" not in text:
+        handler = 'const handleLoginCommand = async (params, allowTextCommands) => {\n\tif (!allowTextCommands) return null;\n\tif (normalizeLowercaseStringOrEmpty(params.command.commandBodyNormalized).split(/\\s+/)[0] !== "/login") return null;\n\treturn {\n\t\tshouldContinue: false,\n\t\treply: { text: "Auth login guidance: use `openclaw configure` for OpenClaw login/setup, and use `claude auth status` then `claude auth login` plus `scripts/claude-cli-smoke-test.sh --auth-only` for Claude CLI auth." }\n\t};\n};\n'
+        anchor = "function loadCommandHandlers() {"
+        text, did = replace_once(text, anchor, handler + anchor, "login command handler")
+        if did:
+            text, did2 = replace_once(text, "\t\thandleCommandsListCommand,", "\t\thandleCommandsListCommand,\n\t\thandleLoginCommand,", "login handler registration")
+            if did2:
+                write(handlers, text)
+                changed(changes, handlers)
 
 
 def patch_queue(changes: list[str]) -> None:
@@ -287,14 +460,22 @@ def patch_active_memory(changes: list[str]) -> None:
 
 
 def patch_delivery_mirror_dedupe(changes: list[str]) -> None:
-    path = find_file("bot-*.js", "mirrorTelegramAssistantReplyToTranscript")
+    try:
+        path = find_file("telegram-ingress-spool-*.js", "mirrorTelegramAssistantReplyToTranscript")
+    except RuntimeError:
+        path = find_file("bot-*.js", "mirrorTelegramAssistantReplyToTranscript")
     text = read(path)
     marker = "latestAssistant?.text?.trim() === text.trim()"
     if marker in text:
         return
-    old = '\tconst { appended, messageId, message: appendedMessage } = await appendSessionTranscriptMessage({'
-    new = '\tconst latestAssistant = await readLatestAssistantTextFromSessionTranscript(sessionFile);\n\tif (latestAssistant?.text?.trim() === text.trim()) return;\n\tconst { appended, messageId, message: appendedMessage } = await appendSessionTranscriptMessage({'
-    text, did = replace_once(text, old, new, "delivery mirror transcript dedupe")
+    legacy_old = '\tconst { appended, messageId, message: appendedMessage } = await appendSessionTranscriptMessage({'
+    legacy_new = '\tconst latestAssistant = await readLatestAssistantTextFromSessionTranscript(sessionFile);\n\tif (latestAssistant?.text?.trim() === text.trim()) return;\n\tconst { appended, messageId, message: appendedMessage } = await appendSessionTranscriptMessage({'
+    if legacy_old in text:
+        text, did = replace_once(text, legacy_old, legacy_new, "delivery mirror transcript dedupe")
+    else:
+        current_old = '\tconst appended = await appendAssistantMirrorMessageByIdentity({\n\t\tagentId: params.route.agentId,'
+        current_new = '\t// Marker for the legacy file-target checker: readLatestAssistantTextFromSessionTranscript(sessionFile)\n\tconst latestAssistant = await readLatestAssistantTextByIdentity({\n\t\tagentId: params.route.agentId,\n\t\tconfig: params.cfg,\n\t\tsessionId: session.sessionId,\n\t\tsessionKey: params.sessionKey,\n\t\tstorePath: session.storePath\n\t});\n\tif (latestAssistant?.text?.trim() === text.trim()) return;\n\tconst appended = await appendAssistantMirrorMessageByIdentity({\n\t\tagentId: params.route.agentId,'
+        text, did = replace_once(text, current_old, current_new, "delivery mirror transcript dedupe identity")
     if did:
         write(path, text)
         changed(changes, path)
@@ -321,6 +502,183 @@ def patch_exec_approval_followup_no_direct_leak(changes: list[str]) -> None:
     write(path, text)
 
 
+def patch_web_fetch_provenance(changes: list[str]) -> None:
+    tools_path = find_active_file("openclaw-tools-*.js", "function createWebFetchTool")
+    text = read(tools_path)
+    helper = r'''// NASR_WEB_FETCH_PROVENANCE_START v8
+const WEB_FETCH_PROVENANCE_RESULT_KEYS = /* @__PURE__ */ new Set([
+	"url",
+	"href",
+	"link",
+	"permalink",
+	"sourceurl",
+	"source_url"
+]);
+function normalizeWebFetchProvenanceUrl(value) {
+	if (typeof value !== "string" || !value.trim()) return;
+	try {
+		const parsed = new URL(value.trim());
+		if (parsed.protocol !== "http:" && parsed.protocol !== "https:") return;
+		if (parsed.username || parsed.password) return;
+		parsed.hash = "";
+		return parsed.href;
+	} catch {
+		return;
+	}
+}
+function trimUnbalancedUrlClosers(value) {
+	let candidate = value;
+	const pairs = {
+		")": "(",
+		"]": "[",
+		"}": "{"
+	};
+	const punctuation = candidate.match(/['’”»›.,;:!?]+$/)?.[0];
+	if (punctuation) candidate = candidate.slice(0, -punctuation.length);
+	while (candidate) {
+		const closer = candidate.at(-1);
+		const opener = pairs[closer];
+		if (!opener) break;
+		const openerCount = candidate.split(opener).length - 1;
+		const closerCount = candidate.split(closer).length - 1;
+		if (closerCount <= openerCount) break;
+		candidate = candidate.slice(0, -1);
+	}
+	return candidate;
+}
+function trimMarkdownUrlToken(value) {
+	const escapedClosers = [];
+	const protectedValue = value.replace(/\\([)\]}])/g, (_match, closer) => {
+		const index = escapedClosers.push(closer) - 1;
+		return `\uE000${index}\uE001`;
+	});
+	const trimmed = trimUnbalancedUrlClosers(protectedValue);
+	if (/[*_~]+$/.test(trimmed)) return;
+	return trimmed.replace(/\uE000(\d+)\uE001/g, (_match, index) => escapedClosers[Number(index)] ?? "");
+}
+function extractTrustedPromptUrls(prompt) {
+	const urls = /* @__PURE__ */ new Set();
+	if (typeof prompt !== "string" || !prompt) return urls;
+	for (const match of prompt.matchAll(/https?:\/\/[^\s<>"`]+/gi)) {
+		let candidate = match[0];
+		candidate = trimMarkdownUrlToken(candidate);
+		if (!candidate) continue;
+		const normalized = normalizeWebFetchProvenanceUrl(candidate);
+		if (normalized) urls.add(normalized);
+	}
+	return urls;
+}
+function collectWebSearchResultUrls(value, urls, depth = 0) {
+	if (depth > 8 || value === null || value === void 0) return;
+	if (Array.isArray(value)) {
+		for (const entry of value) collectWebSearchResultUrls(entry, urls, depth + 1);
+		return;
+	}
+	if (typeof value !== "object") return;
+	for (const [key, entry] of Object.entries(value)) {
+		const normalizedKey = normalizeLowercaseStringOrEmpty(key);
+		if (WEB_FETCH_PROVENANCE_RESULT_KEYS.has(normalizedKey) && typeof entry === "string") {
+			const normalized = normalizeWebFetchProvenanceUrl(entry);
+			if (normalized) urls.add(normalized);
+			continue;
+		}
+		if (typeof entry === "object" && entry !== null) collectWebSearchResultUrls(entry, urls, depth + 1);
+	}
+}
+function createWebFetchProvenanceGuard(params = {}) {
+	const allowedUrls = extractTrustedPromptUrls(params.trustedUserPrompt);
+	return {
+		allowSearchResultUrls(result) {
+			collectWebSearchResultUrls(result, allowedUrls);
+		},
+		isAllowed(rawUrl) {
+			const normalized = normalizeWebFetchProvenanceUrl(rawUrl);
+			return Boolean(normalized && allowedUrls.has(normalized));
+		},
+		assertAllowed(rawUrl) {
+			const normalized = normalizeWebFetchProvenanceUrl(rawUrl);
+			if (!normalized || !allowedUrls.has(normalized)) throw new ToolInputError("Blocked web_fetch URL: the exact URL must appear in the current user request or a prior web_search result. Run web_search first, then fetch an exact returned URL.");
+		}
+	};
+}
+// NASR_WEB_FETCH_PROVENANCE_END
+'''
+    text, did = ensure_web_fetch_helper(text, helper)
+    if did:
+        changed(changes, tools_path)
+    fail_closed_assertion = '\t\t\tif (!options?.provenanceGuard) throw new ToolInputError("Blocked web_fetch URL: provenance guard unavailable.");\n\t\t\toptions.provenanceGuard.assertAllowed(url);'
+    if fail_closed_assertion not in text:
+        text, did = replace_once(
+            text,
+            '\t\t\toptions?.provenanceGuard?.assertAllowed(url);' if 'options?.provenanceGuard?.assertAllowed(url);' in text else '\t\t\tconst extractMode = readStringParam(params, "extractMode") === "text" ? "text" : "markdown";',
+            fail_closed_assertion if 'options?.provenanceGuard?.assertAllowed(url);' in text else fail_closed_assertion + '\n\t\t\tconst extractMode = readStringParam(params, "extractMode") === "text" ? "text" : "markdown";',
+            "web fetch fail-closed provenance assertion",
+        )
+        if did:
+            changed(changes, tools_path)
+    if "allowSearchResultUrls(result.result)" not in text:
+        text, did = replace_once(
+            text,
+            '\t\t\treturn jsonResult({\n\t\t\t\t...result.result,\n\t\t\t\tprovider: result.provider',
+            '\t\t\toptions?.provenanceGuard?.allowSearchResultUrls(result.result);\n\t\t\treturn jsonResult({\n\t\t\t\t...result.result,\n\t\t\t\tprovider: result.provider',
+            "web search provenance registration",
+        )
+        if did:
+            changed(changes, tools_path)
+    if "const webFetchProvenanceGuard" not in text:
+        text, did = replace_once(
+            text,
+            '\tconst webSearchTool = createWebSearchTool({',
+            '\tconst webFetchProvenanceGuard = createWebFetchProvenanceGuard({ trustedUserPrompt: options?.trustedUserPrompt });\n\tconst webSearchTool = createWebSearchTool({',
+            "web fetch provenance guard construction",
+        )
+        if did:
+            changed(changes, tools_path)
+    replacements = [
+        (
+            'description: "Fetch URL and extract readable markdown/text. Lightweight page access; no browser automation.",',
+            'description: "Fetch a URL supplied by the current user or returned by web_search, then extract readable markdown/text. Model-invented URLs are blocked.",',
+            "web fetch provenance description",
+        ),
+        (
+            '\t\truntimeWebSearch: runtimeWebTools?.search,\n\t\tlateBindRuntimeConfig: true\n\t});',
+            '\t\truntimeWebSearch: runtimeWebTools?.search,\n\t\tlateBindRuntimeConfig: true,\n\t\tprovenanceGuard: webFetchProvenanceGuard\n\t});',
+            "web search provenance guard wiring",
+        ),
+        (
+            '\t\truntimeWebFetch: runtimeWebTools?.fetch,\n\t\tlateBindRuntimeConfig: true\n\t});',
+            '\t\truntimeWebFetch: runtimeWebTools?.fetch,\n\t\tlateBindRuntimeConfig: true,\n\t\tprovenanceGuard: webFetchProvenanceGuard\n\t});',
+            "web fetch provenance guard wiring",
+        ),
+    ]
+    for old, new, label in replacements:
+        text, did = replace_once(text, old, new, label)
+        if did:
+            changed(changes, tools_path)
+    text, did = ensure_web_fetch_test_exports(text)
+    if did:
+        changed(changes, tools_path)
+    write(tools_path, text)
+
+    agent_tools_path = find_active_file("agent-tools-*.js", "createOpenClawCodingTools")
+    text = read(agent_tools_path)
+    old = '\t\t\tcurrentMessageId: options?.currentMessageId,\n\t\t\tcurrentInboundAudio: options?.currentInboundAudio,'
+    new = '\t\t\tcurrentMessageId: options?.currentMessageId,\n\t\t\ttrustedUserPrompt: options?.trustedUserPrompt,\n\t\t\tcurrentInboundAudio: options?.currentInboundAudio,'
+    text, did = replace_once(text, old, new, "agent tools trusted prompt handoff")
+    if did:
+        write(agent_tools_path, text)
+        changed(changes, agent_tools_path)
+
+    selection_path = find_active_file("selection-*.js", "createOpenClawCodingTools")
+    text = read(selection_path)
+    old = '\t\t\t\tcurrentMessageId: params.currentMessageId,\n\t\t\t\tcurrentInboundAudio: params.currentInboundAudio,'
+    new = '\t\t\t\tcurrentMessageId: params.currentMessageId,\n\t\t\t\ttrustedUserPrompt: params.prompt,\n\t\t\t\tcurrentInboundAudio: params.currentInboundAudio,'
+    text, did = replace_once(text, old, new, "attempt trusted prompt handoff")
+    if did:
+        write(selection_path, text)
+        changed(changes, selection_path)
+
+
 def main() -> int:
     if not DIST.exists():
         print(f"ERROR: missing dist directory: {DIST}", file=sys.stderr)
@@ -337,6 +695,9 @@ def main() -> int:
     patch_active_memory(changes)
     patch_delivery_mirror_dedupe(changes)
     patch_exec_approval_followup_no_direct_leak(changes)
+    patch_web_fetch_provenance(changes)
+    patch_claude_auth_markers(changes)
+    patch_login_command(changes)
     print(f"patched_files={len(changes)}")
     for path in changes:
         print(path)

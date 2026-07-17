@@ -2108,7 +2108,7 @@ def main():
         spec.loader.exec_module(cl)
         cl.log_cost(
             session_name=f"Morning Briefing ({today_str})",
-            model="openai-codex/gpt-5.5",
+            model="openai/gpt-5.6-sol",
             agent="Morning Briefing",
             duration=elapsed,
             status="success",

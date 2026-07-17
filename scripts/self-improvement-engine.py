@@ -1780,7 +1780,7 @@ def main():
         elapsed_s = int(time.time() - start_time) if 'start_time' in dir() else 0
         cl.log_cost(
             session_name=f"SIE 360 ({datetime.now().strftime('%Y-%m-%d')})",
-            model="openai-codex/gpt-5.5",
+            model="openai/gpt-5.6-sol",
             agent="SIE 360",
             duration=elapsed_s,
             status="success" if health_score >= 50 else "failed",

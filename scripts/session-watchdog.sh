@@ -11,6 +11,8 @@ SESSION_DIRS_RAW="${SESSION_WATCHDOG_DIRS:-/root/.openclaw/agents/main/sessions:
 IFS=':' read -r -a SESSION_DIRS <<< "$SESSION_DIRS_RAW"
 LOG="${SESSION_WATCHDOG_LOG:-/root/.openclaw/workspace/logs/session-watchdog.log}"
 ARCHIVE_DIR="${SESSION_WATCHDOG_ARCHIVE_DIR:-/root/.openclaw/workspace/logs/session-archives}"
+LANE_STALL_DETECTOR="${SESSION_WATCHDOG_LANE_STALL_DETECTOR:-/root/.openclaw/workspace/scripts/agent-lane-stall-report.py}"
+LANE_STALL_REPORT="${SESSION_WATCHDOG_LANE_STALL_REPORT:-/root/.openclaw/workspace/reports/agent-lane-stall-latest.md}"
 
 mkdir -p "$ARCHIVE_DIR" "$(dirname "$LOG")"
 
@@ -19,6 +21,9 @@ log() { echo "[$(date -u '+%Y-%m-%dT%H:%M:%SZ')] $*" >> "$LOG"; }
 RESET_COUNT=0
 SKIP_COUNT=0
 ERROR_COUNT=0
+LANE_STALL_COUNT=0
+LANE_STALL_HIGH=0
+LANE_STALL_MEDIUM=0
 
 for DIR in "${SESSION_DIRS[@]}"; do
   [ -d "$DIR" ] || continue
@@ -53,8 +58,33 @@ for DIR in "${SESSION_DIRS[@]}"; do
   done < <(find "$DIR" -maxdepth 1 -name "*.jsonl" -not -name "*.reset.*" -print0 2>/dev/null)
 done
 
-log "Done reset=$RESET_COUNT skipped=$SKIP_COUNT errors=$ERROR_COUNT"
+if [ -x "$LANE_STALL_DETECTOR" ] || [ -f "$LANE_STALL_DETECTOR" ]; then
+  if python3 "$LANE_STALL_DETECTOR" --min-running-minutes 15 --report "$LANE_STALL_REPORT" >/dev/null 2>&1; then
+    if [ -f "$LANE_STALL_REPORT" ]; then
+      LANE_STALL_LINE=$(grep -E '^Attention needed:' "$LANE_STALL_REPORT" | head -1 || true)
+      if [ -n "$LANE_STALL_LINE" ]; then
+        LANE_STALL_COUNT=$(printf '%s\n' "$LANE_STALL_LINE" | grep -oE '[0-9]+' | sed -n '1p')
+        LANE_STALL_HIGH=$(printf '%s\n' "$LANE_STALL_LINE" | grep -oE 'high=[0-9]+' | grep -oE '[0-9]+' | sed -n '1p')
+        LANE_STALL_MEDIUM=$(printf '%s\n' "$LANE_STALL_LINE" | grep -oE 'medium=[0-9]+' | grep -oE '[0-9]+' | sed -n '1p')
+        log "ALERT [agent-lane-stall] findings=$LANE_STALL_COUNT high=$LANE_STALL_HIGH medium=$LANE_STALL_MEDIUM report=$LANE_STALL_REPORT"
+      else
+        log "OK [agent-lane-stall] no CMO/HR stalled or recently interrupted lane sessions"
+      fi
+    else
+      log "ERROR [agent-lane-stall] detector did not create report: $LANE_STALL_REPORT"
+      ERROR_COUNT=$((ERROR_COUNT + 1))
+    fi
+  else
+    log "ERROR [agent-lane-stall] detector failed: $LANE_STALL_DETECTOR"
+    ERROR_COUNT=$((ERROR_COUNT + 1))
+  fi
+else
+  log "ERROR [agent-lane-stall] detector missing: $LANE_STALL_DETECTOR"
+  ERROR_COUNT=$((ERROR_COUNT + 1))
+fi
 
-if [ "$RESET_COUNT" -gt 0 ] || [ "$ERROR_COUNT" -gt 0 ]; then
-  echo "session-watchdog: reset=$RESET_COUNT skipped=$SKIP_COUNT errors=$ERROR_COUNT"
+log "Done reset=$RESET_COUNT skipped=$SKIP_COUNT errors=$ERROR_COUNT lane_stalls=$LANE_STALL_COUNT high=$LANE_STALL_HIGH medium=$LANE_STALL_MEDIUM"
+
+if [ "$RESET_COUNT" -gt 0 ] || [ "$ERROR_COUNT" -gt 0 ] || [ "$LANE_STALL_COUNT" -gt 0 ]; then
+  echo "session-watchdog: reset=$RESET_COUNT skipped=$SKIP_COUNT errors=$ERROR_COUNT lane_stalls=$LANE_STALL_COUNT high=$LANE_STALL_HIGH medium=$LANE_STALL_MEDIUM report=$LANE_STALL_REPORT"
 fi

@@ -13,6 +13,9 @@ BACKUP_PRUNE="${DISK_GUARD_PRUNE_BACKUPS:-0}"
 SAFE_TMP_AGE_DAYS="${DISK_GUARD_SAFE_TMP_AGE_DAYS:-3}"
 COMPILE_CACHE_AGE_DAYS="${DISK_GUARD_COMPILE_CACHE_AGE_DAYS:-0}"
 HERMES_FRAME_MIN_AGE_MINUTES="${DISK_GUARD_HERMES_FRAME_MIN_AGE_MINUTES:-120}"
+HERMES_DUP_VENV_AGE_DAYS="${DISK_GUARD_HERMES_DUP_VENV_AGE_DAYS:-7}"
+CODEX_LOG_RECENT_DAYS="${DISK_GUARD_CODEX_LOG_RECENT_DAYS:-2}"
+CODEX_LOG_GENERAL_DAYS="${DISK_GUARD_CODEX_LOG_GENERAL_DAYS:-7}"
 mkdir -p "$LOG_DIR" "$TMP_DIR"
 
 now_iso() { date -Is; }
@@ -73,7 +76,7 @@ compress_snapshot_dirs() {
     if [[ ! -s "$archive" ]]; then
       echo "Compressing $dir -> $archive"
       rm -f -- "$tmp_archive"
-      if tar -C /root --use-compress-program='zstd -T0 -6' -cf "$tmp_archive" "$base" \
+      if tar -C /root --use-compress-program='zstd -T2 -6' -cf "$tmp_archive" "$base" \
         && tar -I zstd -tf "$tmp_archive" >/dev/null; then
         mv -f -- "$tmp_archive" "$archive"
       else
@@ -94,9 +97,9 @@ compress_snapshot_dirs() {
   done
 
   mapfile -t archives < <(find /root -xdev -maxdepth 1 -type f -name 'openclaw-snapshot-*.tar.zst' -printf '%T@ %p\n' 2>/dev/null | sort -nr | awk '{$1=""; sub(/^ /,""); print}')
-  if (( ${#archives[@]} > 2 )); then
-    printf '%s\n' "${archives[@]:2}" | xargs -r rm -f --
-    echo "Pruned older compressed snapshot archives; kept latest 2."
+  if (( ${#archives[@]} > 1 )); then
+    printf '%s\n' "${archives[@]:1}" | xargs -r rm -f --
+    echo "Pruned older compressed snapshot archives; kept latest 1."
   fi
 }
 
@@ -109,8 +112,68 @@ clean_hermes_rebuildable_artifacts() {
   find /srv/hermes-pilot/workspace -xdev -maxdepth 1 -type d -name 'agent_roadmap*_frames' -mmin +"$HERMES_FRAME_MIN_AGE_MINUTES" \
     -print -exec rm -rf --one-file-system {} + 2>/dev/null || true
   find /srv/hermes-pilot/.cache -xdev -mindepth 1 -maxdepth 1 \
-    \( -name 'ms-playwright' -o -name 'pip' -o -name 'uv' \) \
+    \( -name 'ms-playwright' -o -name 'pip' -o -name 'uv' -o -name 'go-build' -o -name 'node-gyp' \) \
     -print -exec rm -rf --one-file-system {} + 2>/dev/null || true
+
+  # Remove rebuildable duplicate workspace virtualenvs under disk pressure.
+  # Keep the active runtime venv at /srv/hermes-pilot/venv, plus workspace .venv and .venv-run.
+  find /srv/hermes-pilot/workspace -xdev -maxdepth 1 -type d \
+    \( -iname '*venv*' \) \
+    ! -name '.venv' ! -name '.venv-run' -mtime +"$HERMES_DUP_VENV_AGE_DAYS" \
+    -print -exec rm -rf --one-file-system {} + 2>/dev/null || true
+}
+
+compact_codex_log_dbs() {
+  if ! command -v sqlite3 >/dev/null 2>&1; then
+    echo "sqlite3 unavailable; skipping Codex log DB retention."
+    return 0
+  fi
+
+  local db before_size after_size before_rows after_rows deleted_rows freed sql
+  for db in /root/.openclaw/agents/*/agent/codex-home/logs_2.sqlite; do
+    [[ -f "$db" ]] || continue
+
+    before_size="$(stat -c %s "$db" 2>/dev/null || echo 0)"
+    before_rows="$(sqlite3 -readonly "$db" "SELECT count(*) FROM logs;" 2>/dev/null || echo unknown)"
+
+    # Keep all WARN/ERROR records, keep all recent records, and keep non-noisy
+    # INFO records for a longer audit window. Prune high-volume Codex telemetry
+    # targets by timestamp instead of sparse AUTOINCREMENT ids.
+    sql=".timeout 120000
+PRAGMA busy_timeout=120000;
+PRAGMA wal_checkpoint(PASSIVE);
+DELETE FROM logs
+ WHERE level IN ('TRACE','DEBUG')
+   AND ts < strftime('%s','now','-${CODEX_LOG_RECENT_DAYS} days');
+DELETE FROM logs
+ WHERE level NOT IN ('WARN','ERROR')
+   AND target IN ('codex_otel.trace_safe','codex_otel.log_only','codex_api::endpoint::responses_websocket','codex_api::sse::responses','log')
+   AND ts < strftime('%s','now','-${CODEX_LOG_RECENT_DAYS} days');
+DELETE FROM logs
+ WHERE level = 'INFO'
+   AND ts < strftime('%s','now','-${CODEX_LOG_GENERAL_DAYS} days')
+   AND target NOT IN ('feedback_tags');
+PRAGMA wal_checkpoint(TRUNCATE);
+VACUUM;
+PRAGMA optimize;"
+
+    echo "Compacting $db before_size=${before_size} before_rows=${before_rows} recent_days=${CODEX_LOG_RECENT_DAYS} general_days=${CODEX_LOG_GENERAL_DAYS}"
+    if ! printf '%s
+' "$sql" | sqlite3 "$db" >/dev/null; then
+      echo "Codex log compaction failed for $db; preserving DB as-is."
+      continue
+    fi
+
+    after_size="$(stat -c %s "$db" 2>/dev/null || echo 0)"
+    after_rows="$(sqlite3 -readonly "$db" "SELECT count(*) FROM logs;" 2>/dev/null || echo unknown)"
+    freed=$((before_size - after_size))
+    if [[ "$before_rows" =~ ^[0-9]+$ && "$after_rows" =~ ^[0-9]+$ ]]; then
+      deleted_rows=$((before_rows - after_rows))
+    else
+      deleted_rows="unknown"
+    fi
+    echo "Compacted $db after_size=${after_size} after_rows=${after_rows} deleted_rows=${deleted_rows} freed_bytes=${freed}"
+  done
 }
 
 prune_backup_candidates() {
@@ -192,7 +255,10 @@ LOG="$LOG_DIR/cleanup-$(date +%Y%m%d-%H%M%S).log"
     docker system prune -af || true
   fi
 
-  printf '\nSafe cleanup: compress verified OpenClaw snapshot directories, then keep latest 2 compressed archives.\n'
+  printf '\nSafe cleanup: Codex SQLite log retention and vacuum, preserving WARN/ERROR and recent records.\n'
+  compact_codex_log_dbs
+
+  printf '\nSafe cleanup: compress verified OpenClaw snapshot directories, then keep latest 1 compressed archive.\n'
   compress_snapshot_dirs
 
   printf '\nBackup/snapshot audit, no destructive pruning by default.\n'

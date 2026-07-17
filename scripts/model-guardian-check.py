@@ -28,6 +28,10 @@ def load_env_file(path: Path):
 
 load_env_file(HOOKS_ENV_FILE)
 
+WORKSPACE = Path('/root/.openclaw/workspace')
+USAGE_PROBE_SCRIPT = WORKSPACE / 'scripts' / 'model-guardian-usage-probe.py'
+OPENCLAW_CONFIG_FILE = Path('/root/.openclaw/openclaw.json')
+
 
 def parse_json_from_mixed_output(text: str):
     start = text.find('{')
@@ -38,13 +42,18 @@ def parse_json_from_mixed_output(text: str):
 
 def is_transient_provider_error(text: str) -> bool:
     lower = str(text).lower()
-    return 'operation was aborted' in lower or 'this operation was aborted' in lower
+    return (
+        'operation was aborted' in lower
+        or 'this operation was aborted' in lower
+        or 'transient:' in lower
+    )
 
 
 def run_with_retries(args, timeouts, parser=None, ok_text=None, label='command'):
     last_error = None
     last_output = ''
     for i, timeout in enumerate(timeouts, start=1):
+        combined = ''
         try:
             result = subprocess.run(
                 args,
@@ -73,15 +82,17 @@ def run_with_retries(args, timeouts, parser=None, ok_text=None, label='command')
             last_output = combined
         except Exception as e:
             last_error = f'attempt {i} failed: {e}'
+            if combined:
+                last_output = combined
         if i < len(timeouts):
             time.sleep(2)
-    raise RuntimeError(last_error or f'{label} failed', last_output)
+    detail = ': '.join(part for part in [last_error or f'{label} failed', last_output] if part)
+    raise RuntimeError(detail)
 
 
-EXPECTED_DEFAULT_MODEL = 'openai/gpt-5.5'
-EXPECTED_DEFAULT_LABEL = 'GPT-5.5'
-LEGACY_DEFAULT_MODEL = 'openai-codex/gpt-5.5'
-EXPECTED_DEFAULT_MODELS = {EXPECTED_DEFAULT_MODEL, LEGACY_DEFAULT_MODEL}
+EXPECTED_DEFAULT_MODEL = 'openai/gpt-5.6-sol'
+EXPECTED_DEFAULT_LABEL = 'GPT-5.6 Sol'
+EXPECTED_DEFAULT_MODELS = {EXPECTED_DEFAULT_MODEL}
 EXPECTED_STATUS_MODELS = EXPECTED_DEFAULT_MODELS
 CODEX_USAGE_PROVIDERS = {'openai', 'openai-codex'}
 
@@ -98,20 +109,22 @@ except Exception as e:
     ALERTS.append(f'model-router.json read failed: {e}')
 
 
-# 2. Codex provider health and quota visibility
+# 2. Codex provider health and quota visibility. This quota-only probe avoids
+# `openclaw status --usage`, which scans the wider runtime and can exceed 2 GB.
 status_data = None
 status_probe_error = None
 try:
-    status_data, _, attempts, timed_out = run_with_retries(
-        ['openclaw', 'status', '--usage', '--json'],
-        timeouts=[10, 20, 30],
+    provider_snapshot, _, attempts, timed_out = run_with_retries(
+        ['/usr/bin/python3', str(USAGE_PROBE_SCRIPT)],
+        timeouts=[12, 20],
         parser=parse_json_from_mixed_output,
-        label='openclaw status usage probe',
+        label='Codex quota-only probe',
     )
+    status_data = {'usage': {'providers': [provider_snapshot]}}
     if timed_out:
-        print(f'OK: usage probe timed out but yielded parseable provider JSON on attempt {attempts}')
+        print(f'OK: quota-only probe timed out but yielded parseable provider JSON on attempt {attempts}')
     elif attempts > 1:
-        print(f'OK: usage probe succeeded on retry {attempts}')
+        print(f'OK: quota-only probe succeeded on retry {attempts}')
     cache_path = os.environ.get('MODEL_GUARDIAN_STATUS_CACHE')
     if cache_path:
         Path(cache_path).write_text(json.dumps(status_data) + '\n')
@@ -119,7 +132,7 @@ except Exception as e:
     status_probe_error = str(e)
 
 if not status_data and status_probe_error:
-    ALERTS.append(f'openclaw status usage probe failed after retries: {status_probe_error}')
+    ALERTS.append(f'Codex quota-only probe failed after retries: {status_probe_error}')
 
 provider = None
 if status_data:
@@ -147,25 +160,30 @@ if status_data:
             else:
                 print('OK: Codex usage provider present with no reported error')
 
-# 3. Default model surface sanity check
+# 3. Default model surface sanity check without loading the full OpenClaw CLI.
 try:
-    _, combined, attempts, _ = run_with_retries(
-        ['openclaw', 'models', 'status', '--plain'],
-        timeouts=[8, 15, 25],
-        ok_text=None,
-        label='models status probe',
+    runtime_cfg = json.loads(OPENCLAW_CONFIG_FILE.read_text())
+    agents_cfg = runtime_cfg.get('agents') or {}
+    defaults = agents_cfg.get('defaults') or {}
+    model_cfg = defaults.get('model') or {}
+    reported_model = model_cfg.get('primary') if isinstance(model_cfg, dict) else model_cfg
+    if reported_model not in EXPECTED_STATUS_MODELS:
+        raise RuntimeError(f'unexpected OpenClaw default model {reported_model!r}')
+    main_agent = next(
+        (entry for entry in (agents_cfg.get('list') or []) if entry.get('id') == 'main'),
+        {},
     )
-    lines = [line.strip() for line in combined.splitlines() if line.strip()]
-    reported_model = next((line for line in lines if line in EXPECTED_STATUS_MODELS), '')
-    if not reported_model:
-        noisy_tail = lines[-1] if lines else ''
-        raise RuntimeError(f'unexpected status model {noisy_tail!r}')
-    if attempts > 1:
-        print(f'OK: models status reports {EXPECTED_DEFAULT_LABEL} as configured default after retry {attempts}')
-    else:
-        print(f'OK: models status reports {EXPECTED_DEFAULT_LABEL} as configured default')
+    main_override = main_agent.get('model')
+    if main_override and main_override not in EXPECTED_STATUS_MODELS:
+        raise RuntimeError(f'unexpected main-agent model override {main_override!r}')
+    configured_models = defaults.get('models') or {}
+    expected_entry = configured_models.get(EXPECTED_DEFAULT_MODEL) or {}
+    runtime_id = (expected_entry.get('agentRuntime') or {}).get('id')
+    if runtime_id != 'codex':
+        raise RuntimeError(f'{EXPECTED_DEFAULT_LABEL} agentRuntime is {runtime_id!r}, expected codex')
+    print(f'OK: OpenClaw config reports {EXPECTED_DEFAULT_LABEL} as the Codex default')
 except Exception as e:
-    ALERTS.append(f'models status probe failed after retries: {e}')
+    ALERTS.append(f'OpenClaw default-model config check failed: {e}')
 
 # 4. Optional evidence from recent usage snapshots
 usage_file = Path('/root/.openclaw/workspace/data/model-guardian-usage.jsonl')

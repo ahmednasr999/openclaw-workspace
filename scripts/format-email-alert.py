@@ -8,6 +8,7 @@ Output: concise Telegram-ready text. No process logs, file paths, UIDs, or model
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 from email.header import decode_header, make_header
@@ -26,6 +27,14 @@ ACTIONABLE_CATEGORIES = {
     "recruiter_reach",
 }
 NON_ACTIONABLE_CATEGORIES = {"job_alert", "marketing", "newsletter", "other"}
+HIRING_PROCESS_CATEGORIES = {
+    "interview_invite",
+    "assessment",
+    "application_response",
+    "follow_up_needed",
+    "recruiter_reach",
+    "rejection",
+}
 AUTOMATED_ALERT_SENDERS = {
     "bayt",
     "bayt.com",
@@ -90,6 +99,32 @@ def short(value: str, limit: int = 82) -> str:
     if len(value) <= limit:
         return value
     return value[: limit - 1].rstrip() + "…"
+
+
+def stable_email_key(item: dict[str, Any]) -> str:
+    item_id = str(item.get("id") or item.get("email_id") or "").strip()
+    if item_id:
+        return f"id:{item_id}"
+    fingerprint = f"{clean_sender(item.get('from') or '')}|{clean_subject(item.get('subject') or '')}".lower()
+    return "fp:" + hashlib.sha256(fingerprint.encode("utf-8")).hexdigest()[:24]
+
+
+def pipeline_match_for_item(data: dict[str, Any], item: dict[str, Any]) -> str:
+    wanted = stable_email_key(item)
+    groups = (
+        data.get("interview_invites") or [],
+        data.get("assessments") or [],
+        data.get("application_responses") or [],
+        data.get("follow_ups_needed") or [],
+        data.get("recruiter_messages") or [],
+        data.get("rejections") or [],
+        data.get("hot_alerts") or [],
+    )
+    for group in groups:
+        for raw in group:
+            if stable_email_key(raw) == wanted and raw.get("pipeline_match"):
+                return str(raw["pipeline_match"]).strip()
+    return str(item.get("pipeline_match") or "").strip()
 
 
 def human_priority(value: str) -> str:
@@ -235,6 +270,66 @@ def collect_items(summary: dict[str, Any]) -> list[dict[str, Any]]:
     return sorted(items, key=rank)
 
 
+def collect_hiring_updates(
+    summary: dict[str, Any],
+    action_items: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Return important active-pipeline mail that needs visibility, not a reply.
+
+    A pipeline match is the deterministic proof that the message belongs to an
+    active hiring process. The LLM may correctly decide that no reply is needed,
+    but that decision must not suppress the importance notification.
+    """
+    data = summary.get("data") or summary
+    action_keys = {stable_email_key(item) for item in action_items}
+    seen: set[str] = set()
+    updates: list[dict[str, Any]] = []
+    groups = [
+        ("interview_invite", data.get("interview_invites") or []),
+        ("assessment", data.get("assessments") or []),
+        ("application_response", data.get("application_responses") or []),
+        ("follow_up_needed", data.get("follow_ups_needed") or []),
+        ("recruiter_reach", data.get("recruiter_messages") or []),
+        ("rejection", data.get("rejections") or []),
+    ]
+
+    for category, group in groups:
+        for raw in group:
+            pipeline_match = str(raw.get("pipeline_match") or "").strip()
+            if not pipeline_match:
+                continue
+            sender = clean_sender(raw.get("from") or "")
+            subject = clean_subject(raw.get("subject") or "")
+            if is_automated_alert(sender, subject):
+                continue
+            confidence = raw.get("confidence")
+            min_confidence = 35 if category == "rejection" else 55
+            if confidence is not None and int(confidence or 0) < min_confidence:
+                continue
+
+            normalized = {
+                "id": str(raw.get("id") or raw.get("email_id") or ""),
+                "from": sender,
+                "subject": subject,
+                "category": category,
+                "urgency": "high",
+                "importance": "high",
+                "action_required": False,
+                "action": "no_action",
+                "response_deadline": "",
+                "pipeline_match": pipeline_match,
+                "confidence": confidence,
+                "notes": raw.get("why_actionable") or "Important active hiring-process update.",
+            }
+            key = stable_email_key(normalized)
+            if key in seen or key in action_keys:
+                continue
+            seen.add(key)
+            updates.append(normalized)
+
+    return updates
+
+
 def format_item(item: dict[str, Any], urgent: bool) -> list[str]:
     sender = short(item.get("from") or "Unknown sender", 42)
     subject = short(item.get("subject") or "No subject", 74)
@@ -253,29 +348,90 @@ def format_item(item: dict[str, Any], urgent: bool) -> list[str]:
     return lines
 
 
-def build_alert(summary: dict[str, Any]) -> str:
+def render_action_alert(items: list[dict[str, Any]], data: dict[str, Any]) -> str:
+    lines = ["🚨 Email alert - action needed", "", "🎯 Action required"]
+    for item in items[:3]:
+        lines.extend(format_item(item, urgent=True))
+    focus = ((data.get("llm_analysis") or {}).get("summary") or {}).get("daily_focus")
+    if focus:
+        allowed_subjects = [clean_subject(item.get("subject") or "").lower() for item in items]
+        if not any(subject and subject[:35] in focus.lower() for subject in allowed_subjects):
+            focus = None
+    bottom = focus or "Handle the highest-priority email first. No email has been sent or replied to."
+    lines.extend(["", f"✅ Bottom line: {short(bottom, 140)}"])
+    return "\n".join(lines)
+
+
+def render_hiring_update(items: list[dict[str, Any]]) -> str:
+    lines = ["📌 Hiring process update", ""]
+    for item in items[:5]:
+        sender = short(item.get("from") or "Unknown sender", 42)
+        subject = short(item.get("subject") or "No subject", 74)
+        pipeline = short(item.get("pipeline_match") or "Active hiring process", 48)
+        lines.extend([
+            f"• {sender} - {subject}",
+            f"  Pipeline: {pipeline}",
+            "  Next: No reply is required based on this email.",
+        ])
+    lines.extend(["", "✅ Bottom line: Important update surfaced immediately. No email was sent or replied to."])
+    return "\n".join(lines)
+
+
+def build_delivery(summary: dict[str, Any]) -> dict[str, Any]:
+    """Build structured Telegram delivery envelopes for the watcher.
+
+    The worker consumes fields, never message prefixes. This keeps importance
+    separate from action and gives the delivery ledger stable email keys.
+    """
     data = summary.get("data") or summary
     total_scanned = data.get("total_scanned")
     items = collect_items(summary)
-    hot_alerts = data.get("hot_alerts") or []
     urgent_items = [item for item in items if (item.get("urgency") or "").lower() in URGENT_LEVELS]
+    for item in urgent_items:
+        item["pipeline_match"] = pipeline_match_for_item(data, item)
+    updates = collect_hiring_updates(summary, urgent_items)
+    envelopes: list[dict[str, Any]] = []
 
-    if urgent_items:
-        picked = urgent_items
-        if not picked:
-            scanned = "new emails" if total_scanned is None else f"{total_scanned} new email(s)"
-            return f"📬 Email scan: all clear ✅\nScanned {scanned}. Nothing requiring action."
-        lines = ["🚨 Email alert - action needed", "", "🎯 Action required"]
-        for item in picked[:3]:
-            lines.extend(format_item(item, urgent=True))
-        focus = ((data.get("llm_analysis") or {}).get("summary") or {}).get("daily_focus")
-        if focus:
-            allowed_subjects = [clean_subject(item.get("subject") or "").lower() for item in items]
-            if not any(subject and subject[:35] in focus.lower() for subject in allowed_subjects):
-                focus = None
-        bottom = focus or "Handle the highest-priority email first."
-        lines.extend(["", f"✅ Bottom line: {short(bottom, 120)}"])
-        return "\n".join(lines)
+    for offset in range(0, len(urgent_items), 3):
+        batch = urgent_items[offset: offset + 3]
+        envelopes.append({
+            "type": "action_required",
+            "importance": "high",
+            "action_required": True,
+            "pipeline_matches": sorted({str(item.get("pipeline_match") or "").strip() for item in batch if item.get("pipeline_match")}),
+            "email_keys": [stable_email_key(item) for item in batch],
+            "message": render_action_alert(batch, data),
+        })
+    for offset in range(0, len(updates), 5):
+        batch = updates[offset: offset + 5]
+        envelopes.append({
+            "type": "hiring_process_update",
+            "importance": "high",
+            "action_required": False,
+            "pipeline_matches": sorted({str(item.get("pipeline_match") or "").strip() for item in batch if item.get("pipeline_match")}),
+            "email_keys": [stable_email_key(item) for item in batch],
+            "message": render_hiring_update(batch),
+        })
+
+    return {
+        "version": 1,
+        "scan": {
+            "total_processed": total_scanned,
+            "notifiable_count": sum(len(envelope["email_keys"]) for envelope in envelopes),
+        },
+        "envelopes": envelopes,
+    }
+
+
+def build_alert(summary: dict[str, Any]) -> str:
+    data = summary.get("data") or summary
+    total_scanned = data.get("total_scanned")
+    delivery = build_delivery(summary)
+    envelopes = delivery["envelopes"]
+    if envelopes:
+        return "\n\n".join(envelope["message"] for envelope in envelopes)
+
+    items = collect_items(summary)
 
     if items:
         label = "action item found" if len(items) == 1 else f"{len(items)} items to review"
@@ -286,15 +442,22 @@ def build_alert(summary: dict[str, Any]) -> str:
         lines.extend(["", f"✅ Bottom line: {bottom}"])
         return "\n".join(lines)
 
+    if total_scanned == 0:
+        return "📬 Email scan: no new email ✅\n0 new emails processed in this scan. Real-time watcher remains active."
     scanned = "new emails" if total_scanned is None else f"{total_scanned} new email(s)"
-    return f"📬 Email scan: all clear ✅\nScanned {scanned}. Nothing requiring action."
+    return f"📬 Email scan: {scanned} processed ✅\nNo hiring alert or email action required."
 
 
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", "-i", type=Path, default=DEFAULT_SUMMARY)
+    parser.add_argument("--output", choices=("text", "json"), default="text")
     args = parser.parse_args()
-    print(build_alert(load_summary(args.input)))
+    summary = load_summary(args.input)
+    if args.output == "json":
+        print(json.dumps(build_delivery(summary), ensure_ascii=False))
+    else:
+        print(build_alert(summary))
     return 0
 
 

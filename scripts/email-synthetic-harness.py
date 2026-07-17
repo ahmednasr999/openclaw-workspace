@@ -29,7 +29,7 @@ def load_module(name: str, path: Path):
 ea = load_module("email_agent_under_test", AGENT_PATH)
 fmt = load_module("format_email_alert_under_test", FORMATTER_PATH)
 
-EXPECTED_LLM_MODEL = "openai/gpt-5.5"
+EXPECTED_LLM_MODEL = "openai/gpt-5.6-sol"
 
 FIXTURES = [
     {
@@ -118,9 +118,221 @@ def check_formatter_veto(*, verbose: bool = False) -> list[str]:
     alert = fmt.build_alert(summary)
     if verbose:
         print(json.dumps({"formatter_alert": alert}, ensure_ascii=False))
-    if not alert.startswith("📬 Email scan: all clear"):
+    if not alert.startswith("📬 Email scan: 1 new email(s) processed"):
         return ["formatter veto failed for newsletter false positive"]
     return []
+
+
+def hiring_summary(
+    *,
+    email_id: str,
+    subject: str,
+    category: str,
+    action: str,
+    urgency: str = "low",
+    pipeline: str = "Sprinklr",
+    priority: str = "HIGH",
+) -> dict:
+    raw = {
+        "id": email_id,
+        "from": "Miriam Marras <miriam.marras@sprinklr.com>",
+        "subject": subject,
+        "priority": priority,
+        "pipeline_match": pipeline,
+        "confidence": 95 if category != "rejection" else 40,
+    }
+    group_name = {
+        "interview_invite": "interview_invites",
+        "assessment": "assessments",
+        "application_response": "application_responses",
+        "follow_up_needed": "follow_ups_needed",
+        "recruiter_reach": "recruiter_messages",
+        "rejection": "rejections",
+    }[category]
+    data = {
+        "total_scanned": 1,
+        "interview_invites": [],
+        "assessments": [],
+        "application_responses": [],
+        "follow_ups_needed": [],
+        "recruiter_messages": [],
+        "rejections": [],
+        "hot_alerts": [],
+    }
+    data[group_name] = [raw]
+    data["llm_analysis"] = {
+        "actionable_emails": [{
+            "id": email_id,
+            "from": raw["from"],
+            "subject": subject,
+            "category": category,
+            "urgency": urgency,
+            "action": action,
+            "intent": "Hiring-team process update.",
+        }],
+        "summary": {
+            "total_actionable": 0 if action in {"no_action", "read_and_file"} else 1,
+            "critical_count": 1 if urgency in {"critical", "high"} else 0,
+        },
+    }
+    return {"data": data}
+
+
+def check_structured_delivery(*, verbose: bool = False) -> list[str]:
+    errors: list[str] = []
+    update_cases = [
+        ("missed Miriam update", "364923", "Re: Sprinklr Interview - Availability Request", "interview_invite"),
+        ("interview reschedule", "364924", "Interview rescheduled - calendar updated", "interview_invite"),
+        ("interview cancellation", "364925", "Interview cancelled - no action required", "interview_invite"),
+        ("interview feedback", "364926", "Feedback after your interview", "recruiter_reach"),
+        ("application rejection", "364927", "Update on your application", "rejection"),
+    ]
+    for name, email_id, subject, category in update_cases:
+        plan = fmt.build_delivery(hiring_summary(
+            email_id=email_id,
+            subject=subject,
+            category=category,
+            action="no_action",
+        ))
+        envelopes = plan.get("envelopes") or []
+        update = next((item for item in envelopes if item.get("type") == "hiring_process_update"), None)
+        if not update:
+            errors.append(f"{name}: missing hiring_process_update envelope")
+            continue
+        if update.get("action_required") is not False or update.get("importance") != "high":
+            errors.append(f"{name}: incorrect structured fields {update}")
+        if update.get("pipeline_matches") != ["Sprinklr"]:
+            errors.append(f"{name}: missing Sprinklr pipeline match")
+        if not update.get("message", "").startswith("📌 Hiring process update"):
+            errors.append(f"{name}: incorrect update message")
+
+    medium_plan = fmt.build_delivery(hiring_summary(
+        email_id="364929",
+        subject="A quick update on your interview process",
+        category="recruiter_reach",
+        action="no_action",
+        priority="MEDIUM",
+    ))
+    if not any(item.get("type") == "hiring_process_update" for item in medium_plan.get("envelopes") or []):
+        errors.append("active-pipeline hiring update was suppressed because priority was medium")
+
+    many = hiring_summary(
+        email_id="batch-0",
+        subject="Batch process update 0",
+        category="interview_invite",
+        action="no_action",
+    )
+    many_data = many["data"]
+    many_data["interview_invites"] = []
+    many_data["llm_analysis"]["actionable_emails"] = []
+    for number in range(7):
+        raw = {
+            "id": f"batch-{number}",
+            "from": "Hiring Team <hiring@example.com>",
+            "subject": f"Batch process update {number}",
+            "priority": "HIGH",
+            "pipeline_match": "ExampleCo",
+            "confidence": 90,
+        }
+        many_data["interview_invites"].append(raw)
+        many_data["llm_analysis"]["actionable_emails"].append({
+            **raw,
+            "category": "interview_invite",
+            "urgency": "low",
+            "action": "no_action",
+        })
+    many_plan = fmt.build_delivery(many)
+    many_keys = [key for item in many_plan.get("envelopes") or [] for key in item.get("email_keys") or []]
+    if len(many_plan.get("envelopes") or []) != 2 or len(set(many_keys)) != 7:
+        errors.append(f"batched updates did not ledger every email key: envelopes={len(many_plan.get('envelopes') or [])}, keys={many_keys}")
+
+    action_plan = fmt.build_delivery(hiring_summary(
+        email_id="364928",
+        subject="Please confirm your interview availability",
+        category="interview_invite",
+        action="respond",
+        urgency="high",
+    ))
+    action = next((item for item in action_plan.get("envelopes") or [] if item.get("type") == "action_required"), None)
+    if not action or action.get("action_required") is not True or action.get("pipeline_matches") != ["Sprinklr"]:
+        errors.append(f"action request: incorrect structured envelope {action}")
+
+    noise = {
+        "data": {
+            "total_scanned": 1,
+            "job_alerts": [{"id": "noise-1", "from": "LinkedIn <jobs-noreply@linkedin.com>", "subject": "New jobs for you", "priority": "HIGH"}],
+            "llm_analysis": {"actionable_emails": [], "summary": {"total_actionable": 0}},
+        }
+    }
+    if fmt.build_delivery(noise).get("envelopes"):
+        errors.append("newsletter/job-alert noise produced a delivery envelope")
+
+    if verbose:
+        print(json.dumps({"structured_delivery_errors": errors}, ensure_ascii=False))
+    return errors
+
+
+def check_short_pipeline_collision(*, verbose: bool = False) -> list[str]:
+    errors: list[str] = []
+    original_pipeline_jobs = ea._get_active_pipeline_jobs
+    subject = "In Case You Missed It - Pilot scrawls ‘I’m bored’ into UK sky mid-flight"
+    sender = "CNN <cnn@newsletters.cnn.com>"
+    try:
+        ea._get_active_pipeline_jobs = lambda: [{
+            "job_id": "tp-active",
+            "company": "TP",
+            "title": "VP AI Delivery",
+            "recruiter_name": "",
+            "recruiter_email": None,
+            "recruiter_company": "",
+        }]
+        match = ea._match_pipeline_company(subject, sender, "")
+        categories = ea.categorize_email(subject, sender, "")
+        score, pipeline = ea.score_email(subject, sender, "")
+        if match != (None, 0) or categories != ["other"] or score != 0 or pipeline is not None:
+            errors.append(
+                "CNN/TP boundary collision survived classifier guard: "
+                f"match={match}, categories={categories}, score={score}, pipeline={pipeline}"
+            )
+
+        summary = {
+            "data": {
+                "total_scanned": 1,
+                "recruiter_messages": [] if categories == ["other"] else [{
+                    "id": "364999",
+                    "from": sender,
+                    "subject": subject,
+                    "priority": "HIGH",
+                    "pipeline_match": pipeline,
+                    "confidence": 95,
+                }],
+                "llm_analysis": {"actionable_emails": [], "summary": {"total_actionable": 0}},
+            }
+        }
+        if fmt.build_delivery(summary).get("envelopes"):
+            errors.append("CNN/TP boundary collision produced a Telegram delivery envelope")
+
+        tp_link_match = ea._match_pipeline_company(
+            "TP-Link Wi-Fi routers clearance sale",
+            "Store <sales@example.com>",
+            "",
+        )
+        if tp_link_match != (None, 0):
+            errors.append(f"TP-Link product mail matched active company TP: {tp_link_match}")
+
+        valid_match = ea._match_pipeline_company(
+            "TP VP AI Delivery application update",
+            "Hiring Team <hiring@teleperformance.com>",
+            "",
+        )
+        if valid_match != ("TP", 6):
+            errors.append(f"corroborated TP reference stopped matching: {valid_match}")
+    finally:
+        ea._get_active_pipeline_jobs = original_pipeline_jobs
+
+    if verbose:
+        print(json.dumps({"short_pipeline_collision_errors": errors}, ensure_ascii=False))
+    return errors
 
 
 def main() -> int:
@@ -136,6 +348,8 @@ def main() -> int:
     for fixture in FIXTURES:
         errors.extend(check_fixture(fixture, verbose=args.verbose))
     errors.extend(check_formatter_veto(verbose=args.verbose))
+    errors.extend(check_structured_delivery(verbose=args.verbose))
+    errors.extend(check_short_pipeline_collision(verbose=args.verbose))
     if errors:
         print("FAIL")
         for error in errors:

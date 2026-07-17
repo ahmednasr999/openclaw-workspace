@@ -1,0 +1,49 @@
+{
+  "warning": {
+    "mem_available_pct_below": 20,
+    "swap_used_pct_above": 50,
+    "root_disk_used_pct_above": 80,
+    "memory_psi_some_avg60_above": 10,
+    "memory_psi_full_avg60_above": 2
+  },
+  "critical": {
+    "mem_available_pct_below": 15,
+    "swap_used_pct_above": 70,
+    "root_disk_used_pct_above": 88,
+    "memory_psi_some_avg60_above": 20,
+    "memory_psi_full_avg60_above": 5
+  },
+  "immediate": {
+    "mem_available_pct_below": 8,
+    "swap_used_pct_above": 90,
+    "root_disk_used_pct_above": 95,
+    "memory_psi_full_avg60_above": 15
+  },
+  "recovery": {
+    "mem_available_pct_above": 22,
+    "swap_used_pct_below": 48,
+    "root_disk_used_pct_below": 79,
+    "memory_psi_some_avg60_below": 8,
+    "memory_psi_full_avg60_below": 1.5
+  },
+  "critical_samples_to_block": 2,
+  "recovery_samples_to_unblock": 3,
+  "state_stale_seconds": 180,
+  "stale_helper_age_seconds": 300,
+  "telegram_target": "866838380",
+  "heavy_tasks": [
+    "backup-restore-smoke-test",
+    "cmo-notion-linkedin-post",
+    "daily-snapshot",
+    "executive-intelligence-brief",
+    "executive-intelligence-rss-refresh",
+    "job-radar",
+    "jobzoom-managed-daily",
+    "jobzoom-quality-gate-shadow",
+    "linkedin-comment-radar-1500",
+    "morning-brief",
+    "repo-maintainer-watch",
+    "sie-360-checks",
+    "skill-discovery-pilot"
+  ]
+}

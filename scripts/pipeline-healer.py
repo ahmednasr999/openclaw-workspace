@@ -34,7 +34,7 @@ SCRIPTS_DIR = WORKSPACE / "scripts"
 JOBS_RAW_DIR = DATA_DIR / "jobs-raw"
 
 GATEWAY_URL = "http://127.0.0.1:18789/v1/chat/completions"
-GPT55_MODEL = "openai-codex/gpt-5.5"
+GPT56_MODEL = "openai/gpt-5.6-sol"
 
 TELEGRAM_CHAT_ID = "-1003882622947"
 TELEGRAM_TOPIC_ID = "10"
@@ -188,7 +188,7 @@ Verdicts: SUBMIT (7+), REVIEW (5-6), SKIP (<5)
 
 {jobs_text}"""
 
-        for model, label in [(GPT55_MODEL, "GPT-5.5"), (GPT55_MODEL, "GPT-5.5 retry")]:
+        for model, label in [(GPT56_MODEL, "GPT-5.6 Sol"), (GPT56_MODEL, "GPT-5.6 Sol retry")]:
             print(f"    Batch {batch_start//BATCH_SIZE+1}: trying {label}...", end=" ", flush=True)
             response = call_llm(prompt, model, timeout=120)
             if response:
@@ -312,7 +312,7 @@ Verify these job verdicts. Return JSON only:
 
 {jobs_text}"""
 
-        response = call_llm(prompt, GPT55_MODEL, timeout=180)
+        response = call_llm(prompt, GPT56_MODEL, timeout=180)
         if response:
             import re
             match = re.search(r'\[[\s\S]*\]', response)

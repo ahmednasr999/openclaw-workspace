@@ -338,7 +338,7 @@ def generate_content(prompt, system, max_tokens=600):
     }).encode()
     headers = {
         "Content-Type": "application/json",
-        "x-openclaw-model": "openai-codex/gpt-5.5",
+        "x-openclaw-model": "openai/gpt-5.6-sol",
     }
     gateway_token = get_gateway_token()
     if gateway_token:

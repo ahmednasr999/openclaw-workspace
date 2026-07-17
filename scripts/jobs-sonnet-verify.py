@@ -29,7 +29,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 # OpenClaw gateway
 GATEWAY_URL = "http://127.0.0.1:18789/v1/chat/completions"
-GPT55_MODEL = "openai-codex/gpt-5.5"
+GPT56_MODEL = "openai/gpt-5.6-sol"
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 INPUT_FILE = DATA_DIR / "jobs-summary.json"
@@ -78,7 +78,7 @@ def call_gpt55(prompt: str, timeout: int = 120) -> str | None:
         headers["Authorization"] = f"Bearer {token}"
 
     payload = {
-        "model": GPT55_MODEL,
+        "model": GPT56_MODEL,
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.2,
         "max_tokens": 3000,

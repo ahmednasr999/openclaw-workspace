@@ -36,7 +36,7 @@ PIPELINE_DB_ID = "3268d599-a162-81b4-b768-f162adfa4971"
 NOTION_VERSION = "2022-06-28"
 
 GATEWAY_URL = "http://127.0.0.1:18789/v1/chat/completions"
-GPT55_MODEL = "openai-codex/gpt-5.5"
+GPT56_MODEL = "openai/gpt-5.6-sol"
 
 TELEGRAM_CHAT_ID = "-1003882622947"
 TELEGRAM_TOPIC_ID = "10"
@@ -72,7 +72,7 @@ def call_gpt55(prompt: str, timeout: int = 180) -> str | None:
     if token:
         headers["Authorization"] = f"Bearer {token}"
     payload = {
-        "model": GPT55_MODEL,
+        "model": GPT56_MODEL,
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.5,
         "max_tokens": 2000,

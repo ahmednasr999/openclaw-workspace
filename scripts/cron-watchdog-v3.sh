@@ -105,39 +105,13 @@ if [ -f "$TASKS_FILE" ]; then
 fi
 
 # ═══════════════════════════════════════════
-# 4. JOB PIPELINE CHECK
+# 4. LEGACY JOB PIPELINE
 # ═══════════════════════════════════════════
-CAIRO_HOUR=$(TZ=Africa/Cairo date +%H 2>/dev/null || echo "0")
-MERGED_FILE="${WORKSPACE}/data/jobs-merged.json"
-SUMMARY_FILE="${WORKSPACE}/data/jobs-summary.json"
-
-if [ -f "$MERGED_FILE" ]; then
-    MERGED_MTIME=$(stat -c %Y "$MERGED_FILE" 2>/dev/null || echo 0)
-    NOW=$(date +%s)
-    MERGED_AGE_H=$(( (NOW - MERGED_MTIME) / 3600 ))
-    
-    if [ "$MERGED_AGE_H" -gt 24 ]; then
-        echo "🟡 Jobs data stale (${MERGED_AGE_H}h) - re-running pipeline..."
-        log "WARN: Jobs data stale (${MERGED_AGE_H}h), triggering pipeline"
-        
-        # AUTO-FIX: re-run job pipeline
-        if [ ! -f /tmp/briefing-pipeline.lock ]; then
-            ( exec 9>&-; bash "${WORKSPACE}/scripts/run-briefing-pipeline.sh" --jobs-only >> /tmp/watchdog-pipeline.log 2>&1 ) &
-            echo "  Pipeline triggered in background"
-            log "FIXED: Pipeline triggered"
-            report "🔄 Jobs data was ${MERGED_AGE_H}h stale → pipeline re-triggered"
-            FIXES=$((FIXES + 1))
-        else
-            echo "  Pipeline already running (lock file exists)"
-            log "WARN: Pipeline lock exists, skipping"
-        fi
-    else
-        echo "✅ Jobs data fresh (${MERGED_AGE_H}h)"
-    fi
-else
-    echo "🟡 No merged jobs file"
-    WARNINGS=$((WARNINGS + 1))
-fi
+# The briefing pipeline and data/jobs-merged.json are superseded. JobZoom owns
+# the deep daily scan and job-radar owns the lightweight scan. Never launch the
+# legacy pipeline from this watchdog: its stale output otherwise creates a
+# permanent two-hour retry loop and overlapping high-memory source scans.
+echo "✅ Legacy jobs pipeline trigger disabled (JobZoom + job-radar are authoritative)"
 
 # ═══════════════════════════════════════════
 # 5. SIE 360 CHECK
@@ -174,47 +148,33 @@ else
 fi
 
 # ═══════════════════════════════════════════
-# 6. LOCK FILE CLEANUP
+# 6. LEGACY PIPELINE LOCK
 # ═══════════════════════════════════════════
-LOCK_FILE="/tmp/briefing-pipeline.lock"
-if [ -f "$LOCK_FILE" ]; then
-    LOCK_MTIME=$(stat -c %Y "$LOCK_FILE" 2>/dev/null || echo 0)
-    NOW=$(date +%s)
-    LOCK_AGE_M=$(( (NOW - LOCK_MTIME) / 60 ))
-    
-    if [ "$LOCK_AGE_M" -gt 30 ]; then
-        echo "🟡 Stale lock file (${LOCK_AGE_M}m) - removing..."
-        log "WARN: Stale lock file (${LOCK_AGE_M}m), removing"
-        
-        # AUTO-FIX: remove stale lock
-        rm -f "$LOCK_FILE"
-        echo "  ✅ Lock file removed"
-        report "🔓 Stale pipeline lock removed (was ${LOCK_AGE_M}m old)"
-        FIXES=$((FIXES + 1))
-    else
-        echo "✅ Pipeline lock active (${LOCK_AGE_M}m, still valid)"
-    fi
-fi
+# Do not mutate the retired pipeline's ad-hoc lock here. The pipeline validates
+# its own PID/lock if it is ever run manually.
 
 # ═══════════════════════════════════════════
 # 7. CRON HEALTH (OpenClaw crons)
 # ═══════════════════════════════════════════
-CRON_OUTPUT=$(openclaw cron list 2>&1)
-ERROR_CRONS=$(echo "$CRON_OUTPUT" | grep -iE 'error|timeout|failed' | wc -l)
-if [ "$ERROR_CRONS" -gt 0 ]; then
-    echo "🟡 $ERROR_CRONS crons with issues"
+CRON_OUTPUT=$(timeout 30s openclaw cron list 2>&1)
+CRON_LIST_RC=$?
+if [ "$CRON_LIST_RC" -eq 124 ]; then
+    echo "🟡 Cron status check timed out (no retries launched)"
+    log "WARN: Cron status check timed out"
     WARNINGS=$((WARNINGS + 1))
-    
-    # AUTO-FIX: attempt to re-run failed crons
-    FAILED_IDS=$(echo "$CRON_OUTPUT" | grep -iE 'error|timeout|failed' | grep -oP '[a-f0-9-]{36}' | head -3)
-    for CID in $FAILED_IDS; do
-        openclaw cron run "$CID" >> "$LOG_FILE" 2>&1 &
-        echo "  Re-triggered cron: $CID"
-        log "FIXED: Re-triggered failed cron $CID"
-        FIXES=$((FIXES + 1))
-    done
+elif [ "$CRON_LIST_RC" -ne 0 ]; then
+    echo "🟡 Cron status check failed (no retries launched)"
+    log "WARN: Cron status check failed (rc=$CRON_LIST_RC)"
+    WARNINGS=$((WARNINGS + 1))
 else
-    echo "✅ All crons OK"
+    ERROR_CRONS=$(printf '%s\n' "$CRON_OUTPUT" | grep -ciE '[[:space:]](error|timeout|failed)[[:space:]]' || true)
+    if [ "$ERROR_CRONS" -gt 0 ]; then
+        echo "🟡 $ERROR_CRONS crons with issues (report only; no automatic retries)"
+        log "WARN: $ERROR_CRONS crons with issues; automatic retries disabled"
+        WARNINGS=$((WARNINGS + 1))
+    else
+        echo "✅ All crons OK"
+    fi
 fi
 
 # ═══════════════════════════════════════════

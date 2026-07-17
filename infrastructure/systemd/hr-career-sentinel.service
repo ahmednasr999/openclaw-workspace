@@ -1,0 +1,33 @@
+[Unit]
+Description=HR Career Sentinel v1 (silent Gmail recruitment attention alerts)
+Documentation=file:/root/.openclaw/workspace/docs/hr-career-sentinel.md
+After=network-online.target openclaw-gateway.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/.openclaw/workspace
+Environment=PATH=/usr/local/bin:/usr/bin:/bin:/root/.nvm/versions/node/v22.22.0/bin
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=/root/.config/openclaw-gog-calendar-watch.env
+ExecStartPre=/usr/bin/test -x /usr/local/bin/gcloud
+ExecStartPre=/usr/bin/test -x /usr/local/bin/gog
+ExecStartPre=/usr/bin/test -x /usr/bin/openclaw
+ExecStart=/usr/bin/python3 /root/.openclaw/workspace/scripts/hr-career-sentinel.py
+Restart=on-failure
+RestartSec=15
+TimeoutStopSec=30
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryMax=384M
+TasksMax=32
+
+[Install]
+WantedBy=default.target

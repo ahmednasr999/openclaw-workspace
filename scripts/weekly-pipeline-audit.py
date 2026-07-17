@@ -391,7 +391,7 @@ def check_notion_drift():
 
 # ── CHECK 9: Near-duplicate detection ──
 def check_near_duplicates():
-    """Check for near-duplicate jobs by company+title."""
+    """Check for actionable near-duplicate jobs by company+title."""
     print("  [9/11] Near-duplicate detection...")
     if not _pdb:
         return
@@ -401,14 +401,22 @@ def check_near_duplicates():
         conn.row_factory = sqlite3.Row
         rows = conn.execute("""
             SELECT company, title, COUNT(*) as cnt FROM jobs
-            WHERE company IS NOT NULL AND title IS NOT NULL
+            WHERE company IS NOT NULL
+              AND title IS NOT NULL
+              AND LOWER(COALESCE(status, '')) NOT IN (
+                  'skipped', 'rejected', 'expired', 'closed',
+                  'applied', 'duplicate', 'duplicate-applied'
+              )
+              AND UPPER(COALESCE(verdict, '')) NOT IN ('SKIP', 'REJECT', 'NO', 'LOW')
+              AND COALESCE(applied_date, '') = ''
+              AND COALESCE(application_date, '') = ''
             GROUP BY LOWER(TRIM(company)), LOWER(TRIM(title))
             HAVING cnt > 1
         """).fetchall()
         conn.close()
         if rows:
             finding("WARNING", "duplicates", "nasr-pipeline.db",
-                    f"{len(rows)} near-duplicate groups (same company+title): " +
+                    f"{len(rows)} actionable near-duplicate groups (same company+title): " +
                     ", ".join(f"{r['company']}|{r['title']}({r['cnt']})" for r in rows[:3]))
     except Exception as e:
         finding("INFO", "duplicates", "nasr-pipeline.db", f"Could not check: {e}")

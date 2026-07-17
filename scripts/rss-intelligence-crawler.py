@@ -32,9 +32,17 @@ TOKEN = NOTION_CFG.get("token") or CFG["notion_token"]
 DB = CFG["database_id"]
 CONTENT_CALENDAR_DB = "3268d599-a162-814b-8854-c9b8bde62468"
 FEEDS = CFG["feeds"]
+CONTENT_POLICY = CFG.get("content_policy", {})
+WEEKLY_MIX = CONTENT_POLICY.get("weekly_mix", {})
+RSS_WEEKLY_SLOTS = int(WEEKLY_MIX.get("rss_informed", 4))
+MIN_CONTENT_FIT_SCORE = int(CONTENT_POLICY.get("min_content_fit_score", 40))
+MAX_PER_PRIMARY_PILLAR = int(CONTENT_POLICY.get("max_per_primary_pillar", 2))
+MAX_PER_SOURCE = int(CONTENT_POLICY.get("max_per_source", 2))
+MAX_PER_ANGLE = int(CONTENT_POLICY.get("max_per_angle", 1))
+FRESHNESS_DAYS = int(CONTENT_POLICY.get("freshness_days", 14))
 STATE_FILE = Path(CFG.get("state_file", WORKSPACE / "data" / "rss-intelligence-state.json"))
 DATA_DIR = WORKSPACE / "data"
-TELEGRAM_BOT = "<redacted>"
+TELEGRAM_BOT = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT = "866838380"
 
 STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -116,13 +124,57 @@ ANGLE_PATTERNS = [
     (re.compile(r"\b(fintech|payments|banking|stablecoin)\b", re.I), "fintech transformation"),
 ]
 
+POSITIONING_PILLAR_RULES = {
+    "AI execution and governance": {
+        "categories": {"AI": 24},
+        "angles": {"AI execution gap": 28, "risk and governance": 16},
+        "keywords": {
+            "artificial intelligence": 8, " ai ": 8, "agentic": 10,
+            "automation": 8, "governance": 8, "model": 4,
+        },
+    },
+    "PMO and decision discipline": {
+        "categories": {"PMO": 26, "Strategy": 12, "Operation Excellence": 12},
+        "angles": {"PMO governance": 28, "executive decision quality": 48},
+        "keywords": {
+            "pmo": 10, "portfolio": 8, "program": 6, "decision": 8,
+            "execution": 7, "operating model": 7, "leadership": 5,
+        },
+    },
+    "Healthcare transformation": {
+        "categories": {"Healthcare": 24, "HealthTech": 22},
+        "angles": {"healthcare operating model": 28},
+        "keywords": {
+            "healthcare": 9, "hospital": 9, "clinical": 8, "patient": 7,
+            "ehr": 7, "emr": 7, "health system": 8,
+        },
+    },
+    "Fintech operations": {
+        "categories": {"FinTech": 28},
+        "angles": {"fintech transformation": 28},
+        "keywords": {
+            "fintech": 10, "payment": 9, "banking": 8, "stablecoin": 7,
+            "open finance": 10, "reconciliation": 8,
+        },
+    },
+    "GCC transformation leadership": {
+        "categories": {"Digital Transformation": 18, "Strategy": 8},
+        "angles": {"executive decision quality": 10, "risk and governance": 8},
+        "keywords": {
+            "gcc": 18, "saudi": 18, "uae": 18, "middle east": 15,
+            "mena": 15, "vision 2030": 18, "qatar": 12, "bahrain": 12,
+            "oman": 12, "kuwait": 12, "transformation": 6,
+        },
+    },
+}
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run RSS content intelligence.")
     parser.add_argument("--dry-run", action="store_true", help="Fetch and score only. Do not write Notion, state, or Telegram.")
     parser.add_argument("--no-calendar", action="store_true", help="Do not create Content Calendar idea entries.")
     parser.add_argument("--no-telegram", action="store_true", help="Do not send Telegram summary after a live run.")
-    parser.add_argument("--max-calendar-ideas", type=int, default=3, help="Max top ideas to create in Content Calendar.")
+    parser.add_argument("--max-calendar-ideas", type=int, default=RSS_WEEKLY_SLOTS, help="Max RSS-informed ideas to create in Content Calendar.")
     parser.add_argument("--brief-top", type=int, default=8, help="Number of ranked items to keep in the content brief.")
     parser.add_argument("--rescore-recent", type=int, default=0, help="Also score this many recent RSS Notion entries for backfill.")
     return parser.parse_args()
@@ -315,8 +367,12 @@ def query_recent_rss_articles(limit: int) -> list[dict]:
 def add_content_calendar_idea(candidate: dict) -> tuple[bool, str]:
     if candidate["link"] in content_idea_urls:
         return False, "duplicate"
-    title = f"RSS angle: {candidate['angle']}"
+    title = f"RSS | {candidate['title']}"
     draft = (
+        f"Source type: RSS-informed current signal\n"
+        f"Positioning pillar: {candidate['pillar']}\n"
+        f"Content-fit score: {candidate['content_fit_score']}\n"
+        f"Source published: {candidate.get('published') or 'Not supplied'}\n"
         f"Source: {candidate['title']}\n"
         f"URL: {candidate['link']}\n\n"
         f"Why it matters: {candidate['why']}\n\n"
@@ -377,6 +433,23 @@ def detect_angle(article: dict) -> str:
     return CATEGORY_TOPIC_MAP.get(article["category"], "executive operating insight")
 
 
+def classify_positioning_pillars(article: dict, angle: str) -> tuple[str, list[str], dict[str, int]]:
+    """Map a current signal to Ahmed's positioning before it can enter the content slate."""
+    text = f" {article['title']} {article.get('description', '')} ".lower()
+    scores: dict[str, int] = {}
+    for pillar, rules in POSITIONING_PILLAR_RULES.items():
+        score = rules.get("categories", {}).get(article.get("category", ""), 0)
+        score += rules.get("angles", {}).get(angle, 0)
+        for keyword, points in rules.get("keywords", {}).items():
+            if keyword in text:
+                score += points
+        scores[pillar] = score
+    ranked = sorted(scores, key=lambda pillar: (-scores[pillar], pillar))
+    matched = [pillar for pillar in ranked if scores[pillar] > 0]
+    primary = matched[0] if matched else "GCC transformation leadership"
+    return primary, matched[:2], scores
+
+
 def build_candidate(article: dict) -> dict:
     score, reasons = score_article(article)
     angle = detect_angle(article)
@@ -386,50 +459,63 @@ def build_candidate(article: dict) -> dict:
     if len(signal) == 180:
         signal = signal.rsplit(" ", 1)[0] + "..."
 
+    pillar, pillar_matches, pillar_scores = classify_positioning_pillars(article, angle)
+    pillar_fit_score = pillar_scores.get(pillar, 0)
+    gcc_relevance = pillar_scores.get("GCC transformation leadership", 0)
+    content_fit_score = min(100, score + pillar_fit_score // 2 + min(gcc_relevance, 10))
+
     if angle == "AI execution gap":
         take = "AI value is being won in workflow redesign and governance, not tool adoption."
         risk = "leaders treat AI as a technology rollout instead of an operating-model change"
         rule = "start with the decision, control point, and accountability path before buying the tool"
         hook = "AI does not fail because the model is weak. It fails because the operating model around it is vague."
         cta = "Where is your AI program still a demo instead of an operating rhythm?"
-        image_intent = "Dark executive AI execution card showing workflow nodes, governance checkpoints, and boardroom decision path."
+        image_intent = "Hand-drawn workflow and governance checkpoints showing how an AI signal becomes an owned operating decision."
     elif angle == "healthcare operating model":
         take = "Healthcare transformation only works when clinical workflow, governance, and technology move together."
         risk = "digital projects create data and alerts that clinicians cannot absorb"
         rule = "design around the clinical decision and the handoff, then automate around that path"
         hook = "Healthcare does not need more digital noise. It needs cleaner operating decisions at the point of care."
         cta = "Which healthcare workflow would you redesign before adding another platform?"
-        image_intent = "Premium healthcare operations card with hospital command center, patient-flow signals, and executive governance overlay."
+        image_intent = "Hand-drawn healthcare operating model showing patient flow, clinical handoffs, and governance checkpoints."
     elif angle == "PMO governance":
         take = "The modern PMO is shifting from reporting office to execution control tower."
         risk = "portfolios look green while dependencies, benefits, and decisions are stuck"
         rule = "measure decision latency and dependency burn-down, not only milestone status"
         hook = "A PMO that only reports status is already late. The real value is controlling execution risk before it becomes visible."
         cta = "What is the one PMO metric your leadership team should stop ignoring?"
-        image_intent = "Executive PMO control-tower card with portfolio signals, risk map, and gold/blue governance accents."
+        image_intent = "Hand-drawn PMO control system showing decision latency, dependencies, owners, and intervention points."
     elif angle == "risk and governance":
         take = "Execution speed now depends on governance that is embedded, not bolted on."
         risk = "teams move fast locally while enterprise risk accumulates silently"
         rule = "put control evidence inside the workflow, not in a separate reporting ritual"
         hook = "Governance fails when it arrives after the work is already done."
         cta = "Where should governance be embedded directly into the workflow?"
-        image_intent = "Dark governance card with control checkpoints, audit trail lines, and executive risk dashboard atmosphere."
+        image_intent = "Hand-drawn governance flow showing embedded controls, evidence, ownership, and escalation."
     elif angle == "executive decision quality":
         take = "Executive leverage comes from better decision systems, not more information."
         risk = "leaders mistake more dashboards for better judgment"
         rule = "separate signal, implication, decision, and owner in every executive review"
         hook = "The bottleneck in transformation is rarely information. It is decision quality."
         cta = "What decision in your organization needs a clearer operating rhythm?"
-        image_intent = "Boardroom decision-system card with signal-to-decision flow, crisp typography, and strategic control metaphor."
+        image_intent = "Hand-drawn signal-to-decision system with implication, owner, decision, and operating cadence."
     else:
         take = "Market signals matter only when converted into operating choices."
         risk = "teams collect trends without changing priorities, governance, or execution habits"
         rule = "turn every trend into a decision, a risk, or a content-backed point of view"
         hook = "Trends are cheap. The advantage is turning the signal into an operating decision."
         cta = "Which trend deserves a real management decision this quarter?"
-        image_intent = "Executive signal-to-action card with market signal stream, decision node, and Ahmed-branded footer."
+        image_intent = "Hand-drawn signal-to-action system showing how a market update becomes an operating choice."
 
-    why = f"Useful for Ahmed's content because it connects {article['category']} signal to {angle}."
+    image_intent = (
+        "Premium handmade sketchnote on warm off-white paper, black ink, restrained orange accents, "
+        f"large mobile-readable handwritten headline, compact toolkit/system metaphor. {image_intent} "
+        "Ahmed Nasr signature/footer."
+    )
+    why = (
+        f"Useful for Ahmed's content because it connects a {article['category']} signal to "
+        f"{pillar}, using the {angle} angle."
+    )
     return {
         "title": title,
         "link": article["link"],
@@ -438,6 +524,12 @@ def build_candidate(article: dict) -> dict:
         "published": article.get("published", ""),
         "description": desc,
         "score": score,
+        "content_fit_score": content_fit_score,
+        "pillar_fit_score": pillar_fit_score,
+        "gcc_relevance_score": gcc_relevance,
+        "pillar": pillar,
+        "pillar_matches": pillar_matches,
+        "pillar_scores": pillar_scores,
         "reasons": reasons,
         "angle": angle,
         "signal": signal,
@@ -473,6 +565,110 @@ def select_diverse_candidates(candidates: list[dict], limit: int) -> list[dict]:
     return selected
 
 
+def candidate_is_fresh(candidate: dict) -> bool:
+    published = candidate.get("published", "")
+    if not published:
+        return True
+    try:
+        age_days = (datetime.now().date() - dateparser.parse(published).date()).days
+        return age_days <= FRESHNESS_DAYS
+    except Exception:
+        return False
+
+
+def select_weekly_rss_slate(candidates: list[dict], limit: int = RSS_WEEKLY_SLOTS) -> list[dict]:
+    """Select current signals for the 4/2/1 weekly mix without auto-approving them."""
+    selected: list[dict] = []
+    pillar_counts: dict[str, int] = {}
+    source_counts: dict[str, int] = {}
+    angle_counts: dict[str, int] = {}
+    seen_links: set[str] = set()
+    ranked = sorted(
+        candidates,
+        key=lambda c: (-c.get("content_fit_score", c.get("score", 0)), -c.get("score", 0), c.get("title", "")),
+    )
+    for candidate in ranked:
+        if len(selected) >= max(limit, 0):
+            break
+        if candidate.get("content_fit_score", 0) < MIN_CONTENT_FIT_SCORE:
+            continue
+        if not candidate.get("link") or candidate["link"] in seen_links:
+            continue
+        if not candidate_is_fresh(candidate):
+            continue
+        pillar = candidate.get("pillar", "")
+        source = candidate.get("source", "")
+        angle = candidate.get("angle", "")
+        if pillar_counts.get(pillar, 0) >= MAX_PER_PRIMARY_PILLAR:
+            continue
+        if source_counts.get(source, 0) >= MAX_PER_SOURCE:
+            continue
+        if angle_counts.get(angle, 0) >= MAX_PER_ANGLE:
+            continue
+        selected.append(candidate)
+        seen_links.add(candidate["link"])
+        pillar_counts[pillar] = pillar_counts.get(pillar, 0) + 1
+        source_counts[source] = source_counts.get(source, 0) + 1
+        angle_counts[angle] = angle_counts.get(angle, 0) + 1
+
+    # If the feeds do not provide enough breadth, fill from the strongest remaining
+    # qualifying items while retaining source and angle caps. The review gate remains manual.
+    for candidate in ranked:
+        if len(selected) >= max(limit, 0):
+            break
+        if candidate in selected or candidate.get("content_fit_score", 0) < MIN_CONTENT_FIT_SCORE:
+            continue
+        if not candidate_is_fresh(candidate):
+            continue
+        if source_counts.get(candidate.get("source", ""), 0) >= MAX_PER_SOURCE:
+            continue
+        if angle_counts.get(candidate.get("angle", ""), 0) >= MAX_PER_ANGLE:
+            continue
+        selected.append(candidate)
+        source = candidate.get("source", "")
+        angle = candidate.get("angle", "")
+        source_counts[source] = source_counts.get(source, 0) + 1
+        angle_counts[angle] = angle_counts.get(angle, 0) + 1
+    return selected
+
+
+def build_weekly_slate(slate: list[dict]) -> str:
+    mix = f"{RSS_WEEKLY_SLOTS} RSS-informed + {WEEKLY_MIX.get('evergreen_positioning', 2)} evergreen + {WEEKLY_MIX.get('personal_executive_insight', 1)} personal"
+    lines = [
+        f"# LinkedIn RSS-Pillar Slate - {datetime.now().astimezone().strftime('%Y-%m-%d')}",
+        "",
+        f"Target weekly mix: {mix}",
+        "Status: review input only. Nothing here is approved, scheduled, or publishable by itself.",
+        "",
+        "## Four current-signal slots",
+        "",
+    ]
+    if len(slate) < RSS_WEEKLY_SLOTS:
+        lines.append(f"Warning: only {len(slate)} RSS candidates cleared the quality and diversity gates.")
+        lines.append("")
+    for index, candidate in enumerate(slate, 1):
+        lines.extend([
+            f"### {index}. {candidate['title']}",
+            f"- Pillar: {candidate['pillar']}",
+            f"- Angle: {candidate['angle']}",
+            f"- Content-fit score: {candidate['content_fit_score']}",
+            f"- Hook: {candidate['hook']}",
+            f"- Executive take: {candidate['take']}",
+            f"- Source: {candidate['link']}",
+            "",
+        ])
+    lines.extend([
+        "## Remaining three slots for CMO review",
+        "",
+        "- Two evergreen posts from Ahmed's least-represented positioning pillars, checked against the last 30 days for duplication.",
+        "- One personal executive lesson grounded only in verified CV/career evidence.",
+        "- The CMO must turn all seven slots into Ahmed's viewpoint. Raw news summaries are not acceptable.",
+        "- Ahmed approval remains required before scheduling or publishing.",
+        "",
+    ])
+    return "\n".join(lines)
+
+
 def build_content_brief(candidates: list[dict], errors: list[str], created: list[dict], articles_considered: int) -> str:
     now = datetime.now().astimezone()
     lines = [
@@ -487,9 +683,10 @@ def build_content_brief(candidates: list[dict], errors: list[str], created: list
     lines.extend(["", "## Top Content Angles", ""])
     for i, c in enumerate(candidates, 1):
         lines.extend([
-            f"### {i}. {c['angle']} - {c['score']}",
+            f"### {i}. {c['angle']} - fit {c['content_fit_score']} / signal {c['score']}",
             f"Source: {c['title']}",
             f"Category: {c['category']} | {c['source']}",
+            f"Positioning pillar: {c['pillar']}",
             f"URL: {c['link']}",
             "",
             f"Why it matters: {c['why']}",
@@ -524,7 +721,7 @@ def build_telegram_summary(new_count: int, candidates: list[dict], created: list
     if not candidates:
         lines.append("No strong content candidates this run.")
     for i, c in enumerate(candidates[:3], 1):
-        lines.append(f"{i}. <b>{html.escape(c['angle'])}</b> ({c['score']})")
+        lines.append(f"{i}. <b>{html.escape(c['pillar'])}</b> (fit {c['content_fit_score']})")
         lines.append(f"   {html.escape(c['title'][:90])}")
         lines.append(f"   Hook: {html.escape(c['hook'][:150])}")
     if errors:
@@ -582,32 +779,22 @@ def main() -> int:
             errors.append(f"recent backfill: {e}")
 
     candidates = [build_candidate(article) for article in scoring_articles]
-    candidates.sort(key=lambda c: c["score"], reverse=True)
+    candidates.sort(key=lambda c: (c["content_fit_score"], c["score"]), reverse=True)
     top_candidates = select_diverse_candidates(candidates, max(args.brief_top, 1))
+    weekly_slate = select_weekly_rss_slate(candidates, RSS_WEEKLY_SLOTS)
 
     created: list[dict] = []
     if not args.dry_run and not args.no_calendar:
-        calendar_candidates = []
-        used_angles = set()
-        for candidate in top_candidates + candidates:
-            if len(calendar_candidates) >= max(args.max_calendar_ideas, 0):
-                break
-            if candidate["score"] < 28:
-                continue
-            if candidate["angle"] in used_angles:
-                continue
-            calendar_candidates.append(candidate)
-            used_angles.add(candidate["angle"])
-        for candidate in candidates:
-            if len(calendar_candidates) >= max(args.max_calendar_ideas, 0):
-                break
-            if candidate["score"] >= 35 and candidate not in calendar_candidates:
-                calendar_candidates.append(candidate)
+        calendar_candidates = weekly_slate[:max(args.max_calendar_ideas, 0)]
         for candidate in calendar_candidates:
             ok, result = add_content_calendar_idea(candidate)
             if ok:
-                created.append({"title": candidate["title"], "page_id": result, "score": candidate["score"]})
-                print(f"  Content idea: {candidate['angle']} ({candidate['score']})", flush=True)
+                created.append({
+                    "title": candidate["title"], "page_id": result,
+                    "score": candidate["score"], "content_fit_score": candidate["content_fit_score"],
+                    "pillar": candidate["pillar"],
+                })
+                print(f"  Content idea: {candidate['pillar']} / {candidate['angle']} ({candidate['content_fit_score']})", flush=True)
             elif result != "duplicate":
                 errors.append(f"content calendar/{candidate['title'][:40]}: {result}")
 
@@ -615,6 +802,8 @@ def main() -> int:
     latest_brief = DATA_DIR / "rss-content-brief-latest.md"
     dated_brief = DATA_DIR / f"rss-content-brief-{datetime.now().strftime('%Y-%m-%d')}.md"
     latest_json = DATA_DIR / "rss-content-candidates-latest.json"
+    latest_slate = DATA_DIR / "linkedin-rss-pillar-slate-latest.md"
+    latest_slate_json = DATA_DIR / "linkedin-rss-pillar-slate-latest.json"
 
     if not args.dry_run:
         latest_brief.write_text(brief)
@@ -625,7 +814,16 @@ def main() -> int:
             "scored_articles": len(scoring_articles),
             "created_content_ideas": created,
             "candidates": top_candidates,
+            "weekly_rss_slate": weekly_slate,
+            "weekly_mix": WEEKLY_MIX,
             "errors": errors,
+        }, indent=2, ensure_ascii=False))
+        latest_slate.write_text(build_weekly_slate(weekly_slate))
+        latest_slate_json.write_text(json.dumps({
+            "generated_at": datetime.now().astimezone().isoformat(),
+            "weekly_mix": WEEKLY_MIX,
+            "status": "review_input_only",
+            "rss_slots": weekly_slate,
         }, indent=2, ensure_ascii=False))
         state["seen_urls"] = list(seen)[-50000:]
         state["content_idea_urls"] = list(content_idea_urls)[-50000:]

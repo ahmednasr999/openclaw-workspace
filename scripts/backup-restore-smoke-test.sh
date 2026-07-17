@@ -5,6 +5,7 @@ WORKSPACE="/root/.openclaw/workspace"
 LOG_DIR="$WORKSPACE/logs/cron"
 BACKUP_LOG="$WORKSPACE/logs/cron/daily-backup.log"
 LEGACY_BACKUP_LOG="$WORKSPACE/logs/openclaw-backup.log"
+MANAGED_CRONTAB="$WORKSPACE/config/root-crontab.managed"
 ARCHIVE_DIR="/root/openclaw-backups"
 mkdir -p "$LOG_DIR"
 
@@ -22,8 +23,10 @@ if [[ -s "$BACKUP_LOG" ]] && find "$BACKUP_LOG" -mtime -8 -print -quit | grep -q
     echo "WARN: backup log exists but no successful push marker was found"
     fail=1
   fi
+elif grep -q '^# DISABLED daily-backup' "$MANAGED_CRONTAB" 2>/dev/null; then
+  echo "OK: daily-backup is disabled in managed crontab; skipping stale backup-log check"
 else
-  echo "FAIL: backup log is missing, empty, or older than 8 days: $BACKUP_LOG"
+  echo "FAIL: backup log is missing, empty, or older than 8 days and daily-backup is not marked disabled: $BACKUP_LOG"
   fail=1
 fi
 
@@ -37,7 +40,11 @@ if [[ -n "$latest_snapshot" && -r "$latest_snapshot" ]]; then
     fail=1
   fi
 else
-  latest_archive="$(find "$ARCHIVE_DIR" -maxdepth 1 -type f -name 'openclaw-*.tar.gz' -mtime -8 -printf '%T@ %p\n' 2>/dev/null | sort -nr | head -1 | cut -d' ' -f2-)"
+  latest_archive=""
+  if [[ -d "$ARCHIVE_DIR" ]]; then
+    latest_archive="$(find "$ARCHIVE_DIR" -maxdepth 1 -type f -name 'openclaw-*.tar.gz' -mtime -8 -printf '%T@ %p\n' 2>/dev/null | sort -nr | head -1 | cut -d' ' -f2-)"
+  fi
+  latest_snapshot_archive="$(find /root -maxdepth 1 -type f -name 'openclaw-snapshot-*.tar.zst' -mtime -8 -printf '%T@ %p\n' 2>/dev/null | sort -nr | head -1 | cut -d' ' -f2-)"
   if [[ -n "$latest_archive" && -r "$latest_archive" ]]; then
     if gzip -t "$latest_archive" && tar -tzf "$latest_archive" .openclaw/openclaw.json .openclaw/workspace/MEMORY.md >/dev/null 2>&1; then
       echo "OK: no raw snapshot found, but recent compressed backup archive passed integrity checks: $latest_archive"
@@ -46,8 +53,17 @@ else
       echo "FAIL: recent compressed backup archive failed integrity checks: $latest_archive"
       fail=1
     fi
+  elif [[ -n "$latest_snapshot_archive" && -r "$latest_snapshot_archive" ]]; then
+    snapshot_base="$(basename "$latest_snapshot_archive" .tar.zst)"
+    if tar -I zstd -tf "$latest_snapshot_archive" "$snapshot_base/openclaw.json" "$snapshot_base/workspace/MEMORY.md" >/dev/null 2>&1; then
+      echo "OK: no raw snapshot found, but recent compressed snapshot archive passed integrity checks: $latest_snapshot_archive"
+      du -sh "$latest_snapshot_archive" 2>/dev/null || true
+    else
+      echo "FAIL: recent compressed snapshot archive failed integrity checks: $latest_snapshot_archive"
+      fail=1
+    fi
   else
-    echo "FAIL: no readable openclaw snapshot directory or recent compressed backup archive found"
+    echo "FAIL: no readable openclaw snapshot directory or recent compressed backup/snapshot archive found"
     fail=1
   fi
 fi

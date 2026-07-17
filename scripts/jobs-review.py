@@ -57,8 +57,8 @@ ARCHIVE_LINKEDIN_PROFILE = DATA_DIR.parent / "archive" / "linkedin-data" / "ahme
 GATEWAY_URL = "http://127.0.0.1:18789/v1/chat/completions"
 
 # Model config
-MODEL_ROUND1 = "openai/gpt-5.5"          # Batch pre-filter, pinned to GPT-5.5
-MODEL_ROUND2 = "openai/gpt-5.5"          # Final deep review, primary SAYYAD scorer
+MODEL_ROUND1 = "openai/gpt-5.6-sol"      # Batch pre-filter
+MODEL_ROUND2 = "openai/gpt-5.6-sol"      # Final deep review, primary SAYYAD scorer
 
 # Final verdict settings
 TOP_N_JOBS = 1500  # Bumped from 300 to handle DB backfill of unscored jobs

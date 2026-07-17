@@ -16,7 +16,7 @@ def run(cmd, timeout=120):
         sys.exit(p.returncode)
     return p
 
-run(['openclaw','cron','edit',CRON_ID,'--agent','cto','--model','openai-codex/gpt-5.5','--timeout-seconds','900'])
+run(['openclaw','cron','edit',CRON_ID,'--agent','cto','--model','openai/gpt-5.6-sol','--timeout-seconds','900'])
 run(['openclaw','cron','show',CRON_ID])
 run(['openclaw','cron','run',CRON_ID,'--wait','--wait-timeout','12m','--poll-interval','5s'], timeout=780)
 run(['openclaw','cron','show',CRON_ID])

@@ -8,6 +8,7 @@ import fcntl
 import json
 import os
 import re
+import signal
 import subprocess
 import sys
 import time
@@ -33,6 +34,41 @@ APPROVED_BATCH_START = date.fromisoformat("2026-05-15")
 
 def now() -> datetime:
     return datetime.now(CAIRO)
+
+
+def terminate_process_group(pgid: int) -> None:
+    """Terminate a one-shot command and every helper it spawned."""
+    try:
+        os.killpg(pgid, signal.SIGTERM)
+    except (ProcessLookupError, PermissionError):
+        return
+    time.sleep(0.2)
+    try:
+        os.killpg(pgid, signal.SIGKILL)
+    except (ProcessLookupError, PermissionError):
+        pass
+
+
+def run_isolated(cmd: list[str], *, timeout: int, cwd: Path | None = None, env: dict[str, str] | None = None) -> tuple[int, str, str]:
+    proc = subprocess.Popen(
+        cmd,
+        cwd=str(cwd) if cwd else None,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        env=env,
+        start_new_session=True,
+    )
+    try:
+        stdout, stderr = proc.communicate(timeout=timeout)
+        return proc.returncode, stdout or "", stderr or ""
+    except subprocess.TimeoutExpired:
+        terminate_process_group(proc.pid)
+        stdout, stderr = proc.communicate()
+        return 124, stdout or "", (stderr or "") + f"\nTimed out after {timeout}s"
+    finally:
+        # Clean up any OpenClaw hook helpers that outlive the CLI parent.
+        terminate_process_group(proc.pid)
 
 
 def send_telegram(message: str, *, target: str, thread_id: str | None = None, presentation: dict | None = None, no_send: bool = False) -> dict:
@@ -63,27 +99,34 @@ def send_telegram(message: str, *, target: str, thread_id: str | None = None, pr
         "target": target,
         "thread_id": thread_id,
     }
+
+    def delivery_proven(stdout: str) -> tuple[bool, str]:
+        """Accept a Telegram message ID as stronger evidence than CLI teardown."""
+        try:
+            payload = json.loads((stdout or "").strip())
+        except (json.JSONDecodeError, TypeError):
+            return False, ""
+        if not isinstance(payload, dict):
+            return False, ""
+        nested = payload.get("payload") if isinstance(payload.get("payload"), dict) else {}
+        message_id = str(nested.get("messageId") or payload.get("messageId") or "").strip()
+        delivered = bool(message_id) and nested.get("ok", payload.get("ok", True)) is not False
+        return delivered, message_id
+
     for attempt in range(1, 4):
         try:
-            proc = subprocess.run(cmd, text=True, capture_output=True, timeout=45)
+            returncode, stdout, stderr = run_isolated(cmd, timeout=45)
+            proven, message_id = delivery_proven(stdout)
             last_result = {
-                "ok": proc.returncode == 0,
-                "returncode": proc.returncode,
-                "stdout": proc.stdout.strip(),
-                "stderr": proc.stderr.strip(),
+                "ok": returncode == 0 or proven,
+                "returncode": returncode,
+                "stdout": stdout.strip(),
+                "stderr": stderr.strip(),
                 "target": target,
                 "thread_id": thread_id,
                 "attempt": attempt,
-            }
-        except subprocess.TimeoutExpired as exc:
-            last_result = {
-                "ok": False,
-                "returncode": 124,
-                "stdout": (exc.stdout or "").strip() if isinstance(exc.stdout, str) else "",
-                "stderr": f"Telegram delivery timed out after {exc.timeout}s",
-                "target": target,
-                "thread_id": thread_id,
-                "attempt": attempt,
+                "message_id": message_id or None,
+                "delivery_proof": "telegram_message_id" if proven else "cli_returncode" if returncode == 0 else None,
             }
         except Exception as exc:
             last_result = {
@@ -109,36 +152,17 @@ def run_command(task: str, cmd: list[str], *, cwd: Path, timeout: int, env: dict
     merged_env = os.environ.copy()
     if env:
         merged_env.update(env)
-    try:
-        proc = subprocess.run(
-            cmd,
-            cwd=str(cwd),
-            text=True,
-            capture_output=True,
-            timeout=timeout,
-            env=merged_env,
-        )
-        result = {
-            "task": task,
-            "ts": now().isoformat(),
-            "cmd": cmd,
-            "cwd": str(cwd),
-            "returncode": proc.returncode,
-            "stdout": proc.stdout,
-            "stderr": proc.stderr,
-            "log_path": str(log_path),
-        }
-    except subprocess.TimeoutExpired as exc:
-        result = {
-            "task": task,
-            "ts": now().isoformat(),
-            "cmd": cmd,
-            "cwd": str(cwd),
-            "returncode": 124,
-            "stdout": exc.stdout or "",
-            "stderr": (exc.stderr or "") + f"\nTimed out after {timeout}s",
-            "log_path": str(log_path),
-        }
+    returncode, stdout, stderr = run_isolated(cmd, cwd=cwd, timeout=timeout, env=merged_env)
+    result = {
+        "task": task,
+        "ts": now().isoformat(),
+        "cmd": cmd,
+        "cwd": str(cwd),
+        "returncode": returncode,
+        "stdout": stdout,
+        "stderr": stderr,
+        "log_path": str(log_path),
+    }
     log_path.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return result
 
@@ -298,7 +322,8 @@ def approved_batch_post(args: argparse.Namespace) -> int:
             print(json.dumps({"ok": result["returncode"] == 0, "validate": True, "data": data, "result": result}, ensure_ascii=False))
             return 0 if result["returncode"] == 0 else 1
 
-        if result["returncode"] == 0:
+        incomplete_round = status.startswith("incomplete_")
+        if result["returncode"] == 0 or incomplete_round:
             record = data.get("posted") or data if data.get("already_posted") else data.get("existing_publish_success") or {}
             url = record.get("url") or record.get("post_url") or ""
             title = record.get("title") or "Approved LinkedIn post"
@@ -411,7 +436,7 @@ def linkedin_radar_status_pack(report_path: str, status: str, posts: str, action
             details.extend(["", "Source:", "\n".join(compact_source)])
     if candidates:
         details.extend(["", "Candidate details:", candidates])
-        if status != "ok_ready_for_approval":
+        if status != "ready_full_pack":
             details.append("Approval buttons remain locked until a candidate is marked ready.")
     if signals:
         details.extend(["", "Content signals:", signals])
@@ -477,25 +502,33 @@ def linkedin_comment_radar(args: argparse.Namespace, slot: str) -> int:
             return 0 if result["returncode"] == 0 else 1
 
         ready_count = linkedin_radar_ready_count(report_path)
-        if status == "ok_ready_for_approval":
+        incomplete_round = status.startswith("incomplete_")
+        if status == "ready_full_pack":
             if ready_count is not None and ready_count < 5:
                 action_line = f"Needs CMO: target is 5; only {ready_count} candidates are ready. Continue recovery unless Ahmed approves the partial pack."
             else:
                 action_line = "Needs Ahmed: approve only candidates marked Ready."
-        elif status == "needs_url_recovery":
+        elif status == "incomplete_needs_url_recovery":
             action_line = "Needs CMO: recover URLs before asking Ahmed to approve comments."
-        elif status == "no_ready_candidates":
+        elif status.startswith("incomplete_"):
             action_line = "No approval requested: no candidates passed the quality gate."
         else:
             action_line = "Review the report before taking any LinkedIn action."
 
         if result["returncode"] == 0:
-            status_pack = linkedin_radar_status_pack(report_path, status, posts, action_line)
-            body = f"LinkedIn Comment Radar {label} completed.\n{status_pack}"
-            card_payload = load_linkedin_radar_cards(cards_path) or {}
-            summary_presentation = card_payload.get("summary_presentation") if isinstance(card_payload.get("summary_presentation"), dict) else None
-            delivery = send_telegram(body, target=CEO_GROUP, thread_id=TOPIC_CMO, presentation=summary_presentation, no_send=args.no_send)
-            if status == "ok_ready_for_approval":
+            if status != "ready_full_pack":
+                delivery = {
+                    "ok": True,
+                    "skipped": True,
+                    "reason": "incomplete radar rounds stay internal until five candidates are approval-ready",
+                }
+            else:
+                status_pack = linkedin_radar_status_pack(report_path, status, posts, action_line)
+                body = f"LinkedIn Comment Radar {label} ready.\n{status_pack}"
+                card_payload = load_linkedin_radar_cards(cards_path) or {}
+                summary_presentation = card_payload.get("summary_presentation") if isinstance(card_payload.get("summary_presentation"), dict) else None
+                delivery = send_telegram(body, target=CEO_GROUP, thread_id=TOPIC_CMO, presentation=summary_presentation, no_send=args.no_send)
+            if status == "ready_full_pack":
                 card_delivery = send_linkedin_radar_approval_cards(cards_path, no_send=args.no_send)
                 delivery = {"ok": delivery.get("ok") and card_delivery.get("ok"), "summary": delivery, "cards": card_delivery}
         else:
@@ -507,8 +540,9 @@ def linkedin_comment_radar(args: argparse.Namespace, slot: str) -> int:
             )
             delivery = send_telegram(body, target=AHMED_DM, no_send=args.no_send)
 
-        print(json.dumps({"ok": result["returncode"] == 0 and delivery.get("ok"), "slot": slot, "status": status, "posts": posts, "report": report_path, "cards": cards_path, "result": result, "delivery": delivery}, ensure_ascii=False))
-        return 0 if result["returncode"] == 0 and delivery.get("ok") else 1
+        operational_ok = (result["returncode"] == 0 or incomplete_round) and delivery.get("ok")
+        print(json.dumps({"ok": operational_ok, "slot": slot, "status": status, "posts": posts, "report": report_path, "cards": cards_path, "result": result, "delivery": delivery}, ensure_ascii=False))
+        return 0 if operational_ok else 1
 
 
 def linkedin_comment_radar_1100(args: argparse.Namespace) -> int:

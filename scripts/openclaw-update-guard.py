@@ -20,14 +20,15 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-EXPECTED_MODEL = "openai/gpt-5.5"
-LEGACY_MODEL = "openai-codex/gpt-5.5"
+EXPECTED_MODEL = "openai/gpt-5.6-sol"
+LEGACY_MODEL = "openai/gpt-5.5"
 SANDBOX_IMAGE = "openclaw-sandbox:bookworm-slim"
 OPENCLAW_CONFIG = Path("/root/.openclaw/openclaw.json")
 WORKSPACE = Path("/root/.openclaw/workspace")
 MODEL_ROUTER = WORKSPACE / "config/model-router.json"
 REPORT_DIR = WORKSPACE / "reports"
 OPENCLAW_INSTALL = Path("/usr/lib/node_modules/openclaw")
+MEMORY_HEIST_CHECKER = WORKSPACE / "scripts/check-memory-heist-security-suite.py"
 INSTALL_SIZE_WARN_MB = 850
 DEPENDENCY_COUNT_WARN = 450
 NATIVE_OPTIONAL_WARN = 18
@@ -40,6 +41,7 @@ REQUIRED_PLUGINS = [
     "file-transfer",
     "memory-core",
     "memory-wiki",
+    "memory-heist-guard",
 ]
 LOSSLESS_TOOLS = {"lcm_grep", "lcm_describe", "lcm_expand", "lcm_expand_query"}
 
@@ -276,6 +278,36 @@ class Guard:
         else:
             self.add("config validate", "FAIL", f"exit {cp.returncode}", text[-1200:])
 
+    def check_memory_heist_security_suite(self) -> None:
+        cp = self.run_cmd(
+            "memory heist security suite",
+            [
+                sys.executable,
+                str(MEMORY_HEIST_CHECKER),
+                "--require-runtime-contract",
+                "--json",
+                "--timeout",
+                "60",
+            ],
+            timeout=max(self.timeout, 70),
+        )
+        if not cp:
+            return
+        text = cp.stdout + cp.stderr
+        try:
+            result = self.mixed_json(text)
+        except Exception as exc:
+            self.add("memory heist security suite", "FAIL", f"invalid checker output: {exc}", text[-1500:])
+            return
+        ok = cp.returncode == 0 and result.get("ok") is True
+        counts = f"tests={result.get('tests')} pass={result.get('passed')} fail={result.get('failed')}"
+        self.add(
+            "memory heist security suite",
+            "PASS" if ok else "FAIL",
+            "mandatory 19/19 security baseline passed" if ok else f"mandatory security baseline failed ({counts})",
+            json.dumps(result, ensure_ascii=False)[:1500],
+        )
+
     def check_sandbox_image(self) -> None:
         cp = self.run_cmd("sandbox image", ["docker", "image", "inspect", SANDBOX_IMAGE])
         if not cp:
@@ -461,7 +493,7 @@ class Guard:
         for missing in sorted(set(REQUIRED_PLUGINS) - plugins_seen):
             self.add(f"plugin {missing}", "WARN", "not found in parsed plugin list, checking inspect may still prove runtime")
 
-        for pid in ["lossless-claw", "file-transfer"]:
+        for pid in ["lossless-claw", "file-transfer", "memory-heist-guard"]:
             cp2 = self.run_cmd(f"inspect {pid}", ["openclaw", "plugins", "inspect", pid, "--runtime", "--json"], timeout=max(self.timeout, 30))
             if not cp2:
                 continue
@@ -475,6 +507,37 @@ class Guard:
             if pid == "file-transfer":
                 ok = all(t in text for t in ["file_fetch", "file_write", "dir_list", "dir_fetch"])
                 self.add("runtime file-transfer", "PASS" if ok else "FAIL", "file-transfer tool contracts present" if ok else "missing one or more file-transfer tools")
+            if pid == "memory-heist-guard":
+                expected_hooks = {
+                    "message_received",
+                    "before_tool_call",
+                    "after_tool_call",
+                    "agent_end",
+                }
+                try:
+                    data = self.mixed_json(text)
+                    plugin = data.get("plugin") or {}
+                    hooks = {
+                        str(item.get("name"))
+                        for item in data.get("typedHooks") or []
+                        if isinstance(item, dict) and item.get("name")
+                    }
+                    hook_count = plugin.get("hookCount")
+                    ok = (
+                        plugin.get("status") == "loaded"
+                        and plugin.get("activated") is True
+                        and isinstance(hook_count, int)
+                        and hook_count >= len(expected_hooks)
+                        and expected_hooks.issubset(hooks)
+                    )
+                    self.add(
+                        "runtime memory-heist-guard",
+                        "PASS" if ok else "FAIL",
+                        f"runtime hookCount={hook_count}; hooks={','.join(sorted(hooks))}",
+                        "runtime inspection is authoritative; cold plugin-list snapshots may report hookCount=0",
+                    )
+                except Exception as exc:
+                    self.add("runtime memory-heist-guard", "FAIL", f"could not parse runtime hook evidence: {exc}", text[-1500:])
 
     def check_turn_latency_optional(self) -> None:
         if not self.measure_turn_latency:
@@ -530,6 +593,7 @@ class Guard:
         self.check_runtime_llm_complete()
         self.check_systemd()
         self.check_config_validate()
+        self.check_memory_heist_security_suite()
         self.check_sandbox_image()
         self.check_visible_reply_config()
         self.check_gateway_status()

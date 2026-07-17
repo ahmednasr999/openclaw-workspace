@@ -1,0 +1,12 @@
+{
+  "id": "memory-heist-guard",
+  "name": "Memory Heist Egress Guard",
+  "description": "Blocks native web navigation to URLs without user or web-search provenance.",
+  "activation": {
+    "onStartup": true
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false
+  }
+}

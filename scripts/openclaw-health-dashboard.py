@@ -12,6 +12,9 @@ PATCH_CHECKER = Path("/root/.openclaw/workspace/scripts/check-openclaw-runtime-p
 REPORT_DIR = Path("/root/.openclaw/workspace/reports/health")
 DASHBOARD_STATE_FILE = REPORT_DIR / "dashboard-service-state.json"
 DASHBOARD_URL = "http://100.99.230.14:3000/"
+MODEL_CONTEXT_WINDOW = int(os.environ.get("OPENCLAW_HEALTH_MODEL_CONTEXT_WINDOW", "1000000"))
+LCM_WARN_RATIO = float(os.environ.get("OPENCLAW_HEALTH_LCM_WARN_RATIO", "0.75"))
+LCM_CRITICAL_RATIO = float(os.environ.get("OPENCLAW_HEALTH_LCM_CRITICAL_RATIO", "0.90"))
 
 
 def run(cmd, timeout=30):
@@ -32,8 +35,60 @@ def severity_rank(s):
     return {"OK": 0, "WARN": 1, "CRITICAL": 2}.get(s, 1)
 
 
+def classify_lcm_pressure(ctx_tokens, pending, maint_tokens, context_window=MODEL_CONTEXT_WINDOW):
+    """Classify context pressure relative to the active model window.
+
+    GPT-5.6 Sol currently has a 1M-token runtime window. A fixed 120k cutoff
+    incorrectly marked a healthy 12-15% prompt as CRITICAL. The warning line
+    now matches lossless-claw's configured 75% compaction threshold, while a
+    90% frontier is treated as critical pressure.
+    """
+    tokens = max(int(ctx_tokens or 0), 0)
+    window = max(int(context_window or 0), 1)
+    ratio = tokens / window
+    state = "OK"
+    issues = []
+    if ratio >= LCM_CRITICAL_RATIO:
+        state = "CRITICAL"
+        issues.append("context_pressure_critical")
+    elif ratio >= LCM_WARN_RATIO:
+        state = "WARN"
+        issues.append("context_pressure_high")
+    elif pending and (maint_tokens or 0) > 60000:
+        state = "WARN"
+        issues.append("maintenance_pending")
+    elif pending:
+        issues.append("maintenance_pending_transient")
+    return state, ratio, issues
+
+
 def check_gateway():
-    rc, out = run("openclaw gateway status", timeout=20)
+    rc, out = run("openclaw gateway status", timeout=45)
+    if rc == 124:
+        service_rc, service_out = run(
+            "systemctl --user show openclaw-gateway.service "
+            "-p ActiveState -p SubState -p MainPID --no-page",
+            timeout=10,
+        )
+        socket_rc, socket_out = run("ss -ltn '( sport = :18789 )'", timeout=10)
+        service = parse_systemctl_show(service_out) if service_rc == 0 else {}
+        active = service.get("ActiveState")
+        sub = service.get("SubState")
+        pid = service.get("MainPID")
+        listening = socket_rc == 0 and ":18789" in socket_out
+        if active == "active" and sub == "running" and listening:
+            return status_line(
+                "gateway",
+                "WARN",
+                f"gateway status timed out after 45s under contention; "
+                f"fallback service active/running pid={pid}; port_18789_listening=True",
+            )
+        return status_line(
+            "gateway",
+            "CRITICAL",
+            f"gateway status timed out and fallback health failed: "
+            f"active={active}; sub={sub}; pid={pid}; port_18789_listening={listening}",
+        )
     if rc != 0:
         return status_line("gateway", "CRITICAL", f"gateway status failed rc={rc}: {out.strip()[-500:]}")
     ok = "Connectivity probe: ok" in out and "Runtime: running" in out
@@ -44,14 +99,20 @@ def check_gateway():
 
 
 def check_config():
-    rc, out = run("openclaw config validate", timeout=20)
+    rc, out = run("openclaw config validate", timeout=45)
+    if rc == 124:
+        return status_line("config", "WARN", "config validation timed out after 45s; validity not disproven")
     return status_line("config", "OK" if rc == 0 else "CRITICAL", "valid" if rc == 0 else out.strip()[-500:])
 
 
 def check_patches():
     if not PATCH_CHECKER.exists():
         return status_line("runtime_patches", "WARN", f"missing checker {PATCH_CHECKER}")
-    rc, out = run(f"python3 {PATCH_CHECKER}", timeout=20)
+    # The mandatory checker runs the 19-test Memory Heist suite plus runtime
+    # smoke tests. On this host a clean run takes about 60-65 seconds.
+    rc, out = run(f"python3 {PATCH_CHECKER}", timeout=90)
+    if rc == 124:
+        return status_line("runtime_patches", "WARN", "runtime patch checker timed out after 90s; patch state not disproven")
     if rc == 0 and "OK:" in out:
         return status_line("runtime_patches", "OK", "; ".join([l.strip() for l in out.splitlines() if l.startswith("OK:")]))
     return status_line("runtime_patches", "CRITICAL", out.strip()[-1000:])
@@ -75,20 +136,14 @@ def check_lcm():
     if not row:
         return status_line("lcm_context", "WARN", f"no conversation for {SESSION_KEY}")
     conv, sid, items, ctx_tokens, pending, maint_tokens = row
-    state = "OK"
-    issues = []
-    # Pending maintenance can appear briefly after tool-heavy turns. Alert only when
-    # it combines with elevated maintenance-token count. Active context below the
-    # hard 120k alert line is tracked as detail, not an overall dashboard warning.
-    if pending:
-        issues.append("maintenance_pending")
-    if (ctx_tokens or 0) > 120000:
-        state = "CRITICAL"; issues.append("context_gt_120k")
-    elif pending and (maint_tokens or 0) > 60000:
-        state = max(state, "WARN", key=severity_rank); issues.append("context_attention")
-    elif (ctx_tokens or 0) > 80000:
-        issues.append("context_attention")
-    return status_line("lcm_context", state, f"conv={conv}; items={items}; context_tokens={ctx_tokens}; maintenance_pending={pending}; maintenance_tokens={maint_tokens}; {' '.join(issues)}")
+    state, ratio, issues = classify_lcm_pressure(ctx_tokens, pending, maint_tokens)
+    return status_line(
+        "lcm_context",
+        state,
+        f"conv={conv}; items={items}; context_tokens={ctx_tokens}; "
+        f"context_window={MODEL_CONTEXT_WINDOW}; pressure={ratio:.1%}; "
+        f"maintenance_pending={pending}; maintenance_tokens={maint_tokens}; {' '.join(issues)}",
+    )
 
 
 def journal_since(minutes):

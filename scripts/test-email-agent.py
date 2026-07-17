@@ -100,6 +100,9 @@ ok("recruiter domain -> recruiter_reach",
 ok("noise sender -> other",
    ea.categorize_email("Weekly Tech Digest", "newsletter@substack.com") == ["other"])
 
+ok("newsletter subdomain sender -> other",
+   ea.categorize_email("In Case You Missed It", "CNN <cnn@newsletters.cnn.com>") == ["other"])
+
 ok("noreply -> other",
    ea.categorize_email("Your order shipped", "noreply@amazon.com") == ["other"])
 
@@ -223,6 +226,71 @@ ok("assessment is hot", ea.is_hot_email("Complete assessment invite", "hr@compan
 ok("next stage is hot", ea.is_hot_email("Ranger AI - Followup, next stage", "sari@rangerrfx.com"))
 ok("promo email is NOT hot", not ea.is_hot_email("Invest in Arabian Ranches from just AED 500", "discovery@prypco.com"))
 
+cnn_subject = "In Case You Missed It - Pilot scrawls ‘I’m bored’ into UK sky mid-flight"
+cnn_sender = "CNN <cnn@newsletters.cnn.com>"
+ea._get_active_pipeline_jobs = lambda: [{
+    "job_id": "tp-active",
+    "company": "TP",
+    "title": "VP AI Delivery",
+    "recruiter_name": "",
+    "recruiter_email": None,
+    "recruiter_company": "",
+}]
+cnn_match = ea._match_pipeline_company(cnn_subject, cnn_sender, "")
+cnn_categories = ea.categorize_email(cnn_subject, cnn_sender, "")
+cnn_score, cnn_pipeline = ea.score_email(cnn_subject, cnn_sender, "")
+ok("short pipeline alias does not match across word boundaries",
+   cnn_match == (None, 0),
+   f"match={cnn_match}")
+ok("CNN collision remains non-hiring email",
+   cnn_categories == ["other"] and cnn_score == 0 and cnn_pipeline is None,
+   f"categories={cnn_categories} score={cnn_score} pipeline={cnn_pipeline}")
+
+tp_only_match = ea._match_pipeline_company(
+    "TP interview process update",
+    "Hiring Team <hiring@teleperformance.com>",
+    "",
+)
+ok("standalone short pipeline alias needs corroboration",
+   tp_only_match == (None, 0),
+   f"match={tp_only_match}")
+
+tp_link_match = ea._match_pipeline_company(
+    "TP-Link Wi-Fi routers clearance sale",
+    "Store <sales@example.com>",
+    "",
+)
+ok("short pipeline alias does not promote hyphenated product name",
+   tp_link_match == (None, 0),
+   f"match={tp_link_match}")
+
+tp_corroborated_match = ea._match_pipeline_company(
+    "TP VP AI Delivery application update",
+    "Hiring Team <hiring@teleperformance.com>",
+    "",
+)
+ok("short pipeline alias plus exact role still matches",
+   tp_corroborated_match == ("TP", 6),
+   f"match={tp_corroborated_match}")
+
+ea._get_active_pipeline_jobs = lambda: [{
+    "job_id": "teleperformance-active",
+    "company": "Teleperformance",
+    "title": "VP AI Delivery",
+    "recruiter_name": "",
+    "recruiter_email": None,
+    "recruiter_company": "",
+}]
+full_company_match = ea._match_pipeline_company(
+    "Teleperformance interview process update",
+    "Hiring Team <hiring@teleperformance.com>",
+    "",
+)
+ok("full pipeline company still matches",
+   full_company_match == ("Teleperformance", 10),
+   f"match={full_company_match}")
+ea._get_active_pipeline_jobs = original_pipeline_jobs
+
 
 # ==============================================================================
 # TEST 7: UID State Management (D3)
@@ -260,7 +328,6 @@ ok("error latest has last_success", error_data["last_success"] == "2026-03-24T10
 
 # Restore
 ea.STATE_PATH = original_state
-ea._get_active_pipeline_jobs = original_pipeline_jobs
 shutil.rmtree(tmp_dir)
 
 
@@ -307,7 +374,7 @@ false_positive_summary = {
     }
 }
 alert = fmt.build_alert(false_positive_summary)
-ok("LLM read_and_file veto suppresses urgent fallback", alert.startswith("📬 Email scan: all clear"), alert)
+ok("LLM read_and_file veto suppresses urgent fallback", alert.startswith("📬 Email scan: 35 new email(s) processed"), alert)
 ok("newsletter false positive not action needed", "Email alert - action needed" not in alert, alert)
 
 application_response_summary = {
