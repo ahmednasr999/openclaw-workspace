@@ -65,6 +65,7 @@ Known local patch families:
 - runtime-context plain-header stripping
 - user-facing sanitizer for tool/heartbeat/cron/restart/reply-context leak variants
 - queued-message sanitizer/rendering to avoid raw internal prompt fallback
+- built-in `web_fetch` exact-URL provenance enforcement for Memory Heist containment
 
 ### 4. VERIFY
 

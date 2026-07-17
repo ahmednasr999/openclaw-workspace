@@ -13,9 +13,13 @@ Useful pattern: the anatomy of the card, not the dense horizontal design.
 
 Use this template when Ahmed needs to explain an AI agent, automation, operating model, or execution system as a premium LinkedIn visual.
 
-Do **not** copy the source layout. Ahmed's default visual remains the 9:16 execution-card format:
+Do **not** copy the source layout. Ahmed's default static LinkedIn visual is the hand-drawn sketchnote concept:
 
-`/root/.openclaw/workspace/output/jobzoom-visuals/ahmed-linkedin-ai-execution-card-4k.jpg`
+`/root/.openclaw/workspace/media/inbound/234fe40d-96c3-4b4a-bf6f-dc1f75f91bbf.jpg`
+
+Quality floor:
+
+`/root/.openclaw/workspace/output/linkedin/return-on-tokens-rot-handdrawn-reference-quality-latest-2026-06-10.png`
 
 ## Card anatomy
 
@@ -79,26 +83,26 @@ A strong Ahmed-style AI Agent Workflow Card should include these elements, simpl
      - `confidence: high / medium / low`
      - `5+ hours saved weekly`
 
-## 9:16 visual hierarchy
+## Visual hierarchy
 
-For LinkedIn, compress the anatomy into a premium mobile-readable hierarchy:
+For LinkedIn, compress the anatomy into a premium mobile-readable hand-drawn sketchnote:
 
-- Dominant hook: what the agent does.
-- Small subtitle: why it matters.
-- Mid-card execution path: 4-5 stages, visually connected.
-- Lower guardrail strip: approval/escalation/confidence.
-- Footer: Ahmed Nasr + role line.
+- Dominant handwritten hook: what the agent does.
+- Compact diagram: 4-5 stages, visually connected.
+- Small guardrail/approval notes only where readable.
+- Toolkit/system metaphor tied to the post thesis.
+- Footer/signature: Ahmed Nasr.
 
 Avoid trying to show every field. If it requires tiny copy, it belongs in the post body, not the card.
 
 ## Prompt skeleton
 
 ```text
-Create a premium 9:16 executive LinkedIn card in Ahmed Nasr's execution-card style.
+Create a premium LinkedIn hand-drawn sketchnote visual in Ahmed Nasr's approved style.
 
 Topic: [agent/system name]
 Dominant hook: [short mobile-readable headline]
-Support line: [one concise line]
+Compact diagram labels: [3-5 short labels]
 Agent job: [job-to-be-done]
 Inputs: [3-5 inputs]
 Workflow stages: [4-6 stages]
@@ -107,9 +111,9 @@ Human role: [approval/escalation point]
 Output: [deliverable]
 Metric/confidence: [one proof point]
 
-Style: dark cinematic executive boardroom/city atmosphere, blue/gold accents, polished gold/white typography, clear execution path metaphor, refined Ahmed-branded footer.
+Style: warm off-white paper, black ink illustration, restrained orange accents, authentic hand lettering, compact flow/toolkit/system metaphor, strong whitespace, Ahmed Nasr signature/footer.
 
-Do not create a dense infographic, dashboard, or horizontal system map. No tiny text, no generic boxes, no stock-social template look.
+Do not create a dense infographic, dashboard, horizontal system map, generic dark tech card, stock background, tiny text, generic boxes, or sketch-filter look.
 ```
 
 ## Example: AI Research Agent
@@ -142,7 +146,7 @@ This template does not override the premium visual gate:
 
 Completion still requires an inspected artifact that passes both:
 
-1. format compliance
+1. hand-drawn concept compliance
 2. premium craft parity
 
-A dense dashboard-style card fails for Ahmed's LinkedIn default unless Ahmed explicitly asks for that direction.
+A dense dashboard-style card or generic dark tech card fails for Ahmed's LinkedIn default unless Ahmed explicitly asks for that direction.

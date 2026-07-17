@@ -1,7 +1,7 @@
 # RSS Intelligence Skill
 
 ## What it does
-Weekly crawler that fetches curated RSS/Atom feeds, deduplicates articles, saves them to Notion, generates a ranked content brief, creates the strongest Content Calendar ideas, and sends a compact Telegram summary.
+Weekly crawler that fetches curated RSS/Atom feeds, deduplicates articles, maps each usable signal to Ahmed's positioning, generates a ranked review slate, saves the strongest ideas to Notion, and sends a compact Telegram summary.
 
 ## System Components
 
@@ -63,7 +63,10 @@ print(len(items), 'items')
 - HealthTech moved from MobiHealthNews to Digital Health on 2026-06-05 because MobiHealthNews returns HTTP 403 from the VPS.
 - Deduplication: URL-based, stored in state file (last 50k URLs)
 - Telegram: skips if 0 new feed articles; backfill can still create local/Notion content ideas.
-- Content outputs: `data/rss-content-brief-latest.md`, dated brief, and `data/rss-content-candidates-latest.json`.
-- Content Calendar: creates up to three `Idea` rows per run, favoring distinct content angles and tracking duplicate source URLs in state.
+- Content outputs: `data/rss-content-brief-latest.md`, dated brief, `data/rss-content-candidates-latest.json`, and `data/linkedin-rss-pillar-slate-latest.{md,json}`.
+- Weekly content mix: 4 RSS-informed current signals, 2 evergreen positioning posts, and 1 verified personal executive insight.
+- Mandatory RSS filter: every selected signal maps to at least one of Ahmed's five positioning pillars, clears the content-fit threshold, passes source/pillar diversity limits, and remains review-only.
+- Content Calendar: creates up to four `Idea` rows per run, tracks source URLs for deduplication, and never approves, schedules, or publishes them.
+- The CMO turns the four signals into Ahmed's executive viewpoint and supplies the two evergreen plus one verified personal slot. Raw news summaries are not acceptable.
 - PMO feed (Zalando) uses Atom format — handled by parser
 - Parse errors: try ET.fromstring with namespace fix; if still fails, try regex stripping of broken namespace declarations

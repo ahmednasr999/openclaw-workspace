@@ -1,6 +1,6 @@
 # Model Router Notes
 
-Ahmed's current default model is GPT-5.5 via OpenAI Codex OAuth unless he changes it. Never silently revert his explicit model choice.
+Ahmed's current default model is GPT-5.6 Sol via OpenAI Codex OAuth unless he changes it. Never silently revert his explicit model choice.
 
 ## Model-sensitive work
 
@@ -23,6 +23,6 @@ Use `session_status` for current session model and quota state. Disclose any mod
 
 ## Do not
 
-- Do not silently switch away from GPT-5.5.
+- Do not silently switch away from GPT-5.6 Sol.
 - Do not use retired MiniMax unless Ahmed explicitly asks.
 - Do not assume a model change in one place updated all agent/topic overrides.

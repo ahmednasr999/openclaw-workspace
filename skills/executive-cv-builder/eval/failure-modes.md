@@ -2,7 +2,7 @@
 
 | Failure | Cause | Prevention |
 |---------|-------|------------|
-| CV built on wrong model | Session was not on openai-codex/gpt-5.5 | Step 0 model gate is BLOCKING |
+| CV built on wrong model | Session was not on `openai/gpt-5.6-sol` with high reasoning | Step 0 model gate is BLOCKING |
 | Wasted CV for unqualified role | Scored from title only, full JD revealed disqualifier | Step 0 full JD gate is BLOCKING |
 | Tiny PDF (< 10KB) | Missing CSS/styling in HTML template | Post-gen quality gate checks file size |
 | Bloated PDF (> 100KB) | Playwright embedded fonts/images | Use WeasyPrint, not Playwright |

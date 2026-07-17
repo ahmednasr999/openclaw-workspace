@@ -145,7 +145,7 @@ Notion tokens get auto-revoked when GitHub secret scanning detects them.
 | 8:30 PM Daily | retention-backups.sh | Backup rotation | CTO | openclaw-retention-backups.log |
 | 9:30 AM Sun-Thu | linkedin-auto-poster.py + cf-weekday-check.sh | Post LinkedIn content | CMO | linkedin-poster.log |
 
-**Note:** 23 total crontab entries. The cron-dashboard-updater.py (hourly) is the primary monitoring tool. For missing log files (key-health-check, token-health-check), add logging before escalating.
+**Note:** `daily-backup.sh` is currently disabled per Ahmed. Do not treat its stale status/log timestamp as a blocker while the managed crontab line remains commented out. The cron-dashboard-updater.py (hourly) is the primary monitoring tool. For missing log files (key-health-check, token-health-check), add logging before escalating.
 
 ---
 

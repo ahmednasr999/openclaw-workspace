@@ -7,10 +7,11 @@ Use this guide when deciding what visual should accompany an executive LinkedIn 
 Use when the post has one strong claim.
 
 Pattern:
-- dark/cinematic topic-relevant background
-- one line or two-line headline
-- Ahmed Nasr lockup
-- no dense text
+- warm off-white paper with black ink and restrained orange accents
+- one clear handwritten headline
+- compact system/toolkit metaphor tied to the post thesis
+- Ahmed Nasr signature/footer
+- no dense text, generic dark tech card, or stock-style background unless explicitly requested
 
 ## Metric card
 

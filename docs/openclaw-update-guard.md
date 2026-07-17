@@ -38,6 +38,8 @@ scripts/openclaw-update-guard.py --deep --write-report
 - Optional non-delivered gateway agent turns can record cold/warm turn latency with `--measure-turn-latency`.
 - systemd gateway `ExecStart`, `MainPID`, and start timestamp exist.
 - `openclaw config validate` passes.
+- the mandatory Memory Heist plugin plus held-out GPT-Red baseline passes exactly `19/19`.
+- gateway pre-start additionally requires the four-hook runtime contract; missing `agent_end` permission or hook diagnostics block startup.
 - Docker sandbox image `openclaw-sandbox:bookworm-slim` exists.
 - Telegram direct/group reply-delivery config is known-good: `messages.visibleReplies = automatic` and `messages.groupChat.visibleReplies = automatic`.
 - `openclaw gateway status --deep` returns usable output and no fatal module/auth errors.
@@ -46,6 +48,7 @@ scripts/openclaw-update-guard.py --deep --write-report
 - Codex usage/auth does not surface a hard missing-key error, when the status command responds.
 - key plugins are loaded.
 - lossless-claw and file-transfer runtime tool contracts are present.
+- runtime inspection proves Memory Heist Guard is activated and exposes its four required hooks, including `agent_end`. The cold `plugins list` snapshot may show `hookCount: 0`; `plugins inspect memory-heist-guard --runtime --json` is authoritative for source activation.
 
 ## Limits
 
@@ -85,6 +88,7 @@ Required post-update checks:
 
 ```bash
 docker image inspect openclaw-sandbox:bookworm-slim
+scripts/check-memory-heist-security-suite.py
 scripts/openclaw-update-guard.py --write-report
 ```
 

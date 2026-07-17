@@ -2,6 +2,8 @@
 
 Status: ready for Ahmed review/posting decision. Do not post without explicit approval.
 
+Current-default note, added 2026-06-26: this is a historical handoff for one approved May creative. It does not define Ahmed's current default LinkedIn visual style. Normal static LinkedIn visuals now use the approved hand-drawn sketchnote concept unless Ahmed explicitly asks for the old dark execution-card direction.
+
 ## Approved creative
 
 - Final card: `/root/.openclaw/workspace/output/linkedin/healthcare-ai-roi-final-candidate-v2.jpg`

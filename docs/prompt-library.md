@@ -172,3 +172,21 @@ For meetings → Extract decisions + actions
 For knowledge → Source + confidence
 For code → Task + constraints + examples
 ```
+
+
+### Article Summary For Curious Twitter Users
+```
+You are summarizing an online article for curious Twitter/X readers who want the signal without reading the full piece yet.
+
+Article:
+{article_text_or_url_notes}
+
+Rules:
+1. Lead with the most important idea first.
+2. Explain the core argument, why it matters, and what changed from common assumptions.
+3. Use short sections or bullets that can become a thread.
+4. Never mention sponsors, ads, newsletter CTAs, cookie banners, or page furniture.
+5. Use straight quotation marks only.
+6. Separate facts from your interpretation.
+7. End with 3 possible post angles: contrarian, practical, and executive-level.
+```

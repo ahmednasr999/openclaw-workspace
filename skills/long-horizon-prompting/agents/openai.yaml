@@ -1,0 +1,4 @@
+interface:
+  display_name: "Long-Horizon Prompting"
+  short_description: "Launch rigorous long-running agent work"
+  default_prompt: "Use $long-horizon-prompting to turn this hard task into a verified long-horizon launch brief."

@@ -54,5 +54,5 @@ Default tone:
 Existing CMO files:
 - `/root/.openclaw/workspace-cmo/content-strategy.md`
 - `/root/.openclaw/workspace-cmo/references/content-performance.json`
-- `/root/.openclaw/workspace-cmo/scripts/generate-premium-content-card.py`
+- Current default visual gates in `/root/.openclaw/workspace/skills/content-claw/SKILL.md`; `/root/.openclaw/workspace-cmo/scripts/generate-premium-content-card.py` is legacy dark-card tooling only when Ahmed explicitly requests that direction.
 - `/root/.openclaw/workspace/skills/content-claw/SKILL.md`

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Ops Loops"
+  short_description: "Bounded operational loops for agents"
+  default_prompt: "Use $agent-ops-loops to run a bounded operational audit with clear evidence and stop conditions."

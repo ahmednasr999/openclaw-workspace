@@ -79,7 +79,7 @@ This reads the research log, identifies winners (score ≥7 AND good engagement)
 
 ## Model
 
-Uses MiniMax-M2.7 (free tier) for scoring. Fast and sufficient for binary yes/no.
+Uses `openai/gpt-5.6-sol` with low reasoning for deterministic binary scoring.
 
 ## Integration with linkedin-writer skill
 

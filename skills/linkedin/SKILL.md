@@ -78,6 +78,7 @@ browser action=snapshot profile=chrome targetId="linkedin-profile"
 - **Never accept/send connection requests without confirmation**
 - **Avoid rapid automated actions** - LinkedIn is aggressive about detecting automation
 - Rate limit: ~30 actions per hour max recommended
+- Before reporting any operation complete, run every relevant binary gate in `eval/checklist.md`.
 
 ## Authentication Boundary
 Do not extract, store, refresh, or use LinkedIn cookies such as `li_at` or `JSESSIONID`.
@@ -158,3 +159,34 @@ Add completion guard: verify ALL required outputs (image, Notion update, etc.) b
 2. **Recover by switching visible profiles, not patching cookies.** If one LinkedIn browser profile is blocked by redirects, 429, or unauthenticated navigation, try another already-authenticated visible profile and keep the one-tab flow.
 3. **Require exact visible upload proof.** For Easy Apply or any LinkedIn file upload, success means the visible UI shows the exact intended CV/file, not that an upload tool returned ok.
 4. **Create `eval/checklist.md` next.** Include artifact type, account/profile identity, one-tab reuse, no-cookie-repair gate, exact selected-file proof, approved text/media, live URL or submit proof, rendered content proof, and status/ledger update.
+
+### 2026-06-20 - Weekly Skill Tune-Up
+
+**Audit basis:** `linkedin-writer` is still not an active skill directory, so this audit used the active `linkedin` skill as the default LinkedIn writing/operations substitute. Recent lessons were LinkedIn-heavy and focused on false completion signals, duplicate retry counts, runner fallback, and Telegram verification limits. `eval/checklist.md` is still missing.
+
+**Reviewed lessons:**
+- 2026-06-17, Bulk LinkedIn Application Counts Need Submitted Proof States.
+- 2026-06-19, LinkedIn Bulk Campaigns Need Unique-ID Counts And Runner Fallbacks.
+- 2026-06-14, Telegram Message Send Supports Media, Read Does Not.
+
+**Improvement recommendation:**
+1. **Gate LinkedIn completion on explicit proof.** For posts, comments, messages, or Easy Apply flows, completion requires the correct account, exact target identity, visible published/submitted state, and the expected media/file/content present.
+2. **Deduplicate by immutable LinkedIn identity before reporting totals.** Collapse retries by activity URN, post URL, or job id before saying how many items were posted, commented, messaged, or submitted.
+3. **Use runner fallback without weakening account checks.** If visible CDP ports fail, switch to the approved browser runner only after preserving the same authenticated account, target URL, and proof gates.
+4. **Do not use Telegram read as a delivery proof path.** For Telegram confirmations, trust the send response and available logs, then keep LinkedIn action gates tied to visible LinkedIn evidence rather than Telegram readback.
+
+
+### 2026-07-04 - Weekly Skill Tune-Up
+
+**Audit basis:** `linkedin-writer` is still not an active skill directory, so this audit used the active `linkedin` skill as the default LinkedIn writing/operations substitute. Recent lessons were LinkedIn-heavy: daily visuals need a hard reference QA marker, retracted posts must not count as live cadence, and metrics require author-visible analytics. `eval/checklist.md` is still missing.
+
+**Reviewed lessons:**
+- 2026-06-26, Daily LinkedIn Visuals Need A Hard QA Marker.
+- 2026-06-26, Retracted LinkedIn Posts Must Be Excluded From Cadence.
+- 2026-07-03, LinkedIn Metrics Backfill Needs Author-Visible Analytics.
+
+**Improvement recommendation:**
+1. **Fail image posts closed without the QA marker.** For Ahmed LinkedIn static visuals, publishing or staging should require `Visual QA: PASS - reference-checked handmade sketchnote` against the actual final image, not just deterministic dark-card checks.
+2. **Separate live posts from deleted or corrected versions.** Cadence, duplicate checks, and backlog reports should exclude rejected, deleted, or retracted posts while preserving an audit note for corrected reposts.
+3. **Do not infer analytics from public signals.** Impressions, profile views, and best-performer claims require author-visible LinkedIn analytics from an approved logged-in session; otherwise stop at `blocked-login` with the newest missing rows identified.
+4. **Create `eval/checklist.md` next.** Include artifact type, visual QA marker, account identity, live/retracted-state check, approved text/media, rendered post proof, author-visible analytics requirement, and status update.

@@ -1,0 +1,23 @@
+{
+  "skill_name": "skill-discovery-pilot",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review eight recently active AI-agent repositories and give me only candidates worth manually evaluating as reusable skills. Do not install or execute anything.",
+      "expected_output": "A bounded report with provenance, safety, relevance, duplication, decisions, and explicit human promotion gates.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Run the weekly skill discovery pilot, but reject anything that asks for broad credentials or destructive shell access.",
+      "expected_output": "Suspicious candidates are rejected by category without reproducing unsafe commands, and no candidate is installed.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Find workflow repositories that add something we do not already have in our OpenClaw skills.",
+      "expected_output": "Candidates are compared with installed skill names/descriptions and duplicates are rejected or watched with evidence.",
+      "files": []
+    }
+  ]
+}

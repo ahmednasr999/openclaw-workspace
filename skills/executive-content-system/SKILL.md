@@ -30,7 +30,7 @@ Read the most relevant files before drafting or changing workflow:
 - `/root/.openclaw/workspace/skills/content-claw/SKILL.md` for current CMO rules
 - `/root/.openclaw/workspace-cmo/content-strategy.md` for pillars and publishing workflow
 - `/root/.openclaw/workspace-cmo/references/content-performance.json` when scoring against performance
-- `/root/.openclaw/workspace-cmo/scripts/generate-premium-content-card.py` for premium single-image card workflows
+- `/root/.openclaw/workspace/skills/content-claw/SKILL.md` and its visual-quality gates for the current default LinkedIn visual style. Treat `/root/.openclaw/workspace-cmo/scripts/generate-premium-content-card.py` as a legacy dark-card renderer unless Ahmed explicitly requests that direction.
 
 If a file outside the workspace cannot be read with the `read` tool, use `exec` with a targeted `sed`/`python` command. Do not treat tool-scope errors as evidence that the file is missing.
 
@@ -87,10 +87,13 @@ Inputs:
 - target outcome: engagement, executive positioning, recruiter visibility, thought leadership, lead generation
 
 Default pillars from CMO strategy:
-1. Digital Transformation Insights
-2. PMO and Leadership
-3. GCC Tech Ecosystem
-4. Personal Career Stories
+1. AI execution and governance
+2. PMO and decision discipline
+3. Healthcare transformation
+4. Fintech operations
+5. GCC transformation leadership
+
+For weekly planning, use the approved 4/2/1 mix by default: four qualified RSS-informed current signals, two evergreen positioning posts, and one verified personal executive insight. RSS is a source, not a pillar. Every RSS item must be translated into Ahmed's viewpoint and mapped to at least one pillar.
 
 Formats to rotate:
 - contrarian executive opinion
@@ -206,8 +209,9 @@ Choose the artifact type based on content structure:
 | Abstract concept | Avoid abstract art. Use a concrete executive/business scene |
 
 Default single-image path:
-- use `/root/.openclaw/workspace-cmo/scripts/generate-premium-content-card.py`
-- premium, executive, dark/cinematic, topic-relevant
+- use the approved hand-drawn sketchnote concept from `skills/content-claw/SKILL.md`
+- warm off-white paper, black ink, restrained orange accents, clear handwritten hook, compact system/toolkit metaphor, Ahmed Nasr signature/footer
+- do not use `/root/.openclaw/workspace-cmo/scripts/generate-premium-content-card.py` for normal static visuals unless Ahmed explicitly asks for the legacy dark-card direction
 - do not use text-only publishing when an image is expected
 
 Image quality rules:

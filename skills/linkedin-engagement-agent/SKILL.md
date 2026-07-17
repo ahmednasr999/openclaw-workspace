@@ -88,6 +88,7 @@ Reply "⏭ Skipped" and move on.
 - Max 5 posts per day (never more)
 - Skip authors commented on in last 14 days
 - Log each posted comment to ontology graph
+- Before counting a comment as posted, pass every gate in `eval/checklist.md`.
 
 ---
 
@@ -232,3 +233,67 @@ Reply "⏭ Skipped" and move on.
 3. **Use one visible LinkedIn tab for engagement posting.** Reuse the authenticated LinkedIn tab through comment submission and proof capture. Do not open a new tab per post unless no reusable tab exists.
 4. **Report only after visible proof.** A posted comment is complete only when a fresh visible snapshot shows Ahmed's comment on the exact target post, the like state is checked, and ontology `last_commented` is updated.
 5. **Create `eval/checklist.md` next.** Include approval-card visibility, Ahmed account/profile identity, no-cookie-repair gate, one-tab reuse, activity URN match, author URL match, cooldown clear, approved text match, visible comment proof, like state, ontology update, and one meaningful closeout.
+
+
+### 2026-06-13 - Weekly Skill Tune-Up
+
+**Audit basis:** Recent LinkedIn lessons from 2026-06-02 to 2026-06-03 continue to affect engagement safety: cookie repair is a dead end, visible authenticated profiles are the recovery path, and one-tab visible proof is required before completion. `eval/checklist.md` is still missing.
+
+**Reviewed lessons:**
+- 2026-06-02, Do Not Repair LinkedIn by Editing Cookies.
+- 2026-06-03, LinkedIn Easy Apply Can Recover Through A Different Visible Authenticated Profile.
+- 2026-05-31, HR Easy Apply Should Reuse LinkedIn Tabs.
+
+**Improvement recommendation:**
+1. **Make cookie repair explicitly forbidden for engagement.** If LinkedIn redirects, 429s, or profile auth drifts, do not inspect, delete, edit, or replay cookies. Use Ahmed-Mac Chrome or another already-visible authenticated profile, or stop and report the blocked state.
+2. **Reuse one visible LinkedIn tab where possible.** Discovery and posting should stay in the same authenticated visible session when feasible, navigating the tab to each approved post instead of spawning fresh pages that lose state.
+3. **Bind approval to browser/profile evidence.** Approval cards should include activity URN, author URL, exact approved comment text, and the visible profile/account used during discovery; Step 6 must re-check all before typing or liking.
+4. **Treat proof as the only completion signal.** Success requires a fresh visible snapshot showing Ahmed's comment on the exact post, like state checked, ontology `last_commented` updated, and one meaningful Telegram closeout. Add these gates to `eval/checklist.md` next.
+
+
+### 2026-06-20 - Weekly Skill Tune-Up
+
+**Audit basis:** No direct engagement-comment failure appeared in the last 7 days, but recent LinkedIn automation lessons apply to this skill's approval and posting path. The skill still has no `eval/checklist.md`, so the recommendation stays here.
+
+**Reviewed lessons:**
+- 2026-06-17, Bulk LinkedIn Application Counts Need Submitted Proof States.
+- 2026-06-19, LinkedIn Bulk Campaigns Need Unique-ID Counts And Runner Fallbacks.
+- 2026-06-14, Telegram Message Send Supports Media, Read Does Not.
+
+**Improvement recommendation:**
+1. **Count only unique verified engagement actions.** For comments, success means one unique activity URN with Ahmed's visible comment proof. Retries, queued approvals, skipped posts, failed proof captures, or duplicate rows do not count.
+2. **Deduplicate by immutable post identity.** Before posting or reporting totals, collapse candidates and results by activity URN plus author URL so retry loops cannot inflate the scan or posted-comment count.
+3. **Use runner fallback with the same approval gates.** If visible CDP ports are unavailable, switch to the approved browser runner only after preserving account identity, activity URN, author URL, approved text, cooldown status, and visible proof requirements.
+4. **Do not rely on Telegram read for verification.** For approval-card or media delivery, trust the send response and available logs, then keep posting blocked unless Ahmed's approval and the exact post identity are present.
+
+### 2026-06-27 - Weekly Skill Tune-Up
+
+**Audit basis:** Recent lessons did not show a direct comment-posting failure, but they reinforce proof-state, unique identity, and live-content reconciliation for LinkedIn workflows. Engagement should only count verified live actions against immutable post identities.
+
+**Reviewed lessons:**
+- 2026-06-19, LinkedIn Bulk Campaigns Need Unique-ID Counts And Runner Fallbacks.
+- 2026-06-26, Retracted LinkedIn Posts Must Be Excluded From Cadence.
+- 2026-06-14, Telegram Message Send Supports Media, Read Does Not.
+
+**Improvement recommendation:**
+1. **Count engagement by immutable live post identity.** Discovery, approvals, comments, and reports should deduplicate by activity URN plus author URL. Retries, stale cards, failed proof captures, and duplicate rows do not count.
+2. **Exclude retracted or deleted targets from live cadence.** Before reporting engagement coverage or acting on a post tied to Ahmed's own content, verify the target is still live and not a deleted/retracted version replaced by a corrected repost.
+3. **Use runner fallback without weakening proof gates.** If the visible browser path is unavailable, any approved runner fallback must preserve account identity, activity URN, author URL, approved text, cooldown status, visible comment proof, like state, and ontology update.
+4. **Handle Telegram verification realistically.** For approval-card delivery, trust send responses and available logs when read APIs cannot fetch media/buttons, but keep posting blocked unless Ahmed approval and exact post identity are present.
+5. **Create `eval/checklist.md` next.** Include live post identity, dedupe by URN/author, retracted-post exclusion, correct Ahmed account, approved text match, visible comment proof, like state, ontology update, and one meaningful closeout.
+
+
+### 2026-07-04 - Weekly Skill Tune-Up
+
+**Audit basis:** Recent lessons did not show a direct engagement-comment posting failure, but LinkedIn workflow failures now cluster around live-state reconciliation and analytics proof. This skill should keep engagement discovery and approvals tied to immutable live post identities, and `eval/checklist.md` is still missing.
+
+**Reviewed lessons:**
+- 2026-06-26, Retracted LinkedIn Posts Must Be Excluded From Cadence.
+- 2026-07-03, LinkedIn Metrics Backfill Needs Author-Visible Analytics.
+- 2026-06-26, Daily LinkedIn Visuals Need A Hard QA Marker.
+
+**Improvement recommendation:**
+1. **Verify target posts are still live before approval or posting.** Engagement candidates should exclude deleted, retracted, or superseded posts, especially when a corrected repost exists.
+2. **Bind engagement reporting to immutable post identity.** Discovery, approval cards, comments, and metrics should reconcile by activity URN plus author URL so retries or corrected reposts cannot inflate coverage.
+3. **Keep analytics claims behind author-visible evidence.** Public reactions/comments can inform candidate scoring, but impressions/profile views or best-performer claims require approved author analytics; otherwise mark the metric path `blocked-login`.
+4. **Create `eval/checklist.md` next.** Include live post identity, retracted-post exclusion, correct Ahmed account, approved text match, visible comment proof, like state, ontology update, analytics evidence boundary, and one meaningful closeout.

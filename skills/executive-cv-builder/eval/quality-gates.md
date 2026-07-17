@@ -2,9 +2,9 @@
 
 Before sending any CV PDF to Ahmed, all 3 gates must pass:
 
-1. **Model Gate (GPT-5.5-only for CV work)**
-   - CV tailoring/writing must run on **openai-codex/gpt-5.5**.
-   - If GPT-5.5 is unavailable, STOP and ask Ahmed before continuing.
+1. **Model Gate (GPT-5.6 Sol with high reasoning)**
+   - CV tailoring and writing must run on **openai/gpt-5.6-sol** with high reasoning.
+   - If GPT-5.6 Sol is unavailable, STOP and tell Ahmed. Do not switch models silently.
 
 2. **Header Gate (No extra labels)**
    - First page header must contain only:

@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "issue": {
+    "id": "ISSUE-ID",
+    "title": "Concrete engineering outcome",
+    "source_untrusted": true,
+    "instructions_treated_as_data": true
+  },
+  "state": "ready_for_approval",
+  "history": [
+    {"event_id": "evt-001", "state": "intake", "evidence": "ticket captured"},
+    {"event_id": "evt-002", "state": "specified", "evidence": "spec path and acceptance tests"},
+    {"event_id": "evt-003", "state": "building", "evidence": "isolated branch created"},
+    {"event_id": "evt-004", "state": "review", "evidence": "tests and reviews completed"},
+    {"event_id": "evt-005", "state": "ready_for_approval", "evidence": "tested SHA locked"}
+  ],
+  "scope": {
+    "repository": "/absolute/repository/path",
+    "branch": "ticket/issue-id",
+    "isolation": "worktree",
+    "authority": "local-write; stop before merge",
+    "rollback": "delete isolated worktree or revert focused commit"
+  },
+  "execution": {
+    "builder_context": "builder-context-id",
+    "base_sha": "0123456789abcdef0123456789abcdef01234567",
+    "tested_sha": "fedcba9876543210fedcba9876543210fedcba98",
+    "changed_files": ["src/example.py", "tests/test_example.py"],
+    "repair_rounds": 0
+  },
+  "checks": {
+    "tests": {"status": "passed", "command": "python3 -m unittest", "evidence": "all focused tests passed"},
+    "security": {"status": "passed", "command": "security check command", "evidence": "no blocking findings"},
+    "preview": {"status": "not_applicable", "command": "none", "evidence": "non-visual change"}
+  },
+  "reviews": [
+    {"mandate": "correctness_regression", "context_id": "review-a-context", "disposition": "accept", "evidence": "acceptance cases inspected", "blocking_findings": []},
+    {"mandate": "security_operability", "context_id": "review-b-context", "disposition": "accept", "evidence": "authority and rollback inspected", "blocking_findings": []}
+  ],
+  "approval": null,
+  "merge": null,
+  "stop": null,
+  "remaining_risk": "State the residual risk"
+}

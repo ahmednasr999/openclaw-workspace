@@ -2,33 +2,42 @@
 
 ## Default reference
 
-Universal default for Ahmed LinkedIn post visuals:
+Universal default for Ahmed LinkedIn static post visuals:
 
-`/root/.openclaw/workspace/output/jobzoom-visuals/ahmed-linkedin-ai-execution-card-4k.jpg`
+`/root/.openclaw/workspace/media/inbound/234fe40d-96c3-4b4a-bf6f-dc1f75f91bbf.jpg`
+
+Reference-quality floor for the hand-drawn style:
+
+`/root/.openclaw/workspace/output/linkedin/return-on-tokens-rot-handdrawn-reference-quality-latest-2026-06-10.png`
 
 ## Quality bar
 
-Premium visual must match the reference card's craft level, not just its structure.
+Premium visual must match the approved hand-drawn sketchnote concept and craft level, not just its rough structure.
 
 Pass requires:
 
-- 9:16 executive card format.
-- One dominant mobile-readable headline.
-- One short support line.
-- Dark cinematic executive atmosphere with depth.
-- Gold/white typography hierarchy comparable to reference.
-- Blue/gold accent system.
-- Purposeful execution/system metaphor.
-- Refined Ahmed-branded footer.
+- Warm off-white paper or comparable premium paper texture.
+- Black ink illustration with restrained orange accents.
+- One clear large handwritten headline.
+- Compact flow diagram, toolkit, system, or operating-model metaphor matched to the caption thesis.
+- Authentic hand-drawn lettering and linework, not a sketch filter or generic template.
+- Strong whitespace, readable at mobile size.
+- Ahmed Nasr signature/footer treatment.
 
 Reject if:
 
-- Generic or stock-like.
-- Flat, cheap, or under-designed.
-- Old reference text contaminates the card.
-- Text overlaps Ahmed's face/suit.
-- Dense labels or tiny unreadable copy.
-- Generic infographic boxes.
+- Generic dark tech card, stock photo, or SaaS template unless Ahmed explicitly requested that direction.
+- Flat, cheap, under-designed, or sketch-filter-like.
+- Old reference text contaminates the image.
+- Crowded boxes, dense labels, tiny unreadable copy, or overlapping elements.
+- Missing the hand-drawn paper, ink, orange-accent, and Ahmed-signature treatment.
+- Uses the dark executive card style for a normal LinkedIn static visual.
+
+## Daily publish gate
+
+For automated daily LinkedIn publishing, the Notion image intent must include a reference-checked QA marker such as `Visual QA: PASS - reference-checked handmade sketchnote`. The marker means the actual image, not only the prompt or palette, was compared against the approved hand-drawn sketchnote reference.
+
+The daily publisher must fail closed if the visual is unreviewed, too dark, blue-card dominated, or still points to a rejected legacy asset.
 
 ## Done means
 

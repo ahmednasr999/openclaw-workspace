@@ -42,3 +42,17 @@ Public content affects Ahmed's reputation. Drafting and local artifact preparati
 - Visual or media passed quality gate if expected.
 - Publish/retry checked for duplicates.
 - Final live state or staged artifact was inspected.
+
+## Learned Improvements
+
+### 2026-06-27 - Weekly Skill Tune-Up
+
+**Reviewed lessons:**
+- 2026-06-26, LinkedIn visual defaults conflicted across gates and allowed a bad dark-card visual to reach a live post.
+- 2026-06-26, the corrected visual still failed because it looked like a clean vector flow diagram instead of a handmade sketchnote.
+- 2026-06-26, daily LinkedIn publishing needed a hard `Visual QA: PASS - reference-checked handmade sketchnote` marker tied to the actual asset.
+
+**Improvement recommendation:**
+Before any normal Ahmed LinkedIn static visual is approved, scheduled, published, or described as ready, fail closed unless the actual image has been inspected against the handmade sketchnote reference and the source record carries `Visual QA: PASS - reference-checked handmade sketchnote`. Auto-fail polished vector-like flows, deterministic diagrams, generic dark tech cards, and assets that only match the palette or topic. Treat the marker as proof of visual review, not as a substitute for duplicate checks, approval boundaries, or post-publish verification.
+
+**Checklist status:** No `eval/checklist.md` exists for this skill. Use `checklists/image-post-quality.md`, `checklists/pre-publish.md`, `checklists/post-publish-verification.md`, and `references/visual-quality.md` as the active evaluation checklist.
