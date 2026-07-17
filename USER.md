@@ -1,114 +1,71 @@
 # USER.md - Ahmed Nasr
 
-## Identity
+## Identity and Direction
 
-- **Name:** Ahmed Nasr
-- **Call him:** Ahmed
-- **Pronouns:** he/him
-- **Timezone:** Africa/Cairo (UTC+2 standard, UTC+3 during daylight saving when active)
-- **Primary channel:** Telegram DM, chat id `866838380`
-
-## Profile
-
-Senior technology executive with 20+ years in operational leadership. Currently serving as PMO while building AI automation systems and pursuing the next executive role.
-
-Target direction:
-- VP/C-suite roles in GCC.
-- Healthcare, digital transformation, PMO, transformation, and execution leadership.
+- Call him Ahmed; pronouns he/him.
+- Timezone: Africa/Cairo.
+- Primary channel: Telegram DM, chat id `866838380`.
+- Senior technology executive with 20+ years in operational leadership, currently serving as PMO while building AI automation systems and pursuing VP/C-suite GCC roles.
+- Priority domains: healthcare, digital transformation, PMO, transformation, and execution leadership.
 - Open to relocating to Jeddah, Saudi Arabia.
 
-## Working Relationship
+## Working Style
 
-Ahmed wants a thinking partner, not a passive assistant.
+Ahmed wants a thinking partner, not a passive assistant. He values strategic judgment, direct answers, proactive risks and opportunities, honest trade-offs, end-to-end execution, and systems that reduce babysitting.
 
-He values:
-- strategic judgment over task completion theater
-- direct answers over long explanations
-- proactive risk/opportunity surfacing
-- end-to-end execution
-- honest trade-off analysis
-- systems that reduce babysitting
-
-He dislikes:
-- hand-holding
-- over-explaining
-- asking him for information already available in files
-- stopping after a partial fix
-- cheerleading without substance
-- em dashes
-
-## Communication Preferences
-
-- Be concise, direct, and specific.
-- Prefer bullets and tables for technical material.
-- Lead with the answer or recommendation.
-- Use emojis naturally but sparingly.
+- Lead with the answer or recommendation. Be concise, direct, and specific.
+- Prefer bullets and tables for technical material. Use emojis sparingly and never use em dashes.
 - For multi-step work, execute end-to-end and send one consolidated report unless a real blocker or decision needs Ahmed.
-- If Ahmed pushes with "why" or "?", treat it as a quality challenge, not a request for filler.
+- Use live checks for mutable facts. Do not ask for information already available in files.
+- Treat “why” or “?” as a quality challenge, not a request for filler.
+- Prove output quality on a real sample before automating it.
+- If the same workflow is requested repeatedly, codify it.
 
-## Decision Style
+## Executive Role Decisions
 
-Ahmed researches before committing and expects the same from me.
+Salary is the overriding GCC role factor unless Ahmed adds another hard filter. Reporting line, employer type, and work arrangement remain negotiable when compensation is strong.
 
-He prefers:
-- live checks for mutable facts
-- honest pros/cons
-- clear recommendations
-- reusable workflows for recurring asks
-- automation only after output quality is proven on a real sample
+Minimum monthly total-package baselines:
 
-Executive role evaluation:
-- Salary is the overriding decision factor for GCC executive roles. Do not treat other hard-no filters as primary unless salary is acceptable or Ahmed explicitly adds them.
-- When roles are otherwise similar, prioritize the employer that pays more salary over employer type preferences.
-- Reporting line is not a hard filter if salary is high enough; roles can report below CEO/Board/C-level/Regional GM when compensation justifies it.
-- Work arrangement is not a hard filter if salary is high enough; onsite, hybrid, or remote can be acceptable when compensation justifies it.
-- Minimum monthly total-package baseline for serious GCC executive-role consideration: UAE AED 55,000; Saudi about SAR 56,000; Qatar about QAR 55,000; Oman about OMR 5,750. Optional equivalents: Bahrain about BHD 5,650; Kuwait about KWD 4,600.
-- For application salary-expectation fields, use AED 55,000/month as Ahmed's minimum target and convert to the relevant local currency, rounded conservatively upward to a clean figure when needed.
-- Confirmed reusable application personal defaults: date of birth 28/12/1983 (ISO 1983-12-28), marital status married, full address as provided: UAE, Dubai, Bursha.
-- Ahmed approved creating ATS/candidate accounts with his email when needed for job applications. Use this approval only for application workflows; ask if a platform requires a sensitive unknown, MFA/OTP unavailable to the agent, or a non-standard commitment.
-- If an application needs an answer not already known about Ahmed, ask Ahmed once, then store and reuse the confirmed answer for future applications. Do not fabricate personal/legal/current-employment facts.
+- UAE: AED 55,000
+- Saudi Arabia: about SAR 56,000
+- Qatar: about QAR 55,000
+- Oman: about OMR 5,750
+- Bahrain: about BHD 5,650
+- Kuwait: about KWD 4,600
 
-If Ahmed asks repeatedly for the same workflow, the system failed and should be codified.
+For application salary fields, use AED 55,000/month as the minimum target, convert to local currency, and round conservatively upward to a clean figure.
 
-## Technical Setup
+Reusable application defaults: date of birth 28/12/1983 (`1983-12-28`), married, Egyptian nationality, 30-day notice period, address `UAE, Dubai, Bursha`. Candidate-account creation with Ahmed's email is approved for applications. Ask once and store any unknown personal, legal, or current-employment answer. Never fabricate it.
 
-- VPS: `srv1352768`, Linux/Ubuntu, primary OpenClaw host.
-- Main workspace: `/root/.openclaw/workspace`.
-- Mac node: `Ahmed-Mac`, darwin. No companion app/system.run.
-- Telegram is the primary interface.
-- Browser/account tasks should prefer Ahmed-Mac Chrome when login state matters.
-- VPS IP is blocked by YouTube, do not rely on it for YouTube transcript fetching.
-- `channels.slack.streaming` intentionally uses string value `"partial"`; do not change it unless Ahmed explicitly asks.
+## Job Search
 
-## Model and OpenClaw Preferences
-
-- Current default model is GPT-5.5 via OpenAI Codex OAuth unless Ahmed changes it.
-- Subscription note: Ahmed returned to ChatGPT Pro 20x on 2026-05-30 after briefly planning a 2026-06-07 downgrade to Pro 5x. Treat GPT-5.5 quota headroom as 20x unless Ahmed changes the subscription again.
-- Ahmed's explicit model choices must not be silently reverted.
-- Always disclose model switches.
-- He is interested in OpenClaw, Codex, ACP/ACPX, Hermes, autonomous memory, and self-improving agents.
-- He is not interested in migrating away from OpenClaw unless another framework is clearly superior.
-
-## Job Search Rules
-
-- Target: senior GCC leadership roles, especially healthcare, digital transformation, PMO, transformation, and program delivery.
+- Target senior GCC leadership roles, especially the priority domains above.
 - ATS threshold: 82%+ before applying.
-- Never fabricate roles, titles, achievements, or credentials.
-- Job-email alerts must be body-read and classified before escalation.
-- JobZoom is a protected full-scan daily lane. Do not optimize, trim, or reduce runs unless Ahmed explicitly asks.
-- HR-lane internal work and standard job application submission are pre-approved: job searches/scans, diagnostics, pipeline inspection, ATS analysis, scoring, report generation, CV drafting/generation, artifact verification, reversible HR workspace edits, Telegram delivery to Ahmed, and submitting applications through ATS/job portals/application forms when the approved HR workflow has enough known information. Do not ask approval for these routine HR operations or standard applications. Approval is still required for replying to any email, sending recruiter/employer messages outside the application form/portal flow, public/external third-party messaging, paid actions, credential changes, destructive deletes, or gateway/runtime changes. If an application needs an unknown sensitive answer, MFA/OTP unavailable to the agent, non-standard commitment, or salary/terms outside Ahmed's confirmed rules, ask Ahmed first. <!-- updated 2026-06-02 from Ahmed correction -->
-- JobZoom-related protected-lane work and standard application submission are pre-approved: scans, reruns, diagnostics, scoring, report/CV generation, artifact verification, Telegram delivery to Ahmed, and submitting applications through ATS/job portals/application forms when the approved workflow has enough known information. Do not ask approval for these. Approval is still required for replying to any email, sending recruiter/employer messages outside the application form/portal flow, public/external third-party messaging, paid actions, credentials, destructive deletes, or gateway/runtime changes. <!-- updated 2026-06-02 -->
-- Do not modify JobZoom prompts/files unless the current task is explicitly JobZoom-related.
+- Never fabricate roles, titles, credentials, achievements, dates, or metrics.
+- Body-read and classify job emails before escalating.
+- JobZoom is a protected full-scan daily lane. Do not reduce it or modify its prompts unless the current task is explicitly JobZoom-related.
+- Standard job-application authority and exception gates live in `AGENTS.md`.
 
 ## Content and LinkedIn
 
-- LinkedIn content should be executive-level, practical, and end with a question/CTA when appropriate.
-- LinkedIn posting/image workflows require explicit care: do not post text-only when an image is expected, and do not treat generated/sent media as complete until it passes the relevant quality gate.
-- Content-gap alerts should be short decision-cards: action first, evidence second.
+- LinkedIn content should be executive-level and practical, ending with a question or CTA when appropriate.
+- When a visual is expected, do not publish text-only or accept media before its quality gate and duplicate check pass.
+- Content-gap alerts should be short decision cards: action first, evidence second.
 
-## Memory Notes
+## Technical and Model Preferences
 
-- Profile photo path: `/root/.openclaw/workspace/profile-photo.jpg`.
-- Profile photo description: man in black suit, white dress shirt, dark tie, white pocket square, smiling in modern office with glass-walled background.
-- Master CV source and ATS rules live under workspace memory files.
-- Historical facts belong in `MEMORY.md`; behavior rules belong in `SOUL.md`; technical gotchas belong in `TOOLS.md`; routing/workflow rules belong in `AGENTS.md`.
+- VPS: `srv1352768`, Ubuntu, workspace `/root/.openclaw/workspace`.
+- Mac node: `Ahmed-Mac`, Darwin. Prefer its Chrome when login state matters.
+- The VPS IP is blocked by YouTube.
+- `channels.slack.streaming` intentionally equals the string `"partial"`; do not change it unless Ahmed asks.
+- Default model: GPT-5.6 Sol through OpenAI Codex OAuth, canonical `gpt-5.6-sol`; alias `gpt-5.6` routes to it.
+- ChatGPT plan: Pro 20x since 2026-05-30. Preserve explicit model choices and disclose every switch.
+- Ahmed is interested in OpenClaw, Codex, ACP/ACPX, Hermes, autonomous memory, and self-improving agents. Do not recommend migration from OpenClaw unless another framework is clearly superior.
+
+## References
+
+- Profile photo: `/root/.openclaw/workspace/profile-photo.jpg`
+- CV source: `memory/master-cv-data.md`
+- ATS rules: `memory/ats-best-practices.md`
+- Historical facts: `MEMORY.md`; behavior: `SOUL.md`; tool rules: `TOOLS.md`; routing: `AGENTS.md`

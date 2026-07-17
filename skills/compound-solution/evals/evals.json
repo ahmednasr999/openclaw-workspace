@@ -1,0 +1,23 @@
+{
+  "skill_name": "compound-solution",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We fixed a recurring OpenClaw disk-pressure incident after tracing growth to disposable caches, disabled Snap revisions, and unbounded routine database backups. The cleanup was verified and recovery copies were preserved. Document the durable solution.",
+      "expected_output": "Creates or updates one verified docs/solutions document after overlap search, with cause, safe remedy, evidence, prevention, rollback/stop conditions, and no secrets.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I changed a typo in a README. Compound this solution for future incidents.",
+      "expected_output": "Declines durable solution capture because the change is trivial and recommends no document or a lightweight learning only if useful.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "The Telegram media sender failed once, but we have not reproduced it and do not know whether delivery, formatting, or the API caused it. Write the solution now.",
+      "expected_output": "Refuses to label the incident verified, records investigation status outside docs/solutions if needed, and states what evidence is missing.",
+      "files": []
+    }
+  ]
+}

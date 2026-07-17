@@ -32,13 +32,15 @@ Repurposed LinkedIn video/reel assets should be premium, executive, concise, and
 
 Approved pattern: 9:16 vertical reel, dark executive visual system, clean typography hierarchy, glass-card UI treatment, subtle motion, restrained premium gradient, and narrative pacing such as shift -> risk -> rule -> question.
 
-## LinkedIn Visual Default, Confirmed 2026-04-29
-Universal default for every Ahmed LinkedIn post visual: use Ahmed's LinkedIn AI execution card format unless Ahmed explicitly requests another direction.
+## LinkedIn Static Visual Default, Updated 2026-06-26
+Universal default for Ahmed LinkedIn static post visuals: use the approved hand-drawn sketchnote concept unless Ahmed explicitly requests another direction.
 
-Reference asset: `/root/.openclaw/workspace/output/jobzoom-visuals/ahmed-linkedin-ai-execution-card-4k.jpg`
+Reference asset: `/root/.openclaw/workspace/media/inbound/234fe40d-96c3-4b4a-bf6f-dc1f75f91bbf.jpg`
 
-Required style: 9:16 dark executive card, bold mobile-readable hook hierarchy, blue/gold accent system, execution/governance visual language, and Ahmed-branded footer.
-Quality bar: match the reference card's craft level, not just its structure; reject outputs that feel generic, flat, stock-like, under-designed, less cinematic, or weaker in typography/depth/execution metaphor. <!-- dream-promoted 2026-04-29 -->
+Quality floor: `/root/.openclaw/workspace/output/linkedin/return-on-tokens-rot-handdrawn-reference-quality-latest-2026-06-10.png`
+
+Required style: warm off-white paper, black ink illustration, restrained orange accents, toolkit/system metaphor, large handwritten headline, compact flow diagram, and Ahmed Nasr signature/footer.
+Quality bar: match the hand-drawn reference craft level, not just its rough structure; reject outputs that feel generic, flat, stock-like, under-designed, sketch-filter-like, crowded, missing the system metaphor, or default to dark tech cards without explicit request. Dark executive visuals remain only for explicit reel/video/dark-card requests or JobZoom-specific visuals.
 
 ## Job Application and CV Workflow
 Trigger: Ahmed shares a job link and description.
