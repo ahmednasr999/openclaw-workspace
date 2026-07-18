@@ -84,3 +84,7 @@ CRON_TZ=Africa/Cairo
 
 # Owner: NASR | Purpose: Weekly quarantined skill discovery review; local reports only, no install or messaging | Expected runtime: <5m
 15 11 * * 0 CRON_RUNNER_NO_ALERT=1 /root/.openclaw/workspace/scripts/cron-run-with-alert.sh skill-discovery-pilot /var/lock/openclaw/skill-discovery-pilot.lock /root/.openclaw/workspace/logs/cron/skill-discovery-pilot.log /usr/bin/python3 /root/.openclaw/workspace/skills/skill-discovery-pilot/scripts/discover.py --config /root/.openclaw/workspace/config/skill-discovery-pilot.json --max-candidates 8 # weekly-skill-discovery-pilot
+
+# Owner: CEO Ops | Purpose: Rank and route cross-source executive intelligence | Expected runtime: <5m
+20 4 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh executive-intelligence-brief /var/lock/openclaw/executive-intelligence-brief.lock /root/.openclaw/workspace/logs/cron/executive-intelligence-brief.log /usr/bin/python3 /root/.openclaw/workspace/scripts/executive-intelligence-brief.py # executive-intelligence-brief
+20 13 * * 5 /root/.openclaw/workspace/scripts/cron-run-with-alert.sh executive-intelligence-rss-refresh /var/lock/openclaw/executive-intelligence-brief.lock /root/.openclaw/workspace/logs/cron/executive-intelligence-rss-refresh.log /usr/bin/python3 /root/.openclaw/workspace/scripts/executive-intelligence-brief.py # executive-intelligence-brief
