@@ -9,13 +9,13 @@ CRON_TZ=Africa/Cairo
 45 19 1 * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh archive-daily-notes /var/lock/openclaw/archive-daily-notes.lock /root/.openclaw/workspace/logs/cron/archive-daily-notes.log /root/.openclaw/workspace/scripts/archive-daily-notes.sh
 
 # Owner: OpenClaw Core | Purpose: Daily filesystem snapshot | Expected runtime: <30m
-0 23 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh daily-snapshot /var/lock/openclaw/daily-snapshot.lock /root/.openclaw/workspace/logs/cron/daily-snapshot.log /root/.openclaw/workspace/scripts/daily-snapshot.sh
+# DISABLED per Ahmed 2026-07-18: 0 23 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh daily-snapshot /var/lock/openclaw/daily-snapshot.lock /root/.openclaw/workspace/logs/cron/daily-snapshot.log /root/.openclaw/workspace/scripts/daily-snapshot.sh
 
 # Owner: OpenClaw Core | Purpose: Backup retention cleanup, after backup window | Expected runtime: <20m
 0 21 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh retention-backups /var/lock/openclaw/retention-backups.lock /root/.openclaw/workspace/logs/cron/retention-backups.log /root/.openclaw/workspace/scripts/retention-backups.sh
 
 # Owner: OpenClaw Core | Purpose: Snapshot retention cleanup, after snapshot window | Expected runtime: <20m
-45 23 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh retention-snapshots /var/lock/openclaw/retention-snapshots.lock /root/.openclaw/workspace/logs/cron/retention-snapshots.log /root/.openclaw/workspace/scripts/retention-snapshots.sh
+# DISABLED per Ahmed 2026-07-18: 45 23 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh retention-snapshots /var/lock/openclaw/retention-snapshots.lock /root/.openclaw/workspace/logs/cron/retention-snapshots.log /root/.openclaw/workspace/scripts/retention-snapshots.sh
 
 # Owner: OpenClaw Core | Purpose: Cache retention cleanup, separated from direct session cleanup | Expected runtime: <20m
 25 3 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh retention-caches /var/lock/openclaw/retention-caches.lock /root/.openclaw/workspace/logs/cron/retention-caches.log /root/.openclaw/workspace/scripts/retention-caches.sh
