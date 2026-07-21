@@ -4776,3 +4776,58 @@ Node.js v22.23.1
 ## Calendar - Today's Events
 missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
 
+=== Morning Brief - 2026-07-21 07:05 AM ===
+
+## Claude 2x Usage Reminder
+
+## Open Work
+- Progress: LinkedIn +30 verified application campaign - 18/30. Continue the active worker; 12 strict applications remain.
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **Digital Transformation Summit UAE 2026 | Technology Event**
+  https://digitransformationsummit.com/uae/
+  The Digital Transformation Summit UAE is the 51st edition of a globally recognised series hosted across 10+ cities worldwide. Held under the theme "Driving the UAE's Next Digital Leap Through Agentic AI," it convenes 200+ CIOs, CTOs, CDOs, CISOs and senior technology leaders to explore how organisat...
+
+- **Digital Health Transformation in the UAE: DHA and DoH.**
+  https://sbs-me.com/digital-health-transformation-in-the-uae-dha-and-doh/
+  In 2026, Dubai and Abu Dhabi are taking complementary approaches to modernize healthcare systems, emphasizing telemedicine, AI-driven workforce frameworks, and robust data governance.
+
+- **Transforming healthcare in the Middle East | Deloitte Middle East**
+  https://www.deloitte.com/middle-east/en/our-thinking/mepov-magazine/frontiers/transforming-healthcare-in-the-middle-east.html
+  Furthermore, the UAE, which was the first country in the world to appoint an AI minister, signed an agreement with the US software company Care AI in 2023 to advance its healthcare initiatives. Saudi Arabia: Under its Vision 2030 plan, Saudi Arabia is focused on transforming its healthcare sector th...
+
+- **US-UAE healthcare alliance drives digital transformation wave | World Health Expo Insights**
+  https://www.worldhealthexpo.com/insights/healthcare-management/us-uae-healthcare-alliance-drives-digital-transformation-wave
+  By focusing on user experience and preventive care, the company has expanded rapidly from the UAE into Saudi Arabia and Egypt, recently attracting a US$10 million funding round to fuel its growth.
+
+- **UAE at the Helm of Health Innovation: Shaping Future Healthcare at Arab Health 2024 | Ministry of Health and Prevention - UAE**
+  https://mohap.gov.ae/en/w/uae-at-the-helm-of-health-innovation-shaping-future-healthcare-at-arab-health-2024
+  The Ministry of Health and Prevention (MoHAP) in collaboration with the Department of Health – Abu Dhabi, and the Dubai Health Authority (DHA) are jointly showcasing a suite of innovative initiatives and digital health services at Arab Health 2024.
+
+## Gmail - New Opportunities
+node:internal/modules/cjs/loader:1433
+  throw err;
+  ^
+
+Error: Cannot find module '/root/.openclaw/workspace/scripts/gmail-scan.js'
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1430:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1040:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1045:22)
+    at Function._load (node:internal/modules/cjs/loader:1216:25)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:254:19)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v22.23.1
+
+## Calendar - Today's Events
+missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
+
