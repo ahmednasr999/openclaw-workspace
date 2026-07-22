@@ -4831,3 +4831,23 @@ Node.js v22.23.1
 ## Calendar - Today's Events
 missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
 
+=== Morning Brief - 2026-07-22 07:05 AM ===
+
+## Claude 2x Usage Reminder
+
+## Open Work
+- Intervention: LinkedIn +30 verified application campaign - None/30. service is not loaded: linkedin-plus30-20260720.service
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+## Gmail - Career Monitor
+- Real-time career monitor: unavailable - scheduled reconciliation remains the fallback
+- Scheduled reconciliation: unavailable - investigate Gmail fallback coverage
+
+## Calendar - Today's Events
+missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
+
