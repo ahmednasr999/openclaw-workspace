@@ -32,6 +32,9 @@ CRON_TZ=Africa/Cairo
 # Owner: OpenClaw Core | Purpose: Clear stale agent context | Expected runtime: <2m
 */5 * * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh stale-context-maintenance /var/lock/openclaw/stale-context-maintenance.lock /root/.openclaw/workspace/logs/cron/stale-context-maintenance.log /root/.openclaw/workspace/scripts/clear-stale-context-maintenance.py --ttl-minutes 15 --apply
 
+# Owner: NASR | Purpose: Read-only open-work Resolver; local evidence/briefing views only | Expected runtime: <2m
+*/5 * * * * CRON_RUNNER_NO_ALERT=1 /root/.openclaw/workspace/scripts/cron-run-with-alert.sh open-work-resolver /var/lock/openclaw/open-work-resolver.lock /root/.openclaw/workspace/logs/cron/open-work-resolver.log /usr/bin/python3 /root/.openclaw/workspace/scripts/open-work-resolver.py # open-work-resolver
+
 
 # Owner: CTO | Purpose: Bounded repo maintainer watcher; read-only scan, max one CTO worker dispatch | Expected runtime: <20m
 */5 * * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh repo-maintainer-watch /var/lock/openclaw/repo-maintainer-watch.lock /root/.openclaw/workspace/logs/cron/repo-maintainer-watch.log /usr/bin/python3 /root/.openclaw/workspace/scripts/repo-maintainer-watch.py # bounded-repo-maintainer
@@ -48,8 +51,7 @@ CRON_TZ=Africa/Cairo
 # Owner: OpenClaw Core | Purpose: Weekly self-health, separated from disk health | Expected runtime: <10m
 20 9 * * 0 /root/.openclaw/workspace/scripts/cron-run-with-alert.sh weekly-self-health /var/lock/openclaw/weekly-self-health.cron.lock /root/.openclaw/workspace/logs/cron/weekly-self-health-cron.log /usr/bin/python3 /root/.openclaw/workspace/scripts/direct-cron-runner.py weekly-self-health # direct-weekly-self-health
 
-# Owner: OpenClaw Core | Purpose: Weekly restore-path smoke test | Expected runtime: <10m
-30 10 * * 0 /root/.openclaw/workspace/scripts/cron-run-with-alert.sh backup-restore-smoke-test /var/lock/openclaw/backup-restore-smoke-test.lock /root/.openclaw/workspace/logs/cron/backup-restore-smoke-test.log /root/.openclaw/workspace/scripts/backup-restore-smoke-test.sh # weekly-backup-restore-smoke-test
+# RETIRED per Ahmed 2026-07-21: restore-path smoke test depended on backups/snapshots that were intentionally disabled.
 
 # Owner: OpenClaw Core | Purpose: Disk guard enforcement daily at 75 percent, auto safe cleanup | Expected runtime: <15m
 7 8 * * * /root/.openclaw/workspace/scripts/cron-run-with-alert.sh disk-guard /var/lock/openclaw/disk-guard.cron.lock /root/.openclaw/workspace/logs/cron/disk-guard-cron.log /usr/bin/python3 /root/.openclaw/workspace/scripts/direct-cron-runner.py disk-guard # direct-vps-disk-guard

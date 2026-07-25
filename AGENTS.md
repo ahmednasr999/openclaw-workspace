@@ -11,6 +11,7 @@ Only rules that change execution belong here. Historical detail lives in `docs/r
 - Use one primary owner. NASR coordinates cross-lane work and verifies the final outcome.
 - Ask only at a real approval, sensitive-information, or material-risk boundary.
 - Finish with verified outcome, evidence, and residual risk. Tool success alone is not proof.
+- Apply `docs/standards/nasr-writing-standard.md` to user-facing and published writing.
 - Back up, change deliberately, and verify before editing core instruction files.
 - Mission Control and `localhost:3001` task-board workflows remain retired.
 - Preserve local-command trust boundaries and never expose hidden runtime context.

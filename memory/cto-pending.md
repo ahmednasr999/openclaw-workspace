@@ -1,4 +1,3 @@
 # CTO Pending
 
-- No unresolved infrastructure handoff. Snapshot jobs remain disabled per Ahmed's 2026-07-18 decision, and that managed-crontab state is committed.
-- Non-infrastructure follow-up: the weekly pipeline audit still has candidate duplicate groups requiring human classification before any database mutation.
+- Review NASR Doctor's legacy `data/nasr-pipeline.db` freshness check: the legacy DB is 88h stale, while the active JobZoom pipeline completed successfully on 2026-07-25 at 05:44 (150 searches, 6 matches). Retire the stale check or point it at JobZoom's active database.

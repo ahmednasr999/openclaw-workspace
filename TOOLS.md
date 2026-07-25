@@ -32,6 +32,7 @@ Full detail lives in `docs/reference/TOOLS.full.md`. Keep only active technical 
 - Daily LinkedIn comments require the live Ahmed-Mac feed. If offline, skip the day; never fall back to Exa.
 - LinkedIn posting uses Composio, person URN `urn:li:person:mm8EyA56mj`. Never use exported cookies. Image posts require the uploaded image's real `s3key`, never a URL or local path.
 - Notion content calendar: `3268d599-a162-814b-8854-c9b8bde62468`. Prefer direct Notion access.
+- For CMO Notion rows with local media, store the page-specific pointer as `Final local asset: \`/absolute/path.png\``. Build the backticks outside shell interpolation, then verify `cmo_notion_posting` resolves `asset.source=image_intent_final_asset`; a plain dotted absolute path can fall through to ambiguous date-prefix matching.
 - Direct credential locations and precedence are indexed in `MEMORY.md`.
 
 ## Model and Runtime
