@@ -1,10 +1,32 @@
 # Learnings Log
 
+## 2026-06-24 - Use Ahmed's Hand-Drawn Sketchnote Visual Concept by Default
+
+- Correction: Ahmed reminded NASR that AI/LinkedIn visuals should always use the agreed hand-drawn sketchnote concept, not drift into generic dark tech-card visuals.
+- What happened: A Loop Engineering visual used a dark executive AI card style instead of the reference concept Ahmed expects.
+- Do differently: For AI expertise and LinkedIn static visuals, default to warm off-white paper, black ink hand-drawn illustration, restrained orange accents, toolkit/system metaphor, clear handwritten headline, compact flow, and Ahmed Nasr signature/footer. Use the reference image at `/root/.openclaw/workspace/media/inbound/234fe40d-96c3-4b4a-bf6f-dc1f75f91bbf.jpg`.
+
+---
+
+## 2026-06-22 - CV Tailoring Must Not Reconstruct Employment History
+
+- Correction: Ahmed flagged that Hermes generated a tailored CV with fabricated or substituted employers, dates, roles, and education details.
+- What happened: The attached CV replaced source-of-truth roles with unsupported entries such as PayTabs, Nahdi Medical Company, Bupa Arabia, ITS, and a vague bachelor's degree line, instead of using the master CV exactly.
+- Do differently: CV agents must use `memory/master-cv-data.md` as the only employment, education, certification, title, company, date, and metric source. Tailoring may reorder, emphasize, and mirror JD language, but must never infer, normalize, substitute, or invent facts.
+
+### Enforcement
+Before generating or sending any tailored CV, run a fact-diff against the master CV and block output if any company, title, date, degree, certification, or metric is not present or directly supported.
+
+---
+
 ## 2026-06-02 - Check Sent Mail Before Declaring No Prior Application
 
 - Correction: A Taaeen prior-contact check initially reported no previous application because the jobs DB and applied ledgers had no match.
 - What happened: A later live Gmail Sent Mail search found an April 12, 2026 email to `ymohamed@taaeen.ae` with `Ahmed Nasr - Project Lead - Taaeen.pdf` attached.
 - Do differently: For application-history questions, check Sent Mail and email history alongside `nasr-pipeline.db`, applied ledgers, CV files, and job folders before saying there was no prior application.
+
+### Enforcement
+Application-history checks must include Sent Mail/email history plus pipeline ledgers before reporting no prior contact or application.
 
 ---
 
@@ -66,6 +88,9 @@ For skill updates, inspect the surrounding section after patching and make the f
 - Cause: The browser-automation skill had a general tab hygiene rule, but the HR and LinkedIn skills did not make reuse of one labeled LinkedIn tab mandatory for HR flows.
 - Do differently: Before HR LinkedIn work, list tabs, reuse an existing LinkedIn tab or a labeled `hr-linkedin` tab, navigate that same tab through the workflow, and close only automation-created duplicates after inspection. If tab state cannot be inspected, stop instead of opening more tabs.
 - Durable fix: Added explicit browser hygiene rules to `skills/hr-agent/SKILL.md` and tab reuse rules/examples to `skills/linkedin/SKILL.md`.
+
+### Enforcement
+HR LinkedIn workflows must reuse an existing/labeled LinkedIn tab when browser state is inspectable, and avoid creating duplicate tabs.
 
 ---
 
@@ -467,6 +492,9 @@ For future updates, check: active systemd ExecStart path, `openclaw --version`, 
 - **What I Missed:** When Ahmed shared YouTube URLs, I went straight to Exa/Camofox/web_fetch instead of checking our YouTube transcript skill first
 - **Why:** Didn't scan available_skills thoroughly - the skill exists at `skills/youtube-transcript/` but isn't listed in available_skills (it's a custom workspace skill)
 - **Fix:** For ANY YouTube URL, ALWAYS try `scripts/youtube_transcript.sh` FIRST. It uses yt-dlp + cookies and gives clean full transcripts. Only fall back to Exa/Camofox if cookies are expired and can't be refreshed.
+
+### Enforcement
+YouTube URL handling must try the local transcript script/skill first, then fall back only when it cannot produce a usable transcript.
 
 ## 2026-03-18: Always Read Actual File Before Writing Parser
 ### What I Missed
@@ -1065,6 +1093,9 @@ Scanner `semantic_fit_filter()` requires JD text for career_verdict. Jobs withou
 - Why: Rule was in loaded context but not internalized into output generation
 - Fix: Actively check output for — before sending. Use - or commas instead.
 
+### Enforcement
+Pre-send reply review must catch and replace em dash characters with commas or hyphens.
+
 ## 2026-03-25
 ### Em Dash — STILL VIOLATING (3rd+ occurrence)
 - What happened: Despite the 2026-03-21 rule, em dash slipped through again in a model-switching reply: "I've flagged it — and going forward"
@@ -1072,11 +1103,17 @@ Scanner `semantic_fit_filter()` requires JD text for career_verdict. Jobs withou
 - STRICT FIX: Before sending ANY reply, scan the text for the character — (U+2014 or U+2013). If found, replace with - or restructure the sentence. This must be a literal pre-send scan, not a mental note.
 - Applies to: ALL messages, ALL models, ALL sessions. Not negotiable.
 
+### Enforcement
+Final-answer composition must include a literal scan for U+2014 and U+2013 before sending.
+
 ## 2026-03-21
 ### Reactive Chain Instead of Proactive Fix
 - What happened: Ahmed had to ask 5 separate times to get the briefing pipeline fully working. Scanner alert, missing briefing, no delivery, stale jobs, filter bugs - all connected, all should have been one proactive sweep.
 - Why: Treated each symptom individually instead of thinking "if this is broken, what else is broken?"
 - Fix: When finding one problem, immediately audit the full chain. One broken link means check every link. Don't wait for user to discover the next failure.
+
+### Enforcement
+When one part of a recurring workflow breaks, inspect upstream and downstream checks before declaring the isolated symptom fixed.
 
 ## 2026-03-24
 ### WeasyPrint Page Headers/Footers in CVs
@@ -1084,6 +1121,9 @@ Scanner `semantic_fit_filter()` requires JD text for career_verdict. Jobs withou
 **Root cause:** WeasyPrint respects `@page` margin boxes. Without explicit `content: none`, it prints default page decorations.
 **Fix:** Added `@page` rules with `content: none` for all 6 margin positions (top-left/center/right, bottom-left/center/right). Retroactively patched 45 existing HTML files.
 **Rule:** NEVER send a CV without visually reviewing the PDF first. Every CV must pass validation AND visual check before delivery.
+
+### Enforcement
+CV delivery requires both PDF validation and visual inspection before sending or reporting completion.
 
 ### Promotion
 Promoted during system-wide Skillify Protocol triage on 2026-04-26. Durable rule added to AGENTS.md, SOUL.md, TOOLS.md, or USER.md as appropriate.
@@ -1119,6 +1159,9 @@ Attack order for YouTube URLs:
 1. `scripts/youtube_transcript.sh` (yt-dlp + cookies) - ALWAYS FIRST
 2. Exa GET_CONTENTS - if cookies expired and Mac offline
 3. Local whisper - DELETED, not an option anymore
+
+### Enforcement
+YouTube transcript requests must use the local transcript script first; local whisper is not an approved fallback.
 
 ## [LRN-20260408-001] correction
 
@@ -1252,12 +1295,21 @@ When there is an explicit remaining-items list and the current item is complete,
 ### Do Differently
 After each completed workstream, check the active remaining list and immediately advance the next safe item or create scheduled follow-up checks for items that depend on time.
 
+### Enforcement
+After closing a workstream, check the explicit remaining-items list and continue with the next safe item unless a real approval/blocker exists.
+
 ## 2026-04-28 - Send generated images as direct attachments
 
 Ahmed corrected that saying an image is done without visibly showing/sending it is not useful. For generated images, especially Telegram, send the actual media attachment directly with the reply instead of relying only on a MEDIA path or status text. Verify the delivery path when possible.
 
+### Enforcement
+Generated images intended for Telegram/user review must be delivered as visible attachments, with delivery verified where possible.
+
 ## 2026-04-28 - Repeated JobZoom Health Warning Should Be Fixed, Not Explained Away
 Ahmed flagged that JobZoom showed `AI Scoring Engine: WARNING` for the second day in a row. The warning came from a fragile pre-scoring health probe even though real batch scoring succeeded. When a warning repeats and creates report noise, fix the report logic to use the real scoring outcome as source of truth instead of repeatedly explaining the warning.
+
+### Enforcement
+Repeated health warnings must be corrected at the source of truth instead of normalized through repeated explanations.
 
 ## [LRN-20260503-001] best_practice
 
@@ -1550,6 +1602,9 @@ Promoted during deep-audit closeout on 2026-05-27. Current-user-request preceden
 
 - 2026-05-28 - Step-by-step output sharing preference: Ahmed asked that troubleshooting instructions always be given step by step, with clear guidance on what output to share back.
 
+### Enforcement
+LCM active-context bloat should use targeted compaction against the specific overloaded conversation/session, then verify dashboard recovery.
+
 ---
 
 ## [LRN-20260602-hr-application-vs-email-approval] correction
@@ -1573,3 +1628,136 @@ Keep ATS/job portal/application-form submissions pre-approved. Gate all email re
 - Related Files: USER.md, MEMORY.md, workspace-hr/SOUL.md, workspace-hr/skills/hr-agent/references/approval-boundaries.md
 - Tags: hr, approvals, email, applications, recruiter, correction
 - Pattern-Key: hr.application_auto_email_reply_approval
+
+
+---
+
+## [LRN-20260606-agentic-engineering-loops] improvement
+
+**Logged**: 2026-06-06T20:15:00+03:00
+**Priority**: medium
+**Status**: promoted
+**Area**: agentic engineering
+
+### Summary
+Adopt the useful parts of Matt Van Horn's June 2026 agentic engineering article selectively.
+
+### Details
+Ahmed approved formalizing the practical loops after review: research -> plan -> execute -> verify, raw evidence -> synthesis, and repeat twice -> system. The boundary is deliberate: keep human checkpoints for external impact and avoid broad YOLO permission skipping in OpenClaw, JobZoom, email, LinkedIn, credentials, and gateway/runtime work.
+
+### Suggested Action
+For substantial agent/coding/automation/recovery work, produce a short agent-readable plan after real source inspection, preserve raw evidence where material, use one owner for parallel helpers, and promote repeated useful workflows through the Skillify ladder.
+
+### Metadata
+- Source: user_approved_recommendation
+- Related Files: AGENTS.md, MEMORY.md
+- Tags: agentic-engineering, planning, raw-evidence, skillify, approvals
+- Pattern-Key: agentic_engineering.research_plan_execute_verify
+## 2026-06-10 - LinkedIn visual style reference correction
+
+- Ahmed corrected that the intended daily LinkedIn style for this ROT visual was the attached hand-drawn sketch style, not the dark executive card style.
+- For similar requests, inspect the actual attached/reference visual first and match its specific style: warm paper background, black sketch lines, bold hand-lettered center hook, simple orange accents, workflow icons, and Ahmed Nasr signature.
+
+### Enforcement
+Visual-generation requests with an attachment/reference must inspect and match the actual reference style before applying default brand style.
+
+## 2026-07-07 - CMO/HR Tasks Must Reach Terminal Closeout
+
+- Correction: Ahmed flagged that CMO and HR can start tasks, then stop until he pushes them again.
+- What happened: Inspection found CMO Topic 7 still running after a retry subagent ended early, and HR Topic 9 had a recent killed/aborted session. The CMO retry pattern used a delayed wait/yield instead of a durable continuation.
+- Do differently: Long CMO/HR work must end in a visible terminal state: done, blocked, approval-required, or retry-scheduled with evidence. Do not rely on foreground sleeps plus yield for delayed retries. Use a durable retry record, direct runner, cron/watchdog, or explicit blocked report so Ahmed does not have to chase continuation.
+- Durable aid: Added `scripts/agent-lane-stall-report.py` to detect running, killed, aborted, and child-ended-parent-running CMO/HR lane sessions.
+
+## 2026-07-11 - Optional GitHub Probe Must Not Surface as Bash Failure
+
+- Correction: Ahmed flagged another visible `Bash failed` warning during a repository review.
+- What happened: A nonessential `gh api` check queried repository Actions-permission endpoints that require repository-admin access. GitHub returned HTTP 403, the shell exited nonzero, and OpenClaw exposed the tool failure even though the review itself succeeded.
+- Do differently: Do not query admin-only GitHub endpoints for third-party public repositories. Use workflow files and public metadata. If an optional probe can legitimately return 403/404, capture and classify it without a nonzero top-level exit, then report only if it materially limits the conclusion.
+- Pattern key: `research.optional_probe_no_visible_failure`
+
+## 2026-07-11 - Do Not Guess OpenClaw Browser CLI Syntax
+
+- Ahmed received another visible Bash failure during read-only research immediately after the prior warning correction.
+- Cause: browser-tool conventions were incorrectly translated into CLI flags. `--json` and `--browser-profile` were placed after subcommands, and tool-style `--target` was passed to the CLI. A user-profile connection was also attempted without containing the expected unavailable-browser outcome.
+- Do differently: inspect the exact subcommand help before first use, put global browser flags before the subcommand, focus a tab instead of passing `--target`, and contain optional/profile-unavailable probes.
+- Pattern key: `browser.cli_syntax_no_visible_failure`
+
+## 2026-07-13 - Intelligence Collection Needs a Promotion Handoff
+
+- Ahmed identified that RSS updates were being collected but not used to select daily LinkedIn topics.
+- Cause: the RSS crawler created isolated `Idea` rows, while the active scheduled campaign came from an evergreen post bank and the Friday CMO job only reported performance.
+- Do differently: connect intelligence collection to a review slate with explicit source quality, freshness, duplicate, positioning-pillar, and approval gates. Collection is not integration until a downstream planning workflow consumes the output.
+- Pattern key: `content.intelligence_requires_planning_handoff`
+
+## 2026-07-15 - Email Alert Verification Must Use Real Pipeline Aliases
+
+- Correction: Ahmed challenged a CNN newsletter falsely reported as a `TP` hiring-process update immediately after I claimed the repair was fully tested.
+- Cause: the tests proved delivery mechanics but did not exercise real short company aliases. Separator removal joined `It - Pilot` into a string containing `tp`, and the plural newsletter subdomain was not covered by the noise guard.
+- Do differently: before declaring an email-alert repair live, replay both the missed genuine email and real negative traffic against the current active-pipeline names. Include cross-boundary, hyphenated-product, short-alias-only, newsletter-subdomain, and corroborated-positive fixtures.
+- Status: promoted to `docs/solutions/automation/hiring-email-importance-vs-action.md`.
+- Pattern key: `email_alerts.real_pipeline_alias_negative_replay`
+
+## 2026-07-15 - Codex Device Codes Need Per-Character Browser Filling
+
+- The Codex CLI device-auth page renders the nine-character code as nine separate textboxes. Typing the full code into the first field populated only one character.
+- Use a fresh accessibility snapshot, fill all nine fields explicitly, refresh the snapshot, then click the current Continue ref. Poll the original `codex login --device-auth` process and verify with `codex login status` before running a live review.
+- Pattern key: `codex.device_auth_split_code_fields`
+## 2026-07-15 - Network authorization must reject ambiguous markup
+
+- What happened: attempts to normalize emphasized URLs inside the `web_fetch` provenance guard repeatedly exposed CommonMark edge cases where wrapper interpretation could authorize a different path.
+- Do differently: do not implement a partial markup parser inside a security boundary. Authorize only unambiguous exact URL tokens; reject ambiguous Markdown-sensitive suffixes and require percent encoding for literal terminal markers.
+- Pattern key: `security.network_provenance_fail_closed_markup`
+
+## 2026-07-16 - Email analysis must go beyond summary
+
+- Correction: Ahmed said email analysis was not deep or good enough.
+- What happened: the output leaned toward paraphrasing the message instead of interpreting the sender's real intent, what changed, hidden implications, commitments, decision points, risks, and the best response.
+- Do differently: analyze important emails in layers: bottom line, sender intent and subtext, factual commitments and deadlines, contradictions or missing information, impact on Ahmed, risk/opportunity, recommended action, and a reply strategy grounded in the actual thread. Distinguish evidence from inference and state confidence. Read the whole relevant thread before concluding.
+- Pattern key: `email.analysis_depth_and_judgment`
+
+## 2026-07-18 - Gateway token rotation must include remote clients
+
+- What happened: the gateway token was rotated securely and the VPS restarted cleanly, but Ahmed-Mac and the macOS app continued presenting the old token. The Mac node service was also still stamped as installed by OpenClaw 2026.5.19.
+- Do differently: treat gateway-token rotation as a multi-client change. Update both `gateway.auth.token` and `gateway.remote.token` on configured remote clients without exposing the value, restart those clients, approve only the exact post-rotation pairing request, repair version-stale node services, and verify the production node capabilities before closeout.
+- Verification standard: gateway health passes, no pending pairing request remains, the remote token matches the protected store, and `openclaw nodes status` shows the production node connected.
+- Pattern key: `gateway.token_rotation_remote_client_closeout`
+
+## 2026-07-18 - Distinguish backups from filesystem snapshots
+
+- What happened: an alert from the active `daily-snapshot` job was described as a failed daily backup even though the legacy `daily-backup` job had already been disabled.
+- Do differently: identify the exact failing job from its log or schedule before labeling it. When changing a managed cron, update and verify both the installed crontab and `config/root-crontab.managed` so automation cannot restore a stale entry.
+- Pattern key: `operations.backup_snapshot_job_identity`
+
+## 2026-07-19 - Telegram media delivery requires an explicit receipt
+
+- Correction: Ahmed received repeated `Media failed` responses after requesting a generated visual.
+- Cause: image generation and current-chat media delivery were treated as one implicit step, and failure was reported without switching to the approved local-media delivery path.
+- Do differently: generate the asset, stage it under `/root/.openclaw/media`, send it with `scripts/telegram-send-local-media.py`, and claim success only when the result has `ok=true` and a non-empty Telegram `messageId`. Use a stable receipt key to prevent duplicate sends.
+- Pattern key: `telegram.media_delivery_verified_receipt`
+
+## 2026-07-20 - Resolve the replied-to question before reporting adjacent work
+
+- Correction: Ahmed asked about the upcoming seven-day LinkedIn slate, but the response repeated verification of today's already-published post.
+- Do differently: when a Telegram message replies to a specific question, restate that exact question internally and answer it first. Treat adjacent completed work as supporting context only.
+- Pattern key: `telegram.reply_target_question_first`
+
+## 2026-07-20 - Calendar readiness reports must account for every date asked about
+
+- Correction: Ahmed challenged the seven-day LinkedIn slate because 22, 25, and 27 July were omitted without explanation.
+- What happened: the report listed only scheduled posts and called the three-post cadence intentional, but did not explain that the governed experiment had moved the original 22 July post to 26 July and intentionally left Wednesday 22, Saturday 25, and Monday 27 outside the Sunday/Tuesday/Thursday cadence.
+- Do differently: for a bounded date-range readiness report, account for every date in the range as scheduled, moved, intentionally blank, or missing, and cite the live cadence configuration before calling gaps intentional.
+- Pattern key: `content.calendar_range_account_every_date`
+
+## 2026-07-21 - Comment Radar Benefit Requires Qualified Candidates, Not an Empty Run
+
+- Correction: Ahmed rejected the 11:00 LinkedIn Comment Radar result because zero candidates meant zero practical benefit.
+- What happened: LinkedIn reordered content-search query parameters, while the radar required exact URL equality. A concurrent +30 application campaign also reused the same authenticated browser and redirected the radar tab into job pages. After recovery, the first five drafts exposed a second quality gap: mechanical phrasing and repeated authors could still satisfy the technical gate.
+- Do differently: serialize HR and CMO access to the authenticated LinkedIn browser, compare canonical navigation semantics instead of URL byte order, require five unique authors, and gate drafts on live post evidence, uniqueness, a substantive question, and executive voice. Do not call a radar round complete when sourcing failed or when the output is technically valid but reputationally weak.
+- Pattern key: `linkedin.comment_radar_outcome_and_shared_browser_lock`
+
+## 2026-07-25 - Reviewed Critical Files Must Be Closed in Git
+
+- Correction: Ahmed challenged the same “unreviewed critical files” warning after the files had already been reviewed and declared safe.
+- What happened: the review conclusion was reported in chat, but the files remained dirty and the stale handoff item remained active, so every heartbeat correctly rediscovered them as unreviewed.
+- Do differently: after reviewing intentional critical-file changes, either commit the exact reviewed paths or explicitly record why they must remain dirty and suppress only that reviewed revision. Verify the critical-path status is clean before claiming the alert is resolved.
+- Pattern key: `operations.critical_file_review_requires_git_closeout`
