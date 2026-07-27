@@ -108,7 +108,7 @@
 
 ## Review Handoff
 
-- Diff base and target: `65da9b107451b09fb93d8dd8340b7d2f6d8f4763` to the final scoped commit.
+- Diff base and target: main workspace `65da9b107451b09fb93d8dd8340b7d2f6d8f4763 -> 5273562a0`; parent/CMO repository `fe47c378ae66689ce655336bc71bda07d11139f4 -> 801a9c6`.
 - Reviewer focus: fail-closed state transitions, safe resume semantics, artifact immutability, independent-judge separation, and absence of external action.
 - Known trade-offs: stage outputs add local JSON storage; stage-level resume deliberately reuses prior same-run evidence instead of refreshing it.
 - Deliberately deferred work: cron rollout evidence, node-level metrics dashboard, and migration of JobZoom/content publishing/daily intelligence.
