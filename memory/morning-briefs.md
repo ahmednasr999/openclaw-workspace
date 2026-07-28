@@ -4951,3 +4951,43 @@ _(provider: searxng)_
 ## Calendar - Today's Events
 missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
 
+=== Morning Brief - 2026-07-28 07:05 AM ===
+
+## Claude 2x Usage Reminder
+
+## Open Work
+- Closed: LinkedIn +30 verified application campaign - 30/30. Verified closure recorded.
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **Digital Transformation Summit UAE 2026 | Technology Event**
+  https://digitransformationsummit.com/uae/
+  The Digital Transformation Summit UAE is the 51st edition of a globally recognised series hosted across 10+ cities worldwide. Held under the theme "Driving the UAE's Next Digital Leap Through Agentic AI," it convenes 200+ CIOs, CTOs, CDOs, CISOs and senior technology leaders to explore how organisat...
+
+- **Digital Health Transformation in the UAE: DHA and DoH.**
+  https://sbs-me.com/digital-health-transformation-in-the-uae-dha-and-doh/
+  In 2026, Dubai and Abu Dhabi are taking complementary approaches to modernize healthcare systems, emphasizing telemedicine, AI-driven workforce frameworks, and robust data governance.
+
+- **Transforming healthcare in the Middle East | Deloitte Middle East**
+  https://www.deloitte.com/middle-east/en/our-thinking/mepov-magazine/frontiers/transforming-healthcare-in-the-middle-east.html
+  Furthermore, the UAE, which was the first country in the world to appoint an AI minister, signed an agreement with the US software company Care AI in 2023 to advance its healthcare initiatives. Saudi Arabia: Under its Vision 2030 plan, Saudi Arabia is focused on transforming its healthcare sector th...
+
+- **UAE at the Helm of Health Innovation: Shaping Future Healthcare at Arab Health 2024 | Ministry of Health and Prevention - UAE**
+  https://mohap.gov.ae/en/w/uae-at-the-helm-of-health-innovation-shaping-future-healthcare-at-arab-health-2024
+  The Ministry of Health and Prevention (MoHAP) in collaboration with the Department of Health – Abu Dhabi, and the Dubai Health Authority (DHA) are jointly showcasing a suite of innovative initiatives and digital health services at Arab Health 2024.
+
+- **US-UAE healthcare alliance drives digital transformation wave | World Health Expo Insights**
+  https://www.worldhealthexpo.com/insights/healthcare-management/us-uae-healthcare-alliance-drives-digital-transformation-wave
+  By focusing on user experience and preventive care, the company has expanded rapidly from the UAE into Saudi Arabia and Egypt, recently attracting a US$10 million funding round to fuel its growth.
+
+## Gmail - Career Monitor
+- Real-time career monitor: unavailable - scheduled reconciliation remains the fallback
+- Scheduled reconciliation: unavailable - investigate Gmail fallback coverage
+
+## Calendar - Today's Events
+missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
+
