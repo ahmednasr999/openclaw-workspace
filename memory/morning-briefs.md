@@ -5131,3 +5131,43 @@ _(provider: searxng)_
 ## Calendar - Today's Events
 missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
 
+=== Morning Brief - 2026-08-04 07:05 AM ===
+
+## Claude 2x Usage Reminder
+
+## Open Work
+- Closed: LinkedIn +30 verified application campaign - 30/30. Verified closure recorded.
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **Digital Transformation Summit UAE 2026 | Technology Event**
+  https://digitransformationsummit.com/uae/
+  Global data and AI leader with 30+ years across healthcare and tech.
+
+- **Mazin Gadir PhD MSc BEng PMP Prosci LSSGB EBAS Agile - Alvarez & Marsal | LinkedIn**
+  https://ae.linkedin.com/in/mazin-gadir-phd-msc-beng-b4a4533
+  Dr Mazin Gadir is Director with Alvarez & Marsal’s Healthcare and Life Sciences division… · Experience: Alvarez & Marsal · Education: Harvard Medical School · Location: United Arab Emirates · 500+ connections on LinkedIn.
+
+- **Digital Transformation jobs in United Arab Emirates | Michael Page**
+  https://www.michaelpage.ae/jobs/digital-transformation/united-arab-emirates
+  Ideal for candidates with PMO, governance, business analysis experience.
+
+- **Digital Health Transformation in the UAE: DHA and DoH.**
+  https://sbs-me.com/digital-health-transformation-in-the-uae-dha-and-doh/
+  In 2026, Dubai and Abu Dhabi are taking complementary approaches to modernize healthcare systems, emphasizing telemedicine, AI-driven workforce frameworks, and robust data governance.
+
+- **Finance PMO Lead at Careers at UAE – Dubai – Apply Now! – Jooble**
+  https://ae.jooble.org/jdp/8822074008996457481
+  Job opening at Careers at UAE for Finance PMO Lead in Dubai. Discover new career opportunities with Jooble
+
+## Gmail - Career Monitor
+- Real-time career monitor: unavailable - scheduled reconciliation remains the fallback
+- Scheduled reconciliation: unavailable - investigate Gmail fallback coverage
+
+## Calendar - Today's Events
+missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
+
