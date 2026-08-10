@@ -15,7 +15,7 @@ Full detail lives in `docs/reference/TOOLS.full.md`. Keep only active technical 
 
 ## Browsers and Accounts
 
-- Prefer Camoufox for bot-resistant sites and Ahmed-Mac Chrome when login state matters. Do not fall back to a server browser for account-state work.
+- Prefer Camoufox for bot-resistant sites. For LinkedIn login state, use only the Windows OpenClaw-managed Chrome profile routed through `browser.proxy`; this is an extension-free lane. Do not fall back to Ahmed-Mac or a server browser.
 - Do not join, record, transcribe, or summarize Google Meet sessions without explicit approval for the workflow/session.
 - Stop after three same-page screenshots/scrolls without new extractable content. For X links, use a small screenshot budget and state when evidence cannot be read reliably.
 
@@ -24,12 +24,13 @@ Full detail lives in `docs/reference/TOOLS.full.md`. Keep only active technical 
 - Reply to the current chat through the normal final response, never a send tool. Use `sessions_send` only for cross-session or sub-agent handoff.
 - OpenClaw CLI messaging uses `--target`, not `--to`.
 - For requested current-chat local media, stage under `/root/.openclaw/media`, use `scripts/telegram-send-local-media.py`, and require `ok=true` plus a non-empty `messageId` before claiming delivery.
+- Native Codex approval rules for LinkedIn artifacts or internal status delivery to Ahmed must be scoped to Ahmed's fixed Telegram destination/topic, not to exact caption text or a single file path; exact-content rules re-prompt whenever wording changes. Keep unrelated targets unmatched.
 - If visible replies fail, check `messages.visibleReplies` for DMs and `messages.groupChat.visibleReplies` for groups. For duplicates, inspect delivery-mirror writes, replay/idempotency, visible-reply settings, and the runtime patch checker.
 
 ## External Services
 
 - LinkedIn jobs: `scripts/jobs-source-linkedin-jobspy.py` with `linkedin_fetch_description=True`; do not use authenticated Selenium/Playwright for job search.
-- Daily LinkedIn comments require the live Ahmed-Mac feed. If offline, skip the day; never fall back to Exa.
+- Daily LinkedIn comments require the authenticated Windows OpenClaw-managed Chrome feed through `browser.proxy`. If it is unavailable, skip the round; never ask for extension pairing or fall back to Ahmed-Mac, Exa, exported cookies, or a server-side authenticated browser.
 - LinkedIn posting uses Composio, person URN `urn:li:person:mm8EyA56mj`. Never use exported cookies. Image posts require the uploaded image's real `s3key`, never a URL or local path.
 - Notion content calendar: `3268d599-a162-814b-8854-c9b8bde62468`. Prefer direct Notion access.
 - For CMO Notion rows with local media, store the page-specific pointer as `Final local asset: \`/absolute/path.png\``. Build the backticks outside shell interpolation, then verify `cmo_notion_posting` resolves `asset.source=image_intent_final_asset`; a plain dotted absolute path can fall through to ambiguous date-prefix matching.
@@ -48,7 +49,9 @@ Full detail lives in `docs/reference/TOOLS.full.md`. Keep only active technical 
 
 ## Operations
 
+- Native Codex approval rules match command tokens. For standing-preapproved internal workflows, call the approved script or CLI entry point directly; do not wrap it in `bash -lc` solely to set defaults already embedded by the script, because the opaque shell string defeats bounded policy matching.
 - Shell-based cron work uses deterministic OS cron/direct runners, not agent turns with `toolsAllow: exec`.
+- The publishing watchdog accepts `--minutes 60`, not `--threshold-minutes 60`: `python3 /root/.openclaw/workspace-cmo/scripts/publishing-watchdog.py --minutes 60`.
 - Queue defaults: `steer`, `debounceMs: 500`, `cap: 20`, `drop: summarize`. For bursty Telegram follow-ups, prefer temporary `/queue collect debounce:1s cap:20 drop:summarize`; use interrupt only when Ahmed asks.
 - For latency triage, run `/root/.openclaw/workspace-cto/scripts/cto-fast-status.sh` before broad status checks.
 - Back up live SQLite with `.backup`, including `lcm.db`, `flows/registry.sqlite`, `tasks/runs.sqlite`, and relevant `memory/*.sqlite`.

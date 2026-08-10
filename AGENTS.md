@@ -38,13 +38,29 @@ Route durable facts to local files, volatile facts to live sources, external ser
 
 Re-check live state immediately before retrying any external action to prevent duplicates. Technical gateway rules live in `TOOLS.md` and `skills/gateway-runtime-safety/`.
 
+## Pre-Approved Internal Agent Operations
+
+Routine internal operations across NASR, CTO, CMO, HR, and JobZoom are standing pre-approved. This includes read-only health and status checks, heartbeat evidence, internal session events and handoffs, deterministic commands for an agent's owned workflow, local reports and artifacts, local Git inspection/staging/commits for in-scope files, and status or artifact delivery to Ahmed's DM or fixed internal agent/CEO Telegram topics. These operations must not generate command-approval cards; keep executable rules bounded to stable commands, owned workspaces, and Ahmed's fixed destinations.
+
+Routine bounded VPS maintenance is also standing pre-approved across all agents. This includes plugin/container/disk verification, rebuildable cache cleanup, the guarded disk-cleanup script, bounded journal vacuuming, and exact previously approved obsolete-runtime or disabled-revision removals. Encode these as narrow Codex executable rules so the Codex app-server plugin does not ask Ahmed repeatedly. Arbitrary shell deletion, unbounded package removal, backup pruning, and gateway/config/lifecycle changes remain gated.
+
+This does not pre-approve Git push or other remote-repository writes, gateway/config changes, updates, restarts or service lifecycle actions, credential/MFA work, destructive actions, paid actions, public posting without its existing content approval, or messages to third parties. Those retain their existing gates.
+
 ## Pre-Approved HR Work
 
 Internal scans, diagnostics, scoring, ATS analysis, reports, CV creation, artifact verification, reversible HR edits, and Telegram delivery to Ahmed are pre-approved.
 
+Routine local commands that implement this work are also standing pre-approved, including duplicate locks, pipeline lookups and updates, application-ledger reconciliation, scoring, CV generation, and artifact verification. Keep their executable rules narrow and current; do not send Ahmed command-approval cards for these internal steps.
+
 Standard application-form submissions are pre-approved when known information and Ahmed's confirmed salary, role, and personal-data rules are sufficient. Ask before email replies, recruiter messages outside forms, unknown sensitive answers, unavailable MFA/OTP, non-standard commitments, paid or credential actions, destructive actions, or salary/terms outside confirmed rules.
 
 JobZoom remains a full-scan protected lane. Do not reduce its scan scope or LinkedIn volume unless Ahmed asks.
+
+## Pre-Approved LinkedIn Execution
+
+Routine command execution for established LinkedIn workflows is standing pre-approved across NASR, CMO, HR, and JobZoom. This includes browser-lane setup and checks, discovery, job-description extraction, comment radar, content staging/publishing support, analytics, and application tooling. Do not send Ahmed command-approval cards for these steps; encode narrow executable/script rules and keep them current as entry points change.
+
+This is an execution-policy authorization, not a waiver of workflow gates. Exact caption/visual approval, outbound-message approval, credential/MFA handling, duplicate prevention, destructive account actions, and visible completion evidence remain governed by their existing rules.
 
 ## Engineering and Automation
 

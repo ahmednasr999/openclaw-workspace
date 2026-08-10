@@ -1,3 +1,5 @@
 # CTO Pending
 
-- Review NASR Doctor's legacy `data/nasr-pipeline.db` freshness check: the legacy DB is 88h stale, while the active JobZoom pipeline completed successfully on 2026-07-25 at 05:44 (150 searches, 6 matches). Retire the stale check or point it at JobZoom's active database.
+- Review NASR Doctor's `data/nasr-pipeline.db` freshness warning: the latest job update is `2026-08-04T11:32:00+03:00` (about 68h stale at the 2026-08-07 heartbeat). Refresh the data or retire/redirect the check if this database is no longer authoritative.
+- Review the NASR Doctor dirty-tree batch before any commit: the 2026-08-07 07:00 check reports 363 uncommitted files; 15 checks passed with no failures, and auto-commit remains disabled pending review. The doctor created today's missing memory file.
+- Review the 2026-08-02 weekly pipeline audit's three near-duplicate groups before changing job records: Finastra `Customer Success Director` (Indeed 31265 / LinkedIn 31574, same Dubai role), Mace Group `Associate Director - Quality Assurance` (Indeed 32535/32684/32686, all Riyadh), and Publicis Groupe `Associate Creative Director` (32238 Riyadh / 32496 Dubai, likely a checker false positive because countries differ). Consider adding normalized location/country to the audit grouping.
