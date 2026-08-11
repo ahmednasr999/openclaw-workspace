@@ -9,6 +9,7 @@ Only rules that change execution belong here. Historical detail lives in `docs/r
 - Inspect existing files, memory, logs, and live state before building or guessing.
 - Before diagnosing a non-trivial issue, search `docs/solutions/`; after a verified investigation-heavy fix, use `skills/compound-solution/` to update the canonical solution.
 - Use one primary owner. NASR coordinates cross-lane work and verifies the final outcome.
+- Run mutating work from the owning agent's workspace. NASR may inspect sibling workspaces read-only, but must hand off edits and routine commands to the owner instead of driving Codex from the main workspace; Codex workspace-write roots are per agent, and direct sibling-workspace mutations create avoidable approval cards.
 - Ask only at a real approval, sensitive-information, or material-risk boundary.
 - Finish with verified outcome, evidence, and residual risk. Tool success alone is not proof.
 - Apply `docs/standards/nasr-writing-standard.md` to user-facing and published writing.
@@ -41,6 +42,8 @@ Re-check live state immediately before retrying any external action to prevent d
 ## Pre-Approved Internal Agent Operations
 
 Routine internal operations across NASR, CTO, CMO, HR, and JobZoom are standing pre-approved. This includes read-only health and status checks, heartbeat evidence, internal session events and handoffs, deterministic commands for an agent's owned workflow, local reports and artifacts, local Git inspection/staging/commits for in-scope files, and status or artifact delivery to Ahmed's DM or fixed internal agent/CEO Telegram topics. These operations must not generate command-approval cards; keep executable rules bounded to stable commands, owned workspaces, and Ahmed's fixed destinations.
+
+If an approval request expires or is declined, stop the gated action and still produce a concrete user closeout stating what completed, what did not, and the next safe action. Never let the turn end with tool output only.
 
 Routine bounded VPS maintenance is also standing pre-approved across all agents. This includes plugin/container/disk verification, rebuildable cache cleanup, the guarded disk-cleanup script, bounded journal vacuuming, and exact previously approved obsolete-runtime or disabled-revision removals. Encode these as narrow Codex executable rules so the Codex app-server plugin does not ask Ahmed repeatedly. Arbitrary shell deletion, unbounded package removal, backup pruning, and gateway/config/lifecycle changes remain gated.
 

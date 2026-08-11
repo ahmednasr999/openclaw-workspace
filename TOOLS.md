@@ -50,6 +50,7 @@ Full detail lives in `docs/reference/TOOLS.full.md`. Keep only active technical 
 ## Operations
 
 - Native Codex approval rules match command tokens. For standing-preapproved internal workflows, call the approved script or CLI entry point directly; do not wrap it in `bash -lc` solely to set defaults already embedded by the script, because the opaque shell string defeats bounded policy matching.
+- Codex app-server workspace-write scope is rooted in the active agent's workspace. Route sibling-workspace mutations to that workspace's owning agent; direct cross-workspace edits or commands from NASR trigger approval cards and an expired approval can leave the turn without a final reply.
 - Shell-based cron work uses deterministic OS cron/direct runners, not agent turns with `toolsAllow: exec`.
 - The publishing watchdog accepts `--minutes 60`, not `--threshold-minutes 60`: `python3 /root/.openclaw/workspace-cmo/scripts/publishing-watchdog.py --minutes 60`.
 - Queue defaults: `steer`, `debounceMs: 500`, `cap: 20`, `drop: summarize`. For bursty Telegram follow-ups, prefer temporary `/queue collect debounce:1s cap:20 drop:summarize`; use interrupt only when Ahmed asks.
