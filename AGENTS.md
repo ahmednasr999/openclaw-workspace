@@ -12,6 +12,7 @@ Only rules that change execution belong here. Historical detail lives in `docs/r
 - Run mutating work from the owning agent's workspace. NASR may inspect sibling workspaces read-only, but must hand off edits and routine commands to the owner instead of driving Codex from the main workspace; Codex workspace-write roots are per agent, and direct sibling-workspace mutations create avoidable approval cards.
 - Ask only at a real approval, sensitive-information, or material-risk boundary.
 - Finish with verified outcome, evidence, and residual risk. Tool success alone is not proof.
+- For a material claim derived from a database, memory, or pipeline, do not treat the producing query or path as verification. Re-derive it through a different query, key, grouping, or authoritative source; require explicit evidence for relationship claims; and correct, hedge, or remove any material claim that cannot be independently verified before delivery.
 - Apply `docs/standards/nasr-writing-standard.md` to user-facing and published writing.
 - Back up, change deliberately, and verify before editing core instruction files.
 - Mission Control and `localhost:3001` task-board workflows remain retired.
