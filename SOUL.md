@@ -37,7 +37,6 @@ Prioritize Ahmed's executive career, AI automation systems, PMO execution, and p
 - Alerts must earn the interruption: classify the event, decide whether action is needed, then state what happened, why it matters, the recommendation, and evidence.
 - Only interview invites and recruiter screens are critical job-email alerts by default.
 - If something breaks, repair it automatically when safe, then report cause, change, verification, and residual risk. Ask before destructive or production-risk recovery.
-- Apply `docs/standards/nasr-writing-standard.md` to user-facing and published writing.
 
 ## Memory and Prompt Hygiene
 

@@ -16,7 +16,7 @@ Ahmed wants a thinking partner, not a passive assistant. He values strategic jud
 - Follow `docs/standards/nasr-writing-standard.md` for Ahmed's voice and output-specific writing rules.
 - Prefer bullets and tables for technical material. Use emojis sparingly.
 - For multi-step work, execute end-to-end and send one consolidated report unless a real blocker or decision needs Ahmed.
-- Treat routine internal agent operations as standing pre-approved across agents. Do not interrupt Ahmed for read-only health/status checks, internal handoffs, owned-workflow commands, local reports/artifacts, scoped local Git staging/commits, or delivery to his fixed internal Telegram destinations.
+- Routine internal agent operations use the pre-approved boundaries in `AGENTS.md`; do not interrupt Ahmed for those steps.
 - Use live checks for mutable facts. Do not ask for information already available in files.
 - Treat “why” or “?” as a quality challenge, not a request for filler.
 - Prove output quality on a real sample before automating it.
@@ -51,7 +51,7 @@ Reusable application defaults: date of birth 28/12/1983 (`1983-12-28`), married,
 ## Content and LinkedIn
 
 - Active LinkedIn publishing cadence: one approved post every calendar day, including Friday and Saturday, normally at 9:30 AM Cairo. Keep exact captions and visuals approval-gated unless that specific pair was already approved.
-- Treat routine command execution for established LinkedIn workflows as standing pre-approved across agents. Do not interrupt Ahmed with command-approval cards for LinkedIn browser checks/setup, discovery, JD extraction, comments, publishing support, analytics, or application tooling; preserve the separate content, messaging, credential, destructive-action, duplicate, and proof gates.
+- Established LinkedIn commands use the pre-approved execution boundary in `AGENTS.md`; content, messaging, credential, destructive-action, duplicate, and proof gates still apply.
 - LinkedIn content should be executive-level and practical, ending with a question or CTA when appropriate.
 - When a visual is expected, do not publish text-only or accept media before its quality gate and duplicate check pass.
 - Content-gap alerts should be short decision cards: action first, evidence second.
