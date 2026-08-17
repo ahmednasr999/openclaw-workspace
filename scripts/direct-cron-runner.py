@@ -259,6 +259,48 @@ def disk_guard(args: argparse.Namespace) -> int:
         return 0 if result["returncode"] == 0 and delivery.get("ok") else 1
 
 
+def nasr_doctor(args: argparse.Namespace) -> int:
+    with with_lock("nasr-doctor"):
+        result = run_command(
+            "nasr-doctor",
+            ["/usr/bin/python3", str(ROOT / "scripts" / "nasr-doctor.py"), "--fix"],
+            cwd=ROOT,
+            timeout=540,
+        )
+        returncode = result["returncode"]
+        stdout = result["stdout"].strip()
+        stderr = result["stderr"].strip()
+
+        # NASR Doctor uses 1 and 2 for completed diagnostics containing warning
+        # or failure findings. They are reportable health states, not runner
+        # failures, so only execution/runtime failures propagate to cron.
+        if returncode in {0, 1, 2}:
+            if returncode == 0:
+                summary = next(
+                    (line.strip() for line in reversed(stdout.splitlines()) if "Summary:" in line),
+                    "Summary: healthy",
+                )
+                print(f"NASR Doctor completed: {summary} | Log: {result['log_path']}")
+            else:
+                level = "warnings" if returncode == 1 else "failures"
+                print(f"NASR Doctor completed with {level} (diagnostic rc={returncode}).")
+                if stdout:
+                    print(stdout)
+                if stderr:
+                    print(f"stderr:\n{stderr}")
+                print(f"Durable log: {result['log_path']}")
+            return 0
+
+        print(
+            "NASR Doctor execution failed.\n"
+            f"Unexpected return code: {returncode}\n"
+            f"Log: {result['log_path']}\n"
+            f"Error: {(stderr or stdout)[-2000:].strip() or 'no output'}",
+            file=sys.stderr,
+        )
+        return 1
+
+
 def session_cleanup(args: argparse.Namespace) -> int:
     with with_lock("session-cleanup"):
         if args.validate:
@@ -557,13 +599,14 @@ def main() -> int:
     parser.add_argument("--no-send", action="store_true", help="Run without Telegram delivery.")
     parser.add_argument("--validate", action="store_true", help="Use a non-destructive validation path where available.")
     sub = parser.add_subparsers(dest="task", required=True)
-    for name in ("weekly-self-health", "disk-guard", "session-cleanup", "approved-14day-post", "approved-14day-engagement", "linkedin-comment-radar-1100", "linkedin-comment-radar-1500"):
+    for name in ("weekly-self-health", "disk-guard", "nasr-doctor", "session-cleanup", "approved-14day-post", "approved-14day-engagement", "linkedin-comment-radar-1100", "linkedin-comment-radar-1500"):
         sub.add_parser(name)
     args = parser.parse_args()
 
     handlers = {
         "weekly-self-health": weekly_self_health,
         "disk-guard": disk_guard,
+        "nasr-doctor": nasr_doctor,
         "session-cleanup": session_cleanup,
         "approved-14day-post": approved_batch_post,
         "approved-14day-engagement": approved_batch_engagement,
