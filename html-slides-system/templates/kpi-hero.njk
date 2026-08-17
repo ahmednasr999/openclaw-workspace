@@ -1,10 +1,11 @@
-<section class="slide slide-kpi">
-  {% if eyebrow %}<div class="eyebrow">{{ eyebrow }}</div>{% endif %}
-  <h1 class="slide-title">{{ title }}</h1>
-  <div class="card alt" style="padding:28px; margin-top:18px;">
-    <div class="metric">{{ metric }}</div>
-    <div class="metric-label">{{ metricLabel }}</div>
-    {% if supportingText %}<div class="body-text" style="margin-top:18px; max-width:540px;">{{ supportingText }}</div>{% endif %}
+<section class="slide slide-kpi slide-kpi--executive-split">
+  <div class="kpi-split__metric-panel">
+    <div class="kpi-split__metric">{{ metric }}</div>
+    <div class="kpi-split__label">{{ metricLabel }}</div>
   </div>
-  {% if footnote %}<div class="footnote">{{ footnote }}</div>{% endif %}
+  <div class="kpi-split__brief">
+    <h1 class="slide-title kpi-split__title">{{ title }}</h1>
+    {% if supportingText %}<p class="kpi-split__statement">{{ supportingText }}</p>{% endif %}
+  </div>
+  {% if footnote %}<div class="footnote kpi-split__footnote">{{ footnote }}</div>{% endif %}
 </section>
