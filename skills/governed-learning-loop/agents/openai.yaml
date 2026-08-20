@@ -1,0 +1,4 @@
+interface:
+  display_name: "Governed Learning Loop"
+  short_description: "Turn verified repetitions into reviewable skills"
+  default_prompt: "Use $governed-learning-loop to capture verified workflow evidence and build reviewable improvement candidates."

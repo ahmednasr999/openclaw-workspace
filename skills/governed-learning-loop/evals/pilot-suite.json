@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "name": "Governed learning loop v1-to-v2 shadow pilot",
+  "data_policy": "curated-sanitized",
+  "tasks": [
+    {
+      "id": "bounded-proposal-edits",
+      "split": "validation",
+      "critical": true,
+      "rubric": "Score 1 only when proposals enforce one to four distinct edits."
+    },
+    {
+      "id": "repeated-independent-runs",
+      "split": "validation",
+      "critical": false,
+      "rubric": "Score 1 only when evaluation requires at least two distinct replay run IDs and gates every run."
+    },
+    {
+      "id": "locked-critical-regression",
+      "split": "locked-test",
+      "critical": true,
+      "rubric": "Score 1 only when a critical-task regression rejects the proposal and is retained."
+    },
+    {
+      "id": "candidate-cost-ceiling",
+      "split": "locked-test",
+      "critical": true,
+      "rubric": "Score 1 only when both per-run candidate cost and cost-increase ratio are enforced."
+    },
+    {
+      "id": "manual-promotion-boundary",
+      "split": "locked-test",
+      "critical": true,
+      "rubric": "Score 1 only when replay acceptance still cannot deploy without explicit proposal approval."
+    }
+  ],
+  "thresholds": {
+    "required_runs": 2,
+    "min_absolute_improvement": 0.2,
+    "max_candidate_cost_per_run": 0.0,
+    "max_cost_increase_ratio": 0.0
+  }
+}

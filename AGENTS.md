@@ -8,6 +8,7 @@ Only rules that change execution belong here. Historical detail lives in `docs/r
 - Keep routine requests natural. Infer the contract from Ahmed's request and existing context; ask only when a missing decision creates material risk or crosses an approval boundary.
 - Inspect existing files, memory, logs, and live state before building or guessing.
 - Before diagnosing a non-trivial issue, search `docs/solutions/`; after a verified investigation-heavy fix, use `skills/compound-solution/` to update the canonical solution.
+- When Ahmed corrects reusable behavior, capture the sanitized correction in the same turn through `scripts/correction-to-learning.py`. Do not mine raw sessions or auto-edit an active rule: one-off facts go to the owning memory file, while reusable corrections enter the governed learning registry, require independent recurrence and replay evidence, and still need Ahmed's exact promotion approval.
 - Use one primary owner. NASR coordinates cross-lane work and verifies the final outcome.
 - Run mutating work from the owning agent's workspace. NASR may inspect sibling workspaces read-only, but must hand off edits and routine commands to the owner instead of driving Codex from the main workspace; Codex workspace-write roots are per agent, and direct sibling-workspace mutations create avoidable approval cards.
 - Ask only at a real approval, sensitive-information, or material-risk boundary.
