@@ -37,7 +37,7 @@ The loop uses explicit structured observations and curated sanitized replay suit
 - Keep proposal cost within both the absolute ceiling and relative baseline ratio.
 - Retain rejected evaluations as negative evidence even if a later revision passes.
 - Keep promotion separate from candidate discovery.
-- Fail closed unless the approval receipt verifies against the operator-managed OpenSSH allowed-signers trust root; caller-supplied approver text is not approval evidence.
+- Fail closed unless the approval receipt verifies against the external operator-managed OpenSSH allowed-signers trust root at `/root/.config/openclaw/governed-learning-approval-signers`; caller-supplied approver text is not approval evidence.
 - Add scheduling only after multiple manual samples are useful and low-noise.
 - Do not feed raw session transcripts, hidden runtime instructions, credentials, or personal data into the registry.
 

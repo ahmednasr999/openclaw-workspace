@@ -39,18 +39,23 @@ class GovernedLearningLoopTests(unittest.TestCase):
 
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
+        self.trust_temp = tempfile.TemporaryDirectory()
         root = Path(self.temp.name)
         self.data_dir = root / "data"
         self.report = root / "report.md"
         self.original_workspace = MODULE.WORKSPACE
+        self.original_allowed_signers = MODULE.APPROVAL_ALLOWED_SIGNERS
         MODULE.WORKSPACE = root
-        trust_root = MODULE.approval_allowed_signers_path()
-        trust_root.parent.mkdir(parents=True)
+        trust_root = Path(self.trust_temp.name) / "governed-learning-approval-signers"
+        MODULE.APPROVAL_ALLOWED_SIGNERS = trust_root
         public_key = self.private_key.with_suffix(".pub").read_text(encoding="utf-8").strip()
         trust_root.write_text(f"ahmed {public_key}\n", encoding="utf-8")
+        trust_root.chmod(0o600)
 
     def tearDown(self):
         MODULE.WORKSPACE = self.original_workspace
+        MODULE.APPROVAL_ALLOWED_SIGNERS = self.original_allowed_signers
+        self.trust_temp.cleanup()
         self.temp.cleanup()
 
     def args(self, run_id="run-1", evidence=None, target_type="skill-update"):
@@ -446,6 +451,17 @@ class GovernedLearningLoopTests(unittest.TestCase):
                 )
             payload[field] = original
 
+    def test_replay_rejects_legacy_proposal_with_controlled_error(self):
+        proposal, _ = self.create_proposal()
+        packet = self.write_results(proposal)
+        registry = MODULE.load_registry(self.data_dir)
+        registry["proposals"][0].pop("baseline_config_sha256")
+        MODULE.atomic_write_json(self.data_dir / "registry.json", registry)
+        with self.assertRaisesRegex(MODULE.LearningLoopError, "predates artifact/config"):
+            MODULE.evaluate_proposal(
+                argparse.Namespace(data_dir=self.data_dir, proposal=proposal["id"], results=packet)
+            )
+
     def test_evaluated_proposal_requires_explicit_approval(self):
         proposal, _ = self.create_proposal()
         with self.assertRaises(MODULE.LearningLoopError):
@@ -478,6 +494,22 @@ class GovernedLearningLoopTests(unittest.TestCase):
         receipt["target_path"] = "scripts/other.py"
         approval_args["approval_receipt"].write_text(json.dumps(receipt), encoding="utf-8")
         with self.assertRaises(MODULE.LearningLoopError):
+            MODULE.request_promotion(
+                argparse.Namespace(
+                    data_dir=self.data_dir,
+                    proposal=proposal["id"],
+                    target_path=proposal["target_path"],
+                    **approval_args,
+                )
+            )
+
+    def test_promotion_rejects_writable_approval_trust_root(self):
+        proposal, _ = self.create_proposal()
+        packet = self.write_results(proposal)
+        evaluation = self.evaluate(proposal, packet)
+        approval_args = self.approval_args(proposal, evaluation)
+        MODULE.APPROVAL_ALLOWED_SIGNERS.chmod(0o666)
+        with self.assertRaisesRegex(MODULE.LearningLoopError, "not group/world writable"):
             MODULE.request_promotion(
                 argparse.Namespace(
                     data_dir=self.data_dir,

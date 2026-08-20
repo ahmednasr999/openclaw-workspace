@@ -63,10 +63,10 @@ An evaluation is `accepted` only when every gate passes. A rejected evaluation r
 - the exact target path;
 - a JSON approval receipt that names the exact candidate, proposal, accepted evaluation, target, suite, four replay hashes, and evaluation-result hash;
 - an OpenSSH signature over the unchanged receipt using namespace `openclaw-governed-learning`;
-- an approver principal present in the operator-managed trust root at `config/governed-learning-approval-signers`;
+- an approver principal present in the operator-managed trust root at `/root/.config/openclaw/governed-learning-approval-signers`;
 - an explicit approval reference and timestamp inside the signed receipt.
 
-Allowed target paths are relative workspace paths under `skills/`, `scripts/`, `tests/`, or `docs/solutions/`, plus the exact core files `AGENTS.md`, `SOUL.md`, and `TOOLS.md`. The caller cannot override the trust-root path. A missing trust root, unknown principal, invalid signature, altered receipt, or receipt replayed against another proposal/evaluation fails closed. New promotion receipts always require an evaluation-passed proposal; legacy candidate-only receipts remain readable but cannot authorize a new implementation record. The command records intent only and never writes the target.
+Allowed target paths are relative workspace paths under `skills/`, `scripts/`, `tests/`, or `docs/solutions/`, plus the exact core files `AGENTS.md`, `SOUL.md`, and `TOOLS.md`. The caller cannot override the external trust-root path; its directory and file must be owned by the runtime user and must not be group/world writable. A missing trust root, unknown principal, invalid signature, altered receipt, or receipt replayed against another proposal/evaluation fails closed. New promotion receipts always require an evaluation-passed proposal; legacy candidate-only receipts remain readable but cannot authorize a new implementation record. The command records intent only and never writes the target.
 
 ## Implementation record
 

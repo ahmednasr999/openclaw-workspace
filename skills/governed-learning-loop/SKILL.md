@@ -59,7 +59,7 @@ Turn proven work into reusable organizational capability while keeping active be
 
    A rejection remains in `negative_evidence`; do not delete it or silently retry with easier tasks.
 
-6. Request promotion only after the proposal passes replay and Ahmed approves the exact proposal, accepted evaluation, target, and replay hash set. The approval workflow must create a JSON receipt and sign its unchanged bytes with an OpenSSH key whose principal is pinned in `config/governed-learning-approval-signers`. The private key stays outside this skill. This creates a promotion receipt; it does not edit the target.
+6. Request promotion only after the proposal passes replay and Ahmed approves the exact proposal, accepted evaluation, target, and replay hash set. The approval workflow must create a JSON receipt and sign its unchanged bytes with an OpenSSH key whose principal is pinned in the external, operator-owned trust root at `/root/.config/openclaw/governed-learning-approval-signers`. The private key stays outside this skill. This creates a promotion receipt; it does not edit the target.
 
    ```bash
    python3 skills/governed-learning-loop/scripts/learning_loop.py request-promotion \

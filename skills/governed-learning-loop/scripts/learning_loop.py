@@ -11,6 +11,7 @@ import json
 import math
 import os
 import re
+import stat as stat_module
 import subprocess
 import tempfile
 from datetime import datetime, timezone
@@ -29,6 +30,13 @@ ALLOWED_TARGET_PREFIXES = ("skills/", "scripts/", "tests/", "docs/solutions/")
 EVAL_SPLITS = {"validation", "locked-test"}
 MAX_EVAL_FILE_BYTES = 1_000_000
 APPROVAL_SIGNATURE_NAMESPACE = "openclaw-governed-learning"
+APPROVAL_ALLOWED_SIGNERS = Path("/root/.config/openclaw/governed-learning-approval-signers")
+REPLAY_HASH_FIELDS = (
+    "baseline_artifact_sha256",
+    "baseline_config_sha256",
+    "candidate_artifact_sha256",
+    "candidate_config_sha256",
+)
 SECRET_PATTERNS = (
     re.compile(r"(?i)\b(?:api[_-]?key|password|passwd|secret|access[_-]?token|refresh[_-]?token)\s*[:=]\s*\S+"),
     re.compile(r"(?i)\bbearer\s+[A-Za-z0-9._~+/-]{12,}"),
@@ -137,44 +145,100 @@ def file_sha256(path: Path) -> str:
     return hasher.hexdigest()
 
 
-def approval_allowed_signers_path() -> Path:
-    """Return the operator-managed trust root; callers cannot override it."""
-    return WORKSPACE / "config" / "governed-learning-approval-signers"
-
-
-def verify_ssh_signature(payload_path: Path, signature_path: Path, principal: str) -> None:
-    allowed_signers = approval_allowed_signers_path()
-    for label, path in (
-        ("approval receipt", payload_path),
-        ("approval signature", signature_path),
-        ("approval allowed-signers trust root", allowed_signers),
-    ):
-        if not path.is_file() or path.is_symlink():
-            raise LearningLoopError(f"{label} must be a regular file: {path}")
+def read_regular_file(
+    path: Path, label: str, maximum: int = MAX_EVAL_FILE_BYTES
+) -> tuple[bytes, os.stat_result]:
     try:
-        payload = payload_path.read_bytes()
-        result = subprocess.run(
-            [
-                "/usr/bin/ssh-keygen",
-                "-Y",
-                "verify",
-                "-f",
-                str(allowed_signers),
-                "-I",
-                principal,
-                "-n",
-                APPROVAL_SIGNATURE_NAMESPACE,
-                "-s",
-                str(signature_path),
-            ],
-            input=payload,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            check=False,
-            timeout=15,
+        flags = os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0)
+        fd = os.open(path, flags)
+        with os.fdopen(fd, "rb") as handle:
+            before = os.fstat(handle.fileno())
+            if not stat_module.S_ISREG(before.st_mode) or before.st_size > maximum:
+                raise LearningLoopError(f"{label} must be a bounded regular file: {path}")
+            payload = handle.read(maximum + 1)
+            after = os.fstat(handle.fileno())
+    except (OSError, ValueError) as exc:
+        raise LearningLoopError(f"cannot read {label}: {exc}") from exc
+    if len(payload) > maximum:
+        raise LearningLoopError(f"{label} exceeds {maximum} bytes")
+    if (before.st_dev, before.st_ino, before.st_size, before.st_mtime_ns) != (
+        after.st_dev,
+        after.st_ino,
+        after.st_size,
+        after.st_mtime_ns,
+    ):
+        raise LearningLoopError(f"{label} changed while it was read")
+    return payload, before
+
+
+def read_regular_bytes(path: Path, label: str, maximum: int = MAX_EVAL_FILE_BYTES) -> bytes:
+    return read_regular_file(path, label, maximum)[0]
+
+
+def read_approval_receipt(path: Path) -> tuple[dict[str, Any], bytes, str]:
+    payload_bytes = read_regular_bytes(path, "approval receipt")
+    try:
+        payload = json.loads(payload_bytes.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise LearningLoopError(f"cannot read approval receipt: {exc}") from exc
+    if not isinstance(payload, dict):
+        raise LearningLoopError("approval receipt must be a JSON object")
+    return payload, payload_bytes, hashlib.sha256(payload_bytes).hexdigest()
+
+
+def read_approval_trust_root() -> tuple[bytes, str]:
+    path = APPROVAL_ALLOWED_SIGNERS
+    try:
+        parent_stat = path.parent.stat(follow_symlinks=False)
+    except OSError as exc:
+        raise LearningLoopError(f"cannot read approval allowed-signers trust root: {exc}") from exc
+    if parent_stat.st_uid != os.geteuid() or parent_stat.st_mode & 0o022:
+        raise LearningLoopError(
+            "approval trust-root directory must be owned by the runtime user and not group/world writable"
         )
-    except (OSError, subprocess.SubprocessError) as exc:
-        raise LearningLoopError(f"cannot verify approval signature: {exc}") from exc
+    payload, opened_stat = read_regular_file(path, "approval allowed-signers trust root")
+    if opened_stat.st_uid != os.geteuid() or opened_stat.st_mode & 0o022:
+        raise LearningLoopError(
+            "approval allowed-signers trust root must be owned by the runtime user and not group/world writable"
+        )
+    return payload, hashlib.sha256(payload).hexdigest()
+
+
+def verify_ssh_signature(
+    payload: bytes,
+    signature: bytes,
+    allowed_signers: bytes,
+    principal: str,
+) -> None:
+    with tempfile.TemporaryDirectory(prefix="governed-learning-verify-") as temp_name:
+        temp_dir = Path(temp_name)
+        signature_path = temp_dir / "approval.sig"
+        allowed_signers_path = temp_dir / "allowed_signers"
+        signature_path.write_bytes(signature)
+        allowed_signers_path.write_bytes(allowed_signers)
+        try:
+            result = subprocess.run(
+                [
+                    "/usr/bin/ssh-keygen",
+                    "-Y",
+                    "verify",
+                    "-f",
+                    str(allowed_signers_path),
+                    "-I",
+                    principal,
+                    "-n",
+                    APPROVAL_SIGNATURE_NAMESPACE,
+                    "-s",
+                    str(signature_path),
+                ],
+                input=payload,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                check=False,
+                timeout=15,
+            )
+        except (OSError, subprocess.SubprocessError) as exc:
+            raise LearningLoopError(f"cannot verify approval signature: {exc}") from exc
     if result.returncode != 0:
         detail = result.stderr.decode("utf-8", errors="replace").strip()
         raise LearningLoopError(f"approval signature is not trusted: {detail or 'verification failed'}")
@@ -596,13 +660,13 @@ def normalize_evaluation_packet(
         raise LearningLoopError("evaluation packet proposal_id does not match")
     if payload.get("suite_sha256") != proposal["suite_sha256"]:
         raise LearningLoopError("evaluation packet suite hash does not match the locked suite")
-    for field in (
-        "baseline_artifact_sha256",
-        "baseline_config_sha256",
-        "candidate_artifact_sha256",
-        "candidate_config_sha256",
-    ):
-        if payload.get(field) != proposal[field]:
+    for field in REPLAY_HASH_FIELDS:
+        expected_hash = proposal.get(field)
+        if not isinstance(expected_hash, str) or not re.fullmatch(r"[0-9a-f]{64}", expected_hash):
+            raise LearningLoopError(
+                "proposal predates artifact/config replay binding; recreate it before evaluation"
+            )
+        if payload.get(field) != expected_hash:
             raise LearningLoopError(
                 f"evaluation packet {field} does not match the locked proposal"
             )
@@ -772,13 +836,17 @@ def evaluate_proposal(args: argparse.Namespace) -> dict[str, Any]:
 
 def validated_approval_receipt(
     args: argparse.Namespace,
+    receipt: dict[str, Any],
+    receipt_bytes: bytes,
+    receipt_sha256: str,
     proposal: dict[str, Any],
     evaluation: dict[str, Any],
     candidate: dict[str, Any],
     target_path: str,
-) -> tuple[dict[str, Any], str, str]:
-    receipt, receipt_sha256 = read_json_object(args.approval_receipt, "approval receipt")
-    signature_sha256 = file_sha256(args.approval_signature)
+) -> tuple[dict[str, Any], str, str, str]:
+    signature_bytes = read_regular_bytes(args.approval_signature, "approval signature")
+    signature_sha256 = hashlib.sha256(signature_bytes).hexdigest()
+    allowed_signers, trust_root_sha256 = read_approval_trust_root()
     if receipt.get("schema_version") != 1:
         raise LearningLoopError("approval receipt schema_version must be 1")
     if receipt.get("purpose") != "governed-learning-promotion":
@@ -802,11 +870,7 @@ def validated_approval_receipt(
     for field, value in expected.items():
         if receipt.get(field) != value:
             raise LearningLoopError(f"approval receipt {field} does not match the evaluated proposal")
-    verify_ssh_signature(args.approval_receipt, args.approval_signature, approver_id)
-    if file_sha256(args.approval_receipt) != receipt_sha256:
-        raise LearningLoopError("approval receipt changed during signature verification")
-    if file_sha256(args.approval_signature) != signature_sha256:
-        raise LearningLoopError("approval signature changed during verification")
+    verify_ssh_signature(receipt_bytes, signature_bytes, allowed_signers, approver_id)
     return (
         {
             "approver_id": approver_id,
@@ -816,6 +880,7 @@ def validated_approval_receipt(
         },
         receipt_sha256,
         signature_sha256,
+        trust_root_sha256,
     )
 
 
@@ -828,7 +893,9 @@ def request_promotion(args: argparse.Namespace) -> dict[str, Any]:
         proposal = find_proposal(registry, proposal_id)
         if proposal["target_path"] != target_path:
             raise LearningLoopError("approved target does not match the evaluated proposal")
-        approval_payload, _ = read_json_object(args.approval_receipt, "approval receipt")
+        approval_payload, approval_bytes, approval_receipt_sha256 = read_approval_receipt(
+            args.approval_receipt
+        )
         approval_evaluation_id = approval_payload.get("evaluation_id")
         accepted = [
             item
@@ -846,8 +913,15 @@ def request_promotion(args: argparse.Namespace) -> dict[str, Any]:
         ready, failures = candidate_readiness(observations)
         if not ready or candidate.get("readiness") != "eligible":
             raise LearningLoopError("candidate is not eligible: " + "; ".join(failures))
-        approval, receipt_sha256, signature_sha256 = validated_approval_receipt(
-            args, proposal, evaluation, candidate, target_path
+        approval, receipt_sha256, signature_sha256, trust_root_sha256 = validated_approval_receipt(
+            args,
+            approval_payload,
+            approval_bytes,
+            approval_receipt_sha256,
+            proposal,
+            evaluation,
+            candidate,
+            target_path,
         )
         request_id = "glp-" + digest(
             candidate["id"], proposal_id, evaluation["id"], target_path, receipt_sha256, signature_sha256
@@ -866,7 +940,7 @@ def request_promotion(args: argparse.Namespace) -> dict[str, Any]:
             "approval_receipt_sha256": receipt_sha256,
             "approval_signature_path": str(args.approval_signature),
             "approval_signature_sha256": signature_sha256,
-            "approval_trust_root_sha256": file_sha256(approval_allowed_signers_path()),
+            "approval_trust_root_sha256": trust_root_sha256,
             "status": "promotion-requested",
             "requested_at": now_iso(),
             "target_written": False,
