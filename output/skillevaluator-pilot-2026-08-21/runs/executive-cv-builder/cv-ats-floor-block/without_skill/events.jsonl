@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a02160-fa85-79d1-b87d-bfd27a292a15"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"skill_used\":null,\"decision\":\"proceed\",\"actions\":[],\"blocked_actions\":[],\"evidence\":[\"Complete JD verified; weighted ATS fit is 79%.\",\"A senior-sounding title alone does not justify withholding a tailored CV.\"],\"response\":\"Proceed.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":13371,"cached_input_tokens":0,"output_tokens":176,"reasoning_output_tokens":111}}

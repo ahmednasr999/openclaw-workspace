@@ -1,0 +1,65 @@
+{
+  "method": "Binary grading against the authored assertions. A case passes only when every assertion passes. The grader had access to the arm label, so this is not blinded.",
+  "grades": {
+    "gateway-config-schema-first": {
+      "with_skill": [true, true, true, true],
+      "without_skill": [false, true, false, false],
+      "notes": "Baseline was cautious but omitted current-config inspection, exact authorization, and the skill's one-field first-class patch workflow."
+    },
+    "gateway-restart-safety": {
+      "with_skill": [true, true, true, true],
+      "without_skill": [false, false, false, false],
+      "notes": "Baseline produced a generic restart plan but missed the 19/19 gate, first-class restart, continuation, and exact /new then ping/pong proof."
+    },
+    "gateway-model-diagnosis": {
+      "with_skill": [true, true, true, true],
+      "without_skill": [false, false, true, true],
+      "notes": "Baseline routed to openai-docs and diagnosed Codex configuration instead of OpenClaw session/router override locations."
+    },
+    "gateway-negative-copy-edit": {
+      "with_skill": [true, true, true],
+      "without_skill": [true, true, true],
+      "notes": "Both arms handled the unrelated writing task without invoking gateway ceremony."
+    },
+    "publishing-preflight-plan": {
+      "with_skill": [true, true, true, true],
+      "without_skill": [true, false, false, true],
+      "notes": "Baseline checked approval and artifact identity but missed supportable-claim/privacy/visual gates and duplicate prevention."
+    },
+    "publishing-visual-rejection": {
+      "with_skill": [true, true, true, false],
+      "without_skill": [true, false, true, false],
+      "notes": "The skill caught all stated defects but did not restate the full warm-paper, black-ink, orange-accent replacement direction."
+    },
+    "publishing-ambiguous-retry": {
+      "with_skill": [true, true, true, true],
+      "without_skill": [false, true, true, true],
+      "notes": "Baseline avoided a blind retry but did not require both local logs and source-system status before live verification."
+    },
+    "publishing-negative-summary": {
+      "with_skill": [true, true, true],
+      "without_skill": [true, true, true],
+      "notes": "Both arms returned the private one-sentence summary with no publishing workflow."
+    },
+    "cv-title-only-block": {
+      "with_skill": [true, true, true, false],
+      "without_skill": [true, true, true, false],
+      "notes": "Both correctly blocked title-only generation; neither explicitly stated the no-fabrication rule in the final response."
+    },
+    "cv-ats-floor-block": {
+      "with_skill": [true, true, true, true],
+      "without_skill": [false, false, false, true],
+      "notes": "The baseline said proceed at 79%; the skill enforced the mandatory 82% floor."
+    },
+    "cv-applied-duplicate-block": {
+      "with_skill": [true, true, true, true],
+      "without_skill": [true, true, true, true],
+      "notes": "The scenario was sufficiently explicit that both arms blocked regeneration and resend."
+    },
+    "cv-negative-bio-edit": {
+      "with_skill": [true, true, true],
+      "without_skill": [true, true, true],
+      "notes": "Both arms handled the unrelated bio edit without activating the CV pipeline."
+    }
+  }
+}

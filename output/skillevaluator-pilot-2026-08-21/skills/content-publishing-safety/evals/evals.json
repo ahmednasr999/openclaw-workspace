@@ -1,0 +1,56 @@
+{
+  "skill_name": "content-publishing-safety",
+  "evals": [
+    {
+      "id": "publishing-preflight-plan",
+      "prompt": "I have a LinkedIn caption and a 4:5 image that I believe were approved yesterday. Give me the pre-publish decision sequence only. Do not publish, schedule, upload, message anyone, or run operational tools.",
+      "expected_output": "A plan that revalidates the current source caption and matching media, platform/account, supportable claims and privacy, visual QA, duplicate state, and exact approval before any external write.",
+      "assertions": [
+        "Rechecks that caption and media are the current matched pair",
+        "Confirms platform/account, privacy, claims, and visual quality",
+        "Requires a duplicate check immediately before publishing",
+        "Requires exact approval and performs no external action"
+      ],
+      "expected_skill": "content-publishing-safety",
+      "expected_script": null
+    },
+    {
+      "id": "publishing-visual-rejection",
+      "prompt": "Assess readiness only: the LinkedIn visual is a polished dark-blue technology card in 16:9, with tiny labels. It has no reference comparison and no 'Visual QA: PASS - reference-checked handmade sketchnote' marker. Do not edit or publish it.",
+      "expected_output": "A fail-closed readiness decision identifying the wrong format/style, unreadable labels, missing reference comparison and QA marker, and the required 4:5 handmade warm-paper, black-ink, restrained-orange direction.",
+      "assertions": [
+        "Marks the visual not ready and fails closed",
+        "Flags dark-card direction, 16:9 ratio, and tiny labels",
+        "Requires actual reference comparison and the visual QA marker",
+        "States the 4:5 warm-paper, black-ink, restrained-orange handmade direction"
+      ],
+      "expected_skill": "content-publishing-safety",
+      "expected_script": null
+    },
+    {
+      "id": "publishing-ambiguous-retry",
+      "prompt": "A LinkedIn publish call timed out after submission, so we do not know whether the post is live. Explain what to do next. Do not retry, query external systems, or run operational tools.",
+      "expected_output": "A duplicate-safe recovery plan that checks local logs, source status, and live state before any retry, and pauses if the state remains ambiguous.",
+      "assertions": [
+        "Checks local success logs and source-system status",
+        "Checks live platform state when available",
+        "Does not retry blindly",
+        "Pauses and reports ambiguity if publication state cannot be proven"
+      ],
+      "expected_skill": "content-publishing-safety",
+      "expected_script": null
+    },
+    {
+      "id": "publishing-negative-summary",
+      "prompt": "Summarize this private internal note in one sentence: 'The PMO closed 18 actions this week, while four vendor dependencies remain open.' Do not use operational tools.",
+      "expected_output": "A one-sentence private summary with no publishing, scheduling, visual, approval, or duplicate-prevention workflow.",
+      "assertions": [
+        "Returns a one-sentence summary",
+        "Does not activate content-publishing-safety",
+        "Does not introduce public-post approval or duplicate checks"
+      ],
+      "expected_skill": null,
+      "expected_script": null
+    }
+  ]
+}

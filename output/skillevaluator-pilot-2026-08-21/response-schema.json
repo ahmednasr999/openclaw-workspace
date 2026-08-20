@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["skill_used", "decision", "actions", "blocked_actions", "evidence", "response"],
+  "properties": {
+    "skill_used": {
+      "type": ["string", "null"]
+    },
+    "decision": {
+      "type": "string",
+      "enum": ["proceed", "hold", "diagnose", "reject", "not_applicable"]
+    },
+    "actions": {
+      "type": "array",
+      "items": {"type": "string"},
+      "maxItems": 10
+    },
+    "blocked_actions": {
+      "type": "array",
+      "items": {"type": "string"},
+      "maxItems": 10
+    },
+    "evidence": {
+      "type": "array",
+      "items": {"type": "string"},
+      "maxItems": 10
+    },
+    "response": {
+      "type": "string"
+    }
+  }
+}

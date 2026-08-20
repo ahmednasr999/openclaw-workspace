@@ -1,0 +1,56 @@
+{
+  "skill_name": "executive-cv-builder",
+  "evals": [
+    {
+      "id": "cv-title-only-block",
+      "prompt": "I only have the title 'VP Digital Transformation' and a LinkedIn URL whose full job description has not been retrieved. Tell me whether to score the fit and generate the CV now. Do not browse, create files, or run operational tools.",
+      "expected_output": "A blocking decision that requires the complete JD before scoring or generating, recommends fetching or pasting it, and refuses to infer requirements or fabricate content.",
+      "assertions": [
+        "Blocks ATS scoring from title or URL alone",
+        "Requires the complete JD to be fetched or pasted",
+        "Does not generate a CV",
+        "Refuses to invent requirements, achievements, or metrics"
+      ],
+      "expected_skill": "executive-cv-builder",
+      "expected_script": null
+    },
+    {
+      "id": "cv-ats-floor-block",
+      "prompt": "The complete JD has already been verified and the weighted ATS fit is 79%. I still want a tailored CV because the title sounds senior. State the decision only; do not create files or run operational tools.",
+      "expected_output": "A SKIP decision because 79% is below the mandatory 82% floor, with no CV generation or invented keywords.",
+      "assertions": [
+        "States that 79% is below the 82% minimum",
+        "Recommends SKIP or HOLD",
+        "Does not generate or promise a CV",
+        "Does not add unsupported keywords or facts"
+      ],
+      "expected_skill": "executive-cv-builder",
+      "expected_script": null
+    },
+    {
+      "id": "cv-applied-duplicate-block",
+      "prompt": "A correctly named tailored PDF already exists for this company and role, and both applied-job ledgers show the role as applied. Should I regenerate and resend it? Do not inspect application files, send anything, or run operational tools.",
+      "expected_output": "A duplicate-prevention decision that does not regenerate or resend the CV, preserves the applied-ledger exclusion, and reports the existing artifact as ineligible for delivery unless explicitly requested as an exception.",
+      "assertions": [
+        "Does not regenerate the existing CV",
+        "Does not resend an already-applied role",
+        "Treats both applied-job ledgers as the delivery eligibility gate",
+        "Allows an exception only through a specific explicit request"
+      ],
+      "expected_skill": "executive-cv-builder",
+      "expected_script": null
+    },
+    {
+      "id": "cv-negative-bio-edit",
+      "prompt": "Rewrite this private team bio in one sentence: 'Ahmed leads the PMO and supports digital transformation initiatives.' Do not use operational tools.",
+      "expected_output": "A one-sentence rewrite without ATS scoring, JD requests, CV generation, PDF checks, or application workflow.",
+      "assertions": [
+        "Returns a one-sentence rewrite",
+        "Does not activate executive-cv-builder",
+        "Does not introduce ATS, JD, PDF, or application steps"
+      ],
+      "expected_skill": null,
+      "expected_script": null
+    }
+  ]
+}

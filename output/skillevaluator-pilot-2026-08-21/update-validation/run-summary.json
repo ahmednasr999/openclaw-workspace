@@ -1,0 +1,17 @@
+[
+  {
+    "skill": "content-publishing-safety",
+    "case_id": "publishing-visual-rejection",
+    "arm": "updated_active_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 22.658,
+    "usage": {
+      "input_tokens": 49854,
+      "cached_input_tokens": 31232,
+      "output_tokens": 572
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  }
+]

@@ -1,0 +1,187 @@
+# SkillEvaluator Validation Report
+
+**Status:** ✅ PASSED
+**Profile:** external
+**Policy digest:** `sha256:1caeb0bf9c2e044705f32fcdbd773fea4d835d895b4e0ab20d1aaa5e28acd660`
+**Generated:** August 20, 2026 at 11:23 PM UTC
+
+## Summary
+
+| Metric | Value |
+|--------|-------|
+| Validator Results | 6 |
+| ✅ Passed | 6 |
+| ❌ Failed | 0 |
+| ⚠️ Incomplete | 0 |
+| Total Issues | 16 (5 medium) |
+
+## Quality Score
+
+| Skill | Score | Grade | Type | Correctness | Discoverability | Reliability | Efficiency |
+|-------|-------|-------|------|-------------|-----------------|-------------|------------|
+| executive-cv-builder | 85.2 | B | resource-based | 90.0 | 70.0 | 85.0 | 100.0 |
+
+## Results
+
+### ✅ Schema & Repository Governance
+*Validate SKILL.md frontmatter and repository structure*
+
+- [OK] **manifest_exists**: Found skill manifest: SKILL.md
+- [OK] **frontmatter_valid**: Valid frontmatter for skill 'executive-cv-builder'
+- [OK] **folder_hierarchy**: Valid general skill structure: skills/executive-cv-builder/
+- [OK] **naming_convention**: Folder name 'executive-cv-builder' follows kebab-case convention
+- [OK] **line_count**: SKILL.md within line limit (116/500)
+- [OK] **body_heading**: Body contains a top-level heading
+- [OK] **optional_files**: Found optional supporting files: references
+- [OK] **name_consistency**: Directory name matches frontmatter: 'executive-cv-builder'
+- [OK] **author_format**: Valid author format: Ahmed Nasr <ahmednasr999@gmail.com>
+
+**Non-blocking findings: 6**
+
+| Severity | Issue | Location |
+|----------|-------|----------|
+| [MED] MEDIUM | Missing recommended section: '## Instructions' | <code>/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md</code> |
+| [MED] MEDIUM | Missing recommended section: '## Examples' | <code>/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md</code> |
+| [LOW] LOW | Unexpected 'instructions' in skill root | <code>/root/.openclaw/workspace/skills/executive-cv-builder/instructions</code> |
+| [LOW] LOW | Unexpected 'templates' in skill root | <code>/root/.openclaw/workspace/skills/executive-cv-builder/templates</code> |
+| [LOW] LOW | Unexpected 'eval' in skill root | <code>/root/.openclaw/workspace/skills/executive-cv-builder/eval</code> |
+| [LOW] LOW | Unexpected 'examples' in skill root | <code>/root/.openclaw/workspace/skills/executive-cv-builder/examples</code> |
+
+<details>
+<summary>View Details</summary>
+
+**1. Missing recommended section: '## Instructions'**
+- File: `/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md`
+- Check: `body_recommended_section`
+- Fix: Consider adding a '## Instructions' or '## Usage' section. Per agentskills.io the body format is unrestricted, so this is a convention nudge — it also gives the quality scorer a stable anchor for instruction-quality heuristics.
+
+**2. Missing recommended section: '## Examples'**
+- File: `/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md`
+- Check: `body_recommended_section`
+- Fix: Consider adding a '## Examples' section. If examples are already inline under instructions, this can be skipped.
+
+**3. Unexpected 'instructions' in skill root**
+- File: `/root/.openclaw/workspace/skills/executive-cv-builder/instructions`
+- Check: `unexpected_file`
+- Fix: Consider moving to one of: agents/, assets/, config/, evals/, references/, scripts/, tests/, tools/. To allow additional directories, set $SKILLEVALUATOR_SCHEMA_ALLOWED_DIRS.
+
+**4. Unexpected 'templates' in skill root**
+- File: `/root/.openclaw/workspace/skills/executive-cv-builder/templates`
+- Check: `unexpected_file`
+- Fix: Consider moving to one of: agents/, assets/, config/, evals/, references/, scripts/, tests/, tools/. To allow additional directories, set $SKILLEVALUATOR_SCHEMA_ALLOWED_DIRS.
+
+**5. Unexpected 'eval' in skill root**
+- File: `/root/.openclaw/workspace/skills/executive-cv-builder/eval`
+- Check: `unexpected_file`
+- Fix: Consider moving to one of: agents/, assets/, config/, evals/, references/, scripts/, tests/, tools/. To allow additional directories, set $SKILLEVALUATOR_SCHEMA_ALLOWED_DIRS.
+
+**6. Unexpected 'examples' in skill root**
+- File: `/root/.openclaw/workspace/skills/executive-cv-builder/examples`
+- Check: `unexpected_file`
+- Fix: Consider moving to one of: agents/, assets/, config/, evals/, references/, scripts/, tests/, tools/. To allow additional directories, set $SKILLEVALUATOR_SCHEMA_ALLOWED_DIRS.
+
+</details>
+
+
+### ✅ PII Scan
+*Detect PII and local identifiers*
+
+- [OK] **pii_scan_start**: Scanning 15 files for PII
+- [OK] **pii_detection**: No PII detected in 15 files (emails, SSNs, phone numbers, paths)
+
+### ✅ License Compliance
+*Validate license compliance for Skills, Rules, and Workflows*
+
+- No license detected in any tier
+
+### ✅ Unicode Smuggling Detection
+*Detect invisible Unicode characters and ASCII smuggling*
+
+- [OK] **unicode_scan**: No invisible Unicode characters detected in 15 file(s)
+
+### ✅ B QUALITY
+*Skill quality scoring across Correctness (35%), Discoverability (25%), Reliability (25%), and Efficiency (15%)*
+
+**Overall: 85.2/100 (Grade: B)** | Skill Type: resource-based
+
+| Dimension | Score | Weight |
+|-----------|-------|--------|
+| Correctness | 90.0 | 35% |
+| Discoverability | 70.0 | 25% |
+| Reliability | 85.0 | 25% |
+| Efficiency | 100.0 | 15% |
+
+- [OK] **quality_score**: Score: 85.2/100 (Grade: B)
+
+**Non-blocking findings: 9**
+
+| Severity | Issue | Location |
+|----------|-------|----------|
+| [MED] MEDIUM | SKILL_SPEC recommended field missing: 'version' | <code>/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md</code> |
+| [MED] MEDIUM | SKILL_SPEC recommended field missing: 'metadata.tags' | <code>/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md</code> |
+| [LOW] LOW | Description very long (793 chars, recommend 50-150) | <code>/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md</code> |
+| [MED] MEDIUM | Description uses first/second person | <code>/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md</code> |
+| [LOW] LOW | Skill uses exclusivity language that conflicts with composability | <code>/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md</code> |
+| [LOW] LOW | No '## Purpose' section | <code>/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md</code> |
+| [LOW] LOW | No prerequisites/requirements documented | <code>/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md</code> |
+| [LOW] LOW | No limitations documented | <code>/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md</code> |
+| [LOW] LOW | No troubleshooting section documented | <code>/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md</code> |
+
+<details>
+<summary>View Details</summary>
+
+**1. SKILL_SPEC recommended field missing: 'version'**
+- File: `/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md`
+- Check: `quality_correctness`
+- Fix: Add 'version' to frontmatter — Semantic version (e.g., "1.0.0")
+
+**2. SKILL_SPEC recommended field missing: 'metadata.tags'**
+- File: `/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md`
+- Check: `quality_correctness`
+- Fix: Add 'tags' under metadata: — Categorization tags (under metadata:, list of 1-5 items)
+
+**3. Description very long (793 chars, recommend 50-150)**
+- File: `/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md`
+- Check: `quality_discoverability`
+- Fix: Keep descriptions concise for progressive disclosure
+
+**4. Description uses first/second person**
+- File: `/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md`
+- Check: `quality_discoverability`
+- Fix: Use third person: 'Processes files' not 'I can process'
+
+**5. Skill uses exclusivity language that conflicts with composability**
+- File: `/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md`
+- Check: `quality_discoverability`
+- Fix: Skills should work alongside others (composability principle)
+
+**6. No '## Purpose' section**
+- File: `/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md`
+- Check: `quality_discoverability`
+- Fix: Add purpose section to clarify use cases
+
+**7. No prerequisites/requirements documented**
+- File: `/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md`
+- Check: `quality_reliability`
+- Fix: Document dependencies, API keys, or setup needed
+
+**8. No limitations documented**
+- File: `/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md`
+- Check: `quality_reliability`
+- Fix: Add '## Limitations' section with known issues/constraints
+
+**9. No troubleshooting section documented**
+- File: `/root/.openclaw/workspace/skills/executive-cv-builder/SKILL.md`
+- Check: `quality_reliability`
+- Fix: Add '## Troubleshooting' with Error/Cause/Solution patterns
+
+</details>
+
+
+### ✅ SCRIPT_LINT
+*AST-based code quality checks for skill scripts*
+
+- [OK] **lint**: No scripts/ directory found
+
+---
+*Generated by SkillEvaluator*

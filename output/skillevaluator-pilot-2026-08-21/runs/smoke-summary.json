@@ -1,0 +1,32 @@
+[
+  {
+    "skill": "gateway-runtime-safety",
+    "case_id": "gateway-config-schema-first",
+    "arm": "with_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 20.646,
+    "usage": {
+      "input_tokens": 43878,
+      "cached_input_tokens": 27136,
+      "output_tokens": 663
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "gateway-runtime-safety",
+    "case_id": "gateway-config-schema-first",
+    "arm": "without_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 15.556,
+    "usage": {
+      "input_tokens": 13374,
+      "cached_input_tokens": 0,
+      "output_tokens": 312
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  }
+]

@@ -2,6 +2,7 @@
 name: gateway-runtime-safety
 description: Use for OpenClaw gateway config, runtime safety, restarts, updates, model-router checks, runtime patches, and service lifecycle decisions.
 metadata:
+  author: Ahmed Nasr <ahmednasr999@gmail.com>
   owner: CTO
   status: active
 ---

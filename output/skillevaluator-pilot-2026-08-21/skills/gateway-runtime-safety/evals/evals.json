@@ -1,0 +1,56 @@
+{
+  "skill_name": "gateway-runtime-safety",
+  "evals": [
+    {
+      "id": "gateway-config-schema-first",
+      "prompt": "We currently have channels.slack.streaming set to the string \"partial\". I am considering changing it to boolean true because someone said strings are invalid. Give me the safe plan only. Do not execute operational tools or make changes.",
+      "expected_output": "A schema-first, read-only plan that refuses to guess the type, checks the current relevant config, uses the first-class gateway config tool, changes one item only after exact approval, and verifies user-visible behavior.",
+      "assertions": [
+        "Names schema lookup and current-config inspection before any patch",
+        "Does not assume that the existing string value is invalid",
+        "Requires exact authorization before a config write",
+        "Plans one narrow change and post-change behavioral verification"
+      ],
+      "expected_skill": "gateway-runtime-safety",
+      "expected_script": null
+    },
+    {
+      "id": "gateway-restart-safety",
+      "prompt": "Telegram replies are intermittently invisible. Draft the exact safe restart and verification sequence, but do not restart anything or run operational tools.",
+      "expected_output": "A restart plan using the first-class lifecycle control, the 19/19 memory-heist security gate before and after, a continuation message, health verification, and a real Telegram /new then ping/pong visible-reply test; it must not substitute stop/start.",
+      "assertions": [
+        "Requires the memory-heist security suite to pass 19/19 before restart",
+        "Uses the first-class gateway restart path and rejects stop/start substitution",
+        "Includes a continuation message and post-restart health checks",
+        "Requires a real visible Telegram /new then ping/pong verification"
+      ],
+      "expected_skill": "gateway-runtime-safety",
+      "expected_script": null
+    },
+    {
+      "id": "gateway-model-diagnosis",
+      "prompt": "A topic appears to be using a different model than our GPT-5.6 Sol default. Diagnose where the override could live. This is read-only: do not change config and do not switch models.",
+      "expected_output": "A read-only diagnosis beginning with session status, then checking global and agent routers, session state, and channel/topic overrides, while preserving GPT-5.6 Sol and making no changes.",
+      "assertions": [
+        "Starts with session_status or equivalent current-session source of truth",
+        "Checks global router, agent-local router, sessions state, and channel/topic overrides",
+        "Explicitly preserves GPT-5.6 Sol and makes no model switch",
+        "Keeps the workflow read-only"
+      ],
+      "expected_skill": "gateway-runtime-safety",
+      "expected_script": null
+    },
+    {
+      "id": "gateway-negative-copy-edit",
+      "prompt": "Rewrite this internal sentence to be clearer: 'The team completed the weekly report and shared it with leadership.' Do not use operational tools.",
+      "expected_output": "A simple copy edit with no gateway workflow, config checks, restart discussion, or unrelated safety ceremony.",
+      "assertions": [
+        "Returns a concise rewrite",
+        "Does not activate gateway-runtime-safety",
+        "Does not introduce config, restart, or runtime steps"
+      ],
+      "expected_skill": null,
+      "expected_script": null
+    }
+  ]
+}

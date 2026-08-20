@@ -1,0 +1,15 @@
+{
+  "skill": "executive-cv-builder",
+  "case_id": "cv-applied-duplicate-block",
+  "arm": "with_skill",
+  "model": "gpt-5.6-sol",
+  "returncode": 0,
+  "elapsed_seconds": 11.687,
+  "usage": {
+    "input_tokens": 31749,
+    "cached_input_tokens": 13056,
+    "output_tokens": 324
+  },
+  "response_valid_json": true,
+  "parse_error": null
+}

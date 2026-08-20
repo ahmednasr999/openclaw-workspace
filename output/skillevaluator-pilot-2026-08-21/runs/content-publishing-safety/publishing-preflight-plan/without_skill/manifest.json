@@ -1,0 +1,15 @@
+{
+  "skill": "content-publishing-safety",
+  "case_id": "publishing-preflight-plan",
+  "arm": "without_skill",
+  "model": "gpt-5.6-sol",
+  "returncode": 0,
+  "elapsed_seconds": 8.881,
+  "usage": {
+    "input_tokens": 13375,
+    "cached_input_tokens": 13056,
+    "output_tokens": 256
+  },
+  "response_valid_json": true,
+  "parse_error": null
+}

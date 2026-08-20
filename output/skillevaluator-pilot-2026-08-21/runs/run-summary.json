@@ -1,0 +1,362 @@
+[
+  {
+    "skill": "content-publishing-safety",
+    "case_id": "publishing-ambiguous-retry",
+    "arm": "with_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 22.251,
+    "usage": {
+      "input_tokens": 42871,
+      "cached_input_tokens": 27136,
+      "output_tokens": 715
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "content-publishing-safety",
+    "case_id": "publishing-ambiguous-retry",
+    "arm": "without_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 9.063,
+    "usage": {
+      "input_tokens": 13369,
+      "cached_input_tokens": 9984,
+      "output_tokens": 219
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "content-publishing-safety",
+    "case_id": "publishing-negative-summary",
+    "arm": "with_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 6.446,
+    "usage": {
+      "input_tokens": 13436,
+      "cached_input_tokens": 0,
+      "output_tokens": 85
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "content-publishing-safety",
+    "case_id": "publishing-negative-summary",
+    "arm": "without_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 6.192,
+    "usage": {
+      "input_tokens": 13364,
+      "cached_input_tokens": 0,
+      "output_tokens": 79
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "content-publishing-safety",
+    "case_id": "publishing-preflight-plan",
+    "arm": "with_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 21.77,
+    "usage": {
+      "input_tokens": 43254,
+      "cached_input_tokens": 13056,
+      "output_tokens": 662
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "content-publishing-safety",
+    "case_id": "publishing-preflight-plan",
+    "arm": "without_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 8.881,
+    "usage": {
+      "input_tokens": 13375,
+      "cached_input_tokens": 13056,
+      "output_tokens": 256
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "content-publishing-safety",
+    "case_id": "publishing-visual-rejection",
+    "arm": "with_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 20.364,
+    "usage": {
+      "input_tokens": 44815,
+      "cached_input_tokens": 37120,
+      "output_tokens": 712
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "content-publishing-safety",
+    "case_id": "publishing-visual-rejection",
+    "arm": "without_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 8.175,
+    "usage": {
+      "input_tokens": 13385,
+      "cached_input_tokens": 0,
+      "output_tokens": 165
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "executive-cv-builder",
+    "case_id": "cv-applied-duplicate-block",
+    "arm": "with_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 11.687,
+    "usage": {
+      "input_tokens": 31749,
+      "cached_input_tokens": 13056,
+      "output_tokens": 324
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "executive-cv-builder",
+    "case_id": "cv-applied-duplicate-block",
+    "arm": "without_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 7.687,
+    "usage": {
+      "input_tokens": 13375,
+      "cached_input_tokens": 0,
+      "output_tokens": 170
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "executive-cv-builder",
+    "case_id": "cv-ats-floor-block",
+    "arm": "with_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 13.344,
+    "usage": {
+      "input_tokens": 31731,
+      "cached_input_tokens": 13056,
+      "output_tokens": 297
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "executive-cv-builder",
+    "case_id": "cv-ats-floor-block",
+    "arm": "without_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 7.687,
+    "usage": {
+      "input_tokens": 13371,
+      "cached_input_tokens": 0,
+      "output_tokens": 176
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "executive-cv-builder",
+    "case_id": "cv-negative-bio-edit",
+    "arm": "with_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 5.675,
+    "usage": {
+      "input_tokens": 13588,
+      "cached_input_tokens": 9984,
+      "output_tokens": 77
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "executive-cv-builder",
+    "case_id": "cv-negative-bio-edit",
+    "arm": "without_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 5.533,
+    "usage": {
+      "input_tokens": 13765,
+      "cached_input_tokens": 0,
+      "output_tokens": 78
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "executive-cv-builder",
+    "case_id": "cv-title-only-block",
+    "arm": "with_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 17.267,
+    "usage": {
+      "input_tokens": 51781,
+      "cached_input_tokens": 30208,
+      "output_tokens": 555
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "executive-cv-builder",
+    "case_id": "cv-title-only-block",
+    "arm": "without_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 7.239,
+    "usage": {
+      "input_tokens": 13378,
+      "cached_input_tokens": 0,
+      "output_tokens": 143
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "gateway-runtime-safety",
+    "case_id": "gateway-config-schema-first",
+    "arm": "with_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 24.52,
+    "usage": {
+      "input_tokens": 42635,
+      "cached_input_tokens": 26112,
+      "output_tokens": 768
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "gateway-runtime-safety",
+    "case_id": "gateway-config-schema-first",
+    "arm": "without_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 12.581,
+    "usage": {
+      "input_tokens": 13783,
+      "cached_input_tokens": 0,
+      "output_tokens": 313
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "gateway-runtime-safety",
+    "case_id": "gateway-model-diagnosis",
+    "arm": "with_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 17.109,
+    "usage": {
+      "input_tokens": 42205,
+      "cached_input_tokens": 27136,
+      "output_tokens": 567
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "gateway-runtime-safety",
+    "case_id": "gateway-model-diagnosis",
+    "arm": "without_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 14.426,
+    "usage": {
+      "input_tokens": 30795,
+      "cached_input_tokens": 13056,
+      "output_tokens": 478
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "gateway-runtime-safety",
+    "case_id": "gateway-negative-copy-edit",
+    "arm": "with_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 4.601,
+    "usage": {
+      "input_tokens": 13430,
+      "cached_input_tokens": 0,
+      "output_tokens": 74
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "gateway-runtime-safety",
+    "case_id": "gateway-negative-copy-edit",
+    "arm": "without_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 5.077,
+    "usage": {
+      "input_tokens": 13765,
+      "cached_input_tokens": 0,
+      "output_tokens": 74
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "gateway-runtime-safety",
+    "case_id": "gateway-restart-safety",
+    "arm": "with_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 24.944,
+    "usage": {
+      "input_tokens": 42843,
+      "cached_input_tokens": 13056,
+      "output_tokens": 906
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  },
+  {
+    "skill": "gateway-runtime-safety",
+    "case_id": "gateway-restart-safety",
+    "arm": "without_skill",
+    "model": "gpt-5.6-sol",
+    "returncode": 0,
+    "elapsed_seconds": 13.823,
+    "usage": {
+      "input_tokens": 13764,
+      "cached_input_tokens": 0,
+      "output_tokens": 407
+    },
+    "response_valid_json": true,
+    "parse_error": null
+  }
+]

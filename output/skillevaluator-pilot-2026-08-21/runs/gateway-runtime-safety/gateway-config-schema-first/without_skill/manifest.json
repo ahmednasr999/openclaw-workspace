@@ -1,0 +1,15 @@
+{
+  "skill": "gateway-runtime-safety",
+  "case_id": "gateway-config-schema-first",
+  "arm": "without_skill",
+  "model": "gpt-5.6-sol",
+  "returncode": 0,
+  "elapsed_seconds": 12.581,
+  "usage": {
+    "input_tokens": 13783,
+    "cached_input_tokens": 0,
+    "output_tokens": 313
+  },
+  "response_valid_json": true,
+  "parse_error": null
+}

@@ -1,0 +1,162 @@
+{
+  "model": "gpt-5.6-sol",
+  "method": "Binary grading against the authored assertions. A case passes only when every assertion passes. The grader had access to the arm label, so this is not blinded.",
+  "skills": {
+    "gateway-runtime-safety": {
+      "without_skill": {
+        "assertions_passed": 6,
+        "assertions_total": 15,
+        "correctness_pct": 40.0,
+        "perfect_cases": 1,
+        "case_count": 4,
+        "effectiveness_pct": 25.0,
+        "routing_passed": 1,
+        "discoverability_pct": 25.0,
+        "mean_elapsed_seconds": 11.477,
+        "input_tokens": 72107,
+        "cached_input_tokens": 13056,
+        "uncached_input_tokens": 59051,
+        "output_tokens": 1272
+      },
+      "with_skill": {
+        "assertions_passed": 15,
+        "assertions_total": 15,
+        "correctness_pct": 100.0,
+        "perfect_cases": 4,
+        "case_count": 4,
+        "effectiveness_pct": 100.0,
+        "routing_passed": 4,
+        "discoverability_pct": 100.0,
+        "mean_elapsed_seconds": 17.794,
+        "input_tokens": 141113,
+        "cached_input_tokens": 66304,
+        "uncached_input_tokens": 74809,
+        "output_tokens": 2315
+      },
+      "lift_points": {
+        "correctness": 60.0,
+        "effectiveness": 75.0,
+        "discoverability": 75.0
+      }
+    },
+    "content-publishing-safety": {
+      "without_skill": {
+        "assertions_passed": 10,
+        "assertions_total": 15,
+        "correctness_pct": 66.7,
+        "perfect_cases": 1,
+        "case_count": 4,
+        "effectiveness_pct": 25.0,
+        "routing_passed": 1,
+        "discoverability_pct": 25.0,
+        "mean_elapsed_seconds": 8.078,
+        "input_tokens": 53493,
+        "cached_input_tokens": 23040,
+        "uncached_input_tokens": 30453,
+        "output_tokens": 719
+      },
+      "with_skill": {
+        "assertions_passed": 14,
+        "assertions_total": 15,
+        "correctness_pct": 93.3,
+        "perfect_cases": 3,
+        "case_count": 4,
+        "effectiveness_pct": 75.0,
+        "routing_passed": 4,
+        "discoverability_pct": 100.0,
+        "mean_elapsed_seconds": 17.708,
+        "input_tokens": 144376,
+        "cached_input_tokens": 77312,
+        "uncached_input_tokens": 67064,
+        "output_tokens": 2174
+      },
+      "lift_points": {
+        "correctness": 26.6,
+        "effectiveness": 50.0,
+        "discoverability": 75.0
+      }
+    },
+    "executive-cv-builder": {
+      "without_skill": {
+        "assertions_passed": 11,
+        "assertions_total": 15,
+        "correctness_pct": 73.3,
+        "perfect_cases": 2,
+        "case_count": 4,
+        "effectiveness_pct": 50.0,
+        "routing_passed": 1,
+        "discoverability_pct": 25.0,
+        "mean_elapsed_seconds": 7.037,
+        "input_tokens": 53889,
+        "cached_input_tokens": 0,
+        "uncached_input_tokens": 53889,
+        "output_tokens": 567
+      },
+      "with_skill": {
+        "assertions_passed": 14,
+        "assertions_total": 15,
+        "correctness_pct": 93.3,
+        "perfect_cases": 3,
+        "case_count": 4,
+        "effectiveness_pct": 75.0,
+        "routing_passed": 4,
+        "discoverability_pct": 100.0,
+        "mean_elapsed_seconds": 11.993,
+        "input_tokens": 128849,
+        "cached_input_tokens": 66304,
+        "uncached_input_tokens": 62545,
+        "output_tokens": 1253
+      },
+      "lift_points": {
+        "correctness": 20.0,
+        "effectiveness": 25.0,
+        "discoverability": 75.0
+      }
+    }
+  },
+  "overall": {
+    "without_skill": {
+      "assertions_passed": 27,
+      "assertions_total": 45,
+      "correctness_pct": 60.0,
+      "perfect_cases": 4,
+      "case_count": 12,
+      "effectiveness_pct": 33.3,
+      "routing_passed": 3,
+      "discoverability_pct": 25.0,
+      "mean_elapsed_seconds": 8.864,
+      "input_tokens": 179489,
+      "cached_input_tokens": 36096,
+      "uncached_input_tokens": 143393,
+      "output_tokens": 2558,
+      "successful_runs": 12
+    },
+    "with_skill": {
+      "assertions_passed": 43,
+      "assertions_total": 45,
+      "correctness_pct": 95.6,
+      "perfect_cases": 10,
+      "case_count": 12,
+      "effectiveness_pct": 83.3,
+      "routing_passed": 12,
+      "discoverability_pct": 100.0,
+      "mean_elapsed_seconds": 15.831,
+      "input_tokens": 414338,
+      "cached_input_tokens": 209920,
+      "uncached_input_tokens": 204418,
+      "output_tokens": 5742,
+      "successful_runs": 12
+    },
+    "lift_points": {
+      "correctness": 35.6,
+      "effectiveness": 50.0,
+      "discoverability": 75.0
+    },
+    "cost_change_pct": {
+      "mean_elapsed": 78.6,
+      "input_tokens": 130.8,
+      "uncached_input_tokens": 42.6,
+      "output_tokens": 124.5
+    }
+  }
+}

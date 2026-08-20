@@ -1,0 +1,15 @@
+{
+  "skill": "executive-cv-builder",
+  "case_id": "cv-negative-bio-edit",
+  "arm": "with_skill",
+  "model": "gpt-5.6-sol",
+  "returncode": 0,
+  "elapsed_seconds": 5.675,
+  "usage": {
+    "input_tokens": 13588,
+    "cached_input_tokens": 9984,
+    "output_tokens": 77
+  },
+  "response_valid_json": true,
+  "parse_error": null
+}

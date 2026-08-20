@@ -2,6 +2,7 @@
 name: content-publishing-safety
 description: Use for LinkedIn/content publishing preparation, public post safety, visual quality gates, duplicate prevention, and post-publish verification.
 metadata:
+  author: Ahmed Nasr <ahmednasr999@gmail.com>
   owner: CMO
   status: active
 ---
@@ -14,6 +15,10 @@ Use this skill whenever work could lead to public content, LinkedIn posts, sched
 
 Public content affects Ahmed's reputation. Drafting and local artifact preparation are safe. Publishing, scheduling, comments, public posts, and third-party messages require explicit approval unless Ahmed already approved that exact post/action path.
 
+For normal static LinkedIn visuals, the pre-generation concept must come from `/root/.openclaw/workspace/skills/nasr-visual-metaphor/SKILL.md`. Require its one-anchor, three-candidate, 10/12 winner, recent-collision, and 4:5 shot-list gates before final-image QA. A concept pass is not the final `Visual QA: PASS` marker.
+
+When rejecting a default static visual, fail closed. The visible response must explicitly include every part of this replacement direction, not summarize or imply it: **4:5 portrait, premium handmade sketchnote, warm off-white paper, black ink, restrained orange accents, one dominant physical mechanism, and mobile-readable labels.**
+
 ## Tool ladder
 
 1. Source content system or approved draft.
@@ -22,18 +27,13 @@ Public content affects Ahmed's reputation. Drafting and local artifact preparati
 4. Live duplicate check before publish/retry.
 5. External publish action only when approval boundary is satisfied.
 
-## References
+## Load only what the task needs
 
-- `references/linkedin-posting.md` - LinkedIn publish rules and Composio gotchas.
-- `references/visual-quality.md` - premium visual quality source and rejection rules.
-- `references/notion-content-calendar.md` - content calendar source-of-truth.
-- `references/duplicate-prevention.md` - live/local duplicate prevention before external writes.
-
-## Checklists
-
-- `checklists/pre-publish.md` - before requesting approval or publishing.
-- `checklists/image-post-quality.md` - before sending visual as ready.
-- `checklists/post-publish-verification.md` - after publishing or retrying.
+- Visual readiness or rejection: read `references/visual-quality.md` and `checklists/image-post-quality.md`.
+- Publish preparation or approval: read `checklists/pre-publish.md`, `references/linkedin-posting.md`, and `references/duplicate-prevention.md`.
+- Ambiguous publish result or retry: read `references/duplicate-prevention.md` and `checklists/post-publish-verification.md`.
+- Notion calendar work: read `references/notion-content-calendar.md` only when the calendar is in scope.
+- Do not load unrelated references or checklists.
 
 ## Done means
 

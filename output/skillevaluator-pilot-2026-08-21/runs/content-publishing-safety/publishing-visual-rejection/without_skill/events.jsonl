@@ -1,0 +1,4 @@
+{"type":"thread.started","thread_id":"01a02160-7be5-7212-8c4e-c6ab72ebd104"}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_0","type":"agent_message","text":"{\"skill_used\":null,\"decision\":\"hold\",\"actions\":[\"Assessed readiness only; no edit or publication performed.\"],\"blocked_actions\":[\"Do not approve for publication until reference comparison is completed and the required Visual QA marker is present.\"],\"evidence\":[\"The visual has no reference comparison.\",\"The marker “Visual QA: PASS - reference-checked handmade sketchnote” is absent.\",\"Tiny labels may impair LinkedIn readability.\"],\"response\":\"Not ready. Hold publication pending reference-based visual QA, the required PASS marker, and confirmation that labels are legible at feed size.\"}"}}
+{"type":"turn.completed","usage":{"input_tokens":13385,"cached_input_tokens":0,"output_tokens":165,"reasoning_output_tokens":37}}

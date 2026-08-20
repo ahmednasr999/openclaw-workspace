@@ -4,6 +4,7 @@ Run these checks before sending to Ahmed. If any fail, regenerate:
 
 ```bash
 PDF_PATH="/root/.openclaw/workspace/cvs/Ahmed Nasr - [Role] - [Company].pdf"
+: "${CV_CONTACT_EMAIL:?Set CV_CONTACT_EMAIL from the approved contact in memory/master-cv-data.md}"
 
 # 1. File size check (15-50KB expected)
 SIZE=$(stat -c%s "$PDF_PATH")
@@ -22,8 +23,8 @@ echo "Em dashes found: $EMDASH"
 HEADER_VIOLATION=$(echo "$TEXT" | head -5 | grep -ciE '(CV|Resume|Curriculum)' || echo 0)
 echo "Header violations: $HEADER_VIOLATION"
 
-# 5. Contact info present
-CONTACT=$(echo "$TEXT" | grep -c 'ahmednasr999@gmail.com' || echo 0)
+# 5. Approved contact email present exactly once; never hard-code personal contact data here
+CONTACT=$(printf '%s\n' "$TEXT" | grep -Foc "$CV_CONTACT_EMAIL" || true)
 echo "Contact info: $CONTACT"
 ```
 
