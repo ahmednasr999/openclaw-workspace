@@ -21,9 +21,9 @@ The loop uses explicit structured observations and curated sanitized replay suit
 | Observation | stable pattern key, independent run ID, source, evidence, verification | registry only |
 | Candidate | 2+ observations, 2+ runs, 2+ evidence sets, consistent target type | registry and report only |
 | Validation | candidate still matches current registry and passes all gates | none |
-| Proposal | 1-4 edits, target/artifact/suite hashes, curated validation and locked tasks | registry only |
-| Replay | 2+ independent runs, minimum improvement, zero critical regression, locked-test and cost gates | evaluation and negative-evidence records only |
-| Promotion request | accepted proposal, exact target, approver, approval reference | receipt only |
+| Proposal | 1-4 edits, target, exact baseline/candidate artifact and configuration hashes, suite hash, curated validation and locked tasks | registry only |
+| Replay | packet-bound baseline/candidate artifact and configuration hashes, 2+ independent runs, minimum improvement, zero critical regression, locked-test and cost gates | evaluation and negative-evidence records only |
+| Promotion request | accepted proposal, exact target/evaluation/hash set, signed approval receipt from a pinned approver principal | receipt only |
 | Implementation | separate scoped task and target-specific tests | approved target only |
 | Verification | real behavior or artifact check plus rollback evidence | implementation receipt only |
 
@@ -37,6 +37,7 @@ The loop uses explicit structured observations and curated sanitized replay suit
 - Keep proposal cost within both the absolute ceiling and relative baseline ratio.
 - Retain rejected evaluations as negative evidence even if a later revision passes.
 - Keep promotion separate from candidate discovery.
+- Fail closed unless the approval receipt verifies against the operator-managed OpenSSH allowed-signers trust root; caller-supplied approver text is not approval evidence.
 - Add scheduling only after multiple manual samples are useful and low-noise.
 - Do not feed raw session transcripts, hidden runtime instructions, credentials, or personal data into the registry.
 

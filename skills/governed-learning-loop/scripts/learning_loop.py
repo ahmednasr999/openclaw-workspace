@@ -11,6 +11,7 @@ import json
 import math
 import os
 import re
+import subprocess
 import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
@@ -27,6 +28,7 @@ ALLOWED_EXACT_TARGETS = {"AGENTS.md", "SOUL.md", "TOOLS.md"}
 ALLOWED_TARGET_PREFIXES = ("skills/", "scripts/", "tests/", "docs/solutions/")
 EVAL_SPLITS = {"validation", "locked-test"}
 MAX_EVAL_FILE_BYTES = 1_000_000
+APPROVAL_SIGNATURE_NAMESPACE = "openclaw-governed-learning"
 SECRET_PATTERNS = (
     re.compile(r"(?i)\b(?:api[_-]?key|password|passwd|secret|access[_-]?token|refresh[_-]?token)\s*[:=]\s*\S+"),
     re.compile(r"(?i)\bbearer\s+[A-Za-z0-9._~+/-]{12,}"),
@@ -133,6 +135,49 @@ def file_sha256(path: Path) -> str:
         for chunk in iter(lambda: handle.read(65536), b""):
             hasher.update(chunk)
     return hasher.hexdigest()
+
+
+def approval_allowed_signers_path() -> Path:
+    """Return the operator-managed trust root; callers cannot override it."""
+    return WORKSPACE / "config" / "governed-learning-approval-signers"
+
+
+def verify_ssh_signature(payload_path: Path, signature_path: Path, principal: str) -> None:
+    allowed_signers = approval_allowed_signers_path()
+    for label, path in (
+        ("approval receipt", payload_path),
+        ("approval signature", signature_path),
+        ("approval allowed-signers trust root", allowed_signers),
+    ):
+        if not path.is_file() or path.is_symlink():
+            raise LearningLoopError(f"{label} must be a regular file: {path}")
+    try:
+        payload = payload_path.read_bytes()
+        result = subprocess.run(
+            [
+                "/usr/bin/ssh-keygen",
+                "-Y",
+                "verify",
+                "-f",
+                str(allowed_signers),
+                "-I",
+                principal,
+                "-n",
+                APPROVAL_SIGNATURE_NAMESPACE,
+                "-s",
+                str(signature_path),
+            ],
+            input=payload,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=False,
+            timeout=15,
+        )
+    except (OSError, subprocess.SubprocessError) as exc:
+        raise LearningLoopError(f"cannot verify approval signature: {exc}") from exc
+    if result.returncode != 0:
+        detail = result.stderr.decode("utf-8", errors="replace").strip()
+        raise LearningLoopError(f"approval signature is not trusted: {detail or 'verification failed'}")
 
 
 def read_json_object(path: Path, label: str) -> tuple[dict[str, Any], str]:
@@ -488,7 +533,10 @@ def create_proposal(args: argparse.Namespace) -> dict[str, Any]:
         raise LearningLoopError("a proposal must contain 1-4 distinct edits")
     suite_payload, suite_sha256 = read_json_object(args.suite, "evaluation suite")
     suite = validate_eval_suite(suite_payload)
-    artifact_sha256 = file_sha256(args.artifact)
+    baseline_artifact_sha256 = file_sha256(args.baseline_artifact)
+    baseline_config_sha256 = file_sha256(args.baseline_config)
+    candidate_artifact_sha256 = file_sha256(args.artifact)
+    candidate_config_sha256 = file_sha256(args.candidate_config)
     with locked_registry(args.data_dir) as registry:
         candidate = find_candidate(registry, args.candidate)
         observations_by_id = {item["id"]: item for item in registry["observations"]}
@@ -497,7 +545,14 @@ def create_proposal(args: argparse.Namespace) -> dict[str, Any]:
         if not ready or candidate.get("readiness") != "eligible":
             raise LearningLoopError("candidate is not eligible: " + "; ".join(failures))
         proposal_id = "glv-" + digest(
-            candidate["id"], target_path, artifact_sha256, suite_sha256, *edits
+            candidate["id"],
+            target_path,
+            baseline_artifact_sha256,
+            baseline_config_sha256,
+            candidate_artifact_sha256,
+            candidate_config_sha256,
+            suite_sha256,
+            *edits,
         )
         existing = next((item for item in registry["proposals"] if item["id"] == proposal_id), None)
         if existing:
@@ -506,8 +561,15 @@ def create_proposal(args: argparse.Namespace) -> dict[str, Any]:
             "id": proposal_id,
             "candidate_id": candidate["id"],
             "target_path": target_path,
+            "baseline_artifact_path": str(args.baseline_artifact),
+            "baseline_artifact_sha256": baseline_artifact_sha256,
+            "baseline_config_path": str(args.baseline_config),
+            "baseline_config_sha256": baseline_config_sha256,
             "artifact_path": str(args.artifact),
-            "artifact_sha256": artifact_sha256,
+            "artifact_sha256": candidate_artifact_sha256,
+            "candidate_artifact_sha256": candidate_artifact_sha256,
+            "candidate_config_path": str(args.candidate_config),
+            "candidate_config_sha256": candidate_config_sha256,
             "suite_path": str(args.suite),
             "suite_sha256": suite_sha256,
             "suite": suite,
@@ -534,6 +596,16 @@ def normalize_evaluation_packet(
         raise LearningLoopError("evaluation packet proposal_id does not match")
     if payload.get("suite_sha256") != proposal["suite_sha256"]:
         raise LearningLoopError("evaluation packet suite hash does not match the locked suite")
+    for field in (
+        "baseline_artifact_sha256",
+        "baseline_config_sha256",
+        "candidate_artifact_sha256",
+        "candidate_config_sha256",
+    ):
+        if payload.get(field) != proposal[field]:
+            raise LearningLoopError(
+                f"evaluation packet {field} does not match the locked proposal"
+            )
     runs = payload.get("runs")
     if not isinstance(runs, list):
         raise LearningLoopError("evaluation packet runs must be a list")
@@ -669,6 +741,10 @@ def evaluate_proposal(args: argparse.Namespace) -> dict[str, Any]:
             "results_path": str(args.results),
             "results_sha256": packet_sha256,
             "suite_sha256": proposal["suite_sha256"],
+            "baseline_artifact_sha256": proposal["baseline_artifact_sha256"],
+            "baseline_config_sha256": proposal["baseline_config_sha256"],
+            "candidate_artifact_sha256": proposal["candidate_artifact_sha256"],
+            "candidate_config_sha256": proposal["candidate_config_sha256"],
             "status": "accepted" if accepted else "rejected",
             "metrics": metrics,
             "failures": failures,
@@ -694,10 +770,57 @@ def evaluate_proposal(args: argparse.Namespace) -> dict[str, Any]:
         return {"status": "accepted" if accepted else "rejected", "evaluation": evaluation}
 
 
+def validated_approval_receipt(
+    args: argparse.Namespace,
+    proposal: dict[str, Any],
+    evaluation: dict[str, Any],
+    candidate: dict[str, Any],
+    target_path: str,
+) -> tuple[dict[str, Any], str, str]:
+    receipt, receipt_sha256 = read_json_object(args.approval_receipt, "approval receipt")
+    signature_sha256 = file_sha256(args.approval_signature)
+    if receipt.get("schema_version") != 1:
+        raise LearningLoopError("approval receipt schema_version must be 1")
+    if receipt.get("purpose") != "governed-learning-promotion":
+        raise LearningLoopError("approval receipt purpose does not authorize promotion")
+    approver_id = ensure_safe_text("approval approver_id", str(receipt.get("approver_id", "")), 3, 100)
+    approved_by = ensure_safe_text("approval approved_by", str(receipt.get("approved_by", "")), 3, 100)
+    approval_ref = ensure_safe_text("approval approval_ref", str(receipt.get("approval_ref", "")), 6, 300)
+    approved_at = validate_occurred_at(str(receipt.get("approved_at", "")))
+    expected = {
+        "candidate_id": candidate["id"],
+        "proposal_id": proposal["id"],
+        "evaluation_id": evaluation["id"],
+        "target_path": target_path,
+        "suite_sha256": proposal["suite_sha256"],
+        "baseline_artifact_sha256": proposal["baseline_artifact_sha256"],
+        "baseline_config_sha256": proposal["baseline_config_sha256"],
+        "candidate_artifact_sha256": proposal["candidate_artifact_sha256"],
+        "candidate_config_sha256": proposal["candidate_config_sha256"],
+        "evaluation_results_sha256": evaluation["results_sha256"],
+    }
+    for field, value in expected.items():
+        if receipt.get(field) != value:
+            raise LearningLoopError(f"approval receipt {field} does not match the evaluated proposal")
+    verify_ssh_signature(args.approval_receipt, args.approval_signature, approver_id)
+    if file_sha256(args.approval_receipt) != receipt_sha256:
+        raise LearningLoopError("approval receipt changed during signature verification")
+    if file_sha256(args.approval_signature) != signature_sha256:
+        raise LearningLoopError("approval signature changed during verification")
+    return (
+        {
+            "approver_id": approver_id,
+            "approved_by": approved_by,
+            "approval_ref": approval_ref,
+            "approved_at": approved_at,
+        },
+        receipt_sha256,
+        signature_sha256,
+    )
+
+
 def request_promotion(args: argparse.Namespace) -> dict[str, Any]:
     target_path = validate_target_path(args.target_path)
-    approved_by = ensure_safe_text("approved-by", args.approved_by, 3, 100)
-    approval_ref = ensure_safe_text("approval-ref", args.approval_ref, 6, 300)
     with locked_registry(args.data_dir) as registry:
         proposal_id = getattr(args, "proposal", None)
         if not proposal_id:
@@ -705,22 +828,29 @@ def request_promotion(args: argparse.Namespace) -> dict[str, Any]:
         proposal = find_proposal(registry, proposal_id)
         if proposal["target_path"] != target_path:
             raise LearningLoopError("approved target does not match the evaluated proposal")
+        approval_payload, _ = read_json_object(args.approval_receipt, "approval receipt")
+        approval_evaluation_id = approval_payload.get("evaluation_id")
         accepted = [
             item
             for item in registry["evaluations"]
-            if item["proposal_id"] == proposal["id"] and item["status"] == "accepted"
+            if item["id"] == approval_evaluation_id
+            and item["proposal_id"] == proposal["id"]
+            and item["status"] == "accepted"
         ]
         if proposal.get("status") != "evaluation-passed" or not accepted:
             raise LearningLoopError("proposal has not passed replay evaluation")
-        evaluation = sorted(accepted, key=lambda item: item["evaluated_at"])[-1]
+        evaluation = accepted[0]
         candidate = find_candidate(registry, proposal["candidate_id"])
         observations_by_id = {item["id"]: item for item in registry["observations"]}
         observations = [observations_by_id[item] for item in candidate["observation_ids"]]
         ready, failures = candidate_readiness(observations)
         if not ready or candidate.get("readiness") != "eligible":
             raise LearningLoopError("candidate is not eligible: " + "; ".join(failures))
+        approval, receipt_sha256, signature_sha256 = validated_approval_receipt(
+            args, proposal, evaluation, candidate, target_path
+        )
         request_id = "glp-" + digest(
-            candidate["id"], proposal_id, target_path, approved_by, approval_ref
+            candidate["id"], proposal_id, evaluation["id"], target_path, receipt_sha256, signature_sha256
         )
         existing = next((item for item in registry["promotion_requests"] if item["id"] == request_id), None)
         if existing:
@@ -731,8 +861,12 @@ def request_promotion(args: argparse.Namespace) -> dict[str, Any]:
             "proposal_id": proposal["id"],
             "evaluation_id": evaluation["id"],
             "target_path": target_path,
-            "approved_by": approved_by,
-            "approval_ref": approval_ref,
+            **approval,
+            "approval_receipt_path": str(args.approval_receipt),
+            "approval_receipt_sha256": receipt_sha256,
+            "approval_signature_path": str(args.approval_signature),
+            "approval_signature_sha256": signature_sha256,
+            "approval_trust_root_sha256": file_sha256(approval_allowed_signers_path()),
             "status": "promotion-requested",
             "requested_at": now_iso(),
             "target_written": False,
@@ -758,6 +892,13 @@ def record_implementation(args: argparse.Namespace) -> dict[str, Any]:
         evaluation_id = receipt.get("evaluation_id")
         if not proposal_id or not evaluation_id:
             raise LearningLoopError("legacy candidate-only receipt cannot record implementation")
+        for path_field, hash_field in (
+            ("approval_receipt_path", "approval_receipt_sha256"),
+            ("approval_signature_path", "approval_signature_sha256"),
+        ):
+            evidence_path = Path(str(receipt.get(path_field, "")))
+            if not receipt.get(hash_field) or file_sha256(evidence_path) != receipt[hash_field]:
+                raise LearningLoopError("promotion approval evidence is missing or has changed")
         proposal = find_proposal(registry, proposal_id)
         if not any(
             item["id"] == evaluation_id
@@ -768,7 +909,7 @@ def record_implementation(args: argparse.Namespace) -> dict[str, Any]:
             raise LearningLoopError("promotion receipt is not bound to an accepted evaluation")
         target = WORKSPACE / receipt["target_path"]
         target_sha256 = file_sha256(target)
-        if target_sha256 != proposal["artifact_sha256"]:
+        if target_sha256 != proposal["candidate_artifact_sha256"]:
             raise LearningLoopError("implemented target does not match the approved artifact hash")
         record_id = "gli-" + digest(receipt["id"], target_sha256, verification, rollback)
         existing = next(
@@ -848,7 +989,10 @@ def parser() -> argparse.ArgumentParser:
     )
     proposal_parser.add_argument("--candidate", required=True)
     proposal_parser.add_argument("--target-path", required=True)
+    proposal_parser.add_argument("--baseline-artifact", type=Path, required=True)
+    proposal_parser.add_argument("--baseline-config", type=Path, required=True)
     proposal_parser.add_argument("--artifact", type=Path, required=True)
+    proposal_parser.add_argument("--candidate-config", type=Path, required=True)
     proposal_parser.add_argument("--suite", type=Path, required=True)
     proposal_parser.add_argument("--edit", action="append", required=True)
     proposal_parser.set_defaults(handler=create_proposal)
@@ -863,8 +1007,8 @@ def parser() -> argparse.ArgumentParser:
     promotion_parser = subparsers.add_parser("request-promotion", help="record explicit approval without writing the target")
     promotion_parser.add_argument("--proposal", required=True)
     promotion_parser.add_argument("--target-path", required=True)
-    promotion_parser.add_argument("--approved-by", required=True)
-    promotion_parser.add_argument("--approval-ref", required=True)
+    promotion_parser.add_argument("--approval-receipt", type=Path, required=True)
+    promotion_parser.add_argument("--approval-signature", type=Path, required=True)
     promotion_parser.set_defaults(handler=request_promotion)
 
     implementation_parser = subparsers.add_parser(

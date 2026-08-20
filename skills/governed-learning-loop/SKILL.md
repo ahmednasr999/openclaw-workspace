@@ -34,19 +34,22 @@ Turn proven work into reusable organizational capability while keeping active be
    python3 skills/governed-learning-loop/scripts/learning_loop.py validate --candidate glc-...
    ```
 
-4. Prepare a bounded proposal with one to four edits. Lock the candidate artifact and a curated, sanitized suite containing separate `validation` and `locked-test` tasks. Every suite needs at least two independent runs, a minimum improvement threshold, a candidate cost ceiling, a cost-increase ratio, and at least one critical task.
+4. Prepare a bounded proposal with one to four edits. Lock the exact baseline artifact/configuration, candidate artifact/configuration, and a curated, sanitized suite containing separate `validation` and `locked-test` tasks. Every suite needs at least two independent runs, a minimum improvement threshold, a candidate cost ceiling, a cost-increase ratio, and at least one critical task.
 
    ```bash
    python3 skills/governed-learning-loop/scripts/learning_loop.py create-proposal \
      --candidate glc-... \
      --target-path skills/example/SKILL.md \
+     --baseline-artifact reports/learning-loop/baselines/example.md \
+     --baseline-config reports/learning-loop/baselines/example-config.json \
      --artifact skills/example/SKILL.md \
+     --candidate-config reports/learning-loop/candidates/example-config.json \
      --suite skills/example/evals/replay-suite.json \
      --edit "Add the first bounded change." \
      --edit "Add the second bounded change."
    ```
 
-5. Replay the same tasks against the baseline and candidate outside this registry script. Record scores and costs for every task in every run, then apply the gates. An accepted result requires the threshold in every run, no locked-test regression, zero regression on critical tasks, and all cost limits to pass.
+5. Replay the same tasks against those exact locked baseline and candidate artifacts/configurations outside this registry script. Copy all four proposal hashes plus the suite hash into the result packet, record scores and costs for every task in every run, then apply the gates. An accepted result requires exact hash matches, the threshold in every run, no locked-test regression, zero regression on critical tasks, and all cost limits to pass.
 
    ```bash
    python3 skills/governed-learning-loop/scripts/learning_loop.py evaluate-proposal \
@@ -56,14 +59,14 @@ Turn proven work into reusable organizational capability while keeping active be
 
    A rejection remains in `negative_evidence`; do not delete it or silently retry with easier tasks.
 
-6. Request promotion only after the proposal passes replay and Ahmed approves the exact proposal and target. This creates a receipt; it does not edit the target.
+6. Request promotion only after the proposal passes replay and Ahmed approves the exact proposal, accepted evaluation, target, and replay hash set. The approval workflow must create a JSON receipt and sign its unchanged bytes with an OpenSSH key whose principal is pinned in `config/governed-learning-approval-signers`. The private key stays outside this skill. This creates a promotion receipt; it does not edit the target.
 
    ```bash
    python3 skills/governed-learning-loop/scripts/learning_loop.py request-promotion \
      --proposal glv-... \
      --target-path skills/example/SKILL.md \
-     --approved-by "Ahmed Nasr" \
-     --approval-ref "telegram-message-or-explicit-reference"
+     --approval-receipt reports/learning-loop/approvals/glv-....json \
+     --approval-signature reports/learning-loop/approvals/glv-....json.sig
    ```
 
 7. Implement the approved change as a separate task, run the target's tests, inspect real behavior, and record verification plus rollback evidence.
@@ -82,7 +85,8 @@ Never treat `review`, `evaluation-pending`, `evaluation-passed`, or `promotion-r
 - Require a stable pattern key, concrete evidence, verification, source, and independent run ID.
 - Deduplicate exact observations and candidates.
 - Limit each proposal to one to four explicit edits.
-- Bind evaluation to hashes of the candidate artifact, curated suite, and result packet.
+- Bind evaluation to exact baseline/candidate artifact and configuration hashes, the curated suite hash, and the result packet hash.
+- Accept promotion only from a signed, artifact-bound approval receipt verified against the fixed operator trust root.
 - Require repeated independent runs and separate validation and locked-test splits.
 - Enforce minimum improvement, zero critical regression, and bounded candidate cost.
 - Retain rejected evaluations as negative evidence.

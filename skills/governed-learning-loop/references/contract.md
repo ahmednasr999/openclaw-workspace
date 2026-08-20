@@ -38,7 +38,8 @@ Candidate status `review` means evidence is ready for human judgment. It does no
 A proposal binds one candidate to:
 
 - one exact approved target path;
-- one candidate artifact hash;
+- one exact baseline artifact hash and baseline configuration hash;
+- one exact candidate artifact hash and candidate configuration hash;
 - one curated and sanitized evaluation-suite hash;
 - one to four explicit edits;
 - separate validation and locked-test tasks;
@@ -47,7 +48,7 @@ A proposal binds one candidate to:
 - a candidate cost ceiling and maximum cost-increase ratio;
 - at least one critical task with zero permitted regression.
 
-The result packet must contain each locked task exactly once in every run. Every run must meet the improvement threshold. Locked-test averages cannot regress, and no critical task can score below its baseline in any run. Candidate cost must remain within both cost gates.
+The result packet must repeat all four locked replay hashes plus the suite hash and contain each locked task exactly once in every run. A missing or changed baseline artifact, baseline configuration, candidate artifact, or candidate configuration fails before scores are considered. Every run must meet the improvement threshold. Locked-test averages cannot regress, and no critical task can score below its baseline in any run. Candidate cost must remain within both cost gates.
 
 The suite uses `data_policy: curated-sanitized`. Raw transcripts, hidden runtime instructions, credentials, personal data, and candidate-selected test substitutions are outside the contract.
 
@@ -60,10 +61,12 @@ An evaluation is `accepted` only when every gate passes. A rejected evaluation r
 - a candidate that passes readiness validation;
 - a bounded proposal with an accepted replay evaluation;
 - the exact target path;
-- approver identity;
-- an explicit approval reference.
+- a JSON approval receipt that names the exact candidate, proposal, accepted evaluation, target, suite, four replay hashes, and evaluation-result hash;
+- an OpenSSH signature over the unchanged receipt using namespace `openclaw-governed-learning`;
+- an approver principal present in the operator-managed trust root at `config/governed-learning-approval-signers`;
+- an explicit approval reference and timestamp inside the signed receipt.
 
-Allowed target paths are relative workspace paths under `skills/`, `scripts/`, `tests/`, or `docs/solutions/`, plus the exact core files `AGENTS.md`, `SOUL.md`, and `TOOLS.md`. New promotion receipts always require an evaluation-passed proposal; legacy candidate-only receipts remain readable but cannot authorize a new implementation record. The command records intent only and never writes the target.
+Allowed target paths are relative workspace paths under `skills/`, `scripts/`, `tests/`, or `docs/solutions/`, plus the exact core files `AGENTS.md`, `SOUL.md`, and `TOOLS.md`. The caller cannot override the trust-root path. A missing trust root, unknown principal, invalid signature, altered receipt, or receipt replayed against another proposal/evaluation fails closed. New promotion receipts always require an evaluation-passed proposal; legacy candidate-only receipts remain readable but cannot authorize a new implementation record. The command records intent only and never writes the target.
 
 ## Implementation record
 
