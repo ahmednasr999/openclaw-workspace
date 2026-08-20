@@ -2,8 +2,10 @@ const assert = require('node:assert/strict');
 const test = require('node:test');
 
 const {
+  captionResponseCommand,
   formatTimestamp,
   normalizeYouTubeUrl,
+  parseCaptionResponse,
   transcriptEvents,
 } = require('../scripts/capture-youtube-browser-transcript.cjs');
 
@@ -42,4 +44,37 @@ test('normalizes JSON3 caption events and timestamps', () => {
   );
   assert.equal(formatTimestamp(65000), '1:05');
   assert.equal(formatTimestamp(3723000), '1:02:03');
+});
+
+test('arms requested-video caption interception before navigation', () => {
+  assert.deepEqual(captionResponseCommand('abcdefghijk'), [
+    '--json',
+    'responsebody',
+    '**/api/timedtext**v=abcdefghijk**',
+    '--timeout-ms',
+    '30000',
+    '--max-chars',
+    '5000000',
+  ]);
+});
+
+test('accepts only complete JSON3 responses for the requested video', () => {
+  const output = JSON.stringify({
+    url: 'https://www.youtube.com/api/timedtext?v=abcdefghijk&fmt=json3',
+    status: 200,
+    body: JSON.stringify({ events: [{ tStartMs: 1000, segs: [{ utf8: 'grounded caption' }] }] }),
+  });
+  assert.deepEqual(parseCaptionResponse(output, 'abcdefghijk').events, [
+    { startMs: 1000, durationMs: 0, text: 'grounded caption' },
+  ]);
+  assert.throws(() => parseCaptionResponse(output, 'differentID'), /video ID mismatch/i);
+  assert.throws(
+    () => parseCaptionResponse(JSON.stringify({
+      url: 'https://www.youtube.com/api/timedtext?v=abcdefghijk',
+      status: 200,
+      truncated: true,
+      body: '{}',
+    }), 'abcdefghijk'),
+    /capture limit/i,
+  );
 });
