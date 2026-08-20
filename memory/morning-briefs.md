@@ -5611,3 +5611,23 @@ _(provider: searxng)_
 ## Calendar - Today's Events
 missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
 
+=== Morning Brief - 2026-08-20 07:05 AM ===
+
+## Claude 2x Usage Reminder
+
+## Open Work
+- Closed: LinkedIn +30 verified application campaign - 30/30. Verified closure recorded.
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+## Gmail - Career Monitor
+- Real-time career monitor: unavailable - scheduled reconciliation remains the fallback
+- Scheduled reconciliation: unavailable - investigate Gmail fallback coverage
+
+## Calendar - Today's Events
+missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
+
