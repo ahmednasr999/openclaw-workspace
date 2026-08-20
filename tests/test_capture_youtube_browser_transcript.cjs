@@ -2,8 +2,9 @@ const assert = require('node:assert/strict');
 const test = require('node:test');
 
 const {
-  captionResponseCommand,
+  clickTargetScript,
   formatTimestamp,
+  installHookAndNavigateScript,
   normalizeYouTubeUrl,
   parseCaptionResponse,
   transcriptEvents,
@@ -46,35 +47,41 @@ test('normalizes JSON3 caption events and timestamps', () => {
   assert.equal(formatTimestamp(3723000), '1:02:03');
 });
 
-test('arms requested-video caption interception before navigation', () => {
-  assert.deepEqual(captionResponseCommand('abcdefghijk'), [
-    '--json',
-    'responsebody',
-    '**/api/timedtext**v=abcdefghijk**',
-    '--timeout-ms',
-    '30000',
-    '--max-chars',
-    '5000000',
-  ]);
+test('installs interception before same-task YouTube SPA navigation', () => {
+  const source = installHookAndNavigateScript(
+    'abcdefghijk',
+    'https://www.youtube.com/watch?v=abcdefghijk',
+  );
+  const installedAt = source.indexOf('window.__captionHookInstalled = true');
+  const clickedAt = source.indexOf('link.click()');
+  assert.ok(installedAt > 0);
+  assert.ok(clickedAt > installedAt);
+  assert.match(source, /__captionExpectedId = "abcdefghijk"/);
+  const retrySource = clickTargetScript(
+    'abcdefghijk',
+    'https://www.youtube.com/watch?v=abcdefghijk',
+  );
+  assert.ok(retrySource.indexOf('if (!window.__captionHookInstalled)') < retrySource.indexOf('link.click()'));
+  assert.match(retrySource, /endpoint\.watchEndpoint = \{ videoId: "abcdefghijk" \}/);
 });
 
 test('accepts only complete JSON3 responses for the requested video', () => {
-  const output = JSON.stringify({
+  const output = {
     url: 'https://www.youtube.com/api/timedtext?v=abcdefghijk&fmt=json3',
     status: 200,
     body: JSON.stringify({ events: [{ tStartMs: 1000, segs: [{ utf8: 'grounded caption' }] }] }),
-  });
+  };
   assert.deepEqual(parseCaptionResponse(output, 'abcdefghijk').events, [
     { startMs: 1000, durationMs: 0, text: 'grounded caption' },
   ]);
   assert.throws(() => parseCaptionResponse(output, 'differentID'), /video ID mismatch/i);
   assert.throws(
-    () => parseCaptionResponse(JSON.stringify({
+    () => parseCaptionResponse({
       url: 'https://www.youtube.com/api/timedtext?v=abcdefghijk',
       status: 200,
       truncated: true,
       body: '{}',
-    }), 'abcdefghijk'),
+    }, 'abcdefghijk'),
     /capture limit/i,
   );
 });

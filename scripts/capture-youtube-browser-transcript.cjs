@@ -86,20 +86,7 @@ function parseJsonOutput(output) {
   return JSON.parse(output.slice(start));
 }
 
-function captionResponseCommand(expectedVideoId) {
-  return [
-    '--json',
-    'responsebody',
-    `**/api/timedtext**v=${encodeURIComponent(expectedVideoId)}**`,
-    '--timeout-ms',
-    '30000',
-    '--max-chars',
-    '5000000',
-  ];
-}
-
-function parseCaptionResponse(output, expectedVideoId) {
-  const response = parseJsonOutput(output);
+function parseCaptionResponse(response, expectedVideoId) {
   const responseUrl = new URL(response.url);
   if (!responseUrl.pathname.endsWith('/api/timedtext')) {
     throw new Error(`Captured response was not a timed-text endpoint: ${response.url}`);
@@ -115,43 +102,101 @@ function parseCaptionResponse(output, expectedVideoId) {
   return { events, responseUrl: response.url };
 }
 
-async function capture(expectedVideoId, armedResponse) {
-  await runBrowser(['press', 'c']);
-  await new Promise((resolve) => setTimeout(resolve, 900));
-  await runBrowser(['press', 'c']);
-  const result = await armedResponse;
-  if (!result.ok) throw result.error;
-  return parseCaptionResponse(result.output, expectedVideoId);
+function spaNavigationStatement(expectedVideoId, navigationUrl) {
+  return `const link = document.querySelector('a#video-title[href], a.yt-simple-endpoint[href*="/watch"]'); if (!link?.data) return { installed: true, navigated: false }; const endpoint = structuredClone(link.data); endpoint.commandMetadata = { webCommandMetadata: { url: "/watch?v=${encodeURIComponent(expectedVideoId)}", webPageType: "WEB_PAGE_TYPE_WATCH", rootVe: 3832 } }; endpoint.watchEndpoint = { videoId: ${JSON.stringify(expectedVideoId)} }; link.data = endpoint; link.setAttribute("href", ${JSON.stringify(navigationUrl)}); link.href = ${JSON.stringify(navigationUrl)}; link.click(); return { installed: true, navigated: true };`;
+}
+
+function installHookAndNavigateScript(expectedVideoId, navigationUrl) {
+  return `() => { window.__captionCapture = null; window.__captionExpectedId = ${JSON.stringify(expectedVideoId)}; const store = (url, text) => { if (window.__captionCapture || !String(url).includes("/api/timedtext") || !text) return; try { const requestVideoId = new URL(String(url), location.href).searchParams.get("v"); if (requestVideoId !== window.__captionExpectedId) return; const payload = JSON.parse(text); const events = (payload.events || []).filter((event) => Array.isArray(event.segs)).map((event) => ({ startMs: Number(event.tStartMs || 0), durationMs: Number(event.dDurationMs || 0), text: event.segs.map((segment) => segment.utf8 || "").join("").replace(/\\s+/g, " ").trim() })).filter((event) => event.text); if (events.length) window.__captionCapture = { events, responseUrl: String(url) }; } catch {} }; if (!window.__captionHookInstalled) { window.__captionHookInstalled = true; const originalOpen = XMLHttpRequest.prototype.open; const originalSend = XMLHttpRequest.prototype.send; XMLHttpRequest.prototype.open = function(method, url, ...rest) { this.__captionUrl = String(url); return originalOpen.call(this, method, url, ...rest); }; XMLHttpRequest.prototype.send = function(...args) { if (this.__captionUrl?.includes("/api/timedtext")) this.addEventListener("loadend", () => store(this.__captionUrl, this.responseText || "")); return originalSend.apply(this, args); }; const originalFetch = window.fetch; window.fetch = async function(...args) { const response = await originalFetch.apply(this, args); const url = String(args[0]?.url || args[0]); if (url.includes("/api/timedtext")) response.clone().text().then((text) => store(url, text)); return response; }; } ${spaNavigationStatement(expectedVideoId, navigationUrl)} }`;
+}
+
+function clickTargetScript(expectedVideoId, navigationUrl) {
+  return `() => { if (!window.__captionHookInstalled) return { installed: false, navigated: false }; ${spaNavigationStatement(expectedVideoId, navigationUrl)} }`;
+}
+
+async function evaluateTarget(targetId, functionSource) {
+  return parseJsonOutput(await runBrowser([
+    'evaluate', '--fn', functionSource, '--target-id', targetId,
+  ]));
+}
+
+async function captureInManagedBrowser(requested) {
+  const opened = parseJsonOutput(await runBrowser(['--json', 'open', 'https://www.youtube.com/']));
+  const targetId = opened.targetId;
+  if (!targetId) throw new Error('OpenClaw browser did not return a target ID for the capture tab');
+  try {
+    let navigation = await evaluateTarget(
+      targetId,
+      installHookAndNavigateScript(requested.videoId, requested.navigationUrl),
+    );
+    for (let attempt = 0; !navigation.navigated && attempt < 8; attempt += 1) {
+      if (!navigation.installed) throw new Error('Caption hook was not installed before navigation');
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      navigation = await evaluateTarget(
+        targetId,
+        clickTargetScript(requested.videoId, requested.navigationUrl),
+      );
+    }
+    if (!navigation.navigated) throw new Error('YouTube SPA navigation link was not available');
+
+    let state;
+    for (let attempt = 0; attempt < 20; attempt += 1) {
+      state = await evaluateTarget(targetId, '() => { const initial = window.ytInitialPlayerResponse || {}; const player = document.getElementById("movie_player"); const playerData = player?.getVideoData?.() || {}; const playerTracks = player?.getOption?.("captions", "tracklist") || []; const initialTracks = initial.captions?.playerCaptionsTracklistRenderer?.captionTracks || []; const tracks = playerTracks.length ? playerTracks.map((track) => ({ languageCode: track.languageCode, name: track.displayName || track.languageName || track.name || "", kind: track.kind || "" })) : initialTracks.map((track) => ({ languageCode: track.languageCode, name: track.name?.simpleText || track.name?.runs?.map((run) => run.text).join("") || "", kind: track.kind || "" })); const videoId = playerData.video_id || initial.videoDetails?.videoId || ""; return { installed: Boolean(window.__captionHookInstalled), ready: Boolean(window.__captionCapture), count: window.__captionCapture?.events?.length || 0, title: playerData.title || initial.videoDetails?.title || document.title, videoId, playability: videoId ? "OK" : initial.playabilityStatus?.status || "UNKNOWN", tracks }; }');
+      if (!state.installed) {
+        throw new Error('YouTube navigation replaced the hooked document; caption evidence is unsafe');
+      }
+      if (
+        state.videoId === requested.videoId
+        && state.playability !== 'UNKNOWN'
+        && state.tracks.length > 0
+      ) break;
+      await new Promise((resolve) => setTimeout(resolve, 500));
+    }
+    if (state.playability !== 'OK') throw new Error(`Video is not playable: ${state.playability}`);
+    if (state.videoId !== requested.videoId) {
+      throw new Error(`Authenticated player video ID mismatch: expected ${requested.videoId}, got ${state.videoId || 'none'}`);
+    }
+    if (!state.tracks.length) throw new Error('No caption track is advertised by the authenticated player');
+    const metadata = {
+      title: state.title,
+      videoId: state.videoId,
+      playability: state.playability,
+      tracks: state.tracks,
+    };
+
+    if (!state.ready) {
+      await runBrowser(['press', 'c', '--target-id', targetId]);
+      await new Promise((resolve) => setTimeout(resolve, 900));
+      await runBrowser(['press', 'c', '--target-id', targetId]);
+    }
+    for (let attempt = 0; !state.ready && attempt < 8; attempt += 1) {
+      state = await evaluateTarget(targetId, '() => ({ installed: Boolean(window.__captionHookInstalled), ready: Boolean(window.__captionCapture), count: window.__captionCapture?.events?.length || 0 })');
+      if (!state.installed) throw new Error('Caption hook disappeared before evidence capture');
+      if (!state.ready) await new Promise((resolve) => setTimeout(resolve, 1000));
+    }
+    if (!state.ready || !state.count) throw new Error('Authenticated caption response was not captured');
+
+    const events = [];
+    for (let start = 0; start < state.count; start += 500) {
+      const end = Math.min(state.count, start + 500);
+      events.push(...await evaluateTarget(
+        targetId,
+        `() => window.__captionCapture.events.slice(${start}, ${end})`,
+      ));
+    }
+    return {
+      metadata,
+      payload: { events },
+    };
+  } finally {
+    await runBrowser(['close', targetId]).catch(() => {});
+  }
 }
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   const requested = normalizeYouTubeUrl(args.url);
-  // responsebody registers a Playwright network listener in a separate CLI process.
-  // Start it before navigation so cached or eager caption requests cannot beat interception.
-  const captionResponse = runBrowser(captionResponseCommand(requested.videoId), {
-    timeout: 35000,
-    maxBuffer: 6 * 1024 * 1024,
-  }).then(
-    (output) => ({ ok: true, output }),
-    (error) => ({ ok: false, error }),
-  );
-  await new Promise((resolve) => setTimeout(resolve, 250));
-  await runBrowser(['navigate', requested.navigationUrl]);
-  const metadataOutput = await runBrowser([
-    'evaluate',
-    '--fn',
-    '() => { const player = window.ytInitialPlayerResponse || {}; const tracks = player.captions?.playerCaptionsTracklistRenderer?.captionTracks || []; return { title: player.videoDetails?.title || document.title, videoId: player.videoDetails?.videoId || new URL(location.href).searchParams.get("v"), playability: player.playabilityStatus?.status || "UNKNOWN", tracks: tracks.map((track) => ({ languageCode: track.languageCode, name: track.name?.simpleText || track.name?.runs?.map((run) => run.text).join("") || "", kind: track.kind || "" })) }; }',
-  ]);
-  const metadata = parseJsonOutput(metadataOutput);
-
-  if (metadata.playability !== 'OK') throw new Error(`Video is not playable: ${metadata.playability}`);
-  if (metadata.videoId !== requested.videoId) {
-    throw new Error(`Authenticated player video ID mismatch: expected ${requested.videoId}, got ${metadata.videoId || 'none'}`);
-  }
-  if (!metadata.tracks.length) throw new Error('No caption track is advertised by the authenticated player');
-
-  const payload = await capture(requested.videoId, captionResponse);
+  const { metadata, payload } = await captureInManagedBrowser(requested);
   const events = transcriptEvents(payload);
   if (!events.length) throw new Error('Caption payload contained no usable transcript events');
 
@@ -188,8 +233,10 @@ if (require.main === module) {
 }
 
 module.exports = {
-  captionResponseCommand,
+  captureInManagedBrowser,
+  clickTargetScript,
   formatTimestamp,
+  installHookAndNavigateScript,
   normalizeYouTubeUrl,
   parseCaptionResponse,
   parseArgs,

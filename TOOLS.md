@@ -9,7 +9,7 @@ Full detail lives in `docs/reference/TOOLS.full.md`. Keep only active technical 
 - Prefer primary sources. Use official OpenAI sources for OpenAI products unless Ahmed asks otherwise.
 - Search ladder: direct/source API -> local fetch or `web_fetch` -> `/usr/bin/summarize` -> Crawlee -> Scrapling -> browser automation.
 - Search routers: Tavily `skills/tavily-search/scripts/search.mjs`; research `research-search.mjs`; SearXNG `http://127.0.0.1:8090`.
-- For channel-scale YouTube caption evidence, use `scripts/capture-youtube-browser-transcript.cjs`: pre-arm the browser response-body listener before navigation, because plain timed-text URLs omit the player's session proof token and return empty; Shorts must normalize to watch URLs, and caption responses must match the requested video ID to reject ad tracks.
+- For channel-scale YouTube caption evidence, use `scripts/capture-youtube-browser-transcript.cjs`: install the XHR/fetch interceptor before same-task YouTube SPA navigation and fail if navigation replaces the hooked document, because plain timed-text URLs omit the player's session proof token and return empty; Shorts must normalize to watch URLs, and caption responses must match the requested video ID to reject ad tracks.
 - On Tavily 401, 402, disabled-account, unpaid-balance, or quota errors, stop retrying it and use SearXNG, Camoufox, DuckDuckGo, or OpenClaw fallback. Brave is not configured.
 - Use `rg`/`rg --files` locally. Contain optional 403/404 probes so expected misses do not surface as failures.
 - Read unfamiliar CLI `--help` before use. For `openclaw browser`, global flags precede the subcommand; focus a tab before `snapshot` because positional targets are unsupported.
