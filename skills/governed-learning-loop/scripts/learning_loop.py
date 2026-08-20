@@ -149,7 +149,7 @@ def read_regular_file(
     path: Path, label: str, maximum: int = MAX_EVAL_FILE_BYTES
 ) -> tuple[bytes, os.stat_result]:
     try:
-        flags = os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0)
+        flags = os.O_RDONLY | os.O_NONBLOCK | getattr(os, "O_NOFOLLOW", 0)
         fd = os.open(path, flags)
         with os.fdopen(fd, "rb") as handle:
             before = os.fstat(handle.fileno())

@@ -1,6 +1,7 @@
 import argparse
 import importlib.util
 import json
+import os
 import subprocess
 import tempfile
 import unittest
@@ -283,6 +284,12 @@ class GovernedLearningLoopTests(unittest.TestCase):
         args.verification = "api_key=super-secret-value"
         with self.assertRaises(MODULE.LearningLoopError):
             MODULE.capture(args)
+
+    def test_approval_reader_rejects_fifo_without_blocking(self):
+        fifo = Path(self.temp.name) / "approval.fifo"
+        os.mkfifo(fifo)
+        with self.assertRaisesRegex(MODULE.LearningLoopError, "bounded regular file"):
+            MODULE.read_regular_bytes(fifo, "approval receipt")
 
     def test_promotion_request_never_writes_target(self):
         proposal, _ = self.create_proposal()
