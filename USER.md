@@ -6,6 +6,7 @@
 - Timezone: Africa/Cairo.
 - Primary channel: Telegram DM, chat id `866838380`.
 - Senior technology executive with 20+ years in operational leadership, currently serving as PMO while building AI automation systems and pursuing VP/C-suite GCC roles.
+- Current employer: Saudi German Health. Treat Saudi German Health leaders, HR, recruiters, and colleagues as internal contacts; do not recommend, draft, initiate, or send career-outreach messages or connection activity to them because it could expose Ahmed's job search to his management. Any exception requires Ahmed's explicit approval for the specific contact and action.
 - Priority domains: healthcare, digital transformation, PMO, transformation, and execution leadership.
 - Open to relocating to Jeddah, Saudi Arabia.
 
