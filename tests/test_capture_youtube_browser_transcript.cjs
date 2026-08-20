@@ -7,6 +7,7 @@ const {
   installHookAndNavigateScript,
   normalizeYouTubeUrl,
   parseCaptionResponse,
+  stableTabReference,
   transcriptEvents,
 } = require('../scripts/capture-youtube-browser-transcript.cjs');
 
@@ -27,6 +28,15 @@ test('normalizes supported YouTube URL forms to the requested video ID', () => {
 test('rejects non-YouTube hosts and missing video IDs', () => {
   assert.throws(() => normalizeYouTubeUrl('https://example.com/watch?v=abcdefghijk'), /youtube\.com or youtu\.be/i);
   assert.throws(() => normalizeYouTubeUrl('https://youtube.com/watch'), /valid video ID/i);
+});
+
+test('prefers OpenClaw stable tab handles over raw Chromium target IDs', () => {
+  assert.equal(stableTabReference({
+    targetId: 'volatile-cdp-target',
+    suggestedTargetId: 't42',
+    tabId: 't42',
+  }), 't42');
+  assert.equal(stableTabReference({ targetId: 'volatile-only' }), '');
 });
 
 test('normalizes JSON3 caption events and timestamps', () => {

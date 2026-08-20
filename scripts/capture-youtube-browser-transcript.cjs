@@ -120,10 +120,17 @@ async function evaluateTarget(targetId, functionSource) {
   ]));
 }
 
+function stableTabReference(opened) {
+  return opened.tabId || opened.suggestedTargetId || '';
+}
+
 async function captureInManagedBrowser(requested) {
   const opened = parseJsonOutput(await runBrowser(['--json', 'open', 'https://www.youtube.com/']));
-  const targetId = opened.targetId;
-  if (!targetId) throw new Error('OpenClaw browser did not return a target ID for the capture tab');
+  const targetId = stableTabReference(opened);
+  if (!targetId) {
+    if (opened.targetId) await runBrowser(['close', opened.targetId]).catch(() => {});
+    throw new Error('OpenClaw browser did not return a stable tab handle for the capture tab');
+  }
   try {
     let navigation = await evaluateTarget(
       targetId,
@@ -241,5 +248,6 @@ module.exports = {
   parseCaptionResponse,
   parseArgs,
   parseJsonOutput,
+  stableTabReference,
   transcriptEvents,
 };
