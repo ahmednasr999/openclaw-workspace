@@ -28,6 +28,18 @@ Use this skill when the user asks you to:
 - **Node.js 16+** (for some server implementations)
 - The JobSpy MCP server installed and configured
 
+## Governed Search Contract for Ahmed and JobZoom
+
+Apply this contract before ranking, scoring, CV generation, or an Apply-now decision:
+
+1. Load both persistent application sources: `applied_jobs` and `jobs.applied`. Exclude prior applications before scoring or ranking when any stable identity matches: canonical URL, platform job ID, or normalized title + company + location signature. A refreshed URL does not make an applied role new. Report counts before exclusion, after applied-ledger filtering, after deduplication, and after scoring.
+2. Resolve explicit eligibility restrictions before scoring. A nationality, residency, clearance, licensing, or similar hard requirement that Ahmed does not meet makes the role ineligible; do not score it, classify it Apply now/application-ready, or generate a CV. A high keyword or ATS match never overrides eligibility.
+3. For LinkedIn JobSpy searches, always set `linkedin_fetch_description: true`. An empty, teaser-only, or title-only result remains unscored and not application-ready until the full JD is retrieved and inspected. Do not infer, invent, or fabricate requirements, keywords, responsibilities, or eligibility from the title or teaser.
+4. Treat compensation as verified only when supported by direct listing data or the job description. If compensation is absent, label it unknown/unverified and route the role to **Verify compensation**, not Apply now. A third-party estimate or blog is discovery evidence, not proof that the role clears Ahmed's salary floor.
+5. In JobZoom scoring diagnostics, classify quota exhaustion only on HTTP 429. A non-429 `scoring_health_check` timeout or request error is a warning, not quota evidence. When `batch_scoring` completes with parseable JSON, those batch results are authoritative and must be retained rather than discarded.
+
+Job discovery or ranking does not authorize applying, sending a CV, contacting anyone, or updating application state. Those actions require their own workflow gates and verified evidence.
+
 ---
 
 ## Installation & Setup

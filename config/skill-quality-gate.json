@@ -25,7 +25,8 @@
     "content-publishing-safety",
     "executive-cv-builder",
     "linkedin",
-    "cmo-agent"
+    "cmo-agent",
+    "job-search-mcp"
   ],
   "enforcement": {
     "mode": "required_before_promotion",
@@ -33,7 +34,6 @@
     "require_dry_runs": true
   },
   "next_candidates": [
-    "Job Search MCP",
     "outlook-email",
     "gmail"
   ]

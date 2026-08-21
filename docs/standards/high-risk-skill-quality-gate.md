@@ -4,7 +4,7 @@
 
 New or materially changed high-risk skills must pass the reusable A/B gate before promotion. The gate is intentionally scoped to public, credentialed, career, messaging, and runtime workflows; cosmetic skill edits do not trigger live evaluation.
 
-Enforcement mode is `required_before_promotion`. A materially changed high-risk skill is not promotion-ready until a passing result with no-write dry runs is sealed into a content-bound attestation and `check-promotion` confirms that the current skill tree is the exact evaluated candidate. The five-skill portfolio is proven, so the deterministic portfolio checker is active in the tracked pre-commit hook. CI systems use the same checker with `--all`; no model calls occur in either enforcement path.
+Enforcement mode is `required_before_promotion`. A materially changed high-risk skill is not promotion-ready until a passing result with no-write dry runs is sealed into a content-bound attestation and `check-promotion` confirms that the current skill tree is the exact evaluated candidate. The six-skill portfolio is proven, so the deterministic portfolio checker is active in the tracked pre-commit hook. CI systems use the same checker with `--all`; no model calls occur in either enforcement path.
 
 ## Promotion contract
 
@@ -27,13 +27,13 @@ Binary assertions are machine-graded with explicit regular expressions. Human re
 - Manifest: `evals/skill-quality-gate/baseline-manifest.json`
 - Original pilot evidence: `output/skillevaluator-pilot-2026-08-21/`
 
-The manifest stores SHA-256 hashes for every tracked file in the five enforced high-risk skills. This makes the baseline independently verifiable even in a dirty worktree.
+The manifest stores SHA-256 hashes for every tracked file in the six enforced high-risk skills. This makes the baseline independently verifiable even in a dirty worktree.
 
 The first controlled post-baseline update adds the live-gateway same-turn restart boundary: even explicit approval must execute through the approved maintenance lane or a detached bounded job, with continuation and before/after verification evidence.
 
 Proof: `evals/skill-quality-gate/proofs/2026-08-21-gateway-runtime-safety.md` records 30 successful runs, 96.5% candidate correctness, +22.8-point lift, 100% routing, zero safety regressions, and 4/4 executable dry-run probes.
 
-The initial three-skill portfolio is complete, followed by `linkedin` and `cmo-agent`. The CMO candidate passed three unchanged final confirmations at 100.0%, 98.6%, and 98.6% correctness. Its sealed result improved from 79.2% baseline correctness to 98.6% candidate correctness, with +19.4 points of lift, 100% routing, zero safety regressions, and 6/6 no-write probes. The full five-skill portfolio has matching content-bound attestations and supports the current 95% promotion threshold.
+The initial three-skill portfolio is complete, followed by `linkedin`, `cmo-agent`, and `job-search-mcp`. The job-search candidate passed three unchanged final confirmations at 100.0%, 98.6%, and 98.6% correctness. Its canonical sealed result improved from 75.4% baseline correctness to 98.6% candidate correctness, with +23.2 points of lift, 100% routing, zero safety regressions, and 7/7 no-write probes. The full six-skill portfolio has matching content-bound attestations and supports the current 95% promotion threshold.
 
 ## Commands
 
@@ -97,8 +97,9 @@ For controlled historical proof, both arms may be Git refs. The output directory
 - Publishing: executes the production LinkedIn orchestrator with `--dry-run` against a deliberately empty future date. It performs no publish or calendar write.
 - LinkedIn/recruiter operations: executes five pure decision scenarios covering exact message approval, current-employer exclusion, upload/submission proof, ambiguous-send retry, and an approved external-message control. It performs no browser or external action and writes no workflow state.
 - CMO operations: executes six pure decision scenarios covering live text-visual pairing, image-upload failure, ambiguous publish retry, rescheduling collisions, comment/Like approval, and an approved publish control. It performs no browser, publishing, calendar, messaging, or external action.
+- Job search: executes seven pure decision scenarios covering persistent applied-role exclusion, complete LinkedIn JDs, nationality restrictions, source-backed compensation, non-429 scoring-health errors, and clean control paths. It performs no search, application, CV delivery, ledger mutation, browser, messaging, or external action.
 - CV: executes WeasyPrint on a synthetic CV fixture, then validates the PDF with `pdfinfo` and `pdftotext`. It performs no delivery, ledger update, or application action.
 
 ## Expansion order
 
-Next candidates are `Job Search MCP` and email/external-messaging workflows. Each candidate needs its own case dataset and no-write execution probe before joining the enforced portfolio.
+Next candidates are email/external-messaging workflows. Each candidate needs its own case dataset and no-write execution probe before joining the enforced portfolio.

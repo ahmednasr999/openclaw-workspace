@@ -7,10 +7,11 @@
     "content-publishing-safety",
     "executive-cv-builder",
     "linkedin",
-    "cmo-agent"
+    "cmo-agent",
+    "job-search-mcp"
   ],
-  "file_count": 56,
-  "tree_sha256": "7d3e5c84820bad21c57430d5e16da1d735270c38f0036a7d007b8ba78a7be9d0",
+  "file_count": 60,
+  "tree_sha256": "005084033eff48b1d66de5cf988f85526f9fc2b521c3ca15c883a16d538a2378",
   "files": [
     {
       "path": "skills/gateway-runtime-safety/SKILL.md",
@@ -291,6 +292,26 @@
       "path": "skills/cmo-agent/memory/lessons-learned.md",
       "sha256": "be4d79cec055ff50db723f2d6855abb9e99c3431bee1549510d83564349626e0",
       "bytes": 343
+    },
+    {
+      "path": "skills/job-search-mcp/.clawhub/origin.json",
+      "sha256": "8ea1c7b1426a1929cae67728c1b7a85ea200fdfc2cb08b8abdfab8ae59cb29a3",
+      "bytes": 146
+    },
+    {
+      "path": "skills/job-search-mcp/SKILL.md",
+      "sha256": "6baa67170c4aaceefcc63f4fefe0146c2a9db880321281d7b1099941cdd89a06",
+      "bytes": 16935
+    },
+    {
+      "path": "skills/job-search-mcp/_meta.json",
+      "sha256": "905f42d3fe9474a351b5ba62911d69f8da43526393a5a6c4315b128d010f5f99",
+      "bytes": 133
+    },
+    {
+      "path": "skills/job-search-mcp/example_calls.md",
+      "sha256": "fa9c1d2da142654520b6a8e96bf35959ebc0fcb21b5e97bff64919c1ff414275",
+      "bytes": 2916
     }
   ]
 }

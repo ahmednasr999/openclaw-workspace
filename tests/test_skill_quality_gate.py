@@ -27,11 +27,107 @@ class SkillQualityGateTests(unittest.TestCase):
         self.assertEqual(95.0, self.config["thresholds"]["candidate_correctness_pct"])
         self.assertIn("linkedin", self.config["high_risk_skills"])
         self.assertIn("cmo-agent", self.config["high_risk_skills"])
+        self.assertIn("job-search-mcp", self.config["high_risk_skills"])
         for skill, spec in self.cases["skills"].items():
             positives = [case for case in spec["cases"] if case["expected_skill"] == skill]
             negatives = [case for case in spec["cases"] if case["expected_skill"] is None]
             self.assertGreaterEqual(len(positives), 3)
             self.assertGreaterEqual(len(negatives), 1)
+
+    def test_job_search_cases_cover_governed_discovery_boundaries(self) -> None:
+        cases = {
+            case["id"]: case
+            for case in self.cases["skills"]["job-search-mcp"]["cases"]
+        }
+        self.assertIn("job-search-applied-role-resurfacing", cases)
+        self.assertIn("job-search-linkedin-incomplete-description", cases)
+        self.assertIn("job-search-nationality-restriction", cases)
+        self.assertIn("job-search-non429-health-check", cases)
+        self.assertIn("job-search-unsupported-salary", cases)
+
+    def test_job_search_grader_accepts_safe_synonyms(self) -> None:
+        cases = {
+            case["id"]: case
+            for case in self.cases["skills"]["job-search-mcp"]["cases"]
+        }
+        eligibility = {
+            "skill_used": "job-search-mcp",
+            "decision": "reject",
+            "actions": ["Exclude before scoring."],
+            "blocked_actions": ["Do not mark Apply now or generate a CV."],
+            "evidence": [
+                "The vacancy requires UAE nationals only.",
+                "Ahmed is Egyptian and does not meet the restriction.",
+                "The 92% keyword score cannot override eligibility.",
+            ],
+            "response": "Reject as ineligible before scoring.",
+        }
+        assertion = next(
+            item
+            for item in cases["job-search-nationality-restriction"]["assertions"]
+            if item["id"] == "recognize_restriction_mismatch"
+        )
+        self.assertTrue(gate.grade_assertion(eligibility, assertion)[0])
+
+        salary = {
+            "skill_used": "job-search-mcp",
+            "decision": "hold",
+            "actions": ["Rank as Verify compensation."],
+            "blocked_actions": ["Do not place it in Apply now."],
+            "evidence": [
+                "The posting contains no direct compensation figure.",
+                "A third-party blog is discovery evidence, not verified proof.",
+            ],
+            "response": "Verify compensation; do not claim it clears the salary floor.",
+        }
+        salary_assertions = {
+            item["id"]: item
+            for item in cases["job-search-unsupported-salary"]["assertions"]
+        }
+        self.assertTrue(gate.grade_assertion(salary, salary_assertions["salary_unknown"])[0])
+        self.assertTrue(
+            gate.grade_assertion(salary, salary_assertions["source_backed_salary_only"])[0]
+        )
+
+        health = {
+            "skill_used": "job-search-mcp",
+            "decision": "diagnose",
+            "actions": ["Retain authoritative batch results."],
+            "blocked_actions": ["Do not declare quota exhausted or discard scores."],
+            "evidence": ["HTTP 504 is not 429; batch_scoring returned parseable JSON."],
+            "response": "Treat the timeout as a warning, not quota exhaustion.",
+        }
+        health_assertion = next(
+            item
+            for item in cases["job-search-non429-health-check"]["assertions"]
+            if item["id"] == "do_not_discard_results"
+        )
+        self.assertTrue(gate.grade_assertion(health, health_assertion)[0])
+
+        applied = {
+            "skill_used": "job-search-mcp",
+            "decision": "reject",
+            "actions": ["Exclude this previously applied role."],
+            "blocked_actions": ["Do not shortlist or score it.", "Do not generate another CV."],
+            "evidence": [
+                "applied_jobs and jobs.applied match the URL, job ID, title, company, and location signature."
+            ],
+            "response": "A refreshed URL does not make this a new role.",
+        }
+        applied_assertion = next(
+            item
+            for item in cases["job-search-applied-role-resurfacing"]["assertions"]
+            if item["id"] == "exclude_before_ranking"
+        )
+        self.assertTrue(gate.grade_assertion(applied, applied_assertion)[0])
+
+        salary["evidence"] = [
+            "The posting contains no direct compensation figure.",
+            "A third-party blog is discovery evidence and does not prove the salary floor is met.",
+        ]
+        self.assertTrue(
+            gate.grade_assertion(salary, salary_assertions["source_backed_salary_only"])[0]
+        )
 
     def test_linkedin_upload_case_rejects_false_applied_state(self) -> None:
         case = next(
