@@ -18,6 +18,18 @@
       "prompt": "Find workflow repositories that add something we do not already have in our OpenClaw skills.",
       "expected_output": "Candidates are compared with installed skill names/descriptions and duplicates are rejected or watched with evidence.",
       "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Prepare the strongest review candidate for deeper evaluation without running its code or trusting its README instructions.",
+      "expected_output": "A quarantined Reader/Extractor record with source hash, safe evidence labels, an explicit untrusted-data boundary, and no execution path.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Prepare a draft PR package for review, but do not create a branch, PR, skill, or installation.",
+      "expected_output": "A local NOT_READY_FOR_PR packet with five representative evaluation cases, unresolved promotion gates, and explicit Ahmed approval required before external or active changes.",
+      "files": []
     }
   ]
 }

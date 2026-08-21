@@ -33,18 +33,18 @@ All production agents CTO oversees, their schedules, last run status, and troubl
 3. Scores each post: career relevance, comment opportunity, persona fit (0-100)
 4. Drafts top 5 comments in Ahmed's voice
 5. Sends to Telegram topic 7 (CMO Desk) with approval buttons
-6. On approval: posts comment + like on Ahmed-Mac Chrome
+6. On approval: posts comment + like through the verified Windows OpenClaw-managed Chrome profile via `browser.proxy`
 7. Logs to ontology: `Person.last_commented`, `Person.last_commented_post`
 
 **Dependencies:**
 - Exa API (EXA_API_KEY)
-- Ahmed-Mac Chrome (logged in to LinkedIn)
+- Windows OpenClaw-managed Chrome profile through `browser.proxy` (logged in to Ahmed's LinkedIn; no extension)
 - Telegram bot (TELEGRAM_BOT_TOKEN)
 - Notion (optional, for context)
 
 **Failure Modes:**
 - **Exa timeout:** Retry next run (AMBER)
-- **Ahmed-Mac offline:** Skip posting, send draft to Telegram (AMBER)
+- **Windows Chrome lane unavailable:** Skip posting, send draft to Telegram (AMBER); do not use Ahmed-Mac as fallback
 - **Telegram send fails:** Retry in next run (AMBER)
 - **No posts found:** Log as success (GREEN, empty result)
 

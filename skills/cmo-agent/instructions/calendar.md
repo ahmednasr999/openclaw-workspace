@@ -9,31 +9,32 @@
 ## Weekly Batch (Every Friday)
 
 **Trigger:** Every Friday (automated or on-demand)
-**Output:** 5 new content ideas for the following week
+**Output:** 7 complete post packages for the first seven uncovered calendar dates after the live scheduled queue, plus 2 reserve ideas
 
 ### Process
 1. Review last 4 weeks of posted content (avoid topic repetition)
 2. Check trending GCC/executive topics via Exa search
-3. Generate 5 ideas across topic spread:
+3. Generate 7 posts across the active daily cadence:
    - 2× AI/Technology angle
    - 1× PMO/Operational excellence
    - 1× Leadership/Strategy
-   - 1× Personal insight or industry trend
-4. Create 5 Notion pages in DB with:
-   - Status: `Ideas`
-   - Planned Date: spread Mon–Thu next week (skip Friday)
+   - 1× Healthcare transformation
+   - 1× FinTech/digital payments
+   - 1× Personal insight or current executive signal
+4. Read the live scheduled queue, then create 7 Notion pages for the first seven dates that are not already covered:
+   - Status: `Draft`
+   - Planned Date: one unique date per calendar day, including Friday and Saturday
    - Title: compelling hook (not just topic)
    - Topic tag: one of the 10 canonical topics
-5. Send batch summary to CEO via sessions_send + topic 7 Telegram message
+5. Prepare the matching inspected visual for each post and send the seven-item batch to Ahmed for approval. Only approved rows move to `Scheduled`.
 
 ### Batch Summary Format (to CEO)
 ```
-📅 Content batch ready for next week:
-Mon: [title] — [topic]
-Tue: [title] — [topic]
-Wed: [title] — [topic]
-Thu: [title] — [topic]
-+ 1 reserve idea: [title]
+📅 Daily content batch ready:
+[date 1]: [title] — [topic] — [funnel role]
+...
+[date 7]: [title] — [topic] — [funnel role]
++ 2 reserve ideas: [titles]
 
 Move any from Ideas → Scheduled to approve for auto-posting.
 ```
@@ -54,9 +55,9 @@ Script: `scripts/image-gen-chain.py` handles routing automatically based on `Top
 
 ## Gap Detection (Non-Negotiable)
 
-**Planning target:** Keep 5 business days of content ahead. This is the weekly QA/backlog health standard.
+**Planning target:** Keep exactly one approved `Scheduled` post for each of the next seven calendar days.
 
-**Alert threshold:** Alert CEO immediately when any of the next 3 business days lacks a post with Status=`Scheduled`. Do not use a 5-calendar-day emergency threshold; it creates false urgency and conflicts with the formatter used by `cmo-desk-agent.py`.
+**Alert threshold:** Alert Ahmed when any of the next seven calendar days lacks a `Scheduled` post, or when any date has more than one scheduled row.
 
 **Check frequency:** Daily (run by cmo-desk-agent.py at startup and at 8 AM Cairo)
 
@@ -72,7 +73,7 @@ Use a short decision-card that leads with the action, not a paragraph:
 📌 Situation
 - Window at risk: [dates]
 - Scheduled: [count] posts
-- Gap days: [dates]
+- Cadence shortfall: [count]
 
 📝 Ready queue
 - [date]: [title] ([status])
@@ -95,14 +96,23 @@ When possible, generate the alert with:
 
 ## Streak Rules (GCC Executive Visibility)
 
-- **Minimum:** 3 posts per week (Sun–Thu)
-- **Optimal:** 4–5 posts per week
-- **Never post on Friday/Saturday** (low GCC engagement)
-- **Best times:** 9:00–10:00 AM or 12:00–1:00 PM Cairo (auto-poster handles timing)
+- **Active cadence:** 7 posts per week, one on every calendar day including Friday and Saturday
+- **Standard time:** 9:30 AM Cairo. If Ahmed starts or restores cadence after that day's slot, an already-approved post may publish manually the same day.
 - **Never post twice in one day** — spacing matters more than volume
 
-If streak would break (fewer than 3 posts this week by Wednesday):
-→ Alert CEO with specific gap + suggestion from `Ideas` backlog
+If any day in the next seven-day window lacks a scheduled post:
+→ Alert Ahmed with the exact gap and the best approval-ready replacement.
+
+---
+
+## Executive Funnel Balance
+
+Every `Draft`, `Scheduled`, and `Posted` row must have one `Funnel Role`: `Reach`, `Authority`, or `Conversion`.
+
+- Seven-post daily cadence: 2 Reach, 3 Authority, 2 Conversion.
+- Conversion means a natural invitation to a qualified GCC executive, recruiter, hiring leader, advisory, partnership, or peer conversation. It never means a hard pitch.
+
+Pillars control what Ahmed is known for. Funnel roles control what each post should accomplish. Do not substitute topic diversity for funnel balance.
 
 ---
 
@@ -113,7 +123,7 @@ If streak would break (fewer than 3 posts this week by Wednesday):
 **Steps:**
 1. Log failure to `logs/linkedin-auto-poster.log`
 2. Keep Notion status as `Scheduled` (do NOT change to Failed or Draft)
-3. Update `Planned Date` to next business day (Mon–Thu, skip Fri/Sat/Sun)
+3. Update `Planned Date` to the next free calendar day, including Friday or Saturday, without creating a two-post collision.
 4. Alert CEO DM (866838380):
    ```
    ⚠️ Post failed: "[title]"
@@ -146,5 +156,7 @@ On the 1st of each month, generate and send to CEO:
 - Posts published: count + list
 - Top performing topic: by estimated reach/engagement
 - Content mix: breakdown by topic category
+- Funnel mix: Reach/Authority/Conversion counts and unclassified posts
+- Role-specific outcomes, with qualified conversations reported separately from impressions
 - Ideas in backlog: count
 - Recommendation: topics to double down on next month

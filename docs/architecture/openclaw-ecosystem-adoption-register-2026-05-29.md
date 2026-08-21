@@ -48,7 +48,7 @@ Live baseline checked on 2026-05-29:
 | P2 | Crabfleet | Later pilot | CTO | Fleet execution, monitoring, intervention for multi-agent work | Public/side-effect tasks can duplicate actions | Pilot only on non-public research and diagnostics first | Hold |
 | P2 | acpx | Experiment | CTO | Headless stateful ACP sessions for scripts, tests, and cron | Protocol churn | Use for one repeatable research or CTO diagnostic run | Open |
 | P2 | clawbench-style evaluation | Yes | CTO | Regression tests for agents and workflows | False confidence if test set is weak | Build small benchmark around NASR, CMO, JobZoom, CTO tasks | Open |
-| P2 | Document extraction plugin | Review | HR/JobZoom | Could improve CV/job attachment ingestion | Plugin exposure and document privacy | Evaluate against CV/job PDFs before enabling broadly | Open |
+| P2 | Local document extraction router | Yes, bounded | CTO/HR/JobZoom | Faster, broader local extraction for CVs, reports, and office files | AnyDoc is young, lacks OCR, and loses PPTX slide boundaries | Pinned AnyDoc for non-presentations; retain MarkItDown for PPTX and fallback | Ready (2026-08-05) |
 | P3 | ClickClack | Defer | CTO | Desktop-style control surface | Low value while Telegram is primary | Revisit only if operator UI becomes a real bottleneck | Deferred |
 | P3 | Canvas / broad web UI | Defer | CTO | Visual control and UI rendering | Exposure risk | Keep disabled unless hardened and needed | Deferred |
 | P3 | Hardware/ESP nodes | Defer | CTO | Physical automation | Not aligned to current executive/job/content lanes | No action | Deferred |
@@ -94,7 +94,7 @@ By the end of 90 days, the system should have:
 2. NASR/CTO: create the agent skill allowlist matrix.
 3. CTO: move telecrawl import pilot to Ahmed-Mac or a copied Telegram Desktop archive, because VPS has no `tdata` source.
 4. CTO: build the first read-only gitcrawl OpenClaw repo digest after the one-thread sync pilot passed.
-5. HR/JobZoom: review document-extract plugin against CV/job workflows before enabling.
+5. CTO/HR/JobZoom: monitor the pinned AnyDoc parser and keep scanned-document OCR as a separate controlled lane.
 6. NASR: create the first Tavily-backed ecosystem radar brief template.
 7. CTO: define receipt schema adoption for proof-sensitive workflows, aligned with the existing April roadmap.
 

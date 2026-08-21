@@ -27,6 +27,15 @@ npx --yes defuddle parse '<url>' --md -o '<output>.md'
 3. For GitHub repos, clone/fetch read-only into a sandbox, inspect README and key files.
 4. For hostile/dynamic sites such as X/LinkedIn, prefer API/mirror/oEmbed paths first; use browser/screenshot only as fallback.
 
+## Pre-write entity and dedup gate
+
+Before writing durable knowledge:
+
+1. Resolve named people, companies, projects, and concepts against existing indexes and aliases.
+2. Extract the proposed note's core claim, search for the strongest existing match, and open that match before deciding.
+3. Classify the item as `duplicate`, `new-angle`, or `unique`; update or link duplicates, write only the novel delta for new angles, and use the normal structure for unique items.
+4. If search or index access is unavailable, or the strongest match cannot be opened, preserve the source in quarantine and stop before the knowledge write.
+
 ## Output pattern
 
 For each useful source, create:

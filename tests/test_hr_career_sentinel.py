@@ -122,7 +122,11 @@ class TestClassificationRules(unittest.TestCase):
                 value = thread(message(f"m-{state}", body))
                 result = sentinel.apply_policy(
                     value,
-                    sentinel.validate_model_result(raw_result(state), value, sentinel.reasoning_tier(value)),
+                    sentinel.validate_model_result(
+                        raw_result(state, requires_attention=False, requires_response=False),
+                        value,
+                        sentinel.reasoning_tier(value),
+                    ),
                 )
                 self.assertTrue(result["requires_attention"])
 
@@ -149,7 +153,15 @@ class TestClassificationRules(unittest.TestCase):
         )
         result = sentinel.apply_policy(
             active,
-            sentinel.validate_model_result(raw_result("post_interview_rejection", requires_response=False), active, "medium"),
+            sentinel.validate_model_result(
+                raw_result(
+                    "post_interview_rejection",
+                    requires_attention=False,
+                    requires_response=False,
+                ),
+                active,
+                "medium",
+            ),
         )
         self.assertTrue(result["requires_attention"])
 
@@ -159,6 +171,12 @@ class TestClassificationRules(unittest.TestCase):
     def test_ignore_matrix(self):
         fixtures = [
             ("generic_job_alert", message("n1", "Here are matching jobs for you.", subject="Daily job alert")),
+            ("generic_job_alert", message(
+                "n1b",
+                "Applications close on July 28, 2026.",
+                subject="Job Vacancy",
+                sender="recruitment.notify@oia.gov.om",
+            )),
             ("linkedin_digest_or_social", message("n2", "Your weekly digest and profile views.", subject="LinkedIn weekly digest")),
             ("automatic_application_confirmation", message("n3", "Thank you for your application. It has been received.")),
             ("social_notification", message("n4", "Someone liked your post.", subject="Social notification")),
@@ -403,6 +421,165 @@ class TestDeduplicationAndFailureSafety(unittest.TestCase):
         )
         self.assertTrue(decisions[0]["would_alert"])
         self.assertEqual(self.store.db.execute("SELECT count(*) FROM alerts").fetchone()[0], 0)
+
+    def test_reconciliation_processes_unseen_once_and_deduplicates_repeat(self):
+        value = thread(message("m1", "A recruiter reviewed your candidate profile."))
+
+        class Gmail:
+            def recent_thread_ids(self, days, *, limit):
+                self.query = (days, limit)
+                return ["thread-1"]
+
+            def get_thread(self, thread_id):
+                return value
+
+        gmail = Gmail()
+        classifier = PolicyClassifier(raw_result(
+            "no_action", requires_attention=False, requires_response=False, confidence=90
+        ))
+        app = sentinel.CareerSentinel(
+            store=self.store,
+            gmail=gmail,
+            pubsub=NeverPubSub(),
+            classifier=classifier,
+            log_path=self.directory / "log.jsonl",
+        )
+        first = app.reconcile_recent(days=1, max_threads=500)
+        second = app.reconcile_recent(days=1, max_threads=500)
+        self.assertEqual(gmail.query, (1, 500))
+        self.assertEqual(first["processed"], 1)
+        self.assertEqual(second["already_processed"], 1)
+        self.assertEqual(len(classifier.seen), 1)
+
+    def test_reconciliation_continues_after_thread_failure_then_fails_run(self):
+        good = thread(message("good", "Here are recommended jobs for you.", subject="Daily job alert"))
+
+        class Gmail:
+            def __init__(self):
+                self.requested = []
+
+            def recent_thread_ids(self, days, *, limit):
+                return ["bad", "good"]
+
+            def get_thread(self, thread_id):
+                self.requested.append(thread_id)
+                if thread_id == "bad":
+                    raise RuntimeError("temporary Gmail failure")
+                return good
+
+        gmail = Gmail()
+        app = sentinel.CareerSentinel(
+            store=self.store,
+            gmail=gmail,
+            pubsub=NeverPubSub(),
+            classifier=PolicyClassifier(raw_result("no_action", requires_attention=False)),
+            log_path=self.directory / "log.jsonl",
+        )
+        with self.assertRaisesRegex(RuntimeError, "failed for 1 of 2 threads"):
+            app.reconcile_recent(days=1, max_threads=500)
+        self.assertEqual(gmail.requested, ["bad", "good"])
+        self.assertTrue(self.store.is_message_processed("good"))
+
+    def test_gmail_recent_search_is_bounded_and_fetches_all_pages(self):
+        captured = {}
+
+        def runner(command, timeout):
+            captured["command"] = command
+            return subprocess.CompletedProcess(
+                command,
+                0,
+                stdout=json.dumps({"threads": [{"id": "t1"}, {"id": "t2"}]}),
+                stderr="",
+            )
+
+        ids = sentinel.GmailClient(runner=runner).recent_thread_ids(1, limit=500)
+        self.assertEqual(ids, ["t1", "t2"])
+        self.assertIn("in:inbox newer_than:1d", captured["command"])
+        self.assertIn("--all", captured["command"])
+        self.assertIn("--max=500", captured["command"])
+
+    def test_gog_flat_history_message_ids_resolve_to_thread_ids(self):
+        commands = []
+
+        def runner(command, timeout):
+            commands.append(command)
+            if "history" in command:
+                payload = {
+                    "historyId": "35937238",
+                    "messages": ["message-1", "message-2", "message-3"],
+                }
+            else:
+                message_id = command[command.index("get") + 1]
+                thread_id = "thread-a" if message_id in {"message-1", "message-2"} else "thread-b"
+                payload = {"message": {"id": message_id, "threadId": thread_id}}
+            return subprocess.CompletedProcess(command, 0, stdout=json.dumps(payload), stderr="")
+
+        ids, checkpoint = sentinel.GmailClient(runner=runner).history_thread_ids("35937121")
+
+        self.assertEqual(ids, ["thread-a", "thread-b"])
+        self.assertEqual(checkpoint, "35937238")
+        self.assertEqual(sum("get" in command for command in commands), 3)
+        for command in commands[1:]:
+            self.assertIn("--format=metadata", command)
+
+    def test_nested_history_objects_remain_supported(self):
+        def runner(command, timeout):
+            return subprocess.CompletedProcess(
+                command,
+                0,
+                stdout=json.dumps({
+                    "historyId": "101",
+                    "history": [{"messagesAdded": [{"message": {
+                        "id": "message-1", "threadId": "thread-1",
+                    }}]}],
+                }),
+                stderr="",
+            )
+
+        ids, checkpoint = sentinel.GmailClient(runner=runner).history_thread_ids("100")
+        self.assertEqual(ids, ["thread-1"])
+        self.assertEqual(checkpoint, "101")
+
+    def test_advanced_empty_history_recovers_from_notification_time(self):
+        class Gmail:
+            def history_thread_ids(self, since_history_id):
+                self.since = since_history_id
+                return [], "101"
+
+            def thread_ids_near_publish_time(self, publish_time):
+                self.publish_time = publish_time
+                return ["thread-recovered"]
+
+        gmail = Gmail()
+        self.store.set_meta("last_history_id", "100")
+        app = sentinel.CareerSentinel(
+            store=self.store,
+            gmail=gmail,
+            pubsub=NeverPubSub(),
+            classifier=None,
+            log_path=self.directory / "log.jsonl",
+        )
+
+        ids, checkpoint = app._thread_ids_for_notification({
+            "history_id": "101",
+            "publish_time": "2026-07-21T08:00:40Z",
+        })
+
+        self.assertEqual(ids, ["thread-recovered"])
+        self.assertEqual(checkpoint, "101")
+        self.assertEqual(gmail.since, "100")
+        self.assertEqual(gmail.publish_time, "2026-07-21T08:00:40Z")
+
+    def test_cycle_lock_rejects_overlapping_process_cycle(self):
+        lock_path = self.directory / "cycle.lock"
+        with sentinel.cycle_lock(lock_path, timeout_seconds=0.05):
+            with self.assertRaises(sentinel.CycleLockTimeout):
+                with sentinel.cycle_lock(lock_path, timeout_seconds=0.05):
+                    self.fail("overlapping lock unexpectedly succeeded")
+
+    def test_cli_modes_are_mutually_exclusive(self):
+        with contextlib.redirect_stderr(io.StringIO()), self.assertRaises(SystemExit):
+            sentinel.build_parser().parse_args(["--reconcile", "--dry-run"])
 
     def test_source_has_no_email_write_capability(self):
         source = MODULE_PATH.read_text(encoding="utf-8").lower()

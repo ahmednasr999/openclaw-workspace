@@ -64,6 +64,7 @@ agent_profiles:
       - "exec:python3 /root/.openclaw/workspace-jobzoom/scripts/*"
       - "exec:python3 /root/.openclaw/workspace-cmo/scripts/linkedin-*"
       - "exec:python3 /root/.openclaw/workspace-cmo/scripts/content-*"
+      - "exec:python3 /root/.openclaw/workspace-cmo/scripts/heartbeat_check_current.py*"
       - "exec:python3 /root/.openclaw/workspace-cmo/scripts/publishing-watchdog.py*"
       - "exec:python3 /root/.openclaw/workspace-cmo/scripts/publishing-watchdog.py --minutes 60 --alert"
       - "exec:python3 /root/.openclaw/workspace/scripts/rss-intelligence-crawler.py"
@@ -135,6 +136,10 @@ agent_profiles:
       - "exec:python3 /root/.openclaw/workspace-hr/tools/*"
       - "exec:bash /root/.openclaw/workspace-hr/tools/*"
       - "exec:node /root/.openclaw/workspace-hr/tools/*"
+      - "exec:python3 tools/*linkedin*"  # standing LinkedIn execution pre-approval
+      - "exec:python3 tools/*cdp*"       # authenticated LinkedIn browser helpers
+      - "exec:node tools/*linkedin*"     # LinkedIn browser/application helpers
+      - "exec:node tools/*cdp*"          # authenticated LinkedIn browser helpers
       - "exec:/root/.openclaw/workspace-hr/.venv/bin/python /root/.openclaw/workspace-hr/scripts/*"
       - "exec:/root/.openclaw/workspace-hr/.venv/bin/python /root/.openclaw/workspace-hr/tools/*"
       - "exec:/root/.openclaw/workspace/tools/jobspy-venv/bin/python /root/.openclaw/workspace-hr/scripts/*"
@@ -186,7 +191,7 @@ agent_profiles:
       - "edit:scripts/*"              # full script access
       - "edit:config/*"               # full config access
       - "LINKEDIN_GET_*"              # CAN read LinkedIn data
-    notes: "CTO has full infra access. Cannot post to LinkedIn or touch HR data."
+    notes: "CTO routine internal diagnostics, session handoffs, owned-workflow commands, local reports, scoped local Git commits, and delivery to Ahmed's fixed internal Telegram topics are pre-approved. Gateway/config writes, updates, restarts, destructive actions, external messaging, and remote Git writes remain gated."
 
   cmo:
     # CMO manages content, LinkedIn, engagement
@@ -231,7 +236,12 @@ agent_profiles:
       # Pre-approved routine content commands
       - "exec:python3 /root/.openclaw/workspace-cmo/scripts/linkedin-*"
       - "exec:python3 /root/.openclaw/workspace-cmo/scripts/content-*"
+      - "exec:python3 /root/.openclaw/workspace-cmo/scripts/heartbeat_check_current.py*"
+      - "exec:python3 scripts/heartbeat_check_current.py*"
       - "exec:python3 /root/.openclaw/workspace-cmo/scripts/publishing-watchdog.py*"
+      - "exec:python3 scripts/*linkedin*"  # standing LinkedIn execution pre-approval
+      - "exec:python3 scripts/*radar*"      # LinkedIn comment-radar workflow
+      - "exec:python3 scripts/publishing-watchdog.py*"
       - "exec:python3 /root/.openclaw/workspace/scripts/rss-intelligence-crawler.py"
       - "exec:python3 /root/.openclaw/workspace/scripts/cmo-outreach-queue-weekly.py"
 

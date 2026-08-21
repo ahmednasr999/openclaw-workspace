@@ -155,6 +155,44 @@ ok("recruiter form/CV request is actionable",
    taaeen_assessment["actionable"],
    f"assessment={taaeen_assessment}")
 
+draeger_body = """Thank you for your interest in Draeger. In order to process your
+job application, you'll need to click the link below to complete the registration
+process and set up your user account. Your account will let you receive and confirm
+interview invitations. PROCESS YOUR JOB APPLICATION! Your application has not been
+processed yet and will be deleted if registration is not completed within 20 days."""
+draeger_subject = "Application confirmation"
+draeger_sender = "Drägerwerk AG <jobs@draeger.beesite.de>"
+draeger_categories = ea.categorize_email(draeger_subject, draeger_sender, draeger_body)
+draeger_score, draeger_pipeline = ea.score_email(draeger_subject, draeger_sender, draeger_body)
+draeger_assessment = ea.assess_actionability(
+   draeger_subject,
+   draeger_sender,
+   draeger_body,
+   draeger_categories,
+   draeger_score,
+   draeger_pipeline,
+)
+ok("portal registration request is not an interview",
+   "interview_invite" not in draeger_categories and not ea.has_interview_evidence(
+       draeger_subject, draeger_sender, draeger_body
+   ),
+   f"categories={draeger_categories}")
+ok("portal registration request -> application_response",
+   "application_response" in draeger_categories,
+   f"categories={draeger_categories}")
+ok("portal registration request remains actionable",
+   draeger_assessment["actionable"],
+   f"assessment={draeger_assessment}")
+ok("portal registration request is not a hot interview alert",
+   not ea.is_hot_email(
+       draeger_subject,
+       draeger_sender,
+       draeger_body,
+       categories=draeger_categories,
+       score=draeger_score,
+   ),
+   f"categories={draeger_categories} score={draeger_score}")
+
 original_pipeline_jobs = ea._get_active_pipeline_jobs
 ea._get_active_pipeline_jobs = lambda: [{
     "job_id": "linkedin-li-4384465264",

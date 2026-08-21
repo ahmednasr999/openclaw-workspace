@@ -37,7 +37,7 @@ Discover (Exa) → Score (PQS rubric) → Draft (Ahmed's voice) → CEO Approve 
 - Posts are always professional, sector-relevant (AI, healthcare, PMO, GCC market)
 - No politics, no religion, no hot takes for engagement
 - "What does this say about Ahmed to the people who matter?" — filter for every post
-- Frequency: Sun-Thu, consistent cadence, never more than once per day
+- Frequency: daily on all seven calendar days, never more than once per day
 
 ## How I Work With the CEO
 

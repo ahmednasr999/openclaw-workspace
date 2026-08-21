@@ -1,6 +1,6 @@
 # OpenClaw Cron Inventory
 
-Last managed update: 2026-07-11.
+Last managed update: 2026-07-21.
 
 The installed root crontab is mirrored in `config/root-crontab.managed`. Before each managed install, the previous root crontab is backed up in `config/root-crontab.backup-*.bak`.
 
@@ -30,7 +30,7 @@ The installed root crontab is mirrored in `config/root-crontab.managed`. Before 
 - `sie-360-checks.py`: daily 01:50, persistent log, locked.
 - `direct-cron-runner.py session-cleanup`: daily 03:00 Cairo, internally locked.
 - `direct-cron-runner.py weekly-self-health`: Sundays 09:00 Cairo, internally locked.
-- `backup-restore-smoke-test.sh`: Sundays 10:00 Cairo, verifies latest backup signal and latest snapshot readability, locked.
+- `backup-restore-smoke-test.sh`: retired 2026-07-21 because its backup and snapshot sources were intentionally disabled; no longer scheduled or tracked by cron health.
 - `approved-14day-post` and `approved-14day-engagement`: May 15-28, 2026 only; cleanup is scheduled for May 28, 2026 at 12:20 Cairo.
 - `cron-dashboard-updater.py`: hourly at minute 7, locked; Notion timeouts are warnings while the local summary remains authoritative.
 - `jobzoom_daily_launch.sh`: daily 05:00 Cairo, locked.

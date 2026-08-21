@@ -31,6 +31,7 @@ Do not over-style serious dashboards. Visual polish should improve trust, compre
    - component implementation
    - dashboard/data UI
    - landing/marketing page
+6. Form an internal one-line design read: `surface for audience, with visual language, constrained by brand, accessibility, and product context`. Share it only when it helps alignment; do not turn it into ceremony.
 
 ## Default design dials
 
@@ -108,6 +109,16 @@ Use advanced motion only when it supports comprehension or the user explicitly w
 - Avoid generic AI copy: “elevate”, “seamless”, “unleash”, “next-gen”, “game-changing”, “transform your workflow”.
 - For Ahmed/NASR work, use executive language: crisp, decision-oriented, operationally credible.
 
+## Marketing-page precision gate
+
+Apply this section only to landing pages, marketing sites, portfolios, and editorial pages. Do not force these rules onto dashboards or workflow-heavy product UI.
+
+- Keep the primary CTA visible in the initial desktop viewport. Aim for a two-line hero headline; allow three only when the copy genuinely needs it.
+- Keep CTA labels on one line. Shorten the label or widen the control before reducing legibility.
+- Re-read every visible string before shipping. Rewrite broken grammar, unclear references, forced metaphors, fake precision, and performative AI copy in plain language.
+- Avoid template rhythm. Small uppercase eyebrow labels should appear no more than once per three sections, and repeated section-layout families should be broken with a different composition.
+- Treat these as context gates, not universal bans. Brand evidence and user intent can override them.
+
 ## Implementation rules
 
 - Check dependencies before importing libraries. If a package is missing, either use native CSS/available packages or clearly state the install needed before relying on it.
@@ -171,6 +182,7 @@ Before finalizing frontend work, verify:
 - [ ] Components use the existing stack and dependencies correctly
 - [ ] Motion uses transform/opacity and respects reduced-motion where practical
 - [ ] The result fits the product context, not a generic flashy template
+- [ ] Marketing pages pass hero-fit, CTA-wrap, visible-copy, eyebrow-frequency, and repeated-layout checks
 
 ## Reference files
 

@@ -17,3 +17,8 @@ events:
     datetime: "2026-04-26T10:00:00+02:00"
     notes: "Parked on Apr 25. Review whether to use the static carousel montage for the approved Apr 26 LinkedIn post, make a more premium video/reel version, or keep video as follow-up. Current safe publishing path uses the image asset and passes READY_TO_POST; video drafts exist at /root/.openclaw/media/generated/execution-blueprint-premium-video/ and -v2/."
     reminders: [0]
+
+  - title: "Review LinkedIn comments and automatic posting freeze"
+    datetime: "2026-08-09T10:30:00+03:00"
+    notes: "Decide whether to keep, redesign, or selectively resume the LinkedIn comment and automatic-posting workflows. Do not reactivate anything automatically. Authenticated LinkedIn job-application automation remains separately disabled for account safety."
+    reminders: [0]

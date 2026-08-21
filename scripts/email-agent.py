@@ -228,6 +228,14 @@ APPLICATION_RESPONSE_PATTERNS = [
     r'\bjob\s+description\b.*\battached\b',
 ]
 
+APPLICATION_REGISTRATION_PATTERNS = [
+    r'\bcomplete\s+(?:the\s+)?registration(?:\s+process)?\b',
+    r'\bprocess\s+your\s+job\s+application\b',
+    r'\bapplication\s+has\s+not\s+been\s+processed\s+yet\b',
+    r'\bconfirm\s+your\s+application\b.*\bcreate\s+(?:a\s+)?(?:personal\s+)?(?:user\s+)?account\b',
+    r'\bset\s+up\s+your\s+user\s+account\b',
+]
+
 FOLLOW_UP_PATTERNS = [
     r'please\s*(let|confirm|reply|respond)',
     r'could\s+you\s+share',
@@ -409,6 +417,11 @@ def matches_patterns(text, patterns):
     return False
 
 
+def is_application_registration_request(subject, body=""):
+    """Detect portal-registration steps without mistaking portal copy for an interview."""
+    return matches_patterns(f"{subject} {body}", APPLICATION_REGISTRATION_PATTERNS)
+
+
 def is_noise_sender(from_addr):
     """Check if sender is a known newsletter/notification source."""
     addr_lower = from_addr.lower()
@@ -457,6 +470,12 @@ def has_interview_evidence(subject, from_addr, body=""):
 
     if is_external_meeting_invite(subject, from_addr, body):
         return True
+
+    # Career portals often explain that the account can later be used to
+    # receive interview invitations. That explanatory copy is not evidence
+    # that an interview currently exists.
+    if is_application_registration_request(subject, body):
+        return False
 
     # A subject with explicit interview language is acceptable from a real company
     # or recruiting domain, but not from generic automated job-alert senders.
@@ -634,6 +653,10 @@ def categorize_email(subject, from_addr, body=""):
 
     if hiring_context and matches_patterns(text, APPLICATION_RESPONSE_PATTERNS):
         categories.append("application_response")
+
+    if hiring_context and is_application_registration_request(subject, body):
+        if "application_response" not in categories:
+            categories.append("application_response")
     
     if hiring_context and (re.search(r'\?\s*$', text) or matches_patterns(text, FOLLOW_UP_PATTERNS)):
         if "follow_up_needed" not in categories:
@@ -786,7 +809,11 @@ def assess_actionability(subject, from_addr, body, categories, score, pipeline_c
     if has_interview_evidence(subject, from_addr, body):
         confidence += 45
         evidence.append("calendar or explicit interview evidence")
-    elif matches_patterns(text, STRICT_INTERVIEW_PATTERNS) and has_hiring_context(subject, from_addr, body, pipeline_company):
+    elif (
+        not is_application_registration_request(subject, body)
+        and matches_patterns(text, STRICT_INTERVIEW_PATTERNS)
+        and has_hiring_context(subject, from_addr, body, pipeline_company)
+    ):
         confidence += 35
         evidence.append("explicit interview wording with hiring context")
     if "assessment" in categories:

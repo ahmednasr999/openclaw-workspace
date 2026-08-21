@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "policy_version": "2026-08-14",
+  "owner": "NASR",
+  "enforcement_mode": "shadow",
+  "inject_index_into_prompt": false,
+  "resident_max_count": 13,
+  "resident": [
+    {"name": "compound-solution", "reason": "captures verified recurring fixes"},
+    {"name": "content-publishing-safety", "reason": "guards public content and duplicate actions"},
+    {"name": "gateway-runtime-safety", "reason": "guards high-risk runtime and configuration work"},
+    {"name": "healthcheck", "reason": "frequent operational diagnosis"},
+    {"name": "lossless-claw", "reason": "preserves exact conversation recall"},
+    {"name": "nasr-decision-brief", "reason": "core executive decision support"},
+    {"name": "nasr-knowledge-ingestion", "reason": "governs durable knowledge capture"},
+    {"name": "reminder", "reason": "frequent time-bound follow-through"},
+    {"name": "self-improvement", "reason": "captures corrections and operational failures"},
+    {"name": "skill-discovery-pilot", "reason": "quarantines and reviews external skill candidates"},
+    {"name": "summarize", "reason": "high-frequency source and document compression"},
+    {"name": "taskflow", "reason": "durable multi-step follow-through"},
+    {"name": "tavily", "reason": "live evidence for mutable and source-sensitive facts"}
+  ],
+  "local_on_demand": {
+    "operations": [
+      "agent-ops-loops",
+      "autoreview",
+      "clawback",
+      "codex-review-closeout",
+      "cron-skills-index",
+      "cto-agent",
+      "gh-address-comments",
+      "gh-fix-ci",
+      "gh-issues",
+      "github",
+      "governed-learning-loop",
+      "node-connect",
+      "openclaw-auto-dream-lite",
+      "openclaw-backup",
+      "sweeper-status-loop",
+      "taskflow-inbox-triage",
+      "tmux"
+    ],
+    "content": [
+      "avoid-ai-writing",
+      "brand-guidelines",
+      "cmo-agent",
+      "content-claw",
+      "executive-content-system",
+      "Image",
+      "linkedin",
+      "meme-maker",
+      "premium-frontend-design",
+      "slides",
+      "visual-explainer"
+    ],
+    "documents-and-media": [
+      "ai-meeting-notes",
+      "ai-pdf-builder",
+      "diagram-generator",
+      "diagram-maker",
+      "doc",
+      "nano-pdf",
+      "spreadsheet",
+      "transcribe",
+      "video-frames",
+      "xlsx"
+    ],
+    "career": [
+      "executive-cv-builder",
+      "himalaya",
+      "interview-designer",
+      "Job Search MCP"
+    ],
+    "research-and-web": [
+      "ai-research-scraper",
+      "browser-automation",
+      "crawlee",
+      "last30days",
+      "playwright-interactive",
+      "scrapling",
+      "use-tinyfish"
+    ],
+    "developer": [
+      "grill-me",
+      "long-horizon-prompting",
+      "mcp-builder",
+      "node-inspect-debugger",
+      "prompt-architect",
+      "python-debugpy",
+      "security-best-practices",
+      "skill-autoresearch",
+      "skill-creator",
+      "spike"
+    ],
+    "knowledge": [
+      "knowledge-brain-briefing",
+      "nasr-meta",
+      "note-processor",
+      "obsidian-vault-maintainer",
+      "ontology",
+      "wiki-maintainer"
+    ],
+    "integrations": [
+      "burn-after-login",
+      "gog",
+      "gog-calendar",
+      "here-now",
+      "hubspot",
+      "weather"
+    ]
+  },
+  "quarantined_external": [
+    {
+      "name": "atskills",
+      "source": "https://github.com/SylphAI-Inc/atskills",
+      "revision": "e3c802d39c82831acfe8dc1503a904dbd9b31ce0",
+      "evidence": ".tmp/openclaw-spikes/atskills-pilot/README.md",
+      "execution_allowed": false,
+      "network_allowed": false,
+      "promotion_status": "blocked",
+      "reason": "unsigned immature upstream with CLI/protocol mismatches and no proven OpenClaw benefit"
+    }
+  ]
+}

@@ -23,7 +23,7 @@ Use both. The pipeline makes decks work. The editorial system makes them feel de
 
 | Task | Default move |
 |------|--------------|
-| Read or extract deck content | `python -m markitdown deck.pptx` |
+| Read or extract deck content | `python3 scripts/document-to-markdown.py deck.pptx` |
 | Get visual overview fast | `python3 scripts/render_slides.py deck.pptx --output_dir rendered` then `python3 scripts/create_montage.py --input_dir rendered --output_file montage.png` |
 | Create a new editable deck | Author in JavaScript with PptxGenJS |
 | Edit an existing deck while preserving structure | Use the XML workflow in `references/minimax-editing.md` |
@@ -356,7 +356,7 @@ Minimum standard:
 
 - `python3 scripts/slides_test.py deck.pptx`
 - `python3 scripts/detect_font.py deck.pptx --json`
-- `python -m markitdown deck.pptx`
+- `python3 scripts/document-to-markdown.py deck.pptx`
 - render + montage review
 
 ### Editorial QA
@@ -407,10 +407,10 @@ python3 scripts/slides_test.py deck.pptx
 python3 scripts/detect_font.py deck.pptx --json
 
 # Extract text for content QA
-python -m markitdown deck.pptx
+python3 scripts/document-to-markdown.py deck.pptx
 
 # Check for leftover placeholder text
-python -m markitdown deck.pptx | grep -iE "xxxx|lorem|ipsum|placeholder|this.*(page|slide).*layout"
+python3 scripts/document-to-markdown.py deck.pptx | grep -iE "xxxx|lorem|ipsum|placeholder|this.*(page|slide).*layout"
 ```
 
 Load `references/pptxgenjs-helpers.md` when you need helper API summary or dependency details.

@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "output_dir": "/root/.openclaw/workspace/reports/open-work-resolver",
+  "history_file": "/root/.openclaw/workspace/data/open-work-resolver/history.jsonl",
+  "snapshot_file": "/root/.openclaw/workspace/data/open-work-resolver/latest.json",
+  "items": [
+    {
+      "id": "linkedin-plus30-2026-07-20",
+      "title": "LinkedIn +30 verified application campaign",
+      "owner": "HR",
+      "resolver_owner": "NASR",
+      "adapter": "linkedin_plus30",
+      "authority": "read-only",
+      "target": 30,
+      "unit": "strict verified applications",
+      "date": "2026-07-20",
+      "stale_after_seconds": 900,
+      "state_file": "/root/.openclaw/workspace-hr/state/linkedin-plus30-campaign-2026-07-20.json",
+      "ledger": "/root/.openclaw/workspace-hr/reports/linkedin-plus30-continuation-2026-07-20.jsonl",
+      "status_script": "/root/.openclaw/workspace-hr/tools/linkedin-plus30-status.py",
+      "service": "linkedin-plus30-20260720.service"
+    }
+  ]
+}

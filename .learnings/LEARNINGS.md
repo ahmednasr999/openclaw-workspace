@@ -1761,3 +1761,114 @@ Visual-generation requests with an attachment/reference must inspect and match t
 - What happened: the review conclusion was reported in chat, but the files remained dirty and the stale handoff item remained active, so every heartbeat correctly rediscovered them as unreviewed.
 - Do differently: after reviewing intentional critical-file changes, either commit the exact reviewed paths or explicitly record why they must remain dirty and suppress only that reviewed revision. Verify the critical-path status is clean before claiming the alert is resolved.
 - Pattern key: `operations.critical_file_review_requires_git_closeout`
+## 2026-08-04 - Current Mac mini M4 Pro memory ceiling is 48GB
+
+- What was wrong: an earlier recommendation described the M4 Pro Mac mini as available with 48–64GB unified memory.
+- Evidence: Apple’s current Mac mini technical specifications list the M4 Pro configuration as configurable to 48GB; 64GB belongs to the higher-end M4 Max Mac Studio configuration.
+- Correction: use 48GB as the current Mac mini ceiling, and verify Apple’s live specifications before local-LLM hardware recommendations.
+
+## 2026-08-08 - Comment Radar Must Evaluate Newly Available Authenticated Lanes
+
+- Correction: Ahmed challenged why the 15:00 LinkedIn Comment Radar did not use his Windows laptop after the Mac lane failed.
+- What happened: the radar was hard-coded to Ahmed-Mac SSH/CDP and failed closed when that Mac was offline. The Windows node token was created at 15:02:35 and approved at 15:07:18, after the radar had already finished at 15:02:27; the node also exposed system, screen, camera, canvas, device, and location capabilities but no browser capability or configured authenticated LinkedIn CDP lane.
+- Do differently: distinguish node connectivity from an authenticated browser lane, record exact timing, and after a new device becomes available proactively evaluate and configure it as a governed fallback instead of repeating that only the old lane can be used.
+- Pattern key: `linkedin.comment_radar_authenticated_lane_failover`
+
+## 2026-08-09 - Health Checks Must Verify the Active Runtime and Current Impact
+
+- Correction: Ahmed challenged a weekly health alert that treated a disabled plugin scanner hit, cumulative delivery failures, stale tasks, and an alternate-install update as live problems.
+- Cause: the job used a hard-coded stale NVM OpenClaw binary instead of the gateway's `/usr` installation and copied raw diagnostic severities without checking activation, recency, or current delivery impact.
+- Do differently: resolve the gateway runtime from systemd `ExecStart`; use update-status JSON for that binary; inspect every flagged plugin at runtime; compare queue counts and newest failure timestamps; audit task state; and make the headline agree with verified current severity.
+- Pattern key: `openclaw.health_active_runtime_and_current_impact`
+
+## 2026-08-09 - LinkedIn Command Execution Is Standing Pre-Approved
+
+- Correction: Ahmed said anything related to LinkedIn should be pre-approved after repeated native Codex command-approval cards from CMO and HR workflows.
+- What happened: workspace governance already allowed broad LinkedIn work, but the per-agent native Codex rule files covered only individual commands, so new or alternate LinkedIn entry points still prompted.
+- Do differently: treat routine command execution for established LinkedIn workflows as standing pre-approved across NASR, CMO, HR, and JobZoom; maintain narrow exact script rules at the native Codex layer and the workspace permission profile. Preserve separate gates for exact public content, third-party messages, credentials/MFA, destructive actions, duplicate prevention, and visible proof.
+- Recurrence 2026-08-10: NASR invoked the CMO `heartbeat_check_current.py` through an alternate absolute-path/wrapped shell shape. The CMO rule covered the relative script, but the main-agent native rule and workspace CEO profile did not cover this exact entry point. Use the direct script command without redirection and keep both layers aligned.
+- Recurrence count: 2
+- Pattern key: `linkedin.command_execution_standing_preapproval`
+
+## 2026-08-09 - Do Not Bind Internal LinkedIn Delivery Approval to Caption Text
+
+- Correction: Ahmed reported another approval card after LinkedIn execution had supposedly been pre-approved.
+- Cause: the HR Telegram delivery rule matched one exact caption and file path. A harmless wording change created a new command shape and missed the rule.
+- Do differently: for delivery to Ahmed's own DM/topics, scope approval to the fixed Telegram destination and topic, leaving caption and artifact arguments variable. Keep unrelated targets unmatched and retain public-post, third-party-message, credential, destructive-action, and proof gates.
+- Pattern key: `linkedin.owner_topic_delivery_prefix`
+
+## 2026-08-10 - Routine Internal Agent Operations Are Standing Pre-Approved
+
+- Correction: Ahmed said all such tasks should be pre-approved after routine CTO health validation, internal Telegram status delivery, and local Git documentation commits produced command-approval cards.
+- What happened: native Codex rules matched exact command strings, message text, file paths, and commit messages, so harmless variations repeatedly missed policy even though the work was local, reversible, and within the agent's scope.
+- Do differently: approve bounded categories for internal status checks, session events, owned workflow commands, fixed-destination delivery to Ahmed, and local Git inspection/staging/commits across all agents. Keep remote Git writes, runtime/config/lifecycle actions, third-party messages, public-content gates, credentials/MFA, destructive actions, and paid actions gated.
+- Pattern key: `operations.internal_agent_standing_preapproval`
+
+## 2026-08-10 - Bounded VPS Maintenance Must Not Produce Repeat Codex Approval Cards
+
+- Correction: Ahmed said all such plugin approvals should be pre-approved after a safe disk-cleanup run produced repeated Codex app-server cards for plugin checks, cache cleanup, journal vacuuming, disabled revisions, an obsolete plugin generation, an unused Node runtime, and container verification.
+- What happened: the main-agent rules learned exact commands only after each card, while the other agents had no equivalent maintenance rules.
+- Do differently: maintain shared narrow Codex rules across all agents for routine read-only maintenance checks and guarded cleanup entry points. Keep arbitrary deletion, unbounded package removal, backup pruning, and gateway/config/lifecycle changes gated.
+- Pattern key: `operations.vps_maintenance_standing_preapproval`
+
+## 2026-08-11 - Safe Codex Approval Misses Should Be Auto-Reviewed
+
+- Correction: Ahmed reported excessive plugin approval cards over four days and said the routine actions should already be pre-approved.
+- What happened: the gateway recorded 156 Codex plugin approval waits from August 9-11 (32, 114, and 10 by day). Most came from routine inspection, JobZoom/HR execution, local verification, or an explicitly approved skill install; direct NASR work in sibling workspaces amplified the misses.
+- Do differently: explicitly configure the Codex app-server approval reviewer as `auto_review`, keep stable bounded rules for owned workflows, and route sibling-workspace mutations to the owning agent. Preserve human approval for public/third-party, credential/MFA, paid, destructive, and gateway lifecycle actions.
+- Pattern key: `codex.safe_misses_auto_review`
+
+## 2026-08-13 - Talking-video requests require voice and avatar motion
+
+- Correction: Ahmed rejected a silent graphic-first clip because “video with graphics” meant a speaking, visibly moving avatar enhanced with graphics.
+- What happened: after the HeyGen API credit failure, the fallback preserved the graphics but dropped the essential voice and avatar movement.
+- Do differently: treat voice, lip/head movement, and graphic overlays as separate acceptance gates. If the primary render path fails, do not silently downgrade any gate; use the authenticated web render or report the blocker before delivery.
+- Pattern key: `content.video_voice_motion_graphics_gates`
+
+## 2026-08-14 - Routine Browser Operations Need Category-Level Native Rules
+
+- Correction: Ahmed said routine internal browser activities should all be pre-approved after the CMO agent's read-only `openclaw browser --browser-profile openclaw tabs` check produced a Codex approval card.
+- What happened: shared governance and `config/tool-permissions.yaml` already allowed browser and LinkedIn checks, but the CMO native Codex policy learned only the exact command shape after the miss. Exact subcommand rules remain brittle and do not protect other agents or harmless variants.
+- Do differently: maintain the bounded `openclaw browser` prefix in every internal agent's native Codex rules. Keep workflow-level approval gates for public posting, comments, applications, third-party messages, credentials/MFA, destructive actions, and gateway/config lifecycle changes.
+- Pattern key: `browser.internal_operations_category_preapproval`
+
+## 2026-08-14 - HR And CMO Command Approval Must Be Category-Level
+
+- Correction: Ahmed said all HR and CMO activities should be pre-approved after routine Workday fetching, CV building, Python compilation, pipeline updates, and browser checks produced more Codex approval cards.
+- What happened: the agent governance layer was already permissive, but active Codex threads ran `on-request` in a managed sandbox and their native rule files still learned exact command shapes. Harmless argument, script, and command-chain variations therefore kept missing.
+- Do differently: maintain broad agent-local command-family rules for routine HR and CMO execution, and verify representative commands with `codex execpolicy check`. Keep workflow-level gates for external/public actions, applications, third-party messages, credentials, destructive actions, paid actions, and runtime changes.
+- Recurrence 2026-08-15: NASR directly invoked CMO-owned scripts from the main workspace instead of handing the command to CMO. The sibling-workspace path and shell command shape triggered Codex enforcement despite the standing workflow authorization. Route owned commands through the owning agent and use direct stable entry points.
+- Pattern key: `codex.hr_cmo_category_command_preapproval`
+
+## 2026-08-17 - Impeccable Live Mode On Static Generators Needs A Source Fallback
+
+- What happened: the browser served a generated HTML deck while the durable KPI component lived in a Nunjucks template and shared CSS. Live Mode could preview three variants, but accept correctly refused to persist into generated HTML.
+- Do differently: inject and preview in the generated page, then persist the accepted structure in the true template, move CSS into the owning stylesheet, bake parameter values, rebuild, and verify zero Live Mode residue. Keep the Impeccable dependency out of the project when the trial does not justify its lockfile cost.
+- Pattern key: `frontend.impeccable_static_generator_fallback`
+
+## 2026-08-17 - Recruiter Recommendations Need Contact-History Deduplication
+
+- Correction: Ahmed said Jonathan Holmes, Raed Kanaan, and Sara Azimzadeh had already been inboxed without a response; he completed outreach to Ghada Bamufleh and Wadyan A.
+- What happened: the recommendation reused previously contacted recruiters as if they were new prospects.
+- Do differently: check the recruiter outreach archive/history before proposing profiles, distinguish prior non-response from fresh prospects, and never present prior contacts as new outreach targets.
+- Pattern key: `career.recruiter_outreach_deduplication`
+
+## 2026-08-17 - Caption Approval Markers Must Be Revision-Specific
+
+- What happened: the 2 September LinkedIn caption was revised after an earlier approval, but the recorder used one generic approval marker and could have mistaken the superseded approval for approval of the revision.
+- Do differently: bind exact-caption approvals to the post date and a SHA-256 of the current caption, and target approval recording to the intended post only. Keep scheduling and publishing as separate gates.
+- Pattern key: `content.caption_approval_revision_hash`
+
+## 2026-08-18 - Reply-Target Links Must Be Answered Before Adjacent Work
+
+- Correction: Ahmed had to send “?” after an X link was left unanswered while a separate approved campaign was being completed.
+- What happened: the active reply target was displaced by a long-running adjacent workflow and its approval interruptions.
+- Do differently: resolve the current reply-target request first, or explicitly acknowledge and queue it before continuing other work. Never treat quoted links as background when they are the user's active message.
+- Pattern key: `conversation.reply_target_priority`
+
+## 2026-08-20 - Media Delivery Requires Three-Stage Proof
+
+- Correction: Ahmed received four generic `Media failed` replies even though each attempt had generated a valid PNG.
+- What happened: the agent retried generation without separating image creation, approved media staging, and Telegram delivery. The generated files remained under the Codex image directory instead of being staged under `/root/.openclaw/media`; the first corrected send then hit a transient gateway timeout.
+- Do differently: verify the PNG, copy the selected artifact into the workspace and approved media root, then use `scripts/telegram-send-local-media.py` with a stable receipt key. Claim delivery only when the receipt reports `ok=true` and a non-empty `message_id`; on timeout, probe gateway health before one controlled retry.
+- Pattern key: `media.generation_staging_delivery_proof`

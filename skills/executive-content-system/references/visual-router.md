@@ -2,11 +2,14 @@
 
 Use this guide when deciding what visual should accompany an executive LinkedIn post.
 
+For every normal single-image route, first use `/root/.openclaw/workspace/skills/nasr-visual-metaphor/SKILL.md` to select one cognitive anchor, compare three physical metaphors, and build the 4:5 shot list. If one image cannot express the idea as one physical action, route it to a carousel.
+
 ## Premium statement card
 
 Use when the post has one strong claim.
 
 Pattern:
+- 4:5 portrait by default
 - warm off-white paper with black ink and restrained orange accents
 - one clear handwritten headline
 - compact system/toolkit metaphor tied to the post thesis
@@ -62,6 +65,8 @@ Default flow:
 
 ## Avoid
 
+- borrowed mascots, copied creator compositions, or recently repeated dominant objects
+- static icon collages without physical causality
 - meaningless robots
 - abstract neon geometry
 - busy backgrounds behind text

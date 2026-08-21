@@ -522,7 +522,10 @@ def linkedin_comment_radar(args: argparse.Namespace, slot: str) -> int:
             f"linkedin-comment-radar-{slot}-validate" if args.validate else f"linkedin-comment-radar-{slot}",
             [sys.executable, "scripts/run_linkedin_comment_radar.py", "--slot", slot],
             cwd=CMO_ROOT,
-            timeout=1500,
+            # The authenticated LinkedIn session is shared with the autonomous
+            # HR application campaign. Allow the radar to queue for that lock
+            # and still retain enough time to complete its own browser work.
+            timeout=3600,
         )
 
         stdout = result["stdout"].strip()
@@ -557,7 +560,11 @@ def linkedin_comment_radar(args: argparse.Namespace, slot: str) -> int:
         else:
             action_line = "Review the report before taking any LinkedIn action."
 
-        if result["returncode"] == 0:
+        # The durable radar deliberately returns 2 when its strict five-card
+        # judge rejects an incomplete round. An incomplete_* status is still a
+        # clean operational outcome: keep it internal and try the next live
+        # Mac slot instead of alerting Ahmed as though the cron itself failed.
+        if result["returncode"] == 0 or incomplete_round:
             if status != "ready_full_pack":
                 delivery = {
                     "ok": True,

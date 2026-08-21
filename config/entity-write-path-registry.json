@@ -1,0 +1,574 @@
+{
+  "schema_version": 1,
+  "registry_id": "nasr-entity-write-path-registry",
+  "updated_at": "2026-08-17T22:30:00+03:00",
+  "policy": {
+    "principle": "One accountable owner and one declared write direction per entity; storage may remain federated.",
+    "required_entities": [
+      "jobs",
+      "applications",
+      "contacts",
+      "content_items",
+      "tasks",
+      "calendar_events",
+      "email_messages",
+      "knowledge_records",
+      "runtime_operations"
+    ],
+    "required_governance_gates": [
+      "ownership",
+      "validation",
+      "permissions",
+      "audit_log",
+      "idempotency",
+      "rollback",
+      "kill_switch"
+    ],
+    "required_workflows": [
+      "job_search",
+      "content",
+      "email",
+      "knowledge",
+      "runtime_operations"
+    ],
+    "required_metrics": [
+      "volume",
+      "manual_touch_minutes",
+      "cycle_time_minutes",
+      "exception_count"
+    ],
+    "conflict_rule": "Fail closed on duplicate external action; reconcile to the primary store through the declared bridge.",
+    "automation_rule": "No production automation may be added until ownership, validation, permissions, audit, idempotency, rollback, and kill-switch evidence are documented."
+  },
+  "entities": [
+    {
+      "id": "jobs",
+      "scope": "Discovered and qualified career opportunities across all job-search lanes.",
+      "owner": "HR",
+      "owner_workspace": "/root/.openclaw/workspace-hr",
+      "record_key": "normalized source job ID, then canonical URL hash",
+      "authority": {
+        "primary_system": "NASR career pipeline SQLite",
+        "primary_locator": "/root/.openclaw/workspace/data/nasr-pipeline.db#jobs",
+        "operational_stores": [
+          "/root/.openclaw/workspace-jobzoom/data/jobzoom.db#jobs"
+        ],
+        "precedence": "The main career pipeline owns the cross-lane record. JobZoom owns its scan execution rows and syncs qualified/applied outcomes to the main pipeline."
+      },
+      "write_contract": {
+        "mode": "controlled",
+        "direction": "source collectors -> pipeline_db -> nasr-pipeline.db; JobZoom -> explicit sync bridge -> nasr-pipeline.db",
+        "entry_points": [
+          {
+            "kind": "python_module",
+            "locator": "/root/.openclaw/workspace/scripts/pipeline_db.py",
+            "authority": "approved HR local workflow"
+          },
+          {
+            "kind": "bridge",
+            "locator": "/root/.openclaw/workspace-jobzoom/scripts/sync_applied_to_pipeline.py",
+            "authority": "approved JobZoom confirmation workflow"
+          }
+        ],
+        "forbidden": [
+          "new flat-file job ledgers as an authority",
+          "direct external application from a discovery-only process"
+        ],
+        "dedupe": "job_id/url_hash in main pipeline and linkedin_id/url/signature in JobZoom",
+        "audit_evidence": "status_history plus JobZoom runs and applied ledger",
+        "rollback": "restore the affected SQLite database from a verified SQLite backup before replay",
+        "kill_switch": "scripts/pipeline_db.py ENABLED flag; stop the producing lane"
+      },
+      "governance": {
+        "ownership": {"status": "enforced", "evidence": "AGENTS.md HR ownership"},
+        "validation": {"status": "enforced", "evidence": "pipeline schema, ATS gates, and quality-gate checks"},
+        "permissions": {"status": "enforced", "evidence": "HR local writes are pre-approved; external application rules remain gated"},
+        "audit_log": {"status": "enforced", "evidence": "status_history, runs, and source metadata"},
+        "idempotency": {"status": "enforced", "evidence": "unique job_id/url_hash/linkedin_id constraints"},
+        "rollback": {"status": "documented", "evidence": "SQLite backup and replay contract"},
+        "kill_switch": {"status": "enforced", "evidence": "pipeline_db ENABLED and lane stop"}
+      },
+      "live_evidence": [
+        {"type": "sqlite_table", "path": "/root/.openclaw/workspace/data/nasr-pipeline.db", "table": "jobs"},
+        {"type": "sqlite_table", "path": "/root/.openclaw/workspace-jobzoom/data/jobzoom.db", "table": "jobs"},
+        {"type": "path_exists", "path": "/root/.openclaw/workspace/scripts/pipeline_db.py"}
+      ]
+    },
+    {
+      "id": "applications",
+      "scope": "Application state, duplicate suppression, response, and interview progression.",
+      "owner": "HR",
+      "owner_workspace": "/root/.openclaw/workspace-hr",
+      "record_key": "job_id or linkedin_id/url/signature",
+      "authority": {
+        "primary_system": "NASR career pipeline SQLite",
+        "primary_locator": "/root/.openclaw/workspace/data/nasr-pipeline.db#jobs.status",
+        "operational_stores": [
+          "/root/.openclaw/workspace-jobzoom/data/jobzoom.db#applied_jobs"
+        ],
+        "precedence": "The main pipeline owns cross-lane application status. A positive applied marker in either store blocks duplicate action until reconciliation; JobZoom confirmations sync one way into the main pipeline."
+      },
+      "write_contract": {
+        "mode": "controlled",
+        "direction": "confirmed application event -> owning ledger -> sync_applied_to_pipeline -> main pipeline",
+        "entry_points": [
+          {
+            "kind": "python_module",
+            "locator": "/root/.openclaw/workspace/scripts/pipeline_db.py",
+            "authority": "approved HR application workflow"
+          },
+          {
+            "kind": "command",
+            "locator": "/root/.openclaw/workspace-jobzoom/scripts/mark_run_applied.py",
+            "authority": "Ahmed-confirmed JobZoom batch"
+          }
+        ],
+        "forbidden": [
+          "application without duplicate precheck",
+          "clearing applied state because only one store is negative"
+        ],
+        "dedupe": "positive-in-either-store fail-closed rule followed by bridge reconciliation",
+        "audit_evidence": "application status history, applied_jobs, and JSONL ledger",
+        "rollback": "reverse only a proven false marker with ledger evidence and owner approval",
+        "kill_switch": "stop application writer and preserve both ledgers for reconciliation"
+      },
+      "governance": {
+        "ownership": {"status": "enforced", "evidence": "HR owns applications"},
+        "validation": {"status": "enforced", "evidence": "known-answer, ATS, eligibility, and application gates"},
+        "permissions": {"status": "enforced", "evidence": "standard forms pre-approved; exceptions remain approval-gated"},
+        "audit_log": {"status": "enforced", "evidence": "status_history and permanent applied ledger"},
+        "idempotency": {"status": "enforced", "evidence": "positive-in-either-store suppression and unique ledger keys"},
+        "rollback": {"status": "documented", "evidence": "evidence-backed correction only"},
+        "kill_switch": {"status": "enforced", "evidence": "stop writer; do not delete ledgers"}
+      },
+      "live_evidence": [
+        {"type": "sqlite_table", "path": "/root/.openclaw/workspace/data/nasr-pipeline.db", "table": "status_history"},
+        {"type": "sqlite_table", "path": "/root/.openclaw/workspace-jobzoom/data/jobzoom.db", "table": "applied_jobs"},
+        {"type": "path_exists", "path": "/root/.openclaw/workspace-jobzoom/scripts/mark_run_applied.py"}
+      ]
+    },
+    {
+      "id": "contacts",
+      "scope": "Career recruiters and hiring relationships; this does not claim a general personal address book.",
+      "owner": "HR",
+      "owner_workspace": "/root/.openclaw/workspace-hr",
+      "record_key": "normalized email, then LinkedIn URL, then reviewed name/company pair",
+      "authority": {
+        "primary_system": "NASR career pipeline SQLite",
+        "primary_locator": "/root/.openclaw/workspace/data/nasr-pipeline.db#recruiters",
+        "operational_stores": [
+          "/root/.openclaw/workspace/data/nasr-pipeline.db#job_recruiters"
+        ],
+        "precedence": "The recruiters table owns career-contact identity; messages and LinkedIn are evidence sources, not replacement contact ledgers."
+      },
+      "write_contract": {
+        "mode": "controlled",
+        "direction": "verified interaction -> HR review -> pipeline_db recruiter record/link",
+        "entry_points": [
+          {
+            "kind": "python_module",
+            "locator": "/root/.openclaw/workspace/scripts/pipeline_db.py",
+            "authority": "approved HR local workflow"
+          }
+        ],
+        "forbidden": [
+          "unverified identity merge",
+          "outreach status inferred from profile discovery alone"
+        ],
+        "dedupe": "unique normalized email where present; otherwise reviewed identity match",
+        "audit_evidence": "interactions, job_recruiters, and dated contact notes",
+        "rollback": "unlink or correct a merge while retaining interaction evidence",
+        "kill_switch": "stop contact enrichment/outreach writer"
+      },
+      "governance": {
+        "ownership": {"status": "enforced", "evidence": "HR owns career contacts"},
+        "validation": {"status": "enforced", "evidence": "identity requires explicit evidence"},
+        "permissions": {"status": "enforced", "evidence": "local contact capture allowed; third-party messages remain gated"},
+        "audit_log": {"status": "enforced", "evidence": "interactions and dated notes"},
+        "idempotency": {"status": "enforced", "evidence": "unique email and reviewed fallback key"},
+        "rollback": {"status": "documented", "evidence": "reversible relationship correction"},
+        "kill_switch": {"status": "enforced", "evidence": "stop enrichment/outreach path"}
+      },
+      "live_evidence": [
+        {"type": "sqlite_table", "path": "/root/.openclaw/workspace/data/nasr-pipeline.db", "table": "recruiters"},
+        {"type": "sqlite_table", "path": "/root/.openclaw/workspace/data/nasr-pipeline.db", "table": "job_recruiters"}
+      ]
+    },
+    {
+      "id": "content_items",
+      "scope": "LinkedIn content approval, scheduling, publishing status, and canonical post record.",
+      "owner": "CMO",
+      "owner_workspace": "/root/.openclaw/workspace-cmo",
+      "record_key": "Notion content page ID",
+      "authority": {
+        "primary_system": "Notion Content Calendar",
+        "primary_locator": "notion://database/3268d599-a162-814b-8854-c9b8bde62468",
+        "operational_stores": [
+          "/root/.openclaw/workspace-cmo/data/campaign-graph"
+        ],
+        "precedence": "Notion alone owns live approval, schedule, and publishing state. Local campaign files coordinate and learn but never override it."
+      },
+      "write_contract": {
+        "mode": "external_approval",
+        "direction": "approved CMO workflow -> direct Notion API -> publisher -> verified LinkedIn result -> Notion writeback",
+        "entry_points": [
+          {
+            "kind": "api_client",
+            "locator": "/root/.openclaw/workspace/scripts/notion_client_shared.py",
+            "authority": "CMO content workflow"
+          },
+          {
+            "kind": "publisher",
+            "locator": "/root/.openclaw/workspace-cmo/scripts/post_scheduled_notion_linkedin.py",
+            "authority": "exact approved caption/visual pair"
+          }
+        ],
+        "forbidden": [
+          "local file promoted as approval authority",
+          "publish without exact content approval and duplicate lock"
+        ],
+        "dedupe": "Notion page ID, published-state precheck, success ledger, and shared publish lock",
+        "audit_evidence": "Notion status history, publisher ledger, LinkedIn share ID, and campaign feedback",
+        "rollback": "stop publishing; repair Notion state from verified ledger evidence without deleting the public post unless Ahmed approves",
+        "kill_switch": "disable the owning publisher lane and retain Notion/ledger evidence"
+      },
+      "governance": {
+        "ownership": {"status": "enforced", "evidence": "CMO owns content"},
+        "validation": {"status": "enforced", "evidence": "draft, visual, duplicate, publisher-QA, and post-publish checks"},
+        "permissions": {"status": "enforced", "evidence": "exact caption/visual approval remains required"},
+        "audit_log": {"status": "enforced", "evidence": "Notion, success ledger, and LinkedIn share ID"},
+        "idempotency": {"status": "enforced", "evidence": "single scheduler, shared lock, and success ledger"},
+        "rollback": {"status": "documented", "evidence": "state repair and explicit public-delete gate"},
+        "kill_switch": {"status": "enforced", "evidence": "publisher lane can be disabled independently"}
+      },
+      "live_evidence": [
+        {"type": "json_path", "path": "/root/.openclaw/workspace/config/notion-databases.json", "key_path": "databases.content_calendar.id"},
+        {"type": "file_contains", "path": "/root/.openclaw/workspace/docs/content-claw/nasr-campaign-graph.md", "needle": "Notion remains the only live source of truth"},
+        {"type": "path_exists", "path": "/root/.openclaw/workspace-cmo/scripts/post_scheduled_notion_linkedin.py"}
+      ]
+    },
+    {
+      "id": "tasks",
+      "scope": "Cross-workflow commitments and next actions; execution-run databases are logs, not intent authority.",
+      "owner": "NASR/main",
+      "owner_workspace": "/root/.openclaw/workspace",
+      "record_key": "dated task heading plus stable workflow identity",
+      "authority": {
+        "primary_system": "Active Tasks register",
+        "primary_locator": "/root/.openclaw/workspace/memory/active-tasks.md",
+        "operational_stores": [
+          "/root/.openclaw/tasks/runs.sqlite.migrated"
+        ],
+        "precedence": "active-tasks.md owns the commitment. Taskflow/OpenClaw run databases prove execution only and cannot create or close a commitment by themselves."
+      },
+      "write_contract": {
+        "mode": "controlled",
+        "direction": "Ahmed decision or verified workflow state -> NASR owner review -> active-tasks.md",
+        "entry_points": [
+          {
+            "kind": "workspace_edit",
+            "locator": "/root/.openclaw/workspace/memory/active-tasks.md",
+            "authority": "NASR local-write within the approved workflow"
+          }
+        ],
+        "forbidden": [
+          "Mission Control task board",
+          "execution run treated as verified task closure"
+        ],
+        "dedupe": "one stable task heading per workflow outcome",
+        "audit_evidence": "git diff, dated daily note, and cited operational evidence",
+        "rollback": "revert the scoped task edit while preserving the dated decision note",
+        "kill_switch": "stop automated task edits; task register remains manually reviewable"
+      },
+      "governance": {
+        "ownership": {"status": "enforced", "evidence": "NASR coordinates cross-lane work"},
+        "validation": {"status": "enforced", "evidence": "task closure requires verified outcome evidence"},
+        "permissions": {"status": "enforced", "evidence": "workspace edit only; external action retains its own gate"},
+        "audit_log": {"status": "enforced", "evidence": "git diff and daily note"},
+        "idempotency": {"status": "enforced", "evidence": "stable workflow heading"},
+        "rollback": {"status": "documented", "evidence": "scoped file reversal"},
+        "kill_switch": {"status": "enforced", "evidence": "no autonomous task writer enabled"}
+      },
+      "live_evidence": [
+        {"type": "path_exists", "path": "/root/.openclaw/workspace/memory/active-tasks.md"}
+      ]
+    },
+    {
+      "id": "calendar_events",
+      "scope": "Ahmed's calendar events and attendance state.",
+      "owner": "NASR/main",
+      "owner_workspace": "/root/.openclaw/workspace",
+      "record_key": "provider calendar ID plus event ID",
+      "authority": {
+        "primary_system": "Google Calendar",
+        "primary_locator": "google-calendar://connected-account",
+        "operational_stores": [
+          "/tmp/calendar-events-YYYY-MM-DD.json"
+        ],
+        "precedence": "The provider event is authoritative. The /tmp file is a read cache and never proves an event write or deletion."
+      },
+      "write_contract": {
+        "mode": "external_approval",
+        "direction": "approved calendar intent -> gog-calendar/connected provider -> returned event ID -> optional refreshed cache",
+        "entry_points": [
+          {
+            "kind": "skill",
+            "locator": "/root/.openclaw/workspace/skills/gog-calendar/SKILL.md",
+            "authority": "explicit calendar write request"
+          }
+        ],
+        "forbidden": [
+          "editing the /tmp cache as an event write",
+          "claiming success without returned provider event evidence"
+        ],
+        "dedupe": "provider event ID and time/title duplicate precheck",
+        "audit_evidence": "provider response and subsequent provider read",
+        "rollback": "provider-native update/cancel with explicit approval",
+        "kill_switch": "stop calendar connector writes; retain read-only access"
+      },
+      "governance": {
+        "ownership": {"status": "enforced", "evidence": "NASR coordinates Ahmed's calendar"},
+        "validation": {"status": "enforced", "evidence": "time zone, attendees, recurrence, and conflict check"},
+        "permissions": {"status": "enforced", "evidence": "calendar mutations require an explicit request"},
+        "audit_log": {"status": "enforced", "evidence": "provider event ID and readback"},
+        "idempotency": {"status": "enforced", "evidence": "provider ID and duplicate precheck"},
+        "rollback": {"status": "documented", "evidence": "provider-native correction/cancellation"},
+        "kill_switch": {"status": "enforced", "evidence": "connector writes can be stopped independently"}
+      },
+      "live_evidence": [
+        {"type": "file_contains", "path": "/root/.openclaw/workspace/config/service-registry.md", "needle": "### Google Calendar"},
+        {"type": "path_exists", "path": "/root/.openclaw/workspace/skills/gog-calendar/SKILL.md"},
+        {"type": "file_contains", "path": "/root/.openclaw/workspace/scripts/calendar-prefetch.py", "needle": "cache them for the morning briefing"}
+      ]
+    },
+    {
+      "id": "email_messages",
+      "scope": "Gmail messages and threads; local sentinel state covers processing and alert delivery only.",
+      "owner": "HR",
+      "owner_workspace": "/root/.openclaw/workspace-hr",
+      "record_key": "Gmail message ID and thread ID",
+      "authority": {
+        "primary_system": "Gmail",
+        "primary_locator": "gmail://ahmed-primary-mailbox",
+        "operational_stores": [
+          "/root/.openclaw/workspace/data/hr-career-sentinel/state.sqlite"
+        ],
+        "precedence": "Gmail owns message content and state. Sentinel SQLite owns only ingestion checkpoints, dedupe, classifications, and alert-delivery state."
+      },
+      "write_contract": {
+        "mode": "read_only",
+        "direction": "Gmail -> Pub/Sub/history/read -> sentinel state -> optional Ahmed alert; no mailbox write path",
+        "entry_points": [],
+        "forbidden": [
+          "send, draft, reply, forward, label, flag, trash, or delete from the sentinel",
+          "local classification treated as mailbox state"
+        ],
+        "dedupe": "Gmail message ID, thread ID, and normalized material-event state hash",
+        "audit_evidence": "sentinel notifications, processed_messages, thread_states, and sanitized logs",
+        "rollback": "reprocess an uncheckpointed event; never mutate Gmail to repair local state",
+        "kill_switch": "stop the sentinel/reconciliation lane without changing Gmail"
+      },
+      "governance": {
+        "ownership": {"status": "enforced", "evidence": "HR owns job-email classification"},
+        "validation": {"status": "enforced", "evidence": "complete-thread deterministic and model policy gates"},
+        "permissions": {"status": "enforced", "evidence": "no mailbox mutation path exists"},
+        "audit_log": {"status": "enforced", "evidence": "durable isolated state and sanitized logs"},
+        "idempotency": {"status": "enforced", "evidence": "message/thread/state-hash dedupe"},
+        "rollback": {"status": "documented", "evidence": "checkpoint-safe replay"},
+        "kill_switch": {"status": "enforced", "evidence": "sentinel can stop independently"}
+      },
+      "live_evidence": [
+        {"type": "sqlite_table", "path": "/root/.openclaw/workspace/data/hr-career-sentinel/state.sqlite", "table": "processed_messages"},
+        {"type": "file_contains", "path": "/root/.openclaw/workspace/docs/hr-career-sentinel.md", "needle": "No email write, draft, reply, forwarding, label, flag, trash, or delete path exists"}
+      ]
+    },
+    {
+      "id": "knowledge_records",
+      "scope": "Durable user decisions, workflow knowledge, lessons, and curated reference material.",
+      "owner": "NASR/main",
+      "owner_workspace": "/root/.openclaw/workspace",
+      "record_key": "canonical Markdown path plus dated heading",
+      "authority": {
+        "primary_system": "Workspace memory and reference Markdown",
+        "primary_locator": "/root/.openclaw/workspace/memory",
+        "operational_stores": [
+          "/root/.openclaw/workspace/knowledge.db",
+          "lossless-claw conversation summaries"
+        ],
+        "precedence": "Curated Markdown owns durable knowledge. SQLite/FTS and conversation summaries are retrieval indexes or evidence sources and cannot silently overwrite canonical files."
+      },
+      "write_contract": {
+        "mode": "controlled",
+        "direction": "verified fact/decision -> dated note -> reviewed promotion to one owning canonical file -> optional index rebuild",
+        "entry_points": [
+          {
+            "kind": "skill",
+            "locator": "/root/.openclaw/workspace/skills/nasr-knowledge-ingestion/SKILL.md",
+            "authority": "NASR governed knowledge capture"
+          },
+          {
+            "kind": "workspace_edit",
+            "locator": "/root/.openclaw/workspace/memory",
+            "authority": "same-turn durable decision or correction capture"
+          }
+        ],
+        "forbidden": [
+          "raw session mining into active rules",
+          "index database treated as canonical content",
+          "duplicate fact copied into multiple owner files"
+        ],
+        "dedupe": "one owning file per fact type; daily note before reviewed promotion",
+        "audit_evidence": "dated note, git diff, source citation, and optional compile/lint report",
+        "rollback": "revert the scoped Markdown promotion and rebuild read indexes",
+        "kill_switch": "disable ingest/index jobs while preserving canonical Markdown"
+      },
+      "governance": {
+        "ownership": {"status": "enforced", "evidence": "MEMORY.md memory discipline"},
+        "validation": {"status": "enforced", "evidence": "source verification and owner-file routing"},
+        "permissions": {"status": "enforced", "evidence": "local knowledge capture only; external ingest follows source access rules"},
+        "audit_log": {"status": "enforced", "evidence": "dated notes and git diff"},
+        "idempotency": {"status": "enforced", "evidence": "one owner file and reviewed promotion"},
+        "rollback": {"status": "documented", "evidence": "Markdown revert plus index rebuild"},
+        "kill_switch": {"status": "enforced", "evidence": "indexes are disposable; canonical Markdown is preserved"}
+      },
+      "live_evidence": [
+        {"type": "path_exists", "path": "/root/.openclaw/workspace/memory"},
+        {"type": "path_exists", "path": "/root/.openclaw/workspace/skills/nasr-knowledge-ingestion/SKILL.md"},
+        {"type": "sqlite_table", "path": "/root/.openclaw/workspace/knowledge.db", "table": "pages"}
+      ]
+    },
+    {
+      "id": "runtime_operations",
+      "scope": "OpenClaw configuration, cron, gateway, services, patches, and operational execution state.",
+      "owner": "CTO",
+      "owner_workspace": "/root/.openclaw/workspace-cto",
+      "record_key": "runtime object type plus native ID/name",
+      "authority": {
+        "primary_system": "OpenClaw live runtime and first-class stores",
+        "primary_locator": "/root/.openclaw/openclaw.json plus live gateway/cron/systemd state",
+        "operational_stores": [
+          "/root/.openclaw/flows/registry.sqlite",
+          "/root/.openclaw/tasks/runs.sqlite.migrated",
+          "/root/.openclaw/logs"
+        ],
+        "precedence": "Live first-class runtime state outranks reports and cold snapshots. Config changes follow schema validation and the gateway safety lane."
+      },
+      "write_contract": {
+        "mode": "controlled",
+        "direction": "approved maintenance intent -> first-class CLI/config tool -> bounded lifecycle action -> live probe/readback -> report",
+        "entry_points": [
+          {
+            "kind": "skill",
+            "locator": "/root/.openclaw/workspace/skills/gateway-runtime-safety/SKILL.md",
+            "authority": "approved runtime maintenance"
+          },
+          {
+            "kind": "command_runner",
+            "locator": "/root/.openclaw/workspace/scripts/direct-cron-runner.py",
+            "authority": "bounded deterministic cron handlers"
+          }
+        ],
+        "forbidden": [
+          "same-turn live gateway restart outside the maintenance lane",
+          "report or cold snapshot treated as live authority",
+          "silent model switch"
+        ],
+        "dedupe": "native cron/job/service IDs, bounded locks, and external-action ledgers where applicable",
+        "audit_evidence": "config diff, cron run, service state, gateway probe, patch checks, and sanitized logs",
+        "rollback": "verified config/state backup plus detached bounded maintenance rollback",
+        "kill_switch": "disable the named cron/service/workflow; do not broadly stop OpenClaw"
+      },
+      "governance": {
+        "ownership": {"status": "enforced", "evidence": "CTO owns runtime and infrastructure"},
+        "validation": {"status": "enforced", "evidence": "schema, health, patch, plugin, cron, and Telegram checks"},
+        "permissions": {"status": "enforced", "evidence": "runtime changes remain approval-gated unless explicitly pre-approved"},
+        "audit_log": {"status": "enforced", "evidence": "config diff, run state, probes, and logs"},
+        "idempotency": {"status": "enforced", "evidence": "native IDs, deterministic handlers, and duplicate guards"},
+        "rollback": {"status": "documented", "evidence": "verified backups and maintenance lane"},
+        "kill_switch": {"status": "enforced", "evidence": "narrow workflow/service disable, not global shutdown"}
+      },
+      "live_evidence": [
+        {"type": "path_exists", "path": "/root/.openclaw/openclaw.json"},
+        {"type": "path_exists", "path": "/root/.openclaw/workspace/skills/gateway-runtime-safety/SKILL.md"},
+        {"type": "path_exists", "path": "/root/.openclaw/workspace/scripts/direct-cron-runner.py"}
+      ]
+    }
+  ],
+  "workflows": [
+    {
+      "id": "job_search",
+      "owner": "HR",
+      "entities": ["jobs", "applications", "contacts"],
+      "start_evidence": "source run/search start",
+      "end_evidence": "qualified opportunity or verified application state recorded",
+      "metrics": {
+        "volume": "jobs discovered, qualified, and applied",
+        "manual_touch_minutes": "operator minutes spent reviewing, correcting, or applying",
+        "cycle_time_minutes": "discovery to decision and decision to application",
+        "exception_count": "failed searches, scoring failures, duplicate blocks, and application blockers"
+      },
+      "collection": "existing JobZoom/main pipeline timestamps plus a seven-day manual-touch sample",
+      "baseline": {"status": "instrumentation_defined", "observation_window_days": 7, "starts_on": "2026-08-18", "review_on": "2026-08-25", "values": null}
+    },
+    {
+      "id": "content",
+      "owner": "CMO",
+      "entities": ["content_items"],
+      "start_evidence": "Notion item enters Ideas/Draft",
+      "end_evidence": "Review-ready, approved-awaiting-publish, or published-verified",
+      "metrics": {
+        "volume": "items moved by stage and posts published",
+        "manual_touch_minutes": "draft, design, QA, approval, and recovery minutes",
+        "cycle_time_minutes": "idea to Review and approval to verified publish",
+        "exception_count": "missing assets, failed quality gates, duplicate blocks, and publisher errors"
+      },
+      "collection": "Notion timestamps, publisher ledger, campaign evidence, and a seven-day manual-touch sample",
+      "baseline": {"status": "instrumentation_defined", "observation_window_days": 7, "starts_on": "2026-08-18", "review_on": "2026-08-25", "values": null}
+    },
+    {
+      "id": "email",
+      "owner": "HR",
+      "entities": ["email_messages", "contacts", "applications"],
+      "start_evidence": "Gmail Pub/Sub notification or reconciliation scan",
+      "end_evidence": "thread checkpointed silent or one verified Ahmed alert delivered",
+      "metrics": {
+        "volume": "notifications, threads, classified messages, and alerts",
+        "manual_touch_minutes": "operator minutes spent reviewing false positives, failures, or required replies",
+        "cycle_time_minutes": "notification publish time to checkpoint/alert",
+        "exception_count": "history gaps, parse/model failures, uncertain delivery, and false classifications"
+      },
+      "collection": "sentinel SQLite/log timestamps plus a seven-day manual-touch sample",
+      "baseline": {"status": "instrumentation_defined", "observation_window_days": 7, "starts_on": "2026-08-18", "review_on": "2026-08-25", "values": null}
+    },
+    {
+      "id": "knowledge",
+      "owner": "NASR/main",
+      "entities": ["knowledge_records", "tasks"],
+      "start_evidence": "verified decision, correction, source, or completed work",
+      "end_evidence": "dated note captured and, when warranted, promoted once to the owning file",
+      "metrics": {
+        "volume": "captured decisions, corrections, and reviewed promotions",
+        "manual_touch_minutes": "minutes spent verifying, deduplicating, and promoting knowledge",
+        "cycle_time_minutes": "decision/correction to durable capture",
+        "exception_count": "duplicate owners, stale claims, lint failures, and unsupported promotions"
+      },
+      "collection": "dated notes, git diff, knowledge lint/index output, and a seven-day manual-touch sample",
+      "baseline": {"status": "instrumentation_defined", "observation_window_days": 7, "starts_on": "2026-08-18", "review_on": "2026-08-25", "values": null}
+    },
+    {
+      "id": "runtime_operations",
+      "owner": "CTO",
+      "entities": ["runtime_operations", "tasks"],
+      "start_evidence": "scheduled run or approved maintenance intent",
+      "end_evidence": "bounded run completed with live verification or stopped at an approval boundary",
+      "metrics": {
+        "volume": "scheduled runs, maintenance actions, and incidents",
+        "manual_touch_minutes": "operator minutes spent diagnosing, approving, repairing, and verifying",
+        "cycle_time_minutes": "trigger/incident to verified completion or escalation",
+        "exception_count": "failed runs, approval waits, retries, degraded probes, and duplicate-action blocks"
+      },
+      "collection": "cron/service timestamps, deterministic-run logs, orchestration audit, and a seven-day manual-touch sample",
+      "baseline": {"status": "instrumentation_defined", "observation_window_days": 7, "starts_on": "2026-08-18", "review_on": "2026-08-25", "values": null}
+    }
+  ]
+}

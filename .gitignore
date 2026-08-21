@@ -67,6 +67,7 @@ media/inbound/*.docx
 
 # Local virtual environments
 /tools/jobspy-venv/
+/tools/document-parser-venv/
 /skills/scrapling/.venv/
 
 # Local research/scratch directories (not source of truth)

@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Video Creator"
+  short_description: "Plan and package coherent AI video productions"
+  default_prompt: "Use $ai-video-creator to turn this brief into a production-ready AI video plan."

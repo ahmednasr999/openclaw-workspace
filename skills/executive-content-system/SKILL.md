@@ -28,6 +28,7 @@ Read the most relevant files before drafting or changing workflow:
 - `/root/.openclaw/workspace/USER.md` for Ahmed profile and preferences
 - `/root/.openclaw/workspace/MEMORY.md` for durable content rules
 - `/root/.openclaw/workspace/skills/content-claw/SKILL.md` for current CMO rules
+- `/root/.openclaw/workspace/skills/nasr-visual-metaphor/SKILL.md` for original metaphor invention, scored concept briefs, shot lists, and pre-generation rejection gates
 - `/root/.openclaw/workspace-cmo/content-strategy.md` for pillars and publishing workflow
 - `/root/.openclaw/workspace-cmo/references/content-performance.json` when scoring against performance
 - `/root/.openclaw/workspace/skills/content-claw/SKILL.md` and its visual-quality gates for the current default LinkedIn visual style. Treat `/root/.openclaw/workspace-cmo/scripts/generate-premium-content-card.py` as a legacy dark-card renderer unless Ahmed explicitly requests that direction.
@@ -59,6 +60,22 @@ Default voice:
 - no creator-bro clickbait
 - no em dashes
 - LinkedIn posts should end with a question or CTA unless there is a strong reason not to
+
+## Experience-backed authority series
+
+Use the 16 August 2026 post, "A 16-person PMO can still depend on one person," as the current performance benchmark for Ahmed's authority content. Its winning structure is:
+
+`verified career evidence -> unexpected operating lesson -> practical leadership rule -> pointed peer question`
+
+Planning rules:
+- target roughly two experience-backed posts per week, spaced across different pillars
+- reuse the structure, never the same subject or wording
+- start from `memory/master-cv-data.md`; distinguish Ahmed's direct contribution from the wider company's result
+- use one memorable metric or scope fact when it materially strengthens the point
+- make the lesson useful to an executive who does not know Ahmed
+- keep generic AI commentary subordinate to evidence-backed operating experience
+- rotate evidence across PMO, healthcare, fintech, e-commerce, multi-country transformation, and technical delivery
+- track out-of-network reach, qualified profile visits, followers gained, saves, and substantive comments against the rolling 28-day median; do not treat one breakout as proof that every personal story will perform
 
 ## Workflow selector
 
@@ -206,15 +223,18 @@ Choose the artifact type based on content structure:
 | Data/statistic | Metric card with source note |
 | Career story | Text-first post or executive photo card |
 | Multi-step method | Carousel |
-| Abstract concept | Avoid abstract art. Use a concrete executive/business scene |
+| Abstract concept | Use the NASR visual-metaphor engine to turn it into one concrete physical mechanism |
 
 Default single-image path:
+- create a scored NASR visual-metaphor brief before prompting or generating; default to 4:5 portrait
 - use the approved hand-drawn sketchnote concept from `skills/content-claw/SKILL.md`
 - warm off-white paper, black ink, restrained orange accents, clear handwritten hook, compact system/toolkit metaphor, Ahmed Nasr signature/footer
 - do not use `/root/.openclaw/workspace-cmo/scripts/generate-premium-content-card.py` for normal static visuals unless Ahmed explicitly asks for the legacy dark-card direction
 - do not use text-only publishing when an image is expected
 
 Image quality rules:
+- one image carries one cognitive anchor through one dominant physical action
+- reject recent-object/composition collisions and creator-style imitation before generation
 - background must make sense before reading text
 - no generic AI glow, random geometry, meaningless robots, or stock-photo clichés
 - typography must be readable on mobile
@@ -288,6 +308,18 @@ Process:
 4. Preserve approval gates for public posting and third-party messages.
 5. Add the smallest durable fix: rule, checklist, script, skill, eval, or cron.
 6. Verify by reading the resulting file or running the smallest available validation.
+
+For an idea that should produce more than one coordinated asset, use the NASR
+Campaign Graph in `docs/content-claw/nasr-campaign-graph.md`. It provides:
+
+- structured voice-note or rough-idea intake
+- one manifest connecting primary and derivative assets
+- explicit `pass` or `loop_back` decisions at every campaign stage
+- performance feedback tied to pillar, hook, format, funnel role, and intended outcome
+
+The graph is a local coordination and learning layer. Notion remains the live
+approval and publishing source of truth, and campaign sign-off never replaces
+per-asset publishing approval.
 
 ## Approval and safety gates
 

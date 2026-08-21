@@ -4,7 +4,7 @@ Full preserved history lives in `docs/reference/MEMORY.full.md`. This injected f
 
 ## Current Decisions
 
-- Backups: keep only the latest, daily at 3 AM Cairo. Gmail check: daily at 8 AM Cairo.
+- Full OpenClaw backups and daily filesystem snapshots are disabled per Ahmed. Gmail check: daily at 8 AM Cairo.
 - Use authenticated ChatGPT web Images when viable instead of adding direct OpenAI API billing solely for image generation.
 - Telegram messages may use rich formatting when useful, but must remain readable as plain text when rich UI degrades.
 - MiniMax is retired unless Ahmed explicitly asks for it.
@@ -24,7 +24,9 @@ When Ahmed shares a job link and description: analyze requirements, report ATS s
 ## Content System
 
 - The Content Pipeline is authoritative: Ideas, Outline, Draft, Design, Review, Published. OpenClaw moves completed drafts to Review; Ahmed moves approved work to Published.
+- Agreed editorial direction from 2026-08-17: prioritize experience-backed authority posts over generic AI commentary, targeting roughly two per week. Use one real achievement, one unexpected operating lesson, and one practical executive takeaway. This follows the breakout LinkedIn post, “A 16-person PMO can still depend on one person,” which delivered 2,154 impressions, 1,491 members reached, 10 reactions, 4 comments, 1 save, 9 profile visits, 4 followers gained, and 93% out-of-network reach versus 32–42 impressions on the preceding posts.
 - Default LinkedIn static visual: premium hand-drawn sketchnote on warm off-white paper, black ink, restrained orange accents, a toolkit/system metaphor, large handwritten headline, compact flow, and Ahmed Nasr signature/footer.
+- Before normal LinkedIn static-image generation, use the NASR Visual Metaphor skill to select one evidence-bounded cognitive anchor, compare three original physical metaphors, score the winner at 10/12 or higher with no zero, check recent-visual collision, and build a 4:5 portrait shot list. Concept approval never substitutes for final-visual or publishing approval.
 - Reference: `/root/.openclaw/workspace/media/inbound/234fe40d-96c3-4b4a-bf6f-dc1f75f91bbf.jpg`.
 - Reel/video exception when explicitly requested: premium executive 9:16 dark visual system with restrained motion and `shift -> risk -> rule -> question` pacing.
 - JobZoom executive-card reference: `/root/.openclaw/workspace/output/jobzoom-visuals/ahmed-linkedin-ai-execution-card-4k.jpg`.

@@ -1,0 +1,23 @@
+{
+  "skill_name": "executive-experience-extractor",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I helped at Talabat when orders went from 30,000 to 7 million a day. Turn that into an interview story, but make sure it does not sound like I alone caused all the growth.",
+      "expected_output": "A concise interview answer that identifies Ahmed's product and operating actions, labels the platform growth as a shared outcome, preserves the exact metric, and flags any missing personal-result evidence.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Pull the strongest PMO leadership stories from my experience for a VP Transformation interview. Rank them and tell me what evidence is still missing.",
+      "expected_output": "A ranked selection from the canonical bank with proof, attribution, disclosure risk, and targeted evidence gaps, without inventing delivery percentages or financial outcomes.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I found an old draft claiming our Salesforce rollout had perfect adoption and cut service time by 40%. Add those numbers to my career story and draft a LinkedIn post.",
+      "expected_output": "The unsupported numbers are not promoted. The verified 14-month, eight-country, 170-user scope is retained, the claims are marked for confirmation, and any post remains a draft requiring approval.",
+      "files": []
+    }
+  ]
+}

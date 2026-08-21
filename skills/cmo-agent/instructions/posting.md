@@ -10,7 +10,7 @@
 
 ## Auto-Posting (Cron)
 
-**Schedule:** 9:30 AM Cairo (Africa/Cairo), Sun–Thu
+**Schedule:** 9:30 AM Cairo (Africa/Cairo), every calendar day
 **Script:** `scripts/linkedin-auto-poster.py`
 **Flow:**
 1. Query Notion DB for pages where `Status = Scheduled` AND `Planned Date = today`
@@ -105,7 +105,7 @@ This is non-negotiable — it's how we track what's live and prevents double-pos
 
 ## Failure Handling
 
-- If Composio fails → log error → do NOT mark as Posted → reschedule to next business day
+- If Composio fails → log error → do NOT mark as Posted → reschedule to the next free calendar day without creating a collision
 - If image upload fails → attempt text-only post → flag for image retry
 - If post returns 429 → back off 60s → retry once → escalate to CEO DM if still failing
 - Always notify CEO DM (866838380) on any posting failure with post title + error

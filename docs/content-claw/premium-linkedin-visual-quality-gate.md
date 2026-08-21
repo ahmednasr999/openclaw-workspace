@@ -14,9 +14,15 @@ The references are quality targets, not canvases. Do not paste new text over an 
 
 ## Required pass standard
 
-A candidate passes only if both axes pass:
+A candidate passes only if the concept gate and both final-image axes pass:
+
+0. Concept quality
+   - `/root/.openclaw/workspace/skills/nasr-visual-metaphor/SKILL.md` produced one cognitive anchor, three materially different candidates, and a winner scoring at least 10/12 with no zero.
+   - The brief records a recent-visual collision check and does not borrow another creator's mascot, identity, or composition.
+   - One dominant physical action makes the business mechanism visible.
 
 1. Format compliance
+   - 4:5 portrait by default unless another ratio was explicitly selected.
    - Warm off-white paper or comparable premium paper texture.
    - One dominant mobile-readable handwritten hook.
    - Compact flow, toolkit, system, or operating-model diagram.

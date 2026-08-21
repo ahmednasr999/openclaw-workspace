@@ -21,6 +21,8 @@ LANES = {
     "CMO": Path("/root/.openclaw/workspace-cmo/reports/latest.md"),
 }
 JOBZOOM_REPORTS = Path("/root/.openclaw/workspace-jobzoom/reports")
+ORCHESTRATION_REPORT = REPORTS / "orchestration-audit" / "latest.json"
+ACCOUNT_REGISTRY = ROOT / "data" / "account-experts" / "registry.json"
 
 
 def read_text(path: Path, limit: int = 5000) -> str:
@@ -44,11 +46,39 @@ def run_health() -> None:
         )
 
 
+def run_orchestration_audit() -> dict:
+    script = ROOT / "scripts" / "weekly-orchestration-audit.py"
+    if not script.exists():
+        return {"ok": False, "error": f"missing audit script: {script}"}
+    result = subprocess.run(
+        ["python3", str(script)],
+        cwd=str(ROOT),
+        timeout=90,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    return {
+        "ok": result.returncode == 0,
+        "returncode": result.returncode,
+        "stdout": result.stdout.strip(),
+        "error": result.stderr.strip() or (result.stdout.strip() if result.returncode else ""),
+    }
+
+
 def load_health() -> dict:
     try:
         return json.loads(HEALTH.read_text(encoding="utf-8"))
     except Exception as exc:
         return {"overall": "UNKNOWN", "error": str(exc), "checks": []}
+
+
+def load_json(path: Path, default: dict) -> dict:
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+        return value if isinstance(value, dict) else default
+    except Exception:
+        return default
 
 
 def first_lines(text: str, keep: int = 10) -> str:
@@ -59,7 +89,11 @@ def first_lines(text: str, keep: int = 10) -> str:
 def jobzoom_latest() -> list[str]:
     if not JOBZOOM_REPORTS.exists():
         return []
-    return [str(p) for p in sorted(JOBZOOM_REPORTS.glob("JobZoom_Daily_*.pdf"), reverse=True)[:3]]
+    candidates = {
+        *JOBZOOM_REPORTS.glob("JobZoom_Daily_*.pdf"),
+        *JOBZOOM_REPORTS.glob("jobzoom-*.pdf"),
+    }
+    return [str(p) for p in sorted(candidates, key=lambda path: path.stat().st_mtime, reverse=True)[:3]]
 
 
 def check_detail(health: dict, name: str) -> str:
@@ -69,10 +103,25 @@ def check_detail(health: dict, name: str) -> str:
     return "missing"
 
 
-def build_report(now: dt.datetime, health: dict, lanes: dict[str, str], jobs: list[str]) -> str:
+def build_report(
+    now: dt.datetime,
+    health: dict,
+    lanes: dict[str, str],
+    jobs: list[str],
+    orchestration: dict,
+    accounts: dict,
+) -> str:
     date = now.strftime("%Y-%m-%d")
     health_overall = health.get("overall", "UNKNOWN")
     job_lines = "\n".join(f"- {p}" for p in jobs) if jobs else "- No recent JobZoom daily PDFs found."
+    orchestration_counts = orchestration.get("counts") or {}
+    orchestration_recommendations = orchestration.get("recommendations") or []
+    orchestration_lines = "\n".join(f"- {item}" for item in orchestration_recommendations[:8]) or "- Clean-noop: no orchestration action recommended."
+    account_rows = accounts.get("accounts") or []
+    account_lines = "\n".join(
+        f"- {item.get('employer')} - priority {item.get('priority')}; identity {item.get('identity_status')}; {item.get('active_roles')} active role(s)"
+        for item in account_rows
+    ) or "- No active priority-employer dossiers."
 
     return f"""# CEO/NASR Operating Review - {date}
 
@@ -141,6 +190,30 @@ CEO/NASR push:
 - Penalize already-applied and low-salary roles earlier.
 - Add weekly market signal, not just generated CV count.
 
+## Persistent Account Experts
+
+{account_lines}
+
+Operating rule:
+- Keep at most seven active dossiers.
+- Refresh on stage change or after 14 days.
+- Never infer decision-makers or company identity; unresolved identity blocks networking recommendations.
+
+## Weekly Orchestration Audit
+
+- Audit state: {orchestration.get('terminal_state', 'unknown')}
+- Keep: {orchestration_counts.get('KEEP', 0)}
+- Fix: {orchestration_counts.get('FIX', 0)}
+- Automate: {orchestration_counts.get('AUTOMATE', 0)}
+- Combine-review: {orchestration_counts.get('COMBINE-REVIEW', 0)}
+- Retire-review: {orchestration_counts.get('RETIRE-REVIEW', 0)}
+- Parallelize-review clusters: {len(orchestration.get('parallelize_review') or [])}
+- Automatic mutations: {orchestration.get('mutations_performed', 0)}
+- Evidence: {ORCHESTRATION_REPORT}
+
+Recommendations:
+{orchestration_lines}
+
 ## Weekly Decision
 
 Primary focus:
@@ -165,20 +238,23 @@ Stay silent when work is routine and no decision changes.
 """
 
 
-def telegram_card(now: dt.datetime, health: dict, report_path: Path) -> str:
+def telegram_card(now: dt.datetime, health: dict, report_path: Path, orchestration: dict, accounts: dict) -> str:
     overall = health.get("overall", "UNKNOWN")
     marker = "OK" if overall == "OK" else overall
     decision = "focus this week on HR opportunity quality and CMO authority output. No emergency action."
     if overall != "OK":
         decision = "review the health warning first, then continue HR opportunity quality and CMO authority output."
+    counts = orchestration.get("counts") or {}
+    active_accounts = len(accounts.get("accounts") or [])
     return "\n".join(
         [
             f"CEO/NASR Weekly - {now.strftime('%Y-%m-%d')} - {marker}",
             f"Decision: {decision}",
-            "What changed: weekly CEO/NASR operating review is now generated from lane evidence and health state.",
-            "Next: HR salary-weighted radar first, CMO approval queue second.",
+            f"Orchestration: {counts.get('FIX', 0)} fix, {counts.get('AUTOMATE', 0)} automate, {counts.get('COMBINE-REVIEW', 0)} combine-review, {len(orchestration.get('parallelize_review') or [])} parallelize-review cluster(s); advisory only.",
+            f"Priority employers: {active_accounts} active evidence-linked dossier(s).",
+            "Next: resolve FIX items first, then refresh any stale or ambiguous employer dossier.",
             f"Report: {report_path}",
-            "Needs Ahmed: No, unless you want a different weekly cadence or scoring standard.",
+            "Needs Ahmed: only exact promotion, retirement, or outbound decisions; no automatic changes were made.",
         ]
     )
 
@@ -186,10 +262,22 @@ def telegram_card(now: dt.datetime, health: dict, report_path: Path) -> str:
 def main() -> int:
     now = dt.datetime.now().astimezone()
     run_health()
+    audit_run = run_orchestration_audit()
     health = load_health()
     lanes = {name: read_text(path) for name, path in LANES.items()}
     jobs = jobzoom_latest()
-    report = build_report(now, health, lanes, jobs)
+    if audit_run.get("ok"):
+        orchestration = load_json(ORCHESTRATION_REPORT, {"terminal_state": "error", "counts": {}, "recommendations": [], "mutations_performed": 0})
+    else:
+        orchestration = {
+            "terminal_state": "error",
+            "counts": {},
+            "recommendations": [f"FIX: orchestration audit did not complete - {audit_run.get('error') or 'unknown error'}"],
+            "mutations_performed": 0,
+            "parallelize_review": [],
+        }
+    accounts = load_json(ACCOUNT_REGISTRY, {"accounts": []})
+    report = build_report(now, health, lanes, jobs, orchestration, accounts)
 
     REPORTS.mkdir(parents=True, exist_ok=True)
     dated = REPORTS / f"ceo-nasr-operating-review-{now.strftime('%Y-%m-%d')}.md"
@@ -197,7 +285,7 @@ def main() -> int:
     dated.write_text(report, encoding="utf-8")
     latest.write_text(report, encoding="utf-8")
 
-    print(telegram_card(now, health, dated))
+    print(telegram_card(now, health, dated, orchestration, accounts))
     return 0
 
 

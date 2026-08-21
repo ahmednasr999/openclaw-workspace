@@ -1,0 +1,4 @@
+interface:
+  display_name: "Video Analyzer"
+  short_description: "Analyze video messages, visuals, and editing"
+  default_prompt: "Use $video-analyzer to analyze this video with timestamped evidence and reusable insights."

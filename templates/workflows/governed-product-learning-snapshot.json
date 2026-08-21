@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "snapshot_id": "workflow-window-id",
+  "data_policy": "aggregated-sanitized",
+  "source_type": "posthog-export",
+  "workflow": "Named user workflow",
+  "window": {
+    "start": "2026-08-01T00:00:00+00:00",
+    "end": "2026-08-08T00:00:00+00:00"
+  },
+  "privacy": {
+    "contains_pii": false,
+    "aggregated": true
+  },
+  "steps": [
+    {
+      "id": "workflow-step",
+      "name": "Workflow step",
+      "entered": 100,
+      "completed": 80,
+      "errors": 5,
+      "dropoff_classification": "friction"
+    }
+  ]
+}

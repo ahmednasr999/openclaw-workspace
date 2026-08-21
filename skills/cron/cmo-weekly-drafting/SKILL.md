@@ -40,11 +40,18 @@ Run the Sunday CMO drafting workflow from the CMO workspace. This skill is the s
    /root/.openclaw/workspace-cmo/research/YYYY-MM-DD-weekly-scan.md
    ```
 
-6. Draft four posts for the next posting week and save them to:
+6. Read the live Notion scheduled queue, identify the first seven uncovered calendar dates after it, and draft one post for each date. Never replace or duplicate an already scheduled date. Save the batch to:
 
    ```text
    /root/.openclaw/workspace-cmo/drafts/YYYY-MM-DD-draft.md
    ```
+
+   Use the approved executive funnel balance:
+   - 2 Reach posts for relevant discovery
+   - 3 Authority posts that demonstrate judgment, frameworks, or operating depth
+   - 2 Conversion posts that naturally invite a qualified GCC executive, recruiter, hiring-leader, advisory, partnership, or peer conversation
+
+   Label every draft with its pillar, `Funnel Role`, intended reader action, and evidence source. Before accepting an idea, verify: "So what?", "Can I prove it?", "Which pillar and funnel role does it serve?", and "What observable action indicates success?" Never use hard-sell copy or engagement bait.
 
 7. Generate simple branded images for each post when possible and save them under:
 
@@ -65,7 +72,8 @@ Run the Sunday CMO drafting workflow from the CMO workspace. This skill is the s
    ```
 
 10. Send Ahmed a concise Telegram DM summary with:
-    - the four draft angles
+    - the seven draft angles
+    - the Reach/Authority/Conversion balance
     - suggested posting days
     - where the draft, research, images, and latest report were saved
     - any text-only asset fallbacks

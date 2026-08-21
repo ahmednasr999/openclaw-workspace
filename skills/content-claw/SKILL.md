@@ -16,6 +16,7 @@ Use this skill for Ahmed's executive content workflow when the task concerns con
 - LinkedIn posts should end with a question or CTA when appropriate.
 - Do not post publicly without explicit approval.
 - Do not post text-only when an image is expected.
+- Before prompting or generating a normal static LinkedIn visual, use `/root/.openclaw/workspace/skills/nasr-visual-metaphor/SKILL.md` to produce and score an original physical-metaphor brief. Concept approval is not visual approval, and neither authorizes scheduling or publishing.
 - For Ahmed LinkedIn static post visuals, the universal default is the approved hand-drawn sketchnote concept: warm off-white paper, black ink, restrained orange accents, toolkit/system metaphor, large handwritten headline, compact flow diagram, and Ahmed Nasr signature/footer. Reference: `/root/.openclaw/workspace/media/inbound/234fe40d-96c3-4b4a-bf6f-dc1f75f91bbf.jpg`; quality floor: `/root/.openclaw/workspace/output/linkedin/return-on-tokens-rot-handdrawn-reference-quality-latest-2026-06-10.png`.
 - Do not use generic dark tech cards, cinematic stock backgrounds, or the old blue/gold executive card style for normal LinkedIn static visuals. Use that dark executive direction only when Ahmed explicitly asks for a reel/video/dark-card direction or for JobZoom-specific visuals.
 - Premium visual completion requires a binary visual quality gate before any candidate is sent as done or published. Compare the candidate against the approved hand-drawn references on concept fit, craft parity, mobile readability, paper/ink/orange treatment, whitespace, and Ahmed signature/footer. Reject if it is only loosely similar, feels cheaper, flatter, generic, template-like, crowded, or missing the toolkit/system metaphor.
@@ -24,6 +25,7 @@ Use this skill for Ahmed's executive content workflow when the task concerns con
 - For premium card production, prefer the image-to-UI workflow in `docs/content-claw/image-to-ui-premium-card-workflow.md`: use image generation/reference for taste, then controlled code/composition for typography, spacing, footer, and mobile fidelity when raw generation is not precise enough.
 - For posts explaining an AI agent, automation, or operating model, use `docs/content-claw/ai-agent-workflow-card-template.md` for the content anatomy, then compress it into the approved hand-drawn sketchnote concept. Do not copy dense horizontal dashboard layouts unless Ahmed explicitly asks.
 - For multi-step CMO/content work, use the lightweight workflow-status pattern in `docs/content-claw/codex-social-ai-team-adaptation-2026-05-01.md` when it reduces ambiguity: current stage, next action, blocker, approved assets, publishing status, and quality gate. Do not create process theater for one-step tasks.
+- When one idea should become multiple coordinated assets, use the NASR Campaign Graph in `docs/content-claw/nasr-campaign-graph.md`. Record the intake, asset relationships, stage gates, and tied performance feedback there. Keep Notion as the sole live approval and publishing source of truth.
 - Before any LinkedIn handoff, scheduling preparation, or public posting approval request, run publisher QA: caption approved or clearly draft, creative approved and matched to caption, correct platform/date/ratio, alt text where useful, no unapproved claims, no private data, correct media paths, and explicit approval before any external post/schedule action.
 
 
@@ -55,6 +57,8 @@ Reference: `/root/.openclaw/workspace/media/inbound/234fe40d-96c3-4b4a-bf6f-dc1f
 Quality floor: `/root/.openclaw/workspace/output/linkedin/return-on-tokens-rot-handdrawn-reference-quality-latest-2026-06-10.png`
 
 Pass requires all of the following:
+- A NASR visual-metaphor brief selected one cognitive anchor, compared three materially different concepts, passed the 10/12 concept threshold, and checked recent-visual collision.
+- Default LinkedIn static format is 4:5 portrait unless Ahmed or the content structure requires another ratio.
 - Warm off-white paper or comparable premium paper texture.
 - Black ink illustration with restrained orange accent lines/arrows.
 - One large mobile-readable handwritten headline.

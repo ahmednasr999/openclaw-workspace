@@ -1,0 +1,548 @@
+{
+  "schema_version": "1.0",
+  "subject": "Ahmed Nasr",
+  "last_updated": "2026-08-18",
+  "source_of_truth": [
+    "memory/master-cv-data.md",
+    "memory/cv-pending-updates.md",
+    "Ahmed's explicit confirmations"
+  ],
+  "records": [
+    {
+      "id": "exp-2014-network-enterprise-pmo",
+      "title": "Built and scaled a multi-country enterprise PMO",
+      "organization": "Network International",
+      "role": "PMO Section Head (Project Management Department Manager)",
+      "period": "Sep 2014 - Jun 2017",
+      "status": "verified",
+      "domains": [
+        "FinTech",
+        "Payments",
+        "Multi-country portfolio management"
+      ],
+      "competencies": [
+        "Enterprise PMO design",
+        "Portfolio governance",
+        "Team building",
+        "KPI-driven reporting",
+        "Cross-border leadership"
+      ],
+      "source_evidence": [
+        {
+          "id": "src-network-pmo-1",
+          "source": "memory/master-cv-data.md",
+          "locator": "Professional Experience > Network International > bullet 1",
+          "claim": "Built and led enterprise PMO from ground up managing 300+ concurrent banking, insurance, and payments projects across 8 countries."
+        },
+        {
+          "id": "src-network-pmo-2",
+          "source": "memory/master-cv-data.md",
+          "locator": "Professional Experience > Network International > bullets 2-3",
+          "claim": "Recruited and trained 16 Project Managers and implemented a directive PMO framework with KPI-driven reporting and standardized delivery methodology."
+        },
+        {
+          "id": "src-network-pmo-3",
+          "source": "memory/master-cv-data.md",
+          "locator": "Professional Experience > Network International > bullets 2 and 4",
+          "claim": "The portfolio served 300+ banking and financial services clients and included mobile wallets, cardless transactions, and cross-border money transfer solutions."
+        }
+      ],
+      "situation": "Network International operated a large banking, insurance, and payments portfolio across eight countries and needed a consistent enterprise delivery model.",
+      "responsibility": "Ahmed was responsible for building and leading the enterprise PMO and its project-management capability.",
+      "actions": [
+        "Built the enterprise PMO from the ground up.",
+        "Recruited and trained a team of 16 Project Managers.",
+        "Introduced a directive governance model, KPI-driven reporting, and a standardized delivery methodology.",
+        "Governed a portfolio spanning banking, insurance, payments, and mobile-commerce solutions."
+      ],
+      "outcomes": [
+        {
+          "statement": "The PMO governed 300+ concurrent projects across eight countries.",
+          "attribution": "direct",
+          "source_refs": [
+            "src-network-pmo-1"
+          ]
+        },
+        {
+          "statement": "The governance model supported a portfolio serving 300+ banking and financial services clients.",
+          "attribution": "shared",
+          "source_refs": [
+            "src-network-pmo-2",
+            "src-network-pmo-3"
+          ]
+        }
+      ],
+      "scope_metrics": [
+        {
+          "label": "Concurrent projects",
+          "value": "300+",
+          "verified": true,
+          "source_refs": [
+            "src-network-pmo-1"
+          ]
+        },
+        {
+          "label": "Countries",
+          "value": "8",
+          "verified": true,
+          "source_refs": [
+            "src-network-pmo-1"
+          ]
+        },
+        {
+          "label": "Project Managers recruited and trained",
+          "value": "16",
+          "verified": true,
+          "source_refs": [
+            "src-network-pmo-2"
+          ]
+        },
+        {
+          "label": "Banking and financial services clients",
+          "value": "300+",
+          "verified": true,
+          "source_refs": [
+            "src-network-pmo-3"
+          ]
+        }
+      ],
+      "story_angles": [
+        "A PMO is scalable only when governance reduces dependence on individual memory.",
+        "Portfolio control at scale requires decision rules, not merely more reporting.",
+        "Building the management system and the management team are the same transformation."
+      ],
+      "questions_to_complete": [
+        "What specific portfolio problem or failure pattern triggered the decision to build the PMO?",
+        "Which governance intervention made the largest measurable difference?",
+        "What delivery, financial, or client outcome can be supported beyond portfolio scope?"
+      ],
+      "disclosure": {
+        "classification": "private",
+        "external_reuse_requires_approval": true,
+        "constraints": [
+          "Do not add delivery-rate, savings, revenue, or quality percentages without Ahmed's confirmation."
+        ]
+      }
+    },
+    {
+      "id": "exp-2014-network-salesforce-rollout",
+      "title": "Governed an eight-country Salesforce rollout",
+      "organization": "Network International",
+      "role": "PMO Section Head (Project Management Department Manager)",
+      "period": "Sep 2014 - Jun 2017",
+      "status": "verified",
+      "domains": [
+        "FinTech",
+        "Enterprise platforms",
+        "Change management"
+      ],
+      "competencies": [
+        "Enterprise implementation governance",
+        "Cross-country rollout",
+        "Stakeholder alignment",
+        "CRM and service-management transformation"
+      ],
+      "source_evidence": [
+        {
+          "id": "src-network-salesforce-1",
+          "source": "memory/master-cv-data.md",
+          "locator": "Professional Experience > Network International > bullet 5",
+          "claim": "Governed a 14-month Salesforce enterprise implementation across 8 countries and 170 users, covering CRM, service management, and client engagement across 300+ banking clients."
+        }
+      ],
+      "situation": "Network International needed one enterprise Salesforce implementation to support CRM, service management, and client engagement across a geographically distributed operation.",
+      "responsibility": "Ahmed governed the multi-country implementation over its 14-month delivery period.",
+      "actions": [
+        "Governed the enterprise implementation across eight countries.",
+        "Coordinated a rollout covering CRM, service management, and client engagement.",
+        "Managed the implementation within the wider enterprise PMO and banking-client environment."
+      ],
+      "outcomes": [
+        {
+          "statement": "The full Salesforce platform rollout covered eight countries and 170 users across an environment serving 300+ banking clients.",
+          "attribution": "direct",
+          "source_refs": [
+            "src-network-salesforce-1"
+          ]
+        }
+      ],
+      "scope_metrics": [
+        {
+          "label": "Implementation duration",
+          "value": "14 months",
+          "verified": true,
+          "source_refs": [
+            "src-network-salesforce-1"
+          ]
+        },
+        {
+          "label": "Countries",
+          "value": "8",
+          "verified": true,
+          "source_refs": [
+            "src-network-salesforce-1"
+          ]
+        },
+        {
+          "label": "Users",
+          "value": "170",
+          "verified": true,
+          "source_refs": [
+            "src-network-salesforce-1"
+          ]
+        },
+        {
+          "label": "Banking clients in the operating environment",
+          "value": "300+",
+          "verified": true,
+          "source_refs": [
+            "src-network-salesforce-1"
+          ]
+        }
+      ],
+      "story_angles": [
+        "One platform rollout across eight countries is eight adoption environments, not one transformation.",
+        "Enterprise platform governance must standardize the core while making local adoption explicit."
+      ],
+      "questions_to_complete": [
+        "What was the hardest country-level resistance or process difference?",
+        "Which decision or intervention was most clearly Ahmed's?",
+        "What adoption, service, cycle-time, or business outcome can be verified?"
+      ],
+      "disclosure": {
+        "classification": "private",
+        "external_reuse_requires_approval": true,
+        "constraints": [
+          "Do not claim perfect adoption, cycle-time reduction, or financial impact without new evidence."
+        ]
+      }
+    },
+    {
+      "id": "exp-2017-talabat-hypergrowth",
+      "title": "Led product and operating discipline during Talabat hypergrowth",
+      "organization": "Delivery Hero SE (Talabat)",
+      "role": "Product Development Manager",
+      "period": "Jun 2017 - May 2018",
+      "status": "verified",
+      "domains": [
+        "E-commerce",
+        "Logistics",
+        "GCC hypergrowth"
+      ],
+      "competencies": [
+        "Product strategy",
+        "Operational excellence",
+        "Feature prioritization",
+        "Cross-functional leadership",
+        "Lean delivery"
+      ],
+      "source_evidence": [
+        {
+          "id": "src-talabat-1",
+          "source": "memory/master-cv-data.md",
+          "locator": "Professional Experience > Delivery Hero SE (Talabat) > bullet 1",
+          "claim": "Led product strategy and operational improvements during hypergrowth, contributing to platform scaling from 30,000 to 7 million daily orders across GCC markets."
+        },
+        {
+          "id": "src-talabat-2",
+          "source": "memory/master-cv-data.md",
+          "locator": "Professional Experience > Delivery Hero SE (Talabat) > bullets 2-4",
+          "claim": "Drove feature prioritization, led the Operations Excellence Committee across Berlin HQ and regional markets, established KPIs and dashboards, and managed cross-functional product and design teams using lean methods."
+        }
+      ],
+      "situation": "Talabat was operating through a period of extreme GCC platform and logistics growth in which operating assumptions and product priorities had to keep pace with scale.",
+      "responsibility": "Ahmed led product strategy and operational-improvement work, including regional coordination, KPI discipline, and feature prioritization.",
+      "actions": [
+        "Drove product direction and feature prioritization for rapidly scaling logistics operations.",
+        "Led an Operations Excellence Committee connecting Berlin headquarters, GCC countries, and Egypt markets.",
+        "Established KPIs and performance dashboards.",
+        "Applied lean methods and led cross-functional product and design teams."
+      ],
+      "outcomes": [
+        {
+          "statement": "During Ahmed's product leadership tenure, the platform scaled from 30,000 to 7 million daily orders across GCC markets.",
+          "attribution": "shared",
+          "source_refs": [
+            "src-talabat-1"
+          ]
+        },
+        {
+          "statement": "Ahmed's supported contribution was product prioritization and operating discipline during the scale-up, not sole ownership of the company's growth.",
+          "attribution": "direct",
+          "source_refs": [
+            "src-talabat-1",
+            "src-talabat-2"
+          ]
+        }
+      ],
+      "scope_metrics": [
+        {
+          "label": "Daily order scale",
+          "value": "30,000 to 7 million",
+          "verified": true,
+          "source_refs": [
+            "src-talabat-1"
+          ]
+        },
+        {
+          "label": "Growth multiple stated in master CV",
+          "value": "233x",
+          "verified": true,
+          "source_refs": [
+            "src-talabat-1"
+          ]
+        }
+      ],
+      "story_angles": [
+        "During hypergrowth, operating assumptions can fail before the platform does.",
+        "Product prioritization at scale is a trade-off system, not a feature list.",
+        "Regional operating discipline connects global product intent with local market reality."
+      ],
+      "questions_to_complete": [
+        "Which specific product or operating decision had the clearest measurable effect?",
+        "What was the hardest trade-off Ahmed made during the scale-up?",
+        "Which cost, quality, reliability, or customer metric can be attributed directly to Ahmed's work?"
+      ],
+      "disclosure": {
+        "classification": "private",
+        "external_reuse_requires_approval": true,
+        "constraints": [
+          "Always describe the 30,000 to 7 million order result as a shared company outcome to which Ahmed contributed."
+        ]
+      }
+    },
+    {
+      "id": "exp-2024-sgh-transformation",
+      "title": "Established governance for a 15-hospital digital transformation",
+      "organization": "Saudi German Hospital Group",
+      "role": "PMO & Regional Engagement Lead",
+      "period": "Jun 2024 - Present",
+      "status": "verified",
+      "domains": [
+        "Healthcare",
+        "Digital transformation",
+        "GCC regional delivery"
+      ],
+      "competencies": [
+        "Transformation governance",
+        "Portfolio and budget management",
+        "Cross-functional leadership",
+        "Healthcare AI and analytics",
+        "Regulatory alignment"
+      ],
+      "source_evidence": [
+        {
+          "id": "src-sgh-1",
+          "source": "memory/master-cv-data.md",
+          "locator": "Professional Experience > Saudi German Hospital Group > bullet 1",
+          "claim": "Leading digital transformation across a 15-hospital network in KSA, UAE, and Egypt and managing a $50M technology transformation budget."
+        },
+        {
+          "id": "src-sgh-2",
+          "source": "memory/master-cv-data.md",
+          "locator": "Professional Experience > Saudi German Hospital Group > bullet 2",
+          "claim": "Established an enterprise PMO framework for cross-functional teams of 30 professionals delivering telemedicine, AI-powered clinical decision support, and enterprise data warehouse implementations with data governance standards."
+        },
+        {
+          "id": "src-sgh-3",
+          "source": "memory/master-cv-data.md",
+          "locator": "Professional Experience > Saudi German Hospital Group > bullets 3-4",
+          "claim": "Partnering with U.S. healthcare technology leaders and ensuring JCI, HIMSS, and MOH regulatory compliance while driving KPI tracking and operational excellence."
+        }
+      ],
+      "situation": "A 15-hospital network spanning KSA, UAE, and Egypt required a coordinated transformation model across healthcare technology, data, AI, and regulatory environments.",
+      "responsibility": "Ahmed leads regional engagement and PMO governance for the transformation and manages the $50M technology transformation budget.",
+      "actions": [
+        "Established the enterprise PMO framework.",
+        "Coordinated cross-functional teams of 30 professionals.",
+        "Governed delivery involving telemedicine, AI-powered clinical decision support, enterprise data warehousing, and data-governance standards.",
+        "Worked with healthcare technology partners while aligning delivery with JCI, HIMSS, and MOH requirements."
+      ],
+      "outcomes": [
+        {
+          "statement": "The enterprise PMO framework governs transformation work across a 15-hospital network and a $50M technology budget.",
+          "attribution": "direct",
+          "source_refs": [
+            "src-sgh-1",
+            "src-sgh-2"
+          ]
+        },
+        {
+          "statement": "The delivery environment includes telemedicine, clinical decision support, enterprise data warehousing, and regulatory compliance across three countries.",
+          "attribution": "contextual",
+          "source_refs": [
+            "src-sgh-1",
+            "src-sgh-2",
+            "src-sgh-3"
+          ]
+        }
+      ],
+      "scope_metrics": [
+        {
+          "label": "Technology transformation budget",
+          "value": "$50M",
+          "verified": true,
+          "source_refs": [
+            "src-sgh-1"
+          ]
+        },
+        {
+          "label": "Hospitals",
+          "value": "15",
+          "verified": true,
+          "source_refs": [
+            "src-sgh-1"
+          ]
+        },
+        {
+          "label": "Cross-functional professionals",
+          "value": "30",
+          "verified": true,
+          "source_refs": [
+            "src-sgh-2"
+          ]
+        }
+      ],
+      "story_angles": [
+        "A transformation dashboard cannot prove that a clinical workflow has been adopted.",
+        "A multi-hospital system learns only when operational lessons move across facilities.",
+        "Healthcare transformation governance must connect technology, workflow, data, and compliance."
+      ],
+      "questions_to_complete": [
+        "What was the operating baseline before the enterprise PMO framework was introduced?",
+        "Which governance decision produced the clearest verified result?",
+        "What adoption, quality, cycle-time, financial, or patient-flow outcome is approved for external use?"
+      ],
+      "disclosure": {
+        "classification": "confidential",
+        "external_reuse_requires_approval": true,
+        "constraints": [
+          "Do not disclose patient information, internal hospital performance, vendor-confidential details, unreleased results, or sensitive current-employer context.",
+          "For public content, prefer 'a 15-hospital network' unless Ahmed approves naming the employer."
+        ]
+      }
+    },
+    {
+      "id": "exp-2021-paysky-superapp",
+      "title": "Designed the market-entry and architecture model for a SuperApp",
+      "organization": "PaySky, Inc.",
+      "role": "Country Manager",
+      "period": "Apr 2021 - Jan 2022",
+      "status": "partial",
+      "domains": [
+        "FinTech",
+        "Digital inclusion",
+        "Platform strategy"
+      ],
+      "competencies": [
+        "Market-entry strategy",
+        "Product architecture",
+        "Ecosystem partnerships",
+        "Team and operating-model design"
+      ],
+      "source_evidence": [
+        {
+          "id": "src-paysky-1",
+          "source": "memory/master-cv-data.md",
+          "locator": "Professional Experience > PaySky, Inc. > bullets 1-2",
+          "claim": "Led market-entry strategy and designed the architecture for Egypt's first comprehensive SuperApp, integrating payments, banking, e-commerce, and lifestyle services."
+        },
+        {
+          "id": "src-paysky-2",
+          "source": "memory/master-cv-data.md",
+          "locator": "Professional Experience > PaySky, Inc. > bullets 3-4",
+          "claim": "Established strategic partnerships and built the initial team and operational framework for phased market launch and product rollout."
+        }
+      ],
+      "situation": "PaySky was developing a comprehensive Egypt-focused SuperApp intended to combine financial and non-financial services in one platform.",
+      "responsibility": "Ahmed led the market-entry strategy, product architecture, ecosystem development, and initial operating setup.",
+      "actions": [
+        "Designed the SuperApp architecture across payments, banking, e-commerce, and lifestyle services.",
+        "Developed the market-entry strategy.",
+        "Established partnerships with financial institutions and service providers.",
+        "Built the initial team and operating framework for phased rollout."
+      ],
+      "outcomes": [
+        {
+          "statement": "The work produced an integrated product architecture and an initial operating framework for phased market launch.",
+          "attribution": "direct",
+          "source_refs": [
+            "src-paysky-1",
+            "src-paysky-2"
+          ]
+        }
+      ],
+      "scope_metrics": [],
+      "story_angles": [
+        "One customer interface can conceal several different operating models.",
+        "A platform ecosystem is credible only when ownership and exception paths are as integrated as the interface.",
+        "Market-entry strategy must connect architecture, partners, operating model, and rollout sequencing."
+      ],
+      "questions_to_complete": [
+        "How far did the product proceed from architecture through launch during Ahmed's tenure?",
+        "Which partnerships were secured and what did they unlock?",
+        "What user, launch, revenue, adoption, or time-to-market result is verified?",
+        "What was Ahmed's hardest market-entry decision?"
+      ],
+      "disclosure": {
+        "classification": "private",
+        "external_reuse_requires_approval": true,
+        "constraints": [
+          "Do not claim a completed market launch, user count, adoption result, or commercial outcome until Ahmed confirms it."
+        ]
+      }
+    },
+    {
+      "id": "exp-2013-revamp-enterprise-consulting",
+      "title": "Led enterprise consulting engagements across healthcare and telecom",
+      "organization": "Revamp Consulting",
+      "role": "Engagement Manager",
+      "period": "Mar 2013 - Sep 2014",
+      "status": "partial",
+      "domains": [
+        "Consulting",
+        "Healthcare operations",
+        "Telecommunications"
+      ],
+      "competencies": [
+        "Enterprise engagement management",
+        "Business process optimization",
+        "Service operations transformation"
+      ],
+      "source_evidence": [
+        {
+          "id": "src-revamp-1",
+          "source": "memory/master-cv-data.md",
+          "locator": "Professional Experience > Revamp Consulting",
+          "claim": "Managed multi-sector consulting engagements including Mayo Clinic healthcare business process optimization and AT&T service operations transformation."
+        }
+      ],
+      "situation": "Revamp Consulting delivered enterprise transformation work across healthcare and telecommunications clients in the USA, UAE, and Egypt.",
+      "responsibility": "Ahmed managed the consulting engagements, including work for Mayo Clinic and AT&T.",
+      "actions": [
+        "Managed a healthcare business-process optimization engagement involving Mayo Clinic.",
+        "Managed a service-operations transformation engagement involving AT&T."
+      ],
+      "outcomes": [],
+      "scope_metrics": [],
+      "story_angles": [
+        "Cross-sector operating problems often share the same handoff and accountability failures.",
+        "Consulting credibility comes from translating operating principles across industries without forcing identical solutions."
+      ],
+      "questions_to_complete": [
+        "What exact problem, scope, and deliverable did Ahmed own for the Mayo Clinic engagement?",
+        "What exact problem, scope, and deliverable did Ahmed own for the AT&T engagement?",
+        "What measurable result or client decision followed each engagement?",
+        "Which details are approved for external use?"
+      ],
+      "disclosure": {
+        "classification": "private",
+        "external_reuse_requires_approval": true,
+        "constraints": [
+          "Do not imply direct employment by Mayo Clinic or AT&T.",
+          "Do not add confidential client outcomes or engagement details without Ahmed's approval."
+        ]
+      }
+    }
+  ]
+}

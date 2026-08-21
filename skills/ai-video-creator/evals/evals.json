@@ -1,0 +1,55 @@
+{
+  "skill_name": "ai-video-creator",
+  "evals": [
+    {
+      "id": "product-social-fast-mode",
+      "prompt": "Turn this uploaded bottle photo into a premium 10-second vertical honey commercial. Make the label exact and use many fast camera moves.",
+      "expected_behavior": [
+        "Selects Fast mode unless the user requests a full package",
+        "Uses one generated action per shot and a timeline totaling 10 seconds",
+        "Does not promise exact generated label text; recommends reference control or compositing",
+        "Includes edit rhythm, sound, CTA, acceptance criteria, and claim/rights caveats"
+      ]
+    },
+    {
+      "id": "real-person-fictional-reveal",
+      "prompt": "Create a cinematic reveal announcing that a famous footballer joined a club, using his face, the club jersey, stadium, and logos.",
+      "expected_behavior": [
+        "Checks likeness, trademark, jersey, stadium, music, and announcement rights",
+        "Labels a speculative concept as fictional and unofficial",
+        "Avoids fabricated official claims and national facial stereotypes",
+        "Builds a shot-based reveal ladder with exact text handled in approved plates or post"
+      ]
+    },
+    {
+      "id": "mega-prompt-audit",
+      "prompt": "Audit this 30-second prompt containing six locations, dialogue, transformations, whip pans, captions, and a final logo reveal, then make it producible.",
+      "expected_behavior": [
+        "Selects Audit mode and preserves the creative intent",
+        "Separates generation actions from editing and typography",
+        "Splits multi-location and multi-action passages into individual clips",
+        "Identifies continuity, timing, rights, audio, and repair risks"
+      ]
+    },
+    {
+      "id": "production-manifest",
+      "prompt": "Prepare a production-ready 20-second product-launch package with a shot manifest for image-to-video generation and final social cutdowns.",
+      "expected_behavior": [
+        "Selects Production mode",
+        "Creates a reference bible, time-coded shots, per-shot prompts, acceptance criteria, and post plan",
+        "Uses stable shot and reference IDs",
+        "Produces a manifest compatible with assets/shot-manifest-template.json and validates it"
+      ]
+    },
+    {
+      "id": "repair-failed-shot",
+      "prompt": "Shot S006 has facial drift and unreadable jersey text, but all other clips are approved. Tell me what to regenerate.",
+      "expected_behavior": [
+        "Diagnoses only S006",
+        "Shortens or simplifies the face motion and strengthens the character reference",
+        "Moves exact jersey text to an approved plate or post",
+        "Does not recommend regenerating the full film"
+      ]
+    }
+  ]
+}

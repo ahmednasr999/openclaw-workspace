@@ -128,12 +128,12 @@ What to do:
 1. extract deck text:
 
 ```bash
-python -m markitdown deck.pptx
+python3 scripts/document-to-markdown.py deck.pptx
 ```
 2. grep for placeholders:
 
 ```bash
-python -m markitdown deck.pptx | grep -iE "xxxx|lorem|ipsum|placeholder|hero field|support field"
+python3 scripts/document-to-markdown.py deck.pptx | grep -iE "xxxx|lorem|ipsum|placeholder|hero field|support field"
 ```
 3. replace or intentionally remove before declaring done
 

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "lesson_id": "gpl-replace-with-analysis-id",
+  "mode": "shadow",
+  "hypothesis": "One bounded workflow change will improve completion without degrading the locked guardrail.",
+  "intervention": {
+    "variable": "single-variable",
+    "change": "Describe exactly one controlled change."
+  },
+  "comparator": {
+    "method": "paired-control-treatment",
+    "control": "Replay a frozen candidate pool through the current workflow.",
+    "treatment": "Replay the same candidate pool with exactly one bounded change.",
+    "unit": "candidate-signal"
+  },
+  "primary_metric": {
+    "name": "completion-rate",
+    "direction": "increase",
+    "baseline": 0.8,
+    "min_improvement": 0.05
+  },
+  "guardrails": [
+    {
+      "name": "error-rate",
+      "direction": "decrease",
+      "baseline": 0.05,
+      "max_regression": 0.02
+    }
+  ],
+  "evaluation": {
+    "min_sample_size": 50,
+    "min_window_days": 7,
+    "max_window_days": 14
+  },
+  "approval": null,
+  "rollback": "Restore the prior workflow version and retain the failed result as negative evidence."
+}

@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "timezone": "Africa/Cairo",
+  "max_candidates": 3,
+  "minimum_priority": 60,
+  "duplicate_window_days": 14,
+  "duplicate_similarity": 0.88,
+  "allowed_auto_actions": [
+    "prepare_action_brief",
+    "prepare_owner_handoff"
+  ],
+  "approval_only_terms": [
+    "apply for",
+    "credential",
+    "delete",
+    "email",
+    "gateway",
+    "message third party",
+    "pay",
+    "post publicly",
+    "publish",
+    "purchase",
+    "restart",
+    "send externally",
+    "runtime config"
+  ],
+  "sources": [
+    "memory/active-tasks.md",
+    "memory/YYYY-MM-DD.md",
+    "reports/open-work-resolver/briefing.json",
+    "data/executive-intelligence-latest.json",
+    "intel/DAILY-INTEL.md",
+    "/tmp/calendar-events-YYYY-MM-DD.json",
+    "openclaw cron list --json"
+  ]
+}

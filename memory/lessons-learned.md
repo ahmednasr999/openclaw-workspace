@@ -1658,3 +1658,807 @@ After `gpt-5.6-sol` appeared in official model info and Ahmed asked to switch al
 
 ### Do differently
 Do not treat docs/catalog availability as enough to route all agents to a new model. First run a small probe through the exact OpenClaw + Codex + account path, then verify a real Telegram `/new` or ping reply. If the model error names ChatGPT-account support or Codex version, keep the previous stable model and treat it as a compatibility/update blocker, not a transient gateway failure.
+
+## 2026-07-10 - Dependent Cron Commands Must Verify The Upstream Result
+
+### Incident
+The 09:00 Email Agent cron launched the email scan, then ran the formatter before OpenClaw recorded the scan result. The scan tool call later surfaced as missing its matching result, while the formatter still returned an all-clear from the existing summary file.
+
+### Do differently
+For sequential cron pipelines, do not run a formatter or consumer until the producer command has returned successfully and its expected output artifact is fresh for the current run. If a native tool call loses its result, fail closed or rerun the producer instead of formatting potentially stale data.
+## 2026-07-11 - A local image path is not Telegram delivery
+
+- What happened: NASR repeatedly said an image was sent or attached while only returning text and local links. The actual image arrived only after an explicit Telegram media send returned message ID `61246`.
+- Rule: When Ahmed asks to receive a local image/file in Telegram, stage it under `/root/.openclaw/media`, use the proof-gated media sender, and never claim delivery without `ok=true` plus a non-empty Telegram `messageId`.
+- Prevention: `scripts/telegram-send-local-media.py` now enforces allowed paths, per-request idempotency, response parsing, SHA-256 receipts, and fail-closed reporting.
+
+## 2026-07-11 - Workspace Backups Must Never Broad-Stage Runtime State
+
+### Incident
+An automated workspace commit staged 277 files, including database backups, live databases, logs, sessions, and email/job state. The commit remained local and was removed before push; auto-commit was disabled in the maintenance scripts and backup staging was restricted to source plus explicit safe configuration.
+
+### Do differently
+Backup jobs must use an allowlist for source and reviewed configuration, never `git add -A` or equivalent broad staging in a live OpenClaw workspace. Before pushing, inspect the staged path set, reject volatile/runtime/state categories, and verify the resulting source-only commit is the only new remote-reachable commit.
+
+## 2026-07-11 - Codex Manual Hash-Header Failures Need An Official-Docs Fallback
+
+### Incident
+The Codex manual helper rejected an otherwise reachable response because the server omitted the required `x-content-sha256` header (`ManualFetchError`). The same guidance was retrieved successfully through the official OpenAI documentation source.
+
+### Do differently
+When the Codex manual helper fails specifically on a missing content-hash header, do not treat it as an OpenClaw or model failure and do not keep retrying the same helper. Fall back to the official OpenAI docs search/fetch tools, preserve the official-source restriction, and explain the helper failure only if it was visible to the user.
+
+## 2026-07-12 - Repair Browser Failures On The Actual Execution Node
+
+### Incident
+LinkedIn tabs sometimes worked through the gateway, but snapshot/evaluate repeatedly failed with a 9-second `connectOverCDP` timeout. Gateway-side timeout patches and reloads had no effect because `chrome` was proxied through the outdated Ahmed-Mac node/browser proxy. Upgrading that node to the gateway version and switching its local browser connection to the supported existing-session Chrome MCP path restored snapshot and read-only evaluate.
+
+### Do differently
+Before patching browser timeouts, identify where the browser command actually executes and compare gateway/node versions. If the failing path is node-proxied, repair or upgrade the node/browser proxy, then verify tabs, snapshot, and read-only evaluate; do not weaken runtime permission boundaries or keep patching gateway code that is outside the execution path.
+
+## 2026-07-12 - Browser Transport Recovery Does Not Clear LinkedIn Safety Gates
+
+### Incident
+After the Ahmed-Mac browser transport was repaired and authenticated feed checks passed, the HR campaign preflight opened fresh tabs and detected LinkedIn scraping protection plus invisible reCAPTCHA targets. The campaign correctly stayed paused at 12/30, with no worker launch, application, or ledger reset.
+
+### Do differently
+Treat transport recovery and automation safety as separate gates. After any LinkedIn browser repair, rerun fresh tabs/focus plus snapshot/evaluate and protection/CAPTCHA checks before resuming; preserve the existing ledger and fail closed when anti-automation signals are present.
+
+## 2026-07-13 - Critical Job Email Alerts Need A Real-Time Ingress Path
+
+### Incident
+Sprinklr sent an interview availability request at 16:14 Cairo, after the scheduled 16:00 email scan had already finished. The next polling scan was not due until 20:00. The Gmail Pub/Sub watcher existed only as a disabled scaffold, was inactive, and had no secure runtime environment file, so no event-driven alert path was operating.
+
+### Do differently
+Do not describe four-times-daily IMAP polling as immediate monitoring. Interview invites and recruiter screens need a verified real-time ingress path with body-read classification, Telegram delivery proof, deduplication, and periodic polling retained only as fallback. Monitor the watcher itself and fail loudly if push delivery stops.
+
+## 2026-07-14 - Material Interview-Process Updates Must Not Be Silenced As No-Action
+
+### Incident
+The Gmail Pub/Sub watcher detected Miriam Marras's Sprinklr interview-process update within seconds and classified it as a high-confidence active-pipeline message. Because the email did not request a reply, the formatter did not emit the urgent-alert prefix, and the real-time worker discarded the result. Later scheduled scans reported zero new messages because the UID had already been processed.
+
+### Do differently
+Separate importance from required action. A direct recruiter or hiring-team update about an active interview process, candidate decision, stage completion, or promised next update should be surfaced immediately as a concise informational hiring update even when no reply is required. Keep routine acknowledgements, newsletters, automated job alerts, and marketing silent. Scheduled summaries must distinguish "already processed by real-time monitoring" from "zero messages detected" so they do not imply the mailbox was never checked.
+
+## 2026-07-14 - Live SQLite Snapshots Need Online Backups And Sidecar Exclusion
+
+### Incident
+`daily-snapshot.sh` encountered a transient SQLite shared-memory file while archiving the live OpenClaw workspace, causing GNU tar to exit 1 and preventing a verified snapshot from being promoted.
+
+### Do differently
+For live workspace snapshots, discover included SQLite databases, create and validate an online `.backup` for each one, exclude the original database plus WAL/SHM/journal sidecars, overlay the consistent copies at their original archive paths, and verify every staged database member before atomic promotion. Do not treat a raw live-filesystem tar as a consistent database backup.
+
+## 2026-07-14 - Cron Verification Must Follow The Active Storage Backend
+
+### Incident
+A session-watchdog verification script read the retired `/root/.openclaw/cron/jobs.json` path after cron storage had moved to SQLite, producing a visible `FileNotFoundError` even though the watchdog itself passed.
+
+### Do differently
+Check `openclaw cron status` before inspecting cron state. When it reports SQLite storage, use `openclaw cron get`, `list`, and `runs` as the source of truth; do not read legacy declaration files directly.
+
+## 2026-07-17 - Health Closeouts Must Disclose Superseded Probe Failures
+
+### Incident
+While verifying all five agents after a runtime repair, the first Main and HR probes exceeded a 50-second shell timeout. Fresh probes then completed successfully, but the closeout reported only the successful results. Ahmed saw the earlier failure alert and had to ask `?` before the timeout was explained as historical.
+
+### Do differently
+When a health check initially fails or times out and a retry succeeds, state both results in the same closeout: name the failed probe, give the successful fresh-probe evidence, and explain why the first failure is no longer current. Do not summarize a system as fully healthy while leaving a visible superseded failure unexplained.
+
+## 2026-07-18 - Distinguish Backups From Snapshots Before Schedule Changes
+
+### Incident
+A failed `daily-snapshot` run was initially described as the daily backup even though the separate `daily-backup` cron had already been disabled. When Ahmed then asked to disable the daily backup, the response disabled the active snapshot and snapshot-retention schedules as well without first resolving which exact job he meant.
+
+### Do differently
+Before explaining or changing recovery schedules, identify the exact failing job and show the current state of `daily-backup`, `daily-snapshot`, and their retention jobs separately. If the user's wording does not match the live job identity, clarify the target before disabling anything; do not broaden a schedule change from backup to snapshot by inference.
+
+## 2026-07-18 - Campaign Counters Must Count Only Qualifying Submissions
+
+### Incident
+The LinkedIn +30 campaign total was reported as 16/30, corrected to 14/30 after excluding two Contract roles, then corrected again to 2/30 after a complete quality audit found eleven legacy 7.7 KB ReportLab CVs outside the mandatory 15–50 KB WeasyPrint gate and four roles failing current role-family guards (with overlap).
+
+### Do differently
+Report protected-campaign progress only from ledger rows that pass every current counting gate: employment type, role family, ATS threshold, tailored-CV format/size, duplicate checks, and submission proof. Preserve excluded historical applications, but label raw history separately and require supervisor and runner counters to agree before announcing a verified total.
+
+## 2026-07-18 - Benign Search Misses Must Not Become Visible Tool Failures
+
+### Incident
+A compound schedule-verification command ended with an `rg` search that found no matches. Because exit code 1 was not neutralized, the whole tool call was marked as an error despite earlier checks succeeding, producing a visible warning that Ahmed had to question.
+
+### Do differently
+In diagnostic command chains, isolate each check and treat an expected `rg` no-match as evidence, not command failure (`rg ... || true` when absence is acceptable). Base the final status on explicit assertions for the schedules being verified so benign search misses do not leak as internal error noise.
+
+## 2026-07-19 - Long Implementation Runs Need Milestone Updates
+
+### Incident
+The reliability implementation kept running silently until its command lane timed out. Ahmed was left waiting for a DM response and had to be told afterward that the session was reset, files were preserved, and the verified campaign count was 12/30.
+
+### Do differently
+Before more long-running work, send the next milestone and expected checkpoint, then report each verified milestone before starting another long command. If the command lane times out, immediately state the timeout, preserved state, and last verified result instead of waiting for Ahmed to ask.
+
+## 2026-07-19 - Raw Internal Tool Failures Should Stay Internal
+
+### Preference
+A harmless wrong-directory search miss surfaced as a raw failure alert. Ahmed approved `messages.suppressToolErrors=true` so agents can recover from tool failures internally while interview, recruiter, offer, and other action-required alerts remain visible.
+
+### Do differently
+Do not relay raw tool-error banners. Recover or retry internally, then surface only the user-relevant impact, current verified state, and required action. Keep material alerts enabled and never let suppression hide an incomplete or unsafe outcome.
+
+## 2026-07-19 - Job Hunter Quiet Notion Fallback Is Still Being Bypassed
+
+### Incident
+The weekly Job Hunter reminder explicitly required the local-data fallback when Notion was unavailable and prohibited manual `notion_sync.py` inspection. The run still invoked the unavailable Notion path and produced two visible tracebacks (`notion.json` missing, then `.get()` on a string) before completing from local data.
+
+### Do differently
+Make Notion availability a hard gate in the Job Hunter owner skill: on missing config, exception, or non-list data, stop all Notion-derived steps and run only the local-data path. The fallback must complete without emitting Notion diagnostics.
+
+## 2026-07-19 - A Bare Question Mark Does Not Authorize Workspace Changes
+
+### Incident
+After proposing a canonical writing standard as a possible next move, the agent treated Ahmed's bare `?` as approval and edited `AGENTS.md`, `SOUL.md`, `USER.md`, and a new standards file without an explicit change request.
+
+### Do differently
+Treat `?` as a request for clarification or status, not permission to mutate files or settings. Answer what is pending or ask one concise clarifying question; require clear approval before acting on a proposed change.
+
+## 2026-07-20 - Answer The Replied-To Question Before Adjacent Status
+
+### Incident
+Ahmed asked about the upcoming seven-day LinkedIn slate, but the response led with verification of today's already-published post.
+
+### Do differently
+When a message replies to a specific question, answer that exact question first. Use adjacent completed work only as supporting context.
+
+## 2026-07-20 - Date-Range Readiness Reports Must Account For Every Date
+
+### Incident
+A seven-day LinkedIn readiness report omitted 22, 25, and 27 July without explaining whether they were moved, intentionally blank, or missing.
+
+### Do differently
+For a bounded date-range report, classify every date as scheduled, moved, intentionally blank, or missing, and verify the live cadence before calling gaps intentional.
+
+## 2026-07-20 - Persistent Resolver State Must Be Null-Safe And Cron-Tested
+
+### Incident
+The first scheduled open-work Resolver run lacked the root user systemd bus variables; recovery then crashed on `int(None)` from the prior blocked snapshot.
+
+### Do differently
+Treat persisted state as untrusted and nullable before numeric comparison. Test scheduled probes in a stripped cron-like environment, including blocked-to-healthy recovery, before declaring the loop live.
+
+## 2026-07-20 - Keep Markdown Backticks Out Of Double-Quoted Shell Payloads
+
+### Incident
+Literal Markdown backticks inside a double-quoted shell command triggered Bash command substitution and temporarily removed a Notion asset pointer; a separate dense Python `-c` JSON probe also failed on quote escaping.
+
+### Do differently
+For structured JSON or Markdown payloads, prefer `jq`, a script file, or a direct non-shell execution path. If backticks are required, construct them inside the target language and verify the stored value before relying on it.
+
+## 2026-07-21 - One External Publisher Needs One Scheduler And One Transaction Lock
+
+Ahmed caught the same approved LinkedIn post being published twice. An OS cron and an OpenClaw cron started the same publisher at 09:30, and both passed the duplicate checks before either writeback completed.
+
+Do differently: keep one scheduler owner for each public publisher and serialize the full duplicate-check through writeback transaction inside the publisher. Canonical fix: `docs/solutions/automation/linkedin-publisher-dual-scheduler-race.md`.
+
+## 2026-07-21 - Runtime Health Is Not Workflow Benefit
+
+### Incident
+The HR Career Sentinel was reported as real-time and healthy because its service was active, notifications were durable, tests passed, and scheduled reconciliation worked. Ahmed correctly rejected this as zero benefit. The production logs showed that every Pub/Sub notification resolved zero Gmail threads because the live `gog` history payload shape did not match the adapter contract.
+
+### Do differently
+For event-driven workflows, acceptance must replay a captured production event through source decoding, object resolution, policy, persistence, and final action or justified silence. Service state, queue counts, and synthetic unit fixtures are supporting evidence only. When a source checkpoint advances with zero resolved business objects, fail closed or recover from an independent bounded source instead of declaring the event processed.
+
+## 2026-07-21 - LinkedIn Engagement Must Own The Browser And Prove Comment Value
+
+### Incident
+The 11:00 Comment Radar returned zero candidates because LinkedIn canonicalized the search URL and the temporary +30 application campaign redirected the same authenticated browser tab. A recovered five-card pack then revealed repeated authors and mechanical comments that were technically grounded but not useful enough for Ahmed's executive voice.
+
+### Do differently
+Serialize authenticated LinkedIn browser access across HR and CMO workflows. Accept reordered query parameters only when the LinkedIn path and required values match, reject cross-workflow navigation, select one post per author, and require live evidence, a substantive insight, a forward question, uniqueness, and a 300-character limit before approval. A non-empty pack is not success unless the comments are worth Ahmed posting.
+
+## 2026-07-21 - Reconcile Assessment Labels Against The Actual Requisition
+
+### Incident
+The Sprinklr assessment template was headed `Lead Project Manager`, while the application, Workday/interview correspondence, and pipeline record all identified requisition `113162-JOB` as `Program Manager`. The presentation copied the template label into its cover instead of resolving the conflict against the authoritative hiring records.
+
+### Do differently
+When interview materials use a different title from the requisition, treat the application record and recruiter correspondence as authoritative for candidate-facing titles. Preserve the assessment label only as source context, flag the mismatch, and use the verified role title in the final deck.
+
+## 2026-07-21 - Validate Cron Files With The Installed Crontab Dialect
+
+### Incident
+While removing an obsolete restore-smoke schedule, validation used `crontab -T`, which this Debian cron implementation does not support. Its help output showed that `-n` is the available syntax-check mode; rerunning with `crontab -n` succeeded before installation.
+
+### Do differently
+Check `crontab -h` before assuming flags from another cron implementation. On this host, validate managed cron files with `crontab -n <file>`, preserve the live crontab, and only then install the validated file.
+
+## 2026-07-22 - Cairo Calendar Bounds Must Not Use A Fixed UTC Offset
+
+### Incident
+The calendar-prefetch skill hard-coded Africa/Cairo as UTC+2 and prescribed `+02:00` day bounds, while the July 22 runtime correctly resolved Cairo to UTC+3 through `ZoneInfo("Africa/Cairo")` because daylight-saving time was active.
+
+### Do differently
+For Cairo schedules and date-range API calls, derive local dates and offsets from the `Africa/Cairo` IANA timezone for the target date. Do not copy fixed `+02:00` examples or use UTC+2 as a generic fallback; verify the emitted ISO timestamps across DST transitions.
+
+## 2026-07-23 - Auto-Lessons Reviews Must Inspect Skipped Short Sessions
+
+### Incident
+The daily auto-lessons script found 44 sessions but accepted none because every session had fewer than five exchanges. One skipped session still contained a concrete failed health probe and its corrected command path.
+
+### Do differently
+Treat the exchange threshold as a first-pass filter, not proof that there is no evidence. After the automated pass, inspect user corrections and failed tool results in skipped sessions. Session JSONL readers must handle `message.content` as either a string or an array and filter by message timestamp rather than file modification time.
+
+## 2026-07-23 - Existing PowerPoint QA Needs An Isolated Python 3.13-Compatible Environment
+
+### Incident
+Existing-deck QA failed because `xmllint` and system slide libraries were absent, while workspace-scoped `uv run` selected NumPy 1.26.3 and attempted an incompatible source build under Python 3.13.
+
+### Do differently
+For existing PowerPoint surgery on this host, validate XML with `defusedxml.minidom` and run QA outside workspace dependency scope with `uv run --isolated`, `numpy>=2.2`, `python-pptx`, `pillow`, and `pdf2image`. Do not assume `xmllint` or system Python slide dependencies are installed.
+
+## 2026-07-23 - Use The CTO Workspace Path For Fast Health Checks
+
+### Incident
+A disk-maintenance verification called `scripts/cto-fast-status.sh` from the main workspace and failed because the maintained helper lives in the CTO workspace.
+
+### Do differently
+Run `/root/.openclaw/workspace-cto/scripts/cto-fast-status.sh` by absolute path for CTO health checks; do not infer that CTO helpers exist under the main workspace.
+
+## 2026-07-24 - Publishing Cadence Rules Must Be Enforced In The Publisher
+
+### Incident
+The LinkedIn calendar prohibited Friday and Saturday publishing, but the live publisher had no weekday guard. An approved row dated Saturday, 25 July would therefore have been publish-eligible until Ahmed approved moving it to an unscheduled reserve draft.
+
+### Do differently
+Enforce no-post weekdays in the publisher preflight itself, using the target date in `Africa/Cairo`, so an Approved or Scheduled row cannot bypass the cadence rule. Treat the calendar/runbook rule as policy documentation, not an execution control.
+
+## 2026-07-24 - Today Diagnostics Must Derive The Live Cairo Date
+
+### Incident
+`check_today_post_fields.py` and `check_today_post_status.py` still hard-coded `2026-04-12`, so their “today” output described an old posted row while investigating the 24 July LinkedIn schedule. The live resolver and direct date queries were needed to establish the current state.
+
+### Do differently
+Any script named or used as a “today” diagnostic must derive the date at runtime with `ZoneInfo("Africa/Cairo")` or require an explicit `--date`. Reject or clearly label fixed-date fixtures so stale results cannot be mistaken for current operational evidence.
+
+## 2026-07-25 - Close Alert State After Reviewing Intentional Critical-File Changes
+
+### Incident
+The recurring critical-files heartbeat kept reporting five already-reviewed edits because the files remained dirty in Git and the related handoff item stayed active. The review conclusion existed only in chat, so each run rediscovered the same evidence as unresolved.
+
+### Do differently
+After approving intentional critical-file changes, commit the exact reviewed paths or record a revision-specific exception, clear the corresponding handoff item, and verify the monitored paths are clean before declaring the alert resolved.
+
+## 2026-07-26 - A Remote Gateway Probe Failure Is Path-Specific Evidence
+
+### Incident
+`openclaw gateway probe --json` reported `ssh_tunnel_failed` and `no_gateway_reachable` because the configured remote target tried to tunnel to loopback with a missing `/root/.ssh/id_rsa` and strict host-key checking. Independent local status, health JSON, listener, and Telegram checks showed the gateway was healthy.
+
+### Do differently
+Do not diagnose a gateway outage from the remote-config probe alone. When it fails on SSH setup, label that probe path as failed and cross-check `openclaw gateway status --deep --require-rpc`, `openclaw health --json`, and the local listener before stating runtime health.
+
+## 2026-07-26 - Help Flags On Operational Subcommands Can Still Execute
+
+### Incident
+Running `camofox-browser server start --help` as a diagnostic attempted to start another server and returned `port in use` for 9377. The existing service prevented a duplicate process, but the help check was not side-effect-free.
+
+### Do differently
+Use top-level help, documentation, or source inspection to discover operational CLI syntax. Do not append `--help` to `start`, `stop`, `reset`, or similar mutating subcommands unless the CLI explicitly guarantees help short-circuiting.
+
+## 2026-07-26 - Host Hardening Checks Need Installed-Tool Fallbacks
+
+### Incident
+The VPS hardening review failed on `ufw`, `nft`, and unqualified `sshd` because they were absent from the shell path or not installed. `/usr/sbin/sshd -T` and `ss -ltnp` supplied the SSH policy and exposed-listener evidence needed to continue.
+
+### Do differently
+Check diagnostic-tool availability before chaining host-security commands. On this VPS, use `/usr/sbin/sshd -T` for effective SSH configuration and `ss -ltnp` for exposed listeners; report absent firewall frontends explicitly instead of treating command-not-found as firewall-state evidence.
+
+## 2026-07-27 - LinkedIn Browser Readiness Must Prove Feed Evaluation
+
+### Incident
+`linkedin-lane-browser-check.py` reported the LinkedIn lane ready because it could list an existing feed tab, even though the `nasr-linkedin` profile reported `running: false`. After starting the profile, tab focus still worked but live page evaluation timed out through the gateway.
+
+### Do differently
+Do not treat browser status or tab listing as proof that LinkedIn sourcing is operational. A readiness check must require `running: true` and successfully evaluate or snapshot the authenticated LinkedIn feed through the same path used by the radar.
+
+## 2026-07-27 - One Stalled CDP Tab Must Not Poison A LinkedIn Radar Run
+
+### Incident
+Ahmed-Mac, the authenticated browser profile, and the CDP endpoint were healthy, but several older LinkedIn renderer targets accepted connections without answering `Runtime.evaluate`. The radar cached one target for the entire run, so a single stalled tab caused the feed read and all six searches to time out and return zero candidates.
+
+### Do differently
+Probe candidate CDP page targets before selecting one, prefer a responsive feed or content-search tab, quarantine stalled targets for the current run, and retry once on a healthy or newly created authenticated tab while restoring the intended URL. Verify with a real full radar run, not status or tab-list checks.
+
+## 2026-07-27 - Persist State Before Waiting On A Shared Resource
+
+### Incident
+The first live test of the staged LinkedIn radar spent almost six minutes waiting on the global authenticated-browser lock before any checkpoint existed. The lock was legitimately owned by the approved LinkedIn +30 application campaign, but the radar's blocking `flock` made contention indistinguishable from a hang and left no resumable evidence.
+
+### Do differently
+Allocate the run checkpoint before acquiring shared resources. Acquire a shared lock inside the stage that needs it with a bounded timeout, classify contention in the stage record, and exit without downstream artifacts. A later run should resume the failed stage without repeating completed work.
+
+## 2026-07-27 - Running Is Not The Same As Making Progress
+
+### Incident
+The LinkedIn +30 supervisor and heartbeat were active, but the strict ledger stayed at 3/30 while required questions, salary rules, fit skips, and repeated browser timeouts blocked every submission. Describing the campaign as “healthy” was misleading because the process was alive but stalled at the submission gate.
+
+### Do differently
+Report execution health and outcome progress separately. Call a campaign healthy only when both the worker path is functioning and verified output is advancing; otherwise say it is running but stalled, name the blocking gate, and use the proof-backed ledger for progress.
+
+## 2026-07-28 - Scheduled Browser Work Must Queue Behind Long Bounded Work
+
+### Incident
+The 15:00 LinkedIn Comment Radar had a resumable checkpoint but still failed because its 30-second shared-browser lock timeout was shorter than a legitimate bounded +30 application attempt.
+
+### Do differently
+Keep checkpoint allocation before lock acquisition, but size the lock wait and outer runner budget to the longest approved shared-browser operation. Verify recovery by resuming the exact failed checkpoint and proving both workflows survive the handoff.
+
+## 2026-07-29 - Expected Incomplete Outcomes Must Not Alert As Runtime Failures
+
+### Incident
+The LinkedIn Comment Radar correctly returned an `incomplete_*` result when its live Mac/browser source was unavailable, but the direct cron wrapper alerted before applying the workflow's existing operational-success rule.
+
+### Do differently
+Classify judged incomplete outcomes before delivery: keep expected source-unavailable states internal, preserve evidence for retry, and alert only on unknown/runtime failures or a fully ready pack that fails its quality gate.
+
+## 2026-07-29 - Portal Registration Copy Is Not An Interview Invitation
+
+### Incident
+A Dräger email requiring account registration mentioned that the portal could later receive interview invitations, causing the classifier to label the current message as an interview invite.
+
+### Do differently
+Classify the action requested now. Registration, account setup, application confirmation, and “not yet processed” language should map to `application_response` even when the email describes possible future interview features.
+
+## 2026-07-29 - Refresh Browser References After Resolving Overlays
+
+### Incident
+The first Dräger confirmation click used a ref captured while a cookie panel covered the page, so the browser rejected it as stale or not visible.
+
+### Do differently
+Resolve consent or modal overlays first, take a fresh snapshot, and use only the newly issued refs for controls that were previously behind the overlay.
+
+## 2026-07-29 - Ontology Readers Must Replay The Operation Log
+
+### Incident
+The ontology query CLI expected flat records with top-level IDs, but the live graph is an append-only stream of `create`, `update`, and `relate` operations.
+
+### Do differently
+Replay the operation stream into current entity state before querying. Until the loader supports that schema, verify uniqueness and append validated operations without rewriting history.
+
+## 2026-07-29 - Test Doubles Must Match Live API Shapes
+
+### Incident
+A synthetic CMO preflight mocked `get_page()` with a page-ID string, so `build_post_record()` raised `AttributeError` before reaching the intended missing-funnel-role guard.
+
+### Do differently
+Make mocks conform to the live Notion page object contract, or provide a shared fixture factory validated against a captured response shape.
+
+## 2026-07-29 - Resolve Maintained Browser Interfaces Before Recovery
+
+### Incident
+A Workable verification first called the removed `scripts/openclaw-browser.py` helper, producing two avoidable read-only failures before the current browser CLI was used.
+
+### Do differently
+Confirm helper paths with `rg --files` and prefer the maintained first-class `openclaw browser` CLI before attempting lower-level Playwright or remote-host recovery.
+
+## 2026-07-30 - Treat A Content Calendar Gap As A Creative Decision, Not An Automatic Hold
+
+### Incident
+When the July 30 LinkedIn publisher found no Notion row, the first recommendation was to hold because three posts had already published that week. Ahmed challenged that conclusion and preferred using the open slot for a strong post.
+
+### Do differently
+When the publishing system is healthy but the calendar has a gap, assess whether a distinctive, on-brand post can improve the week before recommending a hold. Preserve the approval gate, funnel balance, visual quality, and duplicate checks, but do not confuse an empty calendar row with a lack of content opportunity.
+
+## 2026-07-30 - Custom Source Arguments Must Preserve Minimum Coverage
+
+### Incident
+The LinkedIn +30 supervisor stayed alive while the strict ledger stalled at 26/30 for four hours. Explicit `--url` values had replaced the broader GCC defaults, leaving only two source collections active.
+
+### Do differently
+For critical multi-source automation, define whether repeatable source arguments extend or replace defaults. Preserve and deduplicate a protected minimum source set, fail closed when required source families are missing, expose effective coverage and stall state, and test the merged runtime configuration.
+
+## 2026-07-30 - Report Effective Runtime Intervals After Clamps
+
+### Incident
+A campaign recovery update said sourcing would run every three minutes, but the supervisor enforces a five-minute minimum with `max(300, interval)`, requiring a correction.
+
+### Do differently
+Before reporting cadence or another bounded setting, inspect the effective runtime value after minimums, maximums, defaults, and guards are applied. Do not report only the requested or configured input.
+
+## 2026-07-31 - Sanitize Browser Text Before Internal Processing
+
+### Incident
+The LinkedIn Comment Radar received a lone UTF-16 surrogate from live page text. Stage-output sanitation ran too late because live validation hashed the malformed string first, causing a `UnicodeEncodeError`.
+
+### Do differently
+Normalize untrusted browser strings recursively at the browser/live-payload boundary, before hashing, interpolation, caching, or artifact serialization. Keep stage-output sanitation as defense in depth and test with an escaped lone-surrogate fixture.
+
+## 2026-07-31 - Generic Fallbacks Must Still Be Candidate-Specific
+
+### Incident
+The LinkedIn Comment Radar's improved topic-family fallback produced polished but identical comments for similar posts. Its duplicate-draft gate then reduced an otherwise valid five-card pack to one ready item.
+
+### Do differently
+Keep reusable quality scaffolding, but bind every generated fallback to verified candidate evidence such as the author and topic. Test grounding, uniqueness, length, and the downstream pack gate together.
+
+## 2026-07-31 - Canonicalize Paths Before Evidence Comparisons
+
+### Incident
+The LinkedIn Comment Radar judge accepted an absolute live run path but falsely rejected the same valid run when invoked through a relative path because persisted stage evidence used absolute paths.
+
+### Do differently
+Resolve CLI-supplied filesystem roots before opening persisted workflow state or comparing evidence paths. Cover both absolute and relative invocation in regression tests.
+
+## 2026-07-31 - Separate Intelligence Inputs From Content Provenance
+
+### Incident
+When Ahmed asked whether RSS was used for the LinkedIn posts, the response reported the full executive-intelligence candidate mix. That established that RSS was ingested, but did not answer which approved post concepts actually came from RSS.
+
+### Do differently
+For content-provenance questions, trace each proposed post to its recorded source and answer at the post level. Distinguish inputs available to the intelligence pipeline from inputs that materially shaped the selected content slate.
+## 2026-07-31 - Compare Content Theses Against Published And Scheduled Posts
+
+### Incident
+The weekly CMO slate advanced three experience-based LinkedIn concepts after a topic-level review, but a live Notion audit found that "Reconciliation backlog is product telemetry" substantially repeated two published reconciliation posts and overlapped an already scheduled payment-recovery post. "Standardize decision rights, not every local control" also sat too close to recent regional-governance and standardization-versus-local-reality posts.
+
+### Do differently
+Before recommending a weekly slate, compare each proposed thesis, reader action, framework, and evidence pattern against the full live Notion corpus, including Posted, Scheduled, Approved, Draft, and Failed rows. Treat a new title or format as insufficient differentiation when the underlying argument and intended reader action are already present.
+
+## 2026-07-31 - Scope Diff Validation To Task-Owned Paths
+
+### Incident
+A repository-wide `git diff --check` stopped on trailing-whitespace-like lines inside a pre-existing modified PDF unrelated to the CMO slate correction.
+
+### Do differently
+In a dirty shared worktree, run diff validation against only the files owned by the current task and the correct repository. Report unrelated existing changes without modifying them.
+
+## 2026-08-01 - External ATS Handoffs Are Not Completed LinkedIn Applications
+
+### Incident
+Amazon and ADNOC roles with no LinkedIn `Next` or `Review` button were initially classified as broken Easy Apply forms. LinkedIn instead marked them as externally managed, and Amazon later confirmed that job 10484526 was incomplete even though the pipeline recorded the LinkedIn step as applied.
+
+### Do differently
+Before diagnosing a broken Easy Apply form, check for `Responses managed off LinkedIn` and the external application link. Record the LinkedIn handoff separately from external-portal completion, and keep the application blocked or pending until a portal receipt or employer confirmation proves completion. Treat missing external-portal authentication as a manual dependency, not a broken LinkedIn form.
+
+## 2026-08-01 - Headless GOG Commands Need The Approved Keyring Environment
+
+### Incident
+A non-interactive Gmail lookup failed first with `aes.KeyUnwrap(): integrity check failed` when `GOG_KEYRING_PASSWORD` was set incorrectly, then with a no-TTY keyring prompt when it was omitted.
+
+### Do differently
+For headless `gog` calls, load `GOG_KEYRING_PASSWORD` from the approved protected runtime environment and use `--no-input`. Do not set the password to an empty guess or place the secret inline in a logged command; fail clearly if the protected environment is unavailable.
+
+## 2026-08-02 - A LinkedIn Hold Must Cover Every Authenticated Lane
+
+### Incident
+Ahmed first asked to hold today's LinkedIn post, then reported that LinkedIn had temporarily restricted the account. The publisher was held, but a persistent +30 application worker continued authenticated browser activity every five minutes, while separate comment, outreach, preflight, publisher, browser, and watchdog paths remained scheduled.
+
+### Do differently
+When LinkedIn reports a restriction, rate limit, CAPTCHA, or suspicious-activity warning, treat it as an account-wide incident. Immediately inventory and stop every authenticated lane across OpenClaw cron, OS cron, systemd services/timers, active browser workers, comments, outreach, applications, analytics, and publishing. Keep passive drafting and non-authenticated research separate. Verify zero active processes and do not resume automatically; require normal manual access plus an explicit recovery decision and lower-volume controls.
+
+## 2026-08-02 - Normalize Mixed Session Message Schemas Before Extraction
+
+### Incident
+The daily lessons review initially treated every `message.content` value as an array, but inter-session messages can store it as a string. The `jq` extraction failed with `Cannot iterate over string` and produced incomplete evidence.
+
+### Do differently
+Type-check session content before extraction: use strings directly, extract text items from arrays, and preserve the original message row until role and error filters are complete. Validate review queries against both shapes before relying on their output.
+
+## 2026-08-03 - Attention Alerts Must Name A Concrete Action
+
+### Incident
+A weekly health alert framed one 2.995-second peak and three maintenance warnings as needing attention. Ahmed replied with `?`; a live recheck showed HTTP 200, 36 ms normal response, zero restarts, no recent cron failures, and no evidence of outage, compromise, or sustained degradation.
+
+### Do differently
+Do not interrupt Ahmed for isolated latency peaks or maintenance warnings alone. Use attention-needed language only when evidence shows sustained or repeated degradation, user-visible impact, a time-sensitive risk, or a concrete decision or action Ahmed must take; otherwise keep the finding in routine maintenance reporting.
+
+## 2026-08-04 - Verify The Exact Mac Chassis Memory Ceiling
+
+### Incident
+An earlier local-LLM hardware recommendation described the M4 Pro Mac mini as available with 48–64 GB unified memory. Apple's current Mac mini specification tops out at 48 GB; 64 GB belongs to a Mac Studio configuration.
+
+### Do differently
+Before recommending Apple hardware for local models, verify the live specification for the exact chip-and-chassis combination. Do not transfer a memory option from Mac Studio to Mac mini, even when both use chips from the same generation.
+
+## 2026-08-05 - Route Document Extraction By Format Semantics
+
+### Incident
+A seven-file local benchmark found AnyDoc 0.1.6 was roughly 8–85 times faster than MarkItDown while retaining all reference tokens on successful non-presentation samples. However, only MarkItDown preserved explicit slide boundaries in PPTX, and neither parser could OCR an image-only PDF.
+
+### Do differently
+Prefer pinned AnyDoc for supported non-presentation documents, keep MarkItDown for presentations and fallback, and treat scanned PDFs as an explicit OCR-required failure rather than successful empty output. Preserve the selected backend in extraction evidence so downstream QA can verify the route.
+
+## 2026-08-06 - Check Node Connectivity Before Remote Hardware Inspection
+
+### Incident
+An attempt to inspect Ahmed's Mac called `sandbox_exec` with `host=node` and failed because the runtime only allowed the gateway host. A subsequent `openclaw nodes status --json` check showed that the available Macs were paired but disconnected, so exact CPU, RAM, and storage could not be queried.
+
+### Do differently
+Before remote device inspection, check node status and capabilities, and distinguish paired from connected. Use the approved node invocation path only when the target is connected; when it is offline, answer from verified inventory fields such as `modelIdentifier` and clearly state which live specifications remain unverified instead of retrying a blocked host override.
+
+## 2026-08-06 - A Listening Gateway Can Still Be Health-Unresponsive
+
+### Incident
+The gateway `/health` request timed out for more than five seconds while the process remained active and port 18789 stayed open. Recent logs showed event-loop pressure (p99 2.95 seconds, maximum 7.19 seconds, utilization 0.879); an authorized controlled restart restored HTTP 200 and passed the 19-test startup security suite.
+
+### Do differently
+When the health endpoint times out but the service and listener remain present, inspect event-loop delay, utilization, and recent logs before classifying the gateway as crashed. After an authorized controlled restart, verify HTTP health, service/listener state, security checks, and cron health; if the pressure recurs, profile the workload rather than relying on repeated restarts.
+
+## 2026-08-07 - Match Windows Commands To The Active Shell And Verified Secret Schema
+
+### Incident
+During Windows Companion setup, a PowerShell-only `Set-Clipboard` command was given while Ahmed was using Command Prompt, and the first command also assumed the wrong nested path for the gateway token in `secrets.json`. The command failed and had to be replaced with a CMD-compatible `clip.exe` pipeline using the verified slash-delimited key.
+
+### Do differently
+Identify the active Windows shell from the prompt before supplying commands, and use shell-native syntax (`clip.exe` for CMD, `Set-Clipboard` for PowerShell). Inspect the actual configuration or secret schema before naming a key path; do not infer nested JSON structure from a slash-delimited config key.
+
+## 2026-08-08 - Do Not Turn Browser Proxy Into An Extension Requirement
+
+### Incident
+After agreeing to verify the authenticated Windows LinkedIn session without a Chrome extension, the repair later selected the `chrome` extension profile and asked Ahmed to pair it. The node's `browser.proxy` capability was working; the wrong browser transport had been chosen.
+
+### Do differently
+For Ahmed's LinkedIn lane, route the Windows `openclaw` managed Chrome profile through `browser.proxy`. Never request extension installation, pairing, or tab attachment. Distinguish node reachability from browser authentication: if the managed profile is signed out, ask only for the one-time visible LinkedIn login, then verify Ahmed's account before declaring the lane ready.
+
+## 2026-08-08 - Restore Cron Jobs As One Verified State Change
+
+### Incident
+Two LinkedIn jobs were restored in the live crontab after an intentional pause, but cron did not reload the restored schedule before the 09:30 publisher window. The managed crontab baseline also still marked Comment Radar as paused, so a later reinstall could silently disable it again. Health reporting correctly saw stale last-success timestamps, but those were restoration defects rather than job crashes.
+
+### Do differently
+Treat cron restoration as incomplete until the authoritative managed baseline and live crontab agree, cron has reloaded, and the next expected invocation is verified in the journal or wrapper status. If the restore occurs after a missed window, reconcile that run explicitly because cron will not replay it.
+
+## 2026-08-09 - Health Checks Must Verify the Active Runtime and Current Impact
+
+### Incident
+A weekly health alert used a dormant NVM OpenClaw binary and treated a disabled plugin scanner hit, cumulative delivery failures, stale tasks, and an alternate-install update as current live problems.
+
+### Do differently
+Resolve the gateway runtime from systemd `ExecStart`, use that binary's update-status JSON, inspect every flagged plugin's live activation and cited source, compare delivery counts and newest failure timestamps with the prior report, and verify task state before setting severity. Keep raw scanner counts in evidence, but make the headline reflect verified current impact.
+
+## 2026-08-09 - LinkedIn Command Execution Is Standing Pre-Approved
+
+### Incident
+Routine NASR, CMO, HR, and JobZoom LinkedIn workflows kept producing native command-approval cards because approval rules covered individual command shapes instead of the established workflow scope.
+
+### Do differently
+Treat routine command execution for established LinkedIn discovery, browser-lane, JD extraction, comment-radar, publishing-support, analytics, and application workflows as standing pre-approved. Keep separate gates for exact public content, third-party messages, credentials or MFA, destructive actions, duplicate prevention, and completion proof.
+
+## 2026-08-09 - Owner-Topic Delivery Approval Must Not Depend on Caption Text
+
+### Incident
+An internal LinkedIn artifact delivery to Ahmed prompted again after a harmless caption change because the approval rule matched one exact caption and file path.
+
+### Do differently
+For internal delivery to Ahmed's fixed Telegram DM or owned topics, scope the rule to the fixed account, destination, and topic while allowing caption and artifact arguments to vary. Leave other targets unmatched and preserve all public-post and third-party-message gates.
+
+## 2026-08-09 - OpenClaw Config Patch Stdin Rejects a PTY
+
+### Incident
+`openclaw config patch --stdin` was started in an interactive PTY so input could be supplied later, and the CLI refused terminal input.
+
+### Do differently
+Create a reviewable JSON5 patch with `apply_patch`, then run `openclaw config patch --file` with a dry run before applying. Use `--stdin` only through a genuinely non-interactive stdin path.
+
+## 2026-08-10 - Routine HR Commands Must Match Standing Pre-Approval
+
+### Incident
+The HR Codex runtime asked Ahmed to approve duplicate-lock checks, pipeline lookups, and recording a user-confirmed application even though these are internal steps inside the already pre-approved HR and JobZoom workflow.
+
+### Do differently
+Encode stable, narrow executable rules for routine HR and JobZoom entry points instead of relying on exact company, title, or argument strings. Do not interrupt Ahmed for internal duplicate prevention, pipeline inspection or reconciliation, scoring, CV generation, artifact checks, or recording an application he already confirmed. Preserve separate gates for external messages, unknown sensitive answers, credentials or MFA, destructive actions, paid actions, and commitments outside confirmed rules.
+
+## 2026-08-09 - Dedupe Loaders Must Normalize Legacy Artifact Shapes
+
+### Incident
+The 11:00 LinkedIn Comment Radar crashed in `load_handled_urls()` because a legacy approval artifact was a JSON array while the loader assumed every artifact was an object and called `.get()`.
+
+### Do differently
+Type-check parsed JSON before reading object fields, skip unsupported legacy shapes safely, and cover both object and array artifacts in regression tests. Keep the workflow failed closed when the authenticated browser lane is unavailable.
+
+## 2026-08-10 - Cross-Workspace Codex Work Can Strand The Final Reply
+
+Promoted to `docs/solutions/runtime/codex-cross-workspace-empty-reply.md`.
+
+### Incident
+NASR directly edited and tested the JobZoom sibling workspace. Because Codex workspace-write scope was rooted in NASR's workspace, routine JobZoom operations generated repeated approval cards. Expired or declined approvals ended the Codex turn after tool results without a final assistant message; OpenClaw then sent the generic no-visible-reply fallback three times.
+
+### Do differently
+Route mutating work to the agent that owns the target workspace and keep NASR's cross-workspace access read-only. After any expired or declined approval, stop the gated action and send a concrete closeout covering completed work, remaining work, and the safe next action. Verify the actual Telegram reply, not only `turn/completed`.
+
+## 2026-08-10 - Heartbeat Sandbox Probes Are Not Gateway Outage Evidence
+
+### Incident
+A heartbeat treated a sandbox-isolated localhost socket failure as a real gateway outage and restarted the gateway hosting its own turn, interrupting two active runs. Shared gateway logs and Telegram/WebSocket traffic showed the live runtime was healthy.
+
+### Do differently
+Treat sandbox-local connection failures as non-authoritative. Heartbeats must verify recent shared gateway-log activity and user-visible traffic before declaring an outage, and must never restart the gateway; any necessary lifecycle action belongs in a separate approved repair session.
+
+## 2026-08-10 - Job Discovery Needs A Capped Rescue Lane Beyond Exact Titles
+
+### Incident
+JobZoom's raw 267-job artifact already contained two opportunities Hermes surfaced, but its title-only Pass 1 rejected them before persistence, full-JD scoring, reporting, or CV generation. Hermes's broader senior-title filter admitted them for semantic review.
+
+### Do differently
+Keep the precise title gate, but add a capped rescue lane for senior AI, technology, digital, transformation, healthcare, PMO, program, portfolio, operations, performance, enablement, and excellence titles. Exclude clearly mismatched functions first, then require nationality checks, full-JD scoring, dedupe, CV validation, and candidate-level evidence before promotion.
+
+## 2026-08-10 - Historical Job Recovery Must Reconcile Mutable Exclusion Ledgers
+
+### Incident
+A no-rescrape JobZoom recovery stopped because five roles were marked applied after the original run, shrinking reconstructed dedup from 248 to 243 even though the saved source artifact was unchanged.
+
+### Do differently
+Allow historical recovery drift only when it is exactly explained by newly applied-ledger exclusions; unexplained drift must still fail closed. Delivery-only paths must recheck the current applied ledger so recovered reports never resend already-applied roles.
+
+## 2026-08-10 - Bounded Internal Maintenance Is Standing Pre-Approved
+
+### Incident
+Routine plugin checks, container and disk inspection, guarded cache cleanup, journal vacuuming, disabled-revision cleanup, and post-cleanup verification produced repeated Codex approval cards. Ahmed explicitly said these bounded internal maintenance actions should be pre-approved.
+
+### Do differently
+Maintain narrow category rules across all agents for read-only maintenance and vetted cleanup entry points. Keep arbitrary deletion, unbounded package removal, backup pruning, Git push, gateway/config/lifecycle changes, credentials, third-party messages, public actions, paid actions, and other destructive operations gated.
+
+## 2026-08-11 - Re-Anchor To The Pending Direct Ask After Inter-Session Traffic
+
+### Incident
+While closing an approval-noise repair, the session processed two internal completion messages, emitted `REPLY_SKIP`, and declared that no further action was needed even though Ahmed's linked-content request had not been answered. His follow-up `?` exposed the miss.
+
+### Do differently
+Before `REPLY_SKIP`, `NO_REPLY`, or a task closeout in a noisy session, identify the latest unresolved direct-user request separately from inter-session messages and verify that the final response answers it. Internal completion reports may close their own subtask, but they do not supersede a pending user ask.
+
+## 2026-08-11 - Exec Host Overrides Must Follow The Current Turn Configuration
+
+### Incident
+The Daily Intel Sweep hard-coded `host=gateway`, but that cron turn was configured with `host=auto`; the override was rejected. Retrying with `host=auto` then exposed that the sandbox-local filesystem did not contain the requested `/root/.openclaw/workspace/scripts/intel-sweep.py` path.
+
+### Do differently
+Treat the inbound exec-host state as authoritative for each turn because it can differ across sessions. Omit an unnecessary host override; if the required filesystem exists only on another host and the configured runtime disallows it, report that configuration mismatch instead of retrying the same absolute path in a sandbox known not to contain it.
+
+## 2026-08-12 - Material Hiring Event States Must Force Attention
+
+### Incident
+HR Career Sentinel ingested Sprinklr's post-interview rejection within seconds and classified the thread as `post_interview_rejection`, but the model also returned `requires_attention=false`. The deterministic policy trusted that boolean, persisted the event state, and created no Telegram alert.
+
+### Do differently
+Treat any validated `ATTENTION_EVENTS` event state as attention-required after deterministic vetoes and confidence gates pass. Add a regression for contradictory model output (`post_interview_rejection` plus `requires_attention=false`) and verify an alert row and Telegram delivery receipt before closing the repair.
+
+## 2026-08-12 - Deliverable Corrections Need One Artifact Owner
+
+### Incident
+Ahmed changed the PureCS request from two role-specific CVs to one combined CV while multiple HR runs were active. Separate PDFs were delivered before the correction propagated, and the combined PDF then existed without clear validation or delivery ownership, creating a duplicate-generation and duplicate-send risk.
+
+### Do differently
+When a user changes the deliverable shape during parallel work, mark prior artifacts superseded, assign one explicit owner for the corrected artifact, and have every other run stop generation and delivery. Before sending, validate the existing artifact against the revised request and check transport receipts; resend only when delivery cannot be proven.
+
+## 2026-08-13 - Cron Diagnostics Must Be Sandbox-Capability-Aware
+
+### Incident
+NASR Doctor reported gateway, Firehose, Gmail, LinkedIn, and backup failures from a restricted cron namespace even though independent gateway, Telegram, log, disk, and database checks were healthy. The network probes were blocked by sandbox policy, and the backup copy failed because the workspace was read-only.
+
+### Do differently
+Test network and write capabilities before health probes. Classify policy-blocked checks as skipped or degraded rather than service outages, retain read-only integrity checks as the fallback, and verify suspected failures through an authoritative host or live service signal before alerting.
+
+## 2026-08-13 - Minimal Environments Must Preserve Required Executable Paths
+
+### Incident
+A credential-free `env -i` dependency-install check could not find Bun because the minimal `PATH` omitted the directory containing the verified Bun binary.
+
+### Do differently
+Resolve each required executable before clearing the environment, then construct the smallest explicit `PATH` that contains those verified directories. Keep credentials excluded without accidentally excluding the runtime itself.
+
+## 2026-08-13 - Resolve Skill-Relative Paths Against The Skill Directory
+
+### Incident
+The GBrain closeout invoked `scripts/validate_vault.py` from the workspace root, but the validator belonged to the selected knowledge-ingestion skill and the path failed.
+
+### Do differently
+Resolve every relative script, reference, asset, and template path against the directory containing the selected `SKILL.md`, then verify the resolved file exists before execution.
+
+## 2026-08-13 - HeyGen Web And API Entitlements Are Separate
+
+### Incident
+A HeyGen API render failed with `MOVIO_PAYMENT_INSUFFICIENT_CREDIT` even though an authenticated web render had completed. The web UI's download button was plan-gated, but the page had already loaded a playable signed media source.
+
+### Do differently
+Treat web-plan download rights and API credits as separate checks. When an authenticated web render is complete but export is gated, inspect the loaded video source, download and decode that exact asset, visually verify it, and use the approved delivery path before retrying paid API work.
+
+## 2026-08-13 - Talking-Video Requests Require Voice And Avatar Motion
+
+### Incident
+Ahmed rejected a silent, graphic-first fallback because “video with graphics” meant a speaking, visibly moving avatar enhanced with graphics. The fallback preserved overlays but dropped the essential voice and motion.
+
+### Do differently
+Treat audible voice, lip or head movement, and graphic overlays as separate acceptance gates. If the primary render path fails, do not silently downgrade any gate; use another verified render path or report the blocker before delivery.
+
+## 2026-08-14 - Heartbeat Alerts Need State Fingerprints And Resolution Clears
+
+### Incident
+The same two critical-diff warnings were handed off repeatedly throughout the day, causing repeated pending-note rewrites even though the material state had not changed. The CTO repair added fingerprint-based deduplication and verified new-state notification, unchanged-state suppression, and clearing after resolution.
+
+### Do differently
+Normalize and fingerprint the material alert state. Notify and update durable pending notes only when the fingerprint changes; suppress unchanged repeats, and clear the stored fingerprint and stale pending item as soon as authoritative evidence proves resolution.
+
+## 2026-08-14 - Superseded Plans Need Matching Verifiers
+
+### Incident
+LinkedIn recovery verification first ran the obsolete eight-post verifier after the approved plan had moved to a six-post slate. The correct six-post verifier then hit sandbox DNS restrictions before succeeding through the approved network-capable read-only path.
+
+### Do differently
+Resolve the verifier from the current recovery label or source-of-truth report before running it. For live Notion checks, use the approved network-capable path and treat sandbox DNS failures as execution-environment evidence, not a failed content state.
+
+## 2026-08-14 - Dependency Test Scripts Must Be Verified On The Exact Node Runner
+
+### Incident
+Pinned `atskills` v0.1.0 declared Node `>=18`, but its `npm test` command used `node --test tests/`; Node 22.23.1 treated the directory as a module path and returned `MODULE_NOT_FOUND`. The same test suite passed when invoked with explicit `tests/*.test.js` files.
+
+### Do differently
+Test dependency scripts on the exact production-adjacent Node version before adoption. Treat an `engines` range as a compatibility claim rather than proof, and use explicit test-file arguments when the active Node runner does not accept a directory target.
+
+## 2026-08-14 - Exhaust Verified Evidence Before Asking Ahmed For Content Details
+
+### Preference
+After the recovery workflow asked Ahmed for two autobiographical details, he instructed the agent to do the work itself and finalize the remaining steps.
+
+### Do differently
+Search verified CV, memory, prior-content, and workspace evidence before requesting factual input. When Ahmed asks for autonomous completion, finalize with conservative evidence-bound wording or omit unsupported scenes; never invent personal experience, sensitive details, or outcomes to avoid asking a question.
+
+## 2026-08-15 - Auto-Lessons Must Inspect Short Tool-Heavy Sessions
+
+### Incident
+The daily collector found 25 sessions but skipped every one because each had fewer than five user-assistant exchanges. That exchange threshold hid material evidence in one-exchange cron runs, including an execution-host rejection and a missing-script failure.
+
+### Do differently
+Scan failed `toolResult` records even when a session has fewer than five exchanges, and keep the manual short-session audit until the collector does this reliably. Exclude `*.trajectory.jsonl` from the transcript pass so duplicated runtime traces do not overwhelm the evidence.
+
+## 2026-08-15 - Recurring Cron Failures Need A Durable Job Fix
+
+### Incident
+Daily Intel Sweep repeated the August 11 failure: its requested gateway override was incompatible with the turn's `host=auto` configuration, and the fallback runtime could not see `/root/.openclaw/workspace/scripts/intel-sweep.py`. The lesson had been recorded, but the scheduled job still failed in the same way.
+
+### Do differently
+Treat a repeated cron failure as an automation defect, not another reminder for the agent. Align the job's configured execution host with the filesystem that owns the script, then verify the next scheduled run writes both intelligence files before considering the issue resolved.
+
+## 2026-08-16 - Snap Chromium Is Not A Safe Remotion Fallback In Restricted Runtimes
+
+### Incident
+A Remotion render first hit transient DNS failure while downloading its managed Chrome Headless Shell. Falling back to `/snap/bin/chromium` then failed because the restricted runtime could not access the user bus or Snap lock. Retrying the managed Headless Shell download succeeded and the render completed.
+
+### Do differently
+For Remotion in restricted server runtimes, prefer its managed Chrome Headless Shell or a verified non-Snap browser binary. Do not treat `command -v chromium` as proof that the executable is runnable; probe the browser once, classify DNS as transient execution-environment evidence, and avoid Snap binaries when `/run/snapd` or the user bus is unavailable.
+
+## 2026-08-17 - Exclude Current-Employer Contacts From Career Outreach
+
+### Correction
+Ahmed works for Saudi German Health and said messaging its leaders, HR, recruiters, or colleagues about opportunities could expose his job search to his manager.
+
+### Do differently
+Treat Saudi German Health as an internal no-outreach zone for career networking. Build discreet target lists from other employers, independent executive recruiters, and trusted external contacts; never send any LinkedIn message or connection request without Ahmed's explicit approval.
+
+## 2026-08-18 - Session Reset Reasons Are Schema Constants
+
+### Incident
+An approved HR-session maintenance reset failed when `sessions.reset` received a descriptive reason. The gateway accepts only the fixed reason values `reset` or `new`; retrying with `reset` rotated the session successfully, while the displayed compaction count remained as historical lineage metadata.
+
+### Do differently
+Use only `reset` or `new` for `sessions.reset.reason`. Verify a reset by confirming a new session ID and zero fresh tokens rather than expecting the historical compaction counter to clear.
+
+## 2026-08-19 - Cron Get Already Returns JSON
+
+### Incident
+Cron-job verification called `openclaw cron get <id> --json`, but `cron get` does not accept `--json`; it returns JSON by default. A retry without the flag then hit a transient gateway abnormal closure in the restricted runtime, while `openclaw cron list --json` succeeded and contained the new job.
+
+### Do differently
+Use `openclaw cron get <id>` without `--json`. If that point lookup fails for a transport or restricted-state reason, verify the job with `openclaw cron list --json` and match the exact job ID or declaration key before treating creation as unverified.
+
+## 2026-08-20 - Generated Media Needs Three Separate Proof Gates
+
+### Incident
+Four valid PNGs were generated, but Ahmed received four `Media failed` replies because the selected image was never persisted, staged under `/root/.openclaw/media`, or sent through the receipt-backed delivery helper. The first corrected send then hit a transient gateway timeout.
+
+### Do differently
+Do not regenerate after a delivery failure. Validate the exact generated file, save the selected artifact under the workspace, stage it under the approved media root, and send it with `scripts/telegram-send-local-media.py` using a stable idempotency key. Claim success only when the receipt has `ok=true` and a non-empty `message_id`; after a timeout, verify gateway health before one controlled retry.
+
+## 2026-08-20 - Visual Approval Does Not Authorize Publishing
+
+### Preference
+Ahmed said he loved the first test produced by the NASR visual-metaphor system: a physical operating-model metaphor rendered as a premium hand-drawn static visual.
+
+### Do differently
+Use that concept-led hand-drawn direction as the preferred baseline for future static LinkedIn visuals. Treat praise or preview approval as validation of the visual direction only; keep exact caption, final artifact, scheduling, and publishing approvals separate.

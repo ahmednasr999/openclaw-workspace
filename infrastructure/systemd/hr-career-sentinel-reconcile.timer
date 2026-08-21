@@ -1,0 +1,13 @@
+[Unit]
+Description=Run HR Career Sentinel Gmail reconciliation four times daily
+Documentation=file:/root/.openclaw/workspace/docs/hr-career-sentinel.md
+
+[Timer]
+OnCalendar=*-*-* 08,12,16,20:00:00 Africa/Cairo
+Persistent=true
+AccuracySec=1min
+RandomizedDelaySec=0
+Unit=hr-career-sentinel-reconcile.service
+
+[Install]
+WantedBy=timers.target

@@ -7,16 +7,16 @@ Each item is binary: ✅ PASS or ❌ FAIL. No partial credit.
 
 ## 1. Content Calendar Coverage
 
-**Check:** At least 1 post has Status=`Scheduled` for each of the next 5 business days.
+**Check:** Exactly 7 posts have Status=`Scheduled` across the next 7 calendar days, one on every date.
 
 ```bash
-# Query Notion DB for Scheduled posts in next 5 days
+# Query Notion DB for Scheduled posts in the next 7 days
 python3 scripts/notion-query.py --db 3268d599-a162-814b-8854-c9b8bde62468 \
-  --filter '{"status": "Scheduled", "date_range": "next_5_business_days"}'
+  --filter '{"status": "Scheduled", "date_range": "next_7_calendar_days"}'
 ```
 
-✅ PASS: 5 posts scheduled across next 5 business days
-❌ FAIL: Any gap in business days 1–3 → trigger the decision-card gap alert to CEO immediately; gap only in days 4–5 → log as backlog health warning and add to Friday batch/approval follow-up.
+✅ PASS: 7 unique scheduled dates across the next 7 calendar days
+❌ FAIL: Any missing date or duplicate date → trigger the cadence decision card.
 
 ---
 
@@ -113,6 +113,15 @@ python3 scripts/notion-query.py --db 3268d599-a162-814b-8854-c9b8bde62468 \
 
 ---
 
+## 8. Funnel Role Coverage
+
+**Check:** Every post in the current posting week has a `Funnel Role`, and the approved or published mix matches the active cadence.
+
+✅ PASS: Seven-post daily cadence = 2 Reach, 3 Authority, 2 Conversion
+❌ FAIL: Any unclassified post or imbalanced mix → correct the planning slate before approval; do not add extra posts merely to repair the ratio
+
+---
+
 ## Checklist Summary Template
 
 ```
@@ -125,9 +134,10 @@ CMO Quality Check — [YYYY-MM-DD]
 5. Brand voice compliance         ✅/❌
 6. Post URL completeness          ✅/❌
 7. Monthly scorecard delivered    ✅/❌
+8. Funnel role coverage           ✅/❌
 
-Score: X/7
-Status: [PASS (7/7) | REVIEW NEEDED (<7/7)]
+Score: X/8
+Status: [PASS (8/8) | REVIEW NEEDED (<8/8)]
 ```
 
 Send summary to CEO via sessions_send if any item is ❌ FAIL.

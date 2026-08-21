@@ -1,0 +1,38 @@
+{
+  "evals": [
+    {
+      "expectations": [
+        "Reads the existing employer dossier before changing it",
+        "Separates verified facts from hypotheses",
+        "Leaves decision-makers empty unless a source verifies them",
+        "Does not contact anyone or alter JobZoom"
+      ],
+      "expected_output": "An evidence-linked Qiddiya dossier update with an explicit stage, source dates, and approval-gated next actions.",
+      "files": [],
+      "id": 1,
+      "prompt": "Qiddiya invited me to an interview for the healthcare role. Update our employer intelligence and prepare the evidence gaps I need to close."
+    },
+    {
+      "expectations": [
+        "Marks the employer identity as ambiguous",
+        "Blocks networking recommendations until identity is resolved",
+        "Does not invent strategy or leaders"
+      ],
+      "expected_output": "A blocked/ambiguous dossier state with a precise identity-resolution action rather than fabricated company intelligence.",
+      "files": [],
+      "id": 2,
+      "prompt": "Build the account expert for SIGN from this COO vacancy, but the job post does not make clear which Saudi company named SIGN it is."
+    },
+    {
+      "expectations": [
+        "Does not use the employer-intelligence workflow for a general company explainer",
+        "Does not create or mutate a persistent dossier"
+      ],
+      "expected_output": "A normal read-only answer or research route without creating persistent employer state.",
+      "files": [],
+      "id": 3,
+      "prompt": "What does DXC Technology do? I am just curious; this is not related to a job or networking decision."
+    }
+  ],
+  "skill_name": "executive-account-intelligence"
+}

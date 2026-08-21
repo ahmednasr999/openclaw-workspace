@@ -14,8 +14,11 @@ Reference-quality floor for the hand-drawn style:
 
 Premium visual must match the approved hand-drawn sketchnote concept and craft level, not just its rough structure.
 
+Before generation, the concept must pass `/root/.openclaw/workspace/skills/nasr-visual-metaphor/SKILL.md`: one cognitive anchor, three candidate metaphors, a 10/12 winning score with no zero, and a recent-visual collision check. This concept gate complements rather than replaces final-image inspection.
+
 Pass requires:
 
+- Default 4:5 portrait composition unless another format is explicitly required.
 - Warm off-white paper or comparable premium paper texture.
 - Black ink illustration with restrained orange accents.
 - One clear large handwritten headline.
@@ -26,6 +29,7 @@ Pass requires:
 
 Reject if:
 
+- No physical causal action, repeated recent composition, borrowed mascot, copied creator identity, or metaphor that says something different from the caption.
 - Generic dark tech card, stock photo, or SaaS template unless Ahmed explicitly requested that direction.
 - Flat, cheap, under-designed, or sketch-filter-like.
 - Old reference text contaminates the image.

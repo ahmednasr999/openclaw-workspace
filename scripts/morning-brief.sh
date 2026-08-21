@@ -22,15 +22,40 @@ if [ "$CURRENT_EPOCH" -lt "$END_EPOCH" ]; then
 fi
 echo "" >> /tmp/morning-brief.md
 
+# 0. Open-work Resolver: only progress, intervention, and verified closures.
+RESOLVER_BRIEF="/root/.openclaw/workspace/reports/open-work-resolver/briefing.json"
+if [ -s "$RESOLVER_BRIEF" ]; then
+    RESOLVER_LINES=$(jq -r '
+      (.progress[]? | "- Progress: \(.title) - \(.progress). \(.next_action)"),
+      (.intervention[]? | "- Intervention: \(.title) - \(.progress). \(.blocker // .next_action)"),
+      (.closures[]? | "- Closed: \(.title) - \(.progress). Verified closure recorded.")
+    ' "$RESOLVER_BRIEF" 2>/dev/null)
+    if [ -n "$RESOLVER_LINES" ]; then
+        echo "## Open Work" >> /tmp/morning-brief.md
+        echo "$RESOLVER_LINES" >> /tmp/morning-brief.md
+        echo "" >> /tmp/morning-brief.md
+    fi
+fi
+
 # 1. Job Radar Results
 echo "## Job Radar (from Tavily)" >> /tmp/morning-brief.md
 SEARCH_RESULT=$(node /root/.openclaw/workspace/skills/tavily-search/scripts/search.mjs "VP Director PMO Digital Transformation healthcare UAE Dubai Saudi 2026" -n 5 2>&1)
 echo "$SEARCH_RESULT" >> /tmp/morning-brief.md
 echo "" >> /tmp/morning-brief.md
 
-# 2. Gmail - New job-related emails
-echo "## Gmail - New Opportunities" >> /tmp/morning-brief.md
-node /root/.openclaw/workspace/scripts/gmail-scan.js >> /tmp/morning-brief.md 2>&1
+# 2. Gmail career-monitor health. Actionable mail is alerted by the silent sentinel.
+echo "## Gmail - Career Monitor" >> /tmp/morning-brief.md
+if systemctl --user is-active --quiet hr-career-sentinel.service; then
+    echo "- Real-time career monitor: active" >> /tmp/morning-brief.md
+else
+    echo "- Real-time career monitor: unavailable - scheduled reconciliation remains the fallback" >> /tmp/morning-brief.md
+fi
+if systemctl --user is-enabled --quiet hr-career-sentinel-reconcile.timer \
+    && systemctl --user is-active --quiet hr-career-sentinel-reconcile.timer; then
+    echo "- Scheduled reconciliation: active at 08:00, 12:00, 16:00, and 20:00 Cairo" >> /tmp/morning-brief.md
+else
+    echo "- Scheduled reconciliation: unavailable - investigate Gmail fallback coverage" >> /tmp/morning-brief.md
+fi
 echo "" >> /tmp/morning-brief.md
 
 # 3. Calendar - Today's events (graceful failure for gog v0.12.0 bug)

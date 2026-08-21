@@ -2,7 +2,7 @@
 import subprocess
 import sys
 
-PROFILE = 'nasr-linkedin'
+PROFILE = 'openclaw'
 FEED = 'https://www.linkedin.com/feed/'
 
 def run(args, timeout=60, required=True):
@@ -20,13 +20,23 @@ def run(args, timeout=60, required=True):
 
 status = run(['status'], required=False)
 if status.returncode != 0:
-    run(['start'], timeout=90)
-    run(['status'])
+    raise SystemExit('BLOCKED: Windows OpenClaw-managed Chrome lane is not reachable through browser.proxy')
 
 tabs = run(['tabs'], required=False)
 combined = f"{tabs.stdout}\n{tabs.stderr}"
 if FEED not in combined and 'linkedin.com/feed' not in combined:
-    run(['open', FEED], timeout=90)
-    run(['tabs'], timeout=60)
+    run(['open', FEED, '--label', 'linkedin-profile'], timeout=90)
+    tabs = run(['tabs'], timeout=60)
+    combined = f"{tabs.stdout}\n{tabs.stderr}"
 
-print('OK: Ahmed-Mac LinkedIn lane ready; no alert sent.')
+if 'linkedin.com/login' in combined or 'checkpoint' in combined:
+    raise SystemExit('BLOCKED: Windows OpenClaw-managed Chrome is reachable but LinkedIn requires manual sign-in')
+
+snapshot = run(['snapshot', '--format', 'aria', '--limit', '220'], timeout=90, required=False)
+snapshot_text = f"{snapshot.stdout}\n{snapshot.stderr}"
+if snapshot.returncode != 0:
+    raise SystemExit('BLOCKED: Windows OpenClaw-managed Chrome is reachable but the LinkedIn feed snapshot failed')
+if 'Ahmed Nasr' not in snapshot_text:
+    raise SystemExit('BLOCKED: LinkedIn is open but Ahmed Nasr account identity was not visibly verified')
+
+print('OK: Windows LinkedIn managed Chrome lane ready; no alert sent.')

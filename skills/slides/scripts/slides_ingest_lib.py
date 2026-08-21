@@ -40,14 +40,22 @@ INTAKE_JSON_REL_PATH = Path("planning") / "intake.json"
 INTAKE_MD_REL_PATH = Path("planning") / "intake.md"
 IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".bmp", ".tif", ".tiff", ".svg", ".heic", ".heif"}
 TEXT_EXTS = {".md", ".markdown", ".txt", ".rst"}
-MARKITDOWN_FRIENDLY_EXTS = {
+DOCUMENT_PARSER_FRIENDLY_EXTS = {
     ".pdf",
     ".docx",
     ".doc",
+    ".docm",
     ".pptx",
     ".ppt",
+    ".pptm",
+    ".pps",
+    ".ppsx",
+    ".ppsm",
+    ".pot",
     ".xlsx",
     ".xls",
+    ".xlsm",
+    ".xlsb",
     ".html",
     ".htm",
     ".epub",
@@ -55,7 +63,10 @@ MARKITDOWN_FRIENDLY_EXTS = {
     ".tsv",
     ".rtf",
     ".odt",
+    ".ods",
+    ".odp",
 }
+DOCUMENT_PARSER_SCRIPT = Path(__file__).resolve().parents[3] / "scripts" / "document-to-markdown.py"
 
 
 class _HTMLTextExtractor(HTMLParser):
@@ -259,13 +270,17 @@ def infer_source_kind(ext: str) -> str:
     return "file"
 
 
-def run_markitdown(input_value: str) -> tuple[bool, str, str]:
+def run_document_parser(input_value: str) -> tuple[bool, str, str, str]:
+    """Run the shared AnyDoc/MarkItDown router and return its chosen backend."""
     proc = subprocess.run(
-        [sys.executable, "-m", "markitdown", input_value],
+        [sys.executable, str(DOCUMENT_PARSER_SCRIPT), "--backend-marker", input_value],
         capture_output=True,
         text=True,
     )
-    return proc.returncode == 0, proc.stdout, proc.stderr
+    marker = re.search(r"^document-parser-backend=(\S+)\s*$", proc.stderr, re.MULTILINE)
+    backend = marker.group(1) if marker else "unknown"
+    stderr = re.sub(r"^document-parser-backend=\S+\s*$", "", proc.stderr, flags=re.MULTILINE).strip()
+    return proc.returncode == 0, proc.stdout, stderr, backend
 
 
 def _write_text(path: Path, text: str) -> None:
@@ -322,10 +337,10 @@ def extract_entry(task_dir: Path, entry: dict[str, Any], force: bool = False) ->
 
     try:
         if entry.get("inputType") == "url":
-            ok, stdout, stderr = run_markitdown(entry["url"])
+            ok, stdout, stderr, backend = run_document_parser(entry["url"])
             if ok and stdout.strip():
                 body = stdout.strip()
-                method = "markitdown-url"
+                method = f"document-parser-{backend}-url"
                 quality = "full"
             else:
                 body = _simple_url_extract(entry["url"])
@@ -340,11 +355,11 @@ def extract_entry(task_dir: Path, entry: dict[str, Any], force: bool = False) ->
                 body = source_path.read_text(encoding="utf-8", errors="replace").strip()
                 method = "direct-text-copy"
                 quality = "full"
-            elif ext in MARKITDOWN_FRIENDLY_EXTS:
-                ok, stdout, stderr = run_markitdown(str(source_path))
+            elif ext in DOCUMENT_PARSER_FRIENDLY_EXTS:
+                ok, stdout, stderr, backend = run_document_parser(str(source_path))
                 if ok and stdout.strip():
                     body = stdout.strip()
-                    method = "markitdown-file"
+                    method = f"document-parser-{backend}-file"
                     quality = "full"
                 else:
                     body = (

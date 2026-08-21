@@ -1,5 +1,7 @@
 {
   "max_candidates": 8,
+  "prepare_review_packets": true,
+  "representative_eval_cases": 5,
   "lookback_days": 120,
   "min_stars": 20,
   "queries": [

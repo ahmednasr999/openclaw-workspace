@@ -1,5 +1,7 @@
 # linkedin-engagement-agent
 
+**Current device decision (2026-08-08):** The Windows OpenClaw-managed Chrome profile through `browser.proxy` is the only authenticated LinkedIn browser lane. It is extension-free; do not request extension installation, pairing, or tab attachment. This supersedes every older Ahmed-Mac or Chrome-extension reference in the historical improvement notes below. If the Windows lane is unavailable, stop; do not fall back to Ahmed-Mac, VPS browsers, cookies, or server-side authenticated sessions.
+
 **Trigger:** Ahmed says "scan" in Telegram thread 7 (Content thread), or taps the "Scan Now" button from the morning cron message.
 
 ## Workflow
@@ -10,8 +12,8 @@ Read `memory/master-cv-data.md` and `memory/ontology/graph.jsonl` to build Ahmed
 - Target personas: VP+, Director, C-suite in GCC (UAE, Saudi, Qatar, Kuwait)
 - 14-day cooldown: Person entities with `last_commented` within last 14 days — skip those
 
-### Step 2 — Browser Discovery (Ahmed-Mac)
-Use browser tool on Ahmed-Mac node. Run these 5 searches sequentially via LinkedIn:
+### Step 2 — Browser Discovery (Windows Chrome)
+Use the verified Windows OpenClaw-managed Chrome profile through `browser.proxy`. Run these 5 searches sequentially via LinkedIn:
 1. `https://www.linkedin.com/search/results/content/?keywords=digital+transformation+AI+GCC&datePosted=past-24h&sortBy=date_posted`
 2. `https://www.linkedin.com/search/results/content/?keywords=HealthTech+digital+health+Saudi+UAE&datePosted=past-24h&sortBy=date_posted`
 3. `https://www.linkedin.com/search/results/content/?keywords=FinTech+payments+BNPL+Middle+East&datePosted=past-24h&sortBy=date_posted`
@@ -84,6 +86,8 @@ Reply "⏭ Skipped" and move on.
 
 ## Key Rules
 - Only post after explicit ✅ approval — never auto-post
+- Use only the verified Windows OpenClaw-managed Chrome profile through `browser.proxy` for authenticated LinkedIn reads and writes; never request the extension
+- Never fall back to Ahmed-Mac, a VPS browser, exported cookies, or a server-side authenticated session
 - No em dashes anywhere in comments
 - Max 5 posts per day (never more)
 - Skip authors commented on in last 14 days
@@ -98,9 +102,9 @@ Reply "⏭ Skipped" and move on.
 
 **Context:** Two high-severity LinkedIn incidents in the prior week directly impact this workflow:
 
-1. **Account verification pre-flight (from 3/23 wrong-account incident):** Before Step 6 (posting), ALWAYS verify which account the browser is authenticated as. The 3/23 incident posted comments under "Nasr Nasr" instead of Ahmed's account because Camofox cookies belonged to the wrong person. HARD RULE: Before any LinkedIn write action, verify authenticated account matches Ahmed (urn:li:person:mm8EyA56mj) or Ahmed-Mac Chrome. If in doubt, abort and ask.
+1. **Account verification pre-flight (from 3/23 wrong-account incident):** Before Step 6 (posting), ALWAYS verify which account the browser is authenticated as. The 3/23 incident posted comments under "Nasr Nasr" instead of Ahmed's account because Camofox cookies belonged to the wrong person. HARD RULE: Before any LinkedIn write action, verify authenticated account matches Ahmed (urn:li:person:mm8EyA56mj) in the Windows Chrome lane. If in doubt, abort and ask.
 
-2. **Browser discovery fallback (from 3/23 cookie expiration):** Step 2 relies on Ahmed-Mac Chrome browser. If Ahmed-Mac is offline, skip that day's scan entirely — do NOT fall back to Camofox or server-side scraping for anything that involves authenticated LinkedIn access. The 14-day cooldown in Step 1 also depends on correct account identity.
+2. **Browser discovery fallback (from 3/23 cookie expiration):** Step 2 relies on the Windows Chrome extension lane. If it is unavailable, skip that day's scan entirely — do NOT fall back to Ahmed-Mac, Camofox, or server-side scraping for anything that involves authenticated LinkedIn access. The 14-day cooldown in Step 1 also depends on correct account identity.
 
 3. **Comment posting verification (from 3/29 agent going rogue):** After Step 6 posts a comment, verify the comment actually appears on the post page before reporting success. The 3/29 incident showed LinkedIn sometimes silently drops comments — never assume click = posted. Navigate back to the post and confirm the comment text is visible.
 
@@ -115,7 +119,7 @@ Reply "⏭ Skipped" and move on.
 
 **Improvements to keep active:**
 1. **Turn Step 6 into a hard pre-flight + post-flight block.** Require account identity check, comment submission, like action, then visible confirmation of both before success is reported.
-2. **Add explicit forbidden fallbacks.** State clearly: no Camofox cookies, no server-side authenticated fallback, no posting from any account that is not Ahmed-Mac Chrome.
+2. **Add explicit forbidden fallbacks.** State clearly: no Ahmed-Mac, no Camofox cookies, no server-side authenticated fallback, and no posting from any account other than Ahmed's verified account in Windows Chrome.
 3. **Add an `eval/checklist.md`.** This skill currently has no dedicated checklist file. It should have a compact approval/posting checklist covering account identity, cooldown, URL match, posted-comment visibility, and ontology update.
 4. **Separate discovery success from posting success.** Finding good posts is not completion. Completion only happens after approval flow, verified comment publish, and graph update all pass.
 
@@ -141,7 +145,7 @@ Reply "⏭ Skipped" and move on.
 
 **Improvements to add next:**
 1. **Bind every approval card to an immutable post identity.** Include activity URN, author profile URL, and a short hash of the approved comment text. Step 6 must re-check all three before typing anything.
-2. **Abort on environment drift.** If Ahmed-Mac is offline, the authenticated account changed, the post resolves to a different activity, or cooldown status cannot be proven, abort and regenerate cards instead of improvising.
+2. **Abort on environment drift.** If the Windows Chrome lane is unavailable, the authenticated account changed, the post resolves to a different activity, or cooldown status cannot be proven, abort and regenerate cards instead of improvising.
 3. **Make proof-of-post a first-class output.** Success requires a fresh post-submit snapshot showing Ahmed's visible comment text on the exact post, plus the like state when that step runs.
 4. **Create the missing `eval/checklist.md`.** Keep it binary and short: right account, right post, cooldown clear, approved text unchanged, visible comment confirmed, ontology updated.
 
@@ -153,7 +157,7 @@ Reply "⏭ Skipped" and move on.
 - 2026-04-20, live LinkedIn write workflows need timely blocker escalation and verified success only.
 
 **Improvement recommendation:**
-1. **Add a same-session lane check before discovery and before posting.** Discovery must prove Ahmed-Mac Chrome is online and logged into Ahmed's account. Posting must re-prove the same account before typing or liking anything.
+1. **Add a same-session lane check before discovery and before posting.** Discovery must prove Windows Chrome is connected and logged into Ahmed's account. Posting must re-prove the same account before typing or liking anything.
 2. **Bind approvals to immutable post identity.** Each approval card should include activity URN, post URL, author profile URL, and approved comment text hash. Step 6 should re-check all fields before submitting so stale approvals cannot land on the wrong post.
 3. **Treat write-path ambiguity as a hard abort.** If the account, post identity, cooldown status, or visible comment proof cannot be verified, abort and regenerate cards rather than improvising with another browser/session.
 4. **Escalate live blockers quickly.** If submit or proof-of-post fails twice, report the blocker in thread 7 with a concise recovery option. Do not keep retrying silently or imply that the comment is posted before visible proof exists.
@@ -169,7 +173,7 @@ Reply "⏭ Skipped" and move on.
 - 2026-04-23, use the exact account Ahmed specifies for live auth or publishing flows.
 
 **Improvement recommendation:**
-1. **Add a lane-exposure preflight.** Before discovery and again before posting, prove Ahmed-Mac Chrome is online, logged into the correct Ahmed account, and able to access the target post.
+1. **Add a lane-exposure preflight.** Before discovery and again before posting, prove Windows Chrome is connected, logged into the correct Ahmed account, and able to access the target post.
 2. **Bind approvals to immutable identity.** Approval cards should include activity URN, post URL, author profile URL, and a hash or exact copy of the approved comment text. Step 6 must re-check all fields before typing.
 3. **Create the missing `eval/checklist.md`.** Keep it binary: correct account, correct post, cooldown clear, approved text unchanged, visible comment confirmed, like state checked, ontology updated, blocker escalated after two failed proof attempts.
 
@@ -183,10 +187,10 @@ Reply "⏭ Skipped" and move on.
 - 2026-04-22, prove lane exposure before blaming stale sessions or asking Ahmed to reconnect.
 
 **Improvement recommendation:**
-1. **Create the missing engagement checklist.** Add `eval/checklist.md` with binary checks for Ahmed-Mac online, correct Ahmed account, activity URN match, author URL match, cooldown clear, approved text unchanged, visible comment confirmed, like state checked, and ontology updated.
+1. **Create the missing engagement checklist.** Add `eval/checklist.md` with binary checks for Windows Chrome connected, correct Ahmed account, activity URN match, author URL match, cooldown clear, approved text unchanged, visible comment confirmed, like state checked, and ontology updated.
 2. **Make approval cards self-verifying.** Each card should include post URL, activity URN, author profile URL, and exact approved comment text so Step 6 can re-check identity before typing.
 3. **Keep Telegram confirmations meaningful.** After a comment is posted, send one visible status with the post URL, visible-comment proof, like state, and ontology update result. Avoid extra private closeouts unless there is a real blocker.
-4. **Fail fast on lane drift.** If Ahmed-Mac, account identity, target post, or visible proof fails twice, abort and report the blocker instead of falling back to another account or session.
+4. **Fail fast on lane drift.** If Windows Chrome, account identity, target post, or visible proof fails twice, abort and report the blocker instead of falling back to another account or session.
 
 ### 2026-05-23 - Weekly Skill Tune-Up
 
@@ -201,7 +205,7 @@ Reply "⏭ Skipped" and move on.
 1. **Verify approval-card visibility, not just send success.** After sending the 5 Telegram approval cards, confirm the cards are visible in thread 7 with actionable approve/edit/skip controls or provide a plain-text fallback that still preserves post identity.
 2. **Treat missing interactive controls as a degraded state.** If buttons or thread delivery fail, do not proceed to any posting path. Re-send a text-only approval card with the post URL, activity URN, author URL, and exact comment text.
 3. **Keep post approval bound to exact evidence.** Approval should reference immutable post identity plus the exact approved comment text, not just "post n".
-4. **Add the missing checklist next.** `eval/checklist.md` should include Telegram card visibility, Ahmed-Mac online, correct account, activity URN match, author URL match, cooldown clear, approved text unchanged, visible comment confirmed, like state checked, and ontology updated.
+4. **Add the missing checklist next.** `eval/checklist.md` should include Telegram card visibility, Windows Chrome connected, correct account, activity URN match, author URL match, cooldown clear, approved text unchanged, visible comment confirmed, like state checked, and ontology updated.
 
 ### 2026-05-30 - Weekly Skill Tune-Up
 
@@ -215,8 +219,8 @@ Reply "⏭ Skipped" and move on.
 **Improvement recommendation:**
 1. **Verify approval-card visibility as a gate.** After sending engagement cards to thread 7, confirm the cards and controls are visible or provide a text-only fallback with full post identity.
 2. **Do not treat send success as approval readiness.** If buttons, thread delivery, or card visibility cannot be proven, stop before posting and report the degraded approval state.
-3. **Re-check lane and account before every write action.** Posting still requires Ahmed-Mac online, correct Ahmed account, exact activity URN, author URL, approved text unchanged, cooldown clear, and visible proof after submit.
-4. **Create `eval/checklist.md` next.** Include Telegram card visibility, fallback-card completeness, Ahmed-Mac/account check, post identity match, cooldown, approved text match, visible comment proof, like state, ontology update, and one meaningful closeout.
+3. **Re-check lane and account before every write action.** Posting still requires Windows Chrome connected, correct Ahmed account, exact activity URN, author URL, approved text unchanged, cooldown clear, and visible proof after submit.
+4. **Create `eval/checklist.md` next.** Include Telegram card visibility, fallback-card completeness, Windows Chrome/account check, post identity match, cooldown, approved text match, visible comment proof, like state, ontology update, and one meaningful closeout.
 
 ### 2026-06-06 - Weekly Skill Tune-Up
 
@@ -228,7 +232,7 @@ Reply "⏭ Skipped" and move on.
 - 2026-06-02, LinkedIn Upload Success Needs Visible Exact-CV Proof.
 
 **Improvement recommendation:**
-1. **Forbid cookie-based engagement recovery.** If engagement discovery or posting hits redirects, 429, or auth drift, do not inspect or repair cookies. Use Ahmed-Mac Chrome or another visible authenticated profile, or stop.
+1. **Forbid cookie-based engagement recovery.** If engagement discovery or posting hits redirects, 429, or auth drift, do not inspect or repair cookies. Use only the already-visible authenticated Windows Chrome lane, or stop.
 2. **Keep approvals bound to the visible session.** Approval cards should remain tied to activity URN, author URL, approved comment text, and the browser profile/account that produced the evidence.
 3. **Use one visible LinkedIn tab for engagement posting.** Reuse the authenticated LinkedIn tab through comment submission and proof capture. Do not open a new tab per post unless no reusable tab exists.
 4. **Report only after visible proof.** A posted comment is complete only when a fresh visible snapshot shows Ahmed's comment on the exact target post, the like state is checked, and ontology `last_commented` is updated.
@@ -245,7 +249,7 @@ Reply "⏭ Skipped" and move on.
 - 2026-05-31, HR Easy Apply Should Reuse LinkedIn Tabs.
 
 **Improvement recommendation:**
-1. **Make cookie repair explicitly forbidden for engagement.** If LinkedIn redirects, 429s, or profile auth drifts, do not inspect, delete, edit, or replay cookies. Use Ahmed-Mac Chrome or another already-visible authenticated profile, or stop and report the blocked state.
+1. **Make cookie repair explicitly forbidden for engagement.** If LinkedIn redirects, 429s, or profile auth drifts, do not inspect, delete, edit, or replay cookies. Use only the already-visible authenticated Windows Chrome lane, or stop and report the blocked state.
 2. **Reuse one visible LinkedIn tab where possible.** Discovery and posting should stay in the same authenticated visible session when feasible, navigating the tab to each approved post instead of spawning fresh pages that lose state.
 3. **Bind approval to browser/profile evidence.** Approval cards should include activity URN, author URL, exact approved comment text, and the visible profile/account used during discovery; Step 6 must re-check all before typing or liking.
 4. **Treat proof as the only completion signal.** Success requires a fresh visible snapshot showing Ahmed's comment on the exact post, like state checked, ontology `last_commented` updated, and one meaningful Telegram closeout. Add these gates to `eval/checklist.md` next.

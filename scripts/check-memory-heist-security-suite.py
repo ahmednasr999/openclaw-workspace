@@ -109,7 +109,16 @@ def run_suite(timeout: int, require_runtime_contract: bool = False) -> dict[str,
             "expectedTests": EXPECTED_TESTS,
         }
 
-    command = ["node", "--test", *(str(path) for path in TEST_FILES)]
+    # Node 22.23+ reports one test per file when the test runner uses its
+    # default process isolation, hiding the 19 individual security cases from
+    # the fail-closed TAP count below. Disable file isolation explicitly so the
+    # gate continues to verify every named case rather than merely two files.
+    command = [
+        "node",
+        "--test",
+        "--experimental-test-isolation=none",
+        *(str(path) for path in TEST_FILES),
+    ]
     try:
         completed = subprocess.run(
             command,

@@ -51,6 +51,41 @@ Evidence checked:
 - End with one recommendation or one approval request.
 - No em dashes. Use commas or hyphens.
 
+## Mandatory verification gates
+
+Do not copy a command's severity or headline into the Ahmed-facing verdict without checking whether the finding is active and current.
+
+### Runtime and update status
+
+- Use the OpenClaw binary that runs the live gateway. Resolve it from the gateway service `ExecStart`, then verify it with `readlink -f` and `--version`.
+- Do not use an old NVM or alternate installation merely because it exists at a hard-coded path.
+- Read `openclaw update status --json`. An update is available only when `availability.available` is true for the active runtime binary and the reported target differs from the active runtime version.
+- If another dormant OpenClaw installation is older, classify that as path/install hygiene, not a live runtime update.
+
+### Deep security scanner findings
+
+- A deep-audit code-pattern severity is scanner output, not proof of exploitation or active exposure.
+- For every `plugins.code_safety` finding, run `openclaw plugins inspect <plugin> --runtime --json` and inspect the cited source.
+- Treat it as Critical only when the plugin is enabled/activated in the live runtime and the cited path is confirmed dangerous or externally reachable.
+- If the plugin is disabled and not activated, report the scanner hit under Monitor or maintenance review. Do not call it an active security incident.
+- Preserve the raw scanner count in Evidence, but use the verified severity in the verdict.
+
+### Delivery queue history
+
+- A failed-queue total is cumulative history, not a current outage.
+- Verify both the newest failure timestamp and whether the count increased since the previous weekly report. Use the state database when health output exposes only `oldestFailedAt`.
+- Escalate only new or recurring failures that affect current delivery. If the newest failure is older than seven days and current channel probes pass, report the backlog as historical cleanup under Monitor.
+
+### Tasks and TaskFlows
+
+- Run `openclaw tasks audit --json` before reporting task issues.
+- Active errors, lost work, or repeatedly failing current workflows can be Important or Critical according to impact.
+- Old stale queued records, ended blocked flows, and missing links to already-finished historical tasks are maintenance cleanup, not active runtime degradation.
+
+### Final consistency check
+
+Before sending the card, verify that the headline, urgency, recommendation, and Critical section agree. A healthy core with only dormant or historical records must not receive an emergency headline.
+
 ## Severity guide
 
 ### 🚨 Critical, interrupt Ahmed

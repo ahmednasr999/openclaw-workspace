@@ -11,15 +11,17 @@ metadata: {"clawdbot":{"emoji":"💼"}}
 
 Use browser automation to interact with LinkedIn - check messages, view profiles, search, and send connection requests.
 
+**Ahmed-specific lane decision (2026-08-08):** Use the Windows `openclaw` managed profile through `browser.proxy`. This lane is extension-free. Do not ask Ahmed to install, pair, or attach the Chrome extension. Do not fall back to Ahmed-Mac, exported cookies, or a server-side authenticated browser.
+
 ## Connection Methods
 
-### Option 1: Chrome Extension Relay (Recommended)
-1. Open LinkedIn in Chrome and log in
-2. Click the Clawdbot Browser Relay toolbar icon to attach the tab
-3. Use `browser` tool with `profile="chrome"`
+### Option 1: Windows Managed Chrome (Ahmed's Approved Lane)
+1. Use `browser` with `profile="openclaw"`; the gateway routes it to Windows through `browser.proxy`.
+2. Open LinkedIn and complete a one-time manual login if the persistent profile is signed out.
+3. Reuse the labeled LinkedIn tab; no extension pairing is involved.
 
-### Option 2: Isolated Browser
-1. Use `browser` tool with `profile="clawd"` 
+### Option 2: Other Isolated Browser
+1. Use `browser` tool with the approved managed profile.
 2. Navigate to linkedin.com
 3. Log in manually (one-time setup)
 4. Session persists for future use
@@ -38,34 +40,34 @@ Do not open a new tab per job, profile, search, upload, or retry. Use one labele
 
 ### Check Connection Status
 ```
-browser action=tabs profile=chrome
+browser action=tabs profile=openclaw
 # If no suitable LinkedIn tab exists:
-browser action=open profile=chrome url="https://www.linkedin.com/feed/" label="linkedin-profile"
-browser action=snapshot profile=chrome targetId="linkedin-profile"
+browser action=open profile=openclaw url="https://www.linkedin.com/feed/" label="linkedin-profile"
+browser action=snapshot profile=openclaw targetId="linkedin-profile"
 ```
 
 ### View Notifications/Messages
 ```
-browser action=tabs profile=chrome
+browser action=tabs profile=openclaw
 # If no suitable LinkedIn tab exists:
-browser action=open profile=chrome url="https://www.linkedin.com/messaging/" label="linkedin-profile"
-browser action=snapshot profile=chrome targetId="linkedin-profile"
+browser action=open profile=openclaw url="https://www.linkedin.com/messaging/" label="linkedin-profile"
+browser action=snapshot profile=openclaw targetId="linkedin-profile"
 ```
 
 ### Search People
 ```
-browser action=tabs profile=chrome
+browser action=tabs profile=openclaw
 # If no suitable LinkedIn tab exists:
-browser action=open profile=chrome url="https://www.linkedin.com/search/results/people/?keywords=QUERY" label="linkedin-profile"
-browser action=snapshot profile=chrome targetId="linkedin-profile"
+browser action=open profile=openclaw url="https://www.linkedin.com/search/results/people/?keywords=QUERY" label="linkedin-profile"
+browser action=snapshot profile=openclaw targetId="linkedin-profile"
 ```
 
 ### View Profile
 ```
-browser action=tabs profile=chrome
+browser action=tabs profile=openclaw
 # If no suitable LinkedIn tab exists:
-browser action=open profile=chrome url="https://www.linkedin.com/in/USERNAME/" label="linkedin-profile"
-browser action=snapshot profile=chrome targetId="linkedin-profile"
+browser action=open profile=openclaw url="https://www.linkedin.com/in/USERNAME/" label="linkedin-profile"
+browser action=snapshot profile=openclaw targetId="linkedin-profile"
 ```
 
 ### Send Message (confirm with user first!)
@@ -125,7 +127,7 @@ Add completion guard: verify ALL required outputs (image, Notion update, etc.) b
 
 **Improvement recommendation:**
 1. **Add a LinkedIn content pre-flight.** Before any content, visual, or posting action, identify the requested artifact type: text post, single-image post, carousel asset, carousel preview, comment, message, or profile/network action.
-2. **Verify the live lane before user-facing fixes.** If a LinkedIn action fails, first prove whether the relevant lane is available: Ahmed-Mac Chrome for authenticated browser work, or the configured Composio/LinkedIn tool lane for approved posting. Do not send Ahmed through reconnect loops until lane exposure is proven.
+2. **Verify the live lane before user-facing fixes.** If a LinkedIn action fails, first prove whether the relevant lane is available: Windows Chrome extension for authenticated browser work, or the configured Composio/LinkedIn tool lane for approved posting. Do not use Ahmed-Mac as a LinkedIn fallback or send Ahmed through reconnect loops until lane exposure is proven.
 3. **Separate draft, staged, and published states.** A post is not complete until the required text, image or carousel, destination account, live URL, and rendered content are all verified. If an image was expected, text-only publishing is a failure unless Ahmed explicitly approves the downgrade.
 4. **Surface blockers after two failed publish paths.** For live posting, give short progress updates while debugging. If two independent publish paths fail, stop silently retrying and report the blocker with the fastest safe alternative.
 5. **Create a future `eval/checklist.md`.** Cover artifact type, account identity, media requirement, full text verification, live URL, rendered post check, and Notion/status update when relevant.

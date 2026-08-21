@@ -185,7 +185,12 @@ def check_memory_heist_guard_security_suite(failures: list[str]) -> None:
         return
     try:
         suite = subprocess.run(
-            ["node", "--test", *(str(path) for path in tests)],
+            [
+                "node",
+                "--test",
+                "--experimental-test-isolation=none",
+                *(str(path) for path in tests),
+            ],
             cwd=WORKSPACE,
             text=True,
             capture_output=True,

@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "project": {
+    "title": "Project title",
+    "mode": "production",
+    "goal": "What the video must achieve",
+    "duration_seconds": 6.0,
+    "aspect_ratio": "9:16",
+    "platform": "Primary platform",
+    "language": "en",
+    "fps": 24
+  },
+  "rights": [
+    {
+      "asset_id": "PROD-01",
+      "type": "product-and-trademark",
+      "status": "pending",
+      "scope": "Internal concept only",
+      "evidence": "TBD",
+      "required_disclosure": "AI-generated visualization; final product use requires brand approval."
+    }
+  ],
+  "references": [
+    {
+      "id": "PROD-01",
+      "category": "product",
+      "path": "references/product-hero.png",
+      "primary": true,
+      "locked": [
+        "silhouette",
+        "geometry",
+        "materials",
+        "palette"
+      ],
+      "may_vary": [
+        "camera angle",
+        "reflections"
+      ],
+      "forbidden": [
+        "redesign",
+        "invented text"
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "shot_id": "S001",
+      "start_seconds": 0.0,
+      "duration_seconds": 2.5,
+      "purpose": "Earn attention and establish the visual world",
+      "reference_ids": [
+        "PROD-01"
+      ],
+      "action": "The product rises once through a controlled ribbon of material",
+      "framing": "Centered medium product shot",
+      "camera": "Slow push-in",
+      "lighting": "Approved key and rim light",
+      "transition_in": "Cut from black",
+      "transition_out": "End with product centered and motion settled",
+      "audio": "Low rise and one material detail",
+      "prompt": "Write the complete per-shot generation prompt here.",
+      "negative_constraints": [
+        "product redesign",
+        "invented text",
+        "flicker"
+      ],
+      "acceptance_criteria": [
+        "PROD-01 geometry remains stable throughout",
+        "The final 12 frames form a clean edit handle"
+      ],
+      "status": "planned",
+      "source_asset": "",
+      "revision": 1
+    },
+    {
+      "shot_id": "S002",
+      "start_seconds": 2.5,
+      "duration_seconds": 3.5,
+      "purpose": "Deliver the hero image and CTA hold",
+      "reference_ids": [
+        "PROD-01"
+      ],
+      "action": "The product remains centered while one environmental element moves slowly",
+      "framing": "Centered hero shot with safe area",
+      "camera": "Locked camera",
+      "lighting": "Approved hero lighting",
+      "transition_in": "Match on product position",
+      "transition_out": "Hold for end card",
+      "audio": "Resolve music and add final impact",
+      "prompt": "Write the complete per-shot generation prompt here.",
+      "negative_constraints": [
+        "product redesign",
+        "invented text",
+        "camera shake"
+      ],
+      "acceptance_criteria": [
+        "CTA safe area remains unobstructed",
+        "The final 24 frames are stable"
+      ],
+      "status": "planned",
+      "source_asset": "",
+      "revision": 1
+    }
+  ],
+  "post": {
+    "music": "TBD licensed or original track",
+    "sound_design": "Action-specific effects and final mix",
+    "voiceover": "None",
+    "on_screen_text": [
+      "Add exact approved copy in post"
+    ],
+    "cta": "TBD",
+    "disclosure": "TBD from rights register",
+    "export_notes": "Master plus platform cutdowns; verify safe areas, loudness, codec, and resolution."
+  }
+}

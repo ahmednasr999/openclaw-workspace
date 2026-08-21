@@ -16,7 +16,18 @@ from zoneinfo import ZoneInfo
 
 ROOT = Path("/root/.openclaw/workspace")
 REPORT_DIR = ROOT / "reports" / "weekly-self-health"
-SELF_HEALTH_JOB_ID = "c7cf8709-4d01-4b9d-a8a3-64ebfe559d7f"
+SELF_HEALTH_JOB_NAMES = {
+    "Weekly OpenClaw read-only health baseline",
+}
+
+# A failed business/maintenance report is important, but it is not an active
+# platform emergency. Reserve cron-driven Critical findings for repeated
+# failures of lanes whose outage directly blocks a live user-facing workflow.
+CORE_CRON_MARKERS = (
+    "publisher",
+    "jobzoom managed daily",
+    "morning brief",
+)
 
 
 def run_json(cmd: list[str], timeout: int) -> tuple[dict | None, str | None]:
@@ -93,11 +104,14 @@ def model_line() -> tuple[str, str | None]:
     return default, None
 
 
-def cron_findings(cron_data: dict | None) -> tuple[list[str], list[str]]:
+def cron_findings(
+    cron_data: dict | None,
+) -> tuple[list[str], list[tuple[str, str, str]], list[str]]:
     critical: list[str] = []
+    important: list[tuple[str, str, str]] = []
     monitor: list[str] = []
     if not cron_data:
-        return critical, monitor
+        return critical, important, monitor
     jobs = cron_data.get("jobs") or []
     error_jobs = []
     for job in jobs:
@@ -111,16 +125,44 @@ def cron_findings(cron_data: dict | None) -> tuple[list[str], list[str]]:
         errors = state.get("consecutiveErrors") or 0
         detail = state.get("lastDiagnosticSummary") or state.get("lastError") or "last run errored"
         text = f"{name}: {detail}"
-        if job.get("id") == SELF_HEALTH_JOB_ID:
+        if name in SELF_HEALTH_JOB_NAMES:
             monitor.append(f"{name}: previous failures before this bounded run - {detail}")
             continue
         if errors >= 2:
-            critical.append(text)
+            if any(marker in name.lower() for marker in CORE_CRON_MARKERS):
+                critical.append(text)
+            else:
+                important.append((
+                    f"Repeated cron failure: {name}",
+                    detail,
+                    "Repair before its next scheduled run; this is not a gateway outage.",
+                ))
         else:
             monitor.append(text)
     if len(error_jobs) > 5:
         monitor.append(f"{len(error_jobs) - 5} additional errored cron job(s) not listed")
-    return critical, monitor
+    return critical, important, monitor
+
+
+def classify_event_loop(event_loop: dict, health_duration_ms: float) -> tuple[str, str]:
+    """Separate an isolated delay sample from sustained gateway degradation."""
+    reasons = set(event_loop.get("reasons") or [])
+    delay_p99 = float(event_loop.get("delayP99Ms") or 0)
+    delay_max = float(event_loop.get("delayMaxMs") or 0)
+    utilization = float(event_loop.get("utilization") or 0)
+    cpu_ratio = float(event_loop.get("cpuCoreRatio") or 0)
+    metrics = (
+        f"p99 {delay_p99:.0f}ms, max {delay_max:.0f}ms, "
+        f"utilization {utilization:.3f}, CPU {cpu_ratio:.3f}, "
+        f"health response {health_duration_ms:.0f}ms"
+    )
+
+    sustained_reasons = reasons.intersection({"event_loop_utilization", "cpu"})
+    severe_delay = delay_p99 >= 3000 or delay_max >= 5000
+    slow_health = health_duration_ms >= 1000
+    if sustained_reasons or severe_delay or slow_health:
+        return "critical", metrics
+    return "transient", metrics
 
 
 def format_card(write_report: bool) -> str:
@@ -144,8 +186,21 @@ def format_card(write_report: bool) -> str:
         event_loop = health.get("eventLoop") or {}
         gateway = "healthy" if ok else "degraded"
         if event_loop.get("degraded"):
-            gateway = f"degraded - event loop {','.join(event_loop.get('reasons') or ['degraded'])}"
-            critical.append(f"Gateway event loop degraded: {event_loop.get('reasons')}")
+            event_loop_level, event_loop_metrics = classify_event_loop(
+                event_loop,
+                float(health.get("durationMs") or 0),
+            )
+            reasons = ",".join(event_loop.get("reasons") or ["degraded"])
+            if event_loop_level == "critical":
+                gateway = f"degraded - event loop {reasons}"
+                critical.append(f"Gateway event loop degraded: {event_loop_metrics}")
+            else:
+                gateway = "responsive - transient event-loop spike"
+                important.append((
+                    "Transient gateway event-loop spike",
+                    event_loop_metrics,
+                    "Monitor; act if it recurs with sustained CPU/utilization or slow health responses.",
+                ))
         channels_data = health.get("channels") or {}
         telegram = channels_data.get("telegram") or {}
         connected = telegram.get("connected")
@@ -159,8 +214,9 @@ def format_card(write_report: bool) -> str:
     if cron_err:
         important.append(("Cron inventory probe failed", cron_err, "Run cron diagnostics separately."))
     else:
-        cron_critical, cron_monitor = cron_findings(crons)
+        cron_critical, cron_important, cron_monitor = cron_findings(crons)
         critical.extend(cron_critical)
+        important.extend(cron_important)
         monitor.extend(cron_monitor)
 
     if security_err:

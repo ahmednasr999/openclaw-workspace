@@ -49,7 +49,7 @@ Action taken: [what CMO did or is doing]
 
 ## 3. From Cron — linkedin-auto-poster.py
 
-**Schedule:** 9:30 AM Cairo, Sun–Thu
+**Schedule:** 9:30 AM Cairo, every calendar day
 **Protocol:**
 - Script runs autonomously — no approval needed for already-Scheduled posts
 - Posts content with Status=Scheduled and Planned Date=today

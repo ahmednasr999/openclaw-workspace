@@ -48,8 +48,10 @@ Before retrying, re-check the live feed, local success log, and Notion state to 
 ## Content Quality
 
 - Executive, practical, specific, and grounded in real evidence.
+- Label every planned post as Reach, Authority, or Conversion. For the active seven-post daily cadence, target 2 Reach, 3 Authority, and 2 Conversion posts per rolling seven days.
+- Track qualified conversations separately from impressions and engagement.
 - End with a useful question or call to action when appropriate.
-- Use Ahmed's approved hand-drawn sketchnote visual direction unless he requests another style.
+- Use Ahmed's approved hand-drawn sketchnote visual direction unless he requests another style. Before normal static-image generation, require the scored concept brief from `/root/.openclaw/workspace/skills/nasr-visual-metaphor/SKILL.md`; default to 4:5 portrait and keep concept approval separate from final-visual approval.
 - Never publish text-only when a visual is expected.
 - Never fabricate metrics, roles, achievements, or stories.
 

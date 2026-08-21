@@ -32,7 +32,6 @@
   "stale_helper_age_seconds": 300,
   "telegram_target": "866838380",
   "heavy_tasks": [
-    "backup-restore-smoke-test",
     "cmo-notion-linkedin-post",
     "daily-snapshot",
     "executive-intelligence-brief",

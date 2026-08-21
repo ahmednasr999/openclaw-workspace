@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+import fcntl
 import hashlib
 import html
 import json
@@ -25,6 +26,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
+from contextlib import contextmanager
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from email.header import decode_header
@@ -53,6 +55,11 @@ POLL_SECONDS = int(os.environ.get("HR_SENTINEL_POLL_SECONDS", "10"))
 RECOVERY_DAYS = int(os.environ.get("HR_SENTINEL_RECOVERY_DAYS", "8"))
 MIN_CONFIDENCE = int(os.environ.get("HR_SENTINEL_MIN_CONFIDENCE", "70"))
 MAX_MODEL_THREAD_CHARS = int(os.environ.get("HR_SENTINEL_MAX_THREAD_CHARS", "200000"))
+CYCLE_LOCK_PATH = Path(os.environ.get(
+    "HR_SENTINEL_CYCLE_LOCK_PATH",
+    "/var/lock/openclaw/hr-career-sentinel-cycle.lock",
+))
+CYCLE_LOCK_TIMEOUT_SECONDS = int(os.environ.get("HR_SENTINEL_CYCLE_LOCK_TIMEOUT_SECONDS", "900"))
 
 ATTENTION_EVENTS = {
     "interview_invited",
@@ -122,6 +129,16 @@ GENERIC_JOB_ALERT_RE = re.compile(
     re.IGNORECASE,
 )
 
+PUBLIC_VACANCY_NOTICE_RE = re.compile(
+    r"^\s*(?:new\s+)?job\s+vacanc(?:y|ies)(?:\s+(?:announcement|notice|bulletin))?\s*$",
+    re.IGNORECASE,
+)
+
+AUTOMATED_NOTIFICATION_SENDER_RE = re.compile(
+    r"(?:^|[._+\-])(notify|notification|alerts?)(?:[._+\-]|@)",
+    re.IGNORECASE,
+)
+
 LINKEDIN_NOISE_RE = re.compile(
     r"\b(linkedin|people\s+you\s+may\s+know|network\s+update|profile\s+views?|"
     r"connections?\s+update|daily\s+rundown|weekly\s+digest)\b",
@@ -156,6 +173,37 @@ def json_log(event: str, *, log_path: Path = LOG_PATH, **fields: Any) -> None:
 def stable_hash(value: Any, length: int = 40) -> str:
     payload = json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()[:length]
+
+
+class CycleLockTimeout(RuntimeError):
+    """Raised when another sentinel process holds the shared production-cycle lock."""
+
+
+@contextmanager
+def cycle_lock(
+    path: Path = CYCLE_LOCK_PATH,
+    *,
+    timeout_seconds: float = CYCLE_LOCK_TIMEOUT_SECONDS,
+) -> Iterable[None]:
+    """Serialize live Pub/Sub cycles and scheduled reconciliation processes."""
+    lock_path = Path(path)
+    lock_path.parent.mkdir(parents=True, exist_ok=True)
+    deadline = time.monotonic() + max(0.0, timeout_seconds)
+    with lock_path.open("a+", encoding="utf-8") as handle:
+        while True:
+            try:
+                fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                break
+            except BlockingIOError:
+                if time.monotonic() >= deadline:
+                    raise CycleLockTimeout(
+                        f"sentinel cycle lock timeout after {timeout_seconds:g}s"
+                    )
+                time.sleep(min(0.1, max(0.01, deadline - time.monotonic())))
+        try:
+            yield
+        finally:
+            fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
 
 
 def decode_mime_header(value: str) -> str:
@@ -311,6 +359,12 @@ def noise_reason(thread: dict[str, Any]) -> str | None:
 
     if GENERIC_JOB_ALERT_RE.search(latest_text):
         return "generic_job_alert"
+    if PUBLIC_VACANCY_NOTICE_RE.fullmatch(subject) and (
+        AUTOMATED_NOTIFICATION_SENDER_RE.search(sender)
+        or latest.get("list_unsubscribe")
+        or str(latest.get("precedence") or "").lower() in {"bulk", "list", "junk"}
+    ):
+        return "generic_job_alert"
     if LINKEDIN_NOISE_RE.search(latest_text) and not has_action:
         return "linkedin_digest_or_social"
     if SOCIAL_RE.search(latest_text) and not has_action:
@@ -409,7 +463,10 @@ def apply_policy(thread: dict[str, Any], result: dict[str, Any]) -> dict[str, An
 
     explicit_action = result["event_state"] in ATTENTION_EVENTS
     forced_action = result["requires_response"] or _deadline_present(result["deadline"])
-    attention = bool(result["requires_attention"] and explicit_action) or forced_action
+    # A validated material event is authoritative after the deterministic veto,
+    # sender, recruitment, confidence, and active-process gates above. Do not let
+    # a contradictory model boolean suppress an interview or hiring outcome.
+    attention = explicit_action or forced_action
     if attention and result["event_state"] not in ATTENTION_EVENTS:
         result = {**result, "event_state": "response_required" if result["requires_response"] else "deadline_changed"}
     if attention and result["importance"] == "low":
@@ -754,8 +811,21 @@ class GmailClient:
     def get_thread(self, thread_id: str) -> dict[str, Any]:
         return gmail_thread_from_json(self._gog(["thread", "get", thread_id, "--full"]))
 
+    def message_thread_id(self, message_id: str) -> str:
+        """Resolve a Gmail message ID to its thread ID without reading its body."""
+        payload = self._gog([
+            "get", str(message_id), "--format=metadata", "--headers=From,Subject",
+        ])
+        root = payload.get("message") if isinstance(payload.get("message"), dict) else payload
+        thread_id = str(root.get("threadId") or "") if isinstance(root, dict) else ""
+        if not thread_id:
+            raise RuntimeError(f"Gmail message {message_id} has no threadId")
+        return thread_id
+
     def recent_thread_ids(self, days: int = RECOVERY_DAYS, *, limit: int = 25) -> list[str]:
-        payload = self._gog(["search", f"newer_than:{max(1, days)}d", f"--max={max(1, limit)}"])
+        payload = self._gog([
+            "search", f"in:inbox newer_than:{max(1, days)}d", "--all", f"--max={max(1, limit)}",
+        ])
         rows = payload.get("threads") if isinstance(payload.get("threads"), list) else []
         return [str(row.get("id")) for row in rows if isinstance(row, dict) and row.get("id")]
 
@@ -791,6 +861,15 @@ class GmailClient:
             for message in self._history_message_objects(payload.get("history") or [])
             if message.get("threadId")
         }
+        # gog v0.12 flattens Gmail history into a top-level `messages` array.
+        # Entries may be message-ID strings rather than Gmail message objects,
+        # so resolve those IDs with metadata-only reads before checkpointing.
+        flat_messages = payload.get("messages") if isinstance(payload.get("messages"), list) else []
+        for item in flat_messages:
+            if isinstance(item, dict) and item.get("threadId"):
+                thread_ids.add(str(item["threadId"]))
+            elif isinstance(item, str) and item.strip():
+                thread_ids.add(self.message_thread_id(item.strip()))
         return sorted(thread_ids), str(payload.get("historyId") or "") or None
 
 
@@ -926,6 +1005,24 @@ class CareerSentinel:
         if last_history:
             try:
                 thread_ids, response_history = self.gmail.history_thread_ids(last_history)
+                if (
+                    not thread_ids
+                    and response_history
+                    and str(response_history) != str(last_history)
+                ):
+                    recovered = self.gmail.thread_ids_near_publish_time(
+                        str(payload.get("publish_time") or "")
+                    )
+                    json_log(
+                        "empty_history_recovered",
+                        log_path=self.log_path,
+                        threads=len(recovered),
+                    )
+                    if recovered:
+                        return recovered, response_history or notification_history
+                    raise RuntimeError(
+                        "Gmail history advanced but resolved zero threads and timestamp recovery was empty"
+                    )
                 return thread_ids, response_history or notification_history or last_history
             except Exception as exc:
                 json_log("history_fallback", log_path=self.log_path, error=str(exc)[-300:])
@@ -991,6 +1088,57 @@ class CareerSentinel:
         self.process_notifications()
         self.deliver_pending()
 
+    def reconcile_recent(self, *, days: int = 1, max_threads: int = 500) -> dict[str, int]:
+        """Process recent Gmail threads without depending on Pub/Sub notification delivery."""
+        before = self.deliver_pending()
+        try:
+            thread_ids = self.gmail.recent_thread_ids(days, limit=max_threads)
+        except Exception as exc:
+            json_log("reconciliation_failed", log_path=self.log_path, error=str(exc)[-500:])
+            raise
+
+        counts = {
+            "scanned": len(thread_ids),
+            "processed": 0,
+            "already_processed": 0,
+            "alerts_created": 0,
+            "failed": 0,
+        }
+        for index, thread_id in enumerate(thread_ids, start=1):
+            try:
+                outcome = self.process_thread(self.gmail.get_thread(thread_id))
+                if outcome.get("status") == "already_processed":
+                    counts["already_processed"] += 1
+                else:
+                    counts["processed"] += 1
+                counts["alerts_created"] += int(bool(outcome.get("alert_created")))
+            except Exception as exc:
+                counts["failed"] += 1
+                json_log(
+                    "reconciliation_thread_failed",
+                    log_path=self.log_path,
+                    thread_index=index,
+                    error=str(exc)[-500:],
+                )
+
+        after = self.deliver_pending()
+        json_log(
+            "reconciliation_completed",
+            log_path=self.log_path,
+            days=max(1, days),
+            max_threads=max(1, max_threads),
+            **counts,
+            delivery_attempted=before["attempted"] + after["attempted"],
+            delivery_delivered=before["delivered"] + after["delivered"],
+            delivery_failed=before["failed"] + after["failed"],
+            delivery_uncertain=before["uncertain"] + after["uncertain"],
+        )
+        if counts["failed"]:
+            raise RuntimeError(
+                f"scheduled reconciliation failed for {counts['failed']} of {counts['scanned']} threads"
+            )
+        return counts
+
 
 def dry_run(
     gmail: GmailClient,
@@ -1020,10 +1168,20 @@ def dry_run(
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Silent HR-only Gmail career alert sentinel")
-    parser.add_argument("--once", action="store_true", help="Run one production poll cycle and exit")
-    parser.add_argument("--dry-run", action="store_true", help="Classify recent Gmail threads without state or delivery")
-    parser.add_argument("--days", type=int, default=1, help="Dry-run Gmail lookback in days")
-    parser.add_argument("--max-threads", type=int, default=10, help="Maximum recent threads to inspect in dry-run mode")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--once", action="store_true", help="Run one production Pub/Sub cycle and exit")
+    mode.add_argument(
+        "--reconcile",
+        action="store_true",
+        help="Process recent Gmail threads as a production fallback and exit",
+    )
+    mode.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Classify recent Gmail threads without state or delivery",
+    )
+    parser.add_argument("--days", type=int, default=1, help="Recent Gmail lookback in days")
+    parser.add_argument("--max-threads", type=int, default=10, help="Maximum recent threads to inspect")
     parser.add_argument("--state", type=Path, default=STATE_PATH, help=argparse.SUPPRESS)
     return parser
 
@@ -1059,12 +1217,18 @@ def main(argv: list[str] | None = None) -> int:
     signal.signal(signal.SIGTERM, request_stop)
     signal.signal(signal.SIGINT, request_stop)
     try:
+        if args.reconcile:
+            with cycle_lock():
+                sentinel.reconcile_recent(days=args.days, max_threads=args.max_threads)
+            return 0
         if args.once:
-            sentinel.run_once()
+            with cycle_lock():
+                sentinel.run_once()
             return 0
         while not stop:
             try:
-                sentinel.run_once()
+                with cycle_lock():
+                    sentinel.run_once()
             except Exception as exc:
                 json_log("cycle_failed", error=str(exc)[-500:])
             for _ in range(max(1, POLL_SECONDS)):
