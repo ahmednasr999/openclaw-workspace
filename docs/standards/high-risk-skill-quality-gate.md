@@ -4,6 +4,8 @@
 
 New or materially changed high-risk skills must pass the reusable A/B gate before promotion. The gate is intentionally scoped to public, credentialed, career, messaging, and runtime workflows; cosmetic skill edits do not trigger live evaluation.
 
+Enforcement mode is `required_before_promotion`. A materially changed high-risk skill is not promotion-ready until a passing result with no-write dry runs is sealed into a content-bound attestation and `check-promotion` confirms that the current skill tree is the exact evaluated candidate. CI and pre-commit wiring remain deferred until all three initial high-risk skills have completed controlled proofs.
+
 ## Promotion contract
 
 A promotion passes only when all conditions are true:
@@ -60,6 +62,18 @@ python3 scripts/skill-quality-gate.py run \
   --candidate-ref WORKTREE \
   --run-dry-runs
 ```
+
+Seal a passing result and verify that the current tree is still identical:
+
+```bash
+python3 scripts/skill-quality-gate.py attest \
+  --results output/skill-quality-gate/runs/<run>/results.json
+
+python3 scripts/skill-quality-gate.py check-promotion \
+  --skill content-publishing-safety
+```
+
+Any edit under the skill directory invalidates the attestation until the gate is rerun and resealed.
 
 For controlled historical proof, both arms may be Git refs. The output directory retains responses, event usage, per-attempt machine grades, aggregate costs, regressions, and the final promotion decision.
 

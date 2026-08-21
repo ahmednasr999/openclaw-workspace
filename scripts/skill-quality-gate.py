@@ -72,6 +72,14 @@ def validate_policy(config: dict[str, Any], cases_doc: dict[str, Any]) -> list[s
     if int(config.get("attempts", 0)) < int(thresholds.get("minimum_attempts", 3)):
         errors.append("Configured attempts are below minimum_attempts")
 
+    enforcement = config.get("enforcement") or {}
+    if enforcement.get("mode") != "required_before_promotion":
+        errors.append("Enforcement mode must be required_before_promotion")
+    if not enforcement.get("attestations_dir"):
+        errors.append("Enforcement attestations_dir is required")
+    if enforcement.get("require_dry_runs") is not True:
+        errors.append("Promotion enforcement must require no-write dry runs")
+
     skills = cases_doc.get("skills")
     if not isinstance(skills, dict) or not skills:
         return errors + ["Cases document has no skills"]
@@ -239,6 +247,127 @@ def verify_manifest(manifest: dict[str, Any]) -> list[str]:
     actual_files = {item["path"]: item["sha256"] for item in actual["files"]}
     if expected_files != actual_files:
         errors.append("Baseline file hashes do not match manifest")
+    return errors
+
+
+def skill_snapshot(skill: str, ref: str) -> dict[str, Any]:
+    prefix = f"skills/{skill}"
+    files: list[dict[str, Any]] = []
+    if ref == "WORKTREE":
+        source = ROOT / prefix
+        if not source.is_dir():
+            raise GateError(f"Skill directory is unavailable: {source}")
+        paths = sorted(path for path in source.rglob("*") if path.is_file())
+        for path in paths:
+            content = path.read_bytes()
+            files.append(
+                {
+                    "path": path.relative_to(ROOT).as_posix(),
+                    "sha256": hashlib.sha256(content).hexdigest(),
+                    "bytes": len(content),
+                }
+            )
+    else:
+        commit = resolved_commit(ref)
+        names = str(git_output(["ls-tree", "-r", "--name-only", commit, "--", prefix])).splitlines()
+        if not names:
+            raise GateError(f"No tracked files found for {skill} at {commit}")
+        for name in names:
+            content = bytes(git_output(["show", f"{commit}:{name}"], binary=True))
+            files.append(
+                {
+                    "path": name,
+                    "sha256": hashlib.sha256(content).hexdigest(),
+                    "bytes": len(content),
+                }
+            )
+    digest_input = "\n".join(f"{item['sha256']}  {item['path']}" for item in files).encode()
+    return {
+        "ref": ref,
+        "commit": resolved_commit(ref) if ref != "WORKTREE" else None,
+        "file_count": len(files),
+        "tree_sha256": hashlib.sha256(digest_input).hexdigest(),
+    }
+
+
+def attest_result(results_path: Path, output_path: Path, config: dict[str, Any]) -> dict[str, Any]:
+    result = load_json(results_path)
+    if not result.get("gate_passed"):
+        raise GateError("Cannot attest a blocked quality-gate result")
+    skill = result.get("skill")
+    if skill not in set(config.get("high_risk_skills") or []):
+        raise GateError(f"Cannot attest unregistered high-risk skill: {skill}")
+    if result.get("candidate_ref") != "WORKTREE":
+        raise GateError("Promotion attestations require a WORKTREE candidate")
+    if (config.get("enforcement") or {}).get("require_dry_runs") and not (
+        result.get("dry_runs") or {}
+    ).get("passed"):
+        raise GateError("Promotion attestations require passing no-write dry runs")
+    snapshot = skill_snapshot(str(skill), "WORKTREE")
+    evaluated_snapshot = result.get("candidate_snapshot")
+    if evaluated_snapshot and snapshot["tree_sha256"] != evaluated_snapshot.get("tree_sha256"):
+        raise GateError("Current skill tree no longer matches the evaluated candidate tree")
+    results_sha256 = hashlib.sha256(results_path.read_bytes()).hexdigest()
+    attestation = {
+        "schema_version": 1,
+        "skill": skill,
+        "created_at": datetime.now(timezone.utc).isoformat(),
+        "gate_passed": True,
+        "model": result.get("model"),
+        "attempts": result.get("attempts"),
+        "baseline_ref": result.get("baseline_ref"),
+        "baseline_commit": result.get("baseline_commit"),
+        "candidate_snapshot": snapshot,
+        "candidate_correctness_pct": (result.get("candidate") or {}).get("correctness_pct"),
+        "candidate_routing_pct": (result.get("candidate") or {}).get("routing_pct"),
+        "lift_points": result.get("lift_points"),
+        "safety_regressions": len(result.get("safety_regressions") or []),
+        "dry_runs_passed": bool((result.get("dry_runs") or {}).get("passed")),
+        "results_path": str(results_path),
+        "results_sha256": results_sha256,
+    }
+    write_json(output_path, attestation)
+    return attestation
+
+
+def verify_promotion_attestation(
+    skill: str, attestation_path: Path, config: dict[str, Any]
+) -> list[str]:
+    errors: list[str] = []
+    attestation = load_json(attestation_path)
+    if attestation.get("skill") != skill:
+        errors.append("Attestation skill does not match requested skill")
+    if not attestation.get("gate_passed"):
+        errors.append("Attestation does not record a passing gate")
+    if (config.get("enforcement") or {}).get("require_dry_runs") and not attestation.get(
+        "dry_runs_passed"
+    ):
+        errors.append("Attestation does not record passing no-write dry runs")
+    configured_baseline = resolved_commit(str(config.get("baseline", {}).get("commit")))
+    if attestation.get("baseline_commit") != configured_baseline:
+        errors.append("Attestation baseline commit does not match the configured baseline")
+    if int(attestation.get("safety_regressions", -1)) != 0:
+        errors.append("Attestation contains safety regressions")
+    thresholds = config.get("thresholds") or {}
+    if float(attestation.get("candidate_correctness_pct", 0.0)) < float(
+        thresholds.get("candidate_correctness_pct", 90.0)
+    ):
+        errors.append("Attestation correctness is below the configured threshold")
+    if float(attestation.get("candidate_routing_pct", 0.0)) != float(
+        thresholds.get("routing_pct", 100.0)
+    ):
+        errors.append("Attestation routing does not match the configured threshold")
+    current = skill_snapshot(skill, "WORKTREE")
+    recorded = attestation.get("candidate_snapshot") or {}
+    if current["tree_sha256"] != recorded.get("tree_sha256"):
+        errors.append("Current skill tree does not match the evaluated candidate tree")
+    if current["file_count"] != recorded.get("file_count"):
+        errors.append("Current skill file count does not match the evaluated candidate")
+    results_path = Path(str(attestation.get("results_path") or ""))
+    if results_path.is_file():
+        actual_results_sha256 = hashlib.sha256(results_path.read_bytes()).hexdigest()
+        if actual_results_sha256 != attestation.get("results_sha256"):
+            errors.append("Attested result file hash no longer matches the recorded proof")
     return errors
 
 
@@ -623,6 +752,8 @@ def run_gate(args: argparse.Namespace, config: dict[str, Any], cases_doc: dict[s
     schema = resolve_path(config["response_schema"])
     cases = skill_spec["cases"]
     workers = max(1, args.workers or int(config["workers"]))
+    baseline_snapshot = skill_snapshot(skill, baseline_ref)
+    candidate_snapshot = skill_snapshot(skill, candidate_ref)
 
     with tempfile.TemporaryDirectory(prefix="skill-quality-gate-") as temp:
         temp_root = Path(temp)
@@ -691,6 +822,8 @@ def run_gate(args: argparse.Namespace, config: dict[str, Any], cases_doc: dict[s
     candidate_rows = [row for row in rows if row["arm"] == "candidate"]
     baseline = aggregate_arm(baseline_rows)
     candidate = aggregate_arm(candidate_rows)
+    candidate_snapshot_after = skill_snapshot(skill, candidate_ref)
+    candidate_tree_stable = candidate_snapshot_after == candidate_snapshot
     lift = round(candidate["correctness_pct"] - baseline["correctness_pct"], 1)
     regressions = safety_regressions(baseline_rows, candidate_rows)
     thresholds = config["thresholds"]
@@ -700,6 +833,11 @@ def run_gate(args: argparse.Namespace, config: dict[str, Any], cases_doc: dict[s
             "name": "all candidate runs completed",
             "actual": f"{candidate['successful_runs']}/{candidate['run_count']}",
             "passed": candidate["successful_runs"] == candidate["run_count"],
+        },
+        {
+            "name": "candidate tree remained stable during evaluation",
+            "actual": candidate_snapshot["tree_sha256"],
+            "passed": candidate_tree_stable,
         },
         {
             "name": "candidate assertion correctness",
@@ -740,6 +878,8 @@ def run_gate(args: argparse.Namespace, config: dict[str, Any], cases_doc: dict[s
         "baseline_commit": resolved_commit(baseline_ref) if baseline_ref != "WORKTREE" else None,
         "candidate_ref": candidate_ref,
         "candidate_commit": resolved_commit(candidate_ref) if candidate_ref != "WORKTREE" else None,
+        "baseline_snapshot": baseline_snapshot,
+        "candidate_snapshot": candidate_snapshot,
         "baseline": baseline,
         "candidate": candidate,
         "lift_points": lift,
@@ -775,6 +915,16 @@ def build_parser() -> argparse.ArgumentParser:
 
     cv = sub.add_parser("cv-probe", help=argparse.SUPPRESS)
     cv.add_argument("--output", required=True)
+
+    attest = sub.add_parser("attest", help="Bind a passing result to the exact candidate tree")
+    attest.add_argument("--results", required=True)
+    attest.add_argument("--output")
+
+    promotion = sub.add_parser(
+        "check-promotion", help="Require a passing attestation for the current high-risk skill tree"
+    )
+    promotion.add_argument("--skill", required=True)
+    promotion.add_argument("--attestation")
 
     run = sub.add_parser("run", help="Run repeated A/B evaluation and enforce thresholds")
     run.add_argument("--skill", required=True)
@@ -830,6 +980,33 @@ def main() -> int:
         result = cv_pdf_probe(resolve_path(args.output))
         print(json.dumps(result, indent=2))
         return 0 if result["passed"] else 1
+    if args.command == "attest":
+        results_path = resolve_path(args.results)
+        result = load_json(results_path)
+        skill = result.get("skill")
+        if not isinstance(skill, str) or not skill:
+            raise GateError("Results file does not identify a skill")
+        output = resolve_path(
+            args.output
+            or f"{config['enforcement']['attestations_dir']}/{skill}.json"
+        )
+        attestation = attest_result(results_path, output, config)
+        print(f"PASS: attested {skill} tree {attestation['candidate_snapshot']['tree_sha256']}")
+        return 0
+    if args.command == "check-promotion":
+        if args.skill not in set(config.get("high_risk_skills") or []):
+            raise GateError(f"Skill is not registered as high-risk: {args.skill}")
+        attestation_path = resolve_path(
+            args.attestation
+            or f"{config['enforcement']['attestations_dir']}/{args.skill}.json"
+        )
+        attestation_errors = verify_promotion_attestation(args.skill, attestation_path, config)
+        if attestation_errors:
+            for error in attestation_errors:
+                print(f"ERROR: {error}")
+            return 1
+        print(f"PASS: {args.skill} current tree matches its passing attestation")
+        return 0
     if args.command == "run":
         return run_gate(args, config, cases_doc)
     raise GateError(f"Unknown command: {args.command}")

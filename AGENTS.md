@@ -71,6 +71,7 @@ This is an execution-policy authorization, not a waiver of workflow gates. Exact
 - Small reversible change: inspect, edit, verify.
 - Substantial engineering: research, create an executor-ready plan from `templates/workflows/agentic-engineering-plan.md`, execute, self-review, and verify. For git-backed work, stamp the plan with the current commit, cite evidence as `file:line`, and rerun its drift check before implementation or handoff.
 - High-risk code: use `templates/workflows/high-risk-engineering-loop.md`, including two review passes with different mandates, accepted-finding repairs, targeted tests, and the original reproduction.
+- Before promoting a new or materially changed public, credentialed, career, messaging, or runtime skill, run `scripts/skill-quality-gate.py` under `docs/standards/high-risk-skill-quality-gate.md`, seal the passing no-write result, and require `check-promotion` to match the exact current skill tree. Cosmetic edits do not require the repeated model gate.
 - Use helpers only for independent work without shared mutable state. The owner reviews all delegated output.
 - Promote repeated useful work to the smallest durable form: memory, rule, skill, script, test, then cron.
 - Recurring automation needs one owner, idempotency, bounded retries, failure reporting, and a verified success condition. Add cron only after a real sample passes.

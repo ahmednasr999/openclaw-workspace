@@ -25,6 +25,11 @@
     "content-publishing-safety",
     "executive-cv-builder"
   ],
+  "enforcement": {
+    "mode": "required_before_promotion",
+    "attestations_dir": "evals/skill-quality-gate/attestations",
+    "require_dry_runs": true
+  },
   "next_candidates": [
     "linkedin",
     "cmo-agent",

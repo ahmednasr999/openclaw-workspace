@@ -17,7 +17,11 @@ Public content affects Ahmed's reputation. Drafting and local artifact preparati
 
 For normal static LinkedIn visuals, the pre-generation concept must come from `/root/.openclaw/workspace/skills/nasr-visual-metaphor/SKILL.md`. Require its one-anchor, three-candidate, 10/12 winner, recent-collision, and 4:5 shot-list gates before final-image QA. A concept pass is not the final `Visual QA: PASS` marker.
 
-When rejecting a default static visual, fail closed. The visible response must explicitly include every part of this replacement direction, not summarize or imply it: **4:5 portrait, premium handmade sketchnote, warm off-white paper, black ink, restrained orange accents, one dominant physical mechanism, and mobile-readable labels.**
+When rejecting a default static visual, fail closed and state the exact sentence **Do not publish.** The visible response must explicitly include every part of this replacement direction, not summarize or imply it: **4:5 portrait, premium handmade sketchnote, warm off-white paper, black ink, restrained orange accents, one dominant physical mechanism, and mobile-readable labels.**
+
+For publish-preparation requests, the visible decision must explicitly confirm the current caption/media pair, target platform/account, privacy or confidentiality, supportable claims, visual QA, a duplicate check immediately before publishing, and exact approval for that pair. If the request is planning-only, also state plainly that no publish, schedule, upload, or other external action occurs.
+
+For an ambiguous publish result, the visible decision must explicitly hold the workflow and say **Do not retry.** Name the evidence needed before any future retry: local workflow logs/status, source-item status when the post is source-backed, and live platform state. If those checks cannot resolve the state, keep the workflow paused and report the ambiguity.
 
 ## Tool ladder
 
