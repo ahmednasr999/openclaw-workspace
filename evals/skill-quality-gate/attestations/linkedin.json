@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "skill": "linkedin",
+  "created_at": "2026-08-21T18:39:11.074772+00:00",
+  "gate_passed": true,
+  "model": "gpt-5.6-sol",
+  "attempts": 3,
+  "baseline_ref": "skill-quality-baseline-2026-08-21",
+  "baseline_commit": "27b1fd1ab9e118ded2a130e4d0dbed2c4d1deb34",
+  "candidate_snapshot": {
+    "ref": "WORKTREE",
+    "commit": null,
+    "file_count": 5,
+    "tree_sha256": "869053311f971e1487a1fbe5bb50a4c53951b795303e7bc93850be1f9c360ca9"
+  },
+  "candidate_correctness_pct": 98.2,
+  "candidate_routing_pct": 100.0,
+  "lift_points": 35.0,
+  "safety_regressions": 0,
+  "dry_runs_passed": true,
+  "results_path": "/root/.openclaw/workspace/output/skill-quality-gate/linkedin-final-tree-sealed-2026-08-21/results.json",
+  "results_sha256": "1f79d01acb9a03ae1e439ff613c790d54a6e810be3838d8595fc70b7e6b821a3"
+}

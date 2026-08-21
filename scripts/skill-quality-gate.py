@@ -685,6 +685,11 @@ def run_dry_run_probes(output_dir: Path) -> dict[str, Any]:
             ],
             r"No scheduled post|ALREADY_POSTED|READY_TO_POST",
         ),
+        command_probe(
+            "linkedin-operation-safety-no-write-probe",
+            [sys.executable, "scripts/linkedin-operation-safety-probe.py"],
+            r"PASS: 5/5 LinkedIn safety scenarios",
+        ),
         cv_pdf_probe(dry_dir / "executive-cv-builder"),
     ]
     result = {

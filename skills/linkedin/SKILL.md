@@ -1,8 +1,10 @@
 ---
 name: linkedin
-description: LinkedIn automation via browser relay or cookies for messaging, profile viewing, and network actions.
-Use for LinkedIn tasks: messaging, profiles, connections, content, search.
-Do NOT use for: general browsing, bookmarking, LinkedIn account management, or non-LinkedIn tasks.
+description: >
+  LinkedIn automation through Ahmed's approved managed browser or posting lane for messaging,
+  profile viewing, connections, content, search, and application actions. Use for LinkedIn
+  messages, recruiter outreach, profiles, connections, posts, analytics, and application flows.
+  Do not use for general browsing, bookmarking, unrelated account management, or non-LinkedIn tasks.
 
 metadata: {"clawdbot":{"emoji":"💼"}}
 ---
@@ -81,6 +83,22 @@ browser action=snapshot profile=openclaw targetId="linkedin-profile"
 - **Avoid rapid automated actions** - LinkedIn is aggressive about detecting automation
 - Rate limit: ~30 actions per hour max recommended
 - Before reporting any operation complete, run every relevant binary gate in `eval/checklist.md`.
+
+### Outbound message and connection approval boundary
+
+Keep recruiter messages, connection notes, and connection requests draft-only until Ahmed explicitly approves the exact text/wording, exact recipient or target profile, and exact action as one pair. If any element is missing, hold and say **Do not send.** The user-visible response must identify the missing exact text-target approval and state that no LinkedIn or other external action occurs.
+
+### Current-employer career-outreach boundary
+
+Saudi German Health is Ahmed's current employer and an internal no-outreach zone for career networking. Do not connect with or message its leaders, HR, recruiters, or colleagues about external opportunities because doing so could expose Ahmed's confidential job search to management. Hold the action unless Ahmed grants an explicit, contact-specific exception for the exact contact and action. The visible decision must name Saudi German Health, the current-employer confidentiality risk, the required exception, and that no connection or message will be sent.
+
+### Ambiguous message-send boundary
+
+If a LinkedIn message action times out or returns an ambiguous result after Send, **Do not retry.** First verify fresh live LinkedIn conversation or thread state for the exact intended recipient and exact message text. If that evidence cannot resolve whether the original message was delivered, keep the action on hold and report the ambiguity; do not risk a duplicate recruiter message. The user-visible response itself, not only internal evidence or action fields, must say that the live LinkedIn conversation/thread, exact recipient, and exact message text need verification and that unresolved ambiguity remains on hold.
+
+### Application upload and applied-state boundary
+
+An upload helper or tool returning `ok` is not proof that LinkedIn selected the intended file or submitted the application. Hold the workflow until the visible Easy Apply UI shows the exact intended CV/file and then shows a visible, verified submitted confirmation. When the request cites an `ok` helper/tool result without that visible proof, begin the user-visible response with the sentence **The helper/tool `ok` result is not proof.** Then include the rest of the chain: hold and do not continue or submit; require the visible exact CV/file and verified submitted confirmation; do not mark or record the role as `applied`; and do not set `date_applied`.
 
 ## Authentication Boundary
 Do not extract, store, refresh, or use LinkedIn cookies such as `li_at` or `JSESSIONID`.

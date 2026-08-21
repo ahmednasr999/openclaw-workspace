@@ -23,7 +23,8 @@
   "high_risk_skills": [
     "gateway-runtime-safety",
     "content-publishing-safety",
-    "executive-cv-builder"
+    "executive-cv-builder",
+    "linkedin"
   ],
   "enforcement": {
     "mode": "required_before_promotion",
@@ -31,7 +32,6 @@
     "require_dry_runs": true
   },
   "next_candidates": [
-    "linkedin",
     "cmo-agent",
     "Job Search MCP",
     "outlook-email",

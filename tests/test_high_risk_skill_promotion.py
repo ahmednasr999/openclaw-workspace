@@ -17,7 +17,12 @@ SPEC.loader.exec_module(promotion)
 
 class HighRiskSkillPromotionTests(unittest.TestCase):
     def setUp(self) -> None:
-        self.skills = ["gateway-runtime-safety", "content-publishing-safety", "executive-cv-builder"]
+        self.skills = [
+            "gateway-runtime-safety",
+            "content-publishing-safety",
+            "executive-cv-builder",
+            "linkedin",
+        ]
 
     def test_unrelated_staged_file_checks_no_skills(self) -> None:
         self.assertEqual([], promotion.affected_skills({"memory/notes.md"}, self.skills))

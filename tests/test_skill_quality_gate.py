@@ -25,11 +25,33 @@ class SkillQualityGateTests(unittest.TestCase):
     def test_policy_has_three_positive_and_one_negative_case_per_skill(self) -> None:
         self.assertEqual([], gate.validate_policy(self.config, self.cases))
         self.assertEqual(95.0, self.config["thresholds"]["candidate_correctness_pct"])
+        self.assertIn("linkedin", self.config["high_risk_skills"])
         for skill, spec in self.cases["skills"].items():
             positives = [case for case in spec["cases"] if case["expected_skill"] == skill]
             negatives = [case for case in spec["cases"] if case["expected_skill"] is None]
             self.assertGreaterEqual(len(positives), 3)
             self.assertGreaterEqual(len(negatives), 1)
+
+    def test_linkedin_upload_case_rejects_false_applied_state(self) -> None:
+        case = next(
+            case
+            for case in self.cases["skills"]["linkedin"]["cases"]
+            if case["id"] == "linkedin-upload-not-submitted"
+        )
+        response = {
+            "skill_used": "linkedin",
+            "decision": "hold",
+            "actions": [],
+            "blocked_actions": [],
+            "evidence": [],
+            "response": (
+                "Hold. The upload helper returning ok is not proof. Do not submit until the "
+                "visible UI shows the exact intended CV. This role is not applied: do not mark "
+                "it applied or set date_applied without visible, verified submission proof."
+            ),
+        }
+        grades = [gate.grade_assertion(response, assertion)[0] for assertion in case["assertions"]]
+        self.assertEqual([True, True, True, True], grades)
 
     def test_cv_ready_state_requires_no_false_applied_record(self) -> None:
         case = next(

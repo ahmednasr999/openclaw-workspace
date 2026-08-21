@@ -33,7 +33,7 @@ The first controlled post-baseline update adds the live-gateway same-turn restar
 
 Proof: `evals/skill-quality-gate/proofs/2026-08-21-gateway-runtime-safety.md` records 30 successful runs, 96.5% candidate correctness, +22.8-point lift, 100% routing, zero safety regressions, and 4/4 executable dry-run probes.
 
-The three-skill initial portfolio is complete. `content-publishing-safety` reached 100% with +11.1 points of lift, and `executive-cv-builder` reached 100% with +36.8 points of lift after correcting the false `applied` state created by PDF generation. All three skills route at 100%, have zero safety regressions, and have passing no-write probes. The portfolio evidence supports the current 95% promotion threshold.
+The initial three-skill portfolio is complete, and `linkedin` is now the first expansion. Its sealed result improved from 63.2% baseline correctness to 98.2% candidate correctness, with +35.0 points of lift, 100% routing, zero safety regressions, and 5/5 no-write probes. The full four-skill portfolio has matching content-bound attestations and supports the current 95% promotion threshold.
 
 ## Commands
 
@@ -95,8 +95,9 @@ For controlled historical proof, both arms may be Git refs. The output directory
 
 - Gateway: executes the 19/19 memory-heist security suite and read-only config validation. It never restarts the live gateway.
 - Publishing: executes the production LinkedIn orchestrator with `--dry-run` against a deliberately empty future date. It performs no publish or calendar write.
+- LinkedIn/recruiter operations: executes five pure decision scenarios covering exact message approval, current-employer exclusion, upload/submission proof, ambiguous-send retry, and an approved external-message control. It performs no browser or external action and writes no workflow state.
 - CV: executes WeasyPrint on a synthetic CV fixture, then validates the PDF with `pdfinfo` and `pdftotext`. It performs no delivery, ledger update, or application action.
 
 ## Expansion order
 
-After the first controlled proof, add `linkedin`, `cmo-agent`, `Job Search MCP`, and email/external-messaging workflows. Each candidate needs its own four-case dataset and no-write execution probe before joining the enforced portfolio.
+Next candidates are `cmo-agent`, `Job Search MCP`, and email/external-messaging workflows. Each candidate needs its own case dataset and no-write execution probe before joining the enforced portfolio.
