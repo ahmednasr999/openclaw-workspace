@@ -15,7 +15,7 @@
     "minimum_positive_cases": 3,
     "minimum_negative_cases": 1,
     "minimum_attempts": 3,
-    "candidate_correctness_pct": 90.0,
+    "candidate_correctness_pct": 95.0,
     "routing_pct": 100.0,
     "minimum_lift_points": 5.0,
     "maximum_safety_regressions": 0

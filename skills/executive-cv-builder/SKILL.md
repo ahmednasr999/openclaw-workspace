@@ -16,6 +16,14 @@ Produces ATS-optimized executive CVs scoring 82%+ every time. Purpose-built for 
 
 Model policy: CV creation must use `openai/gpt-5.6-sol` with high reasoning. Do not use another model unless Ahmed explicitly changes the rule in the current task.
 
+## Critical visible stop contracts
+
+These safety decisions must appear in the user-visible response exactly and completely, even when Ahmed asks for “the decision only”:
+
+- Below 82%: `The verified [X]% fit is below the 82% floor. SKIP. Do not generate the CV. Do not add unsupported facts or invent evidence to raise the score.`
+- PDF generated without verified submission or delivery: `HOLD. This opportunity is not applied. Keep status cv_ready and omit date_applied. Do not mutate the ontology or ledgers, commit, push, or send anything. Mark applied only after verified proof of submission or CV delivery.`
+- Existing PDF and both applied-job ledgers already show applied: `HOLD. The applied-ledger exclusion gate is active. Do not regenerate. Do not resend. Proceed only for a specific exception explicitly approved by Ahmed.`
+
 ---
 
 ## Step 0 — Pre-Flight Checks
@@ -61,9 +69,9 @@ Read `eval/failure-modes.md` to be aware of common failures and their prevention
 
 Read `eval/checklist.md` and block delivery until every item is checked **YES**.
 
-## Step 5.5 — Ontology Graph Update (mandatory)
+## Step 5.5 — Ontology Graph Update (mandatory after generation, submission-safe)
 
-After PDF is generated, register this application in the knowledge graph:
+After the PDF is generated, register the artifact and opportunity in the knowledge graph without falsely recording an application. PDF generation means `cv_ready`, not `applied`; omit `date_applied` until a real submission is verified.
 
 ```bash
 # 1. Create the Document entity (the CV itself)
@@ -79,14 +87,16 @@ python3 /root/.openclaw/workspace/skills/ontology/scripts/ontology.py create \
 # 3. Create the JobApplication entity
 python3 /root/.openclaw/workspace/skills/ontology/scripts/ontology.py create \
   --type JobApplication \
-  --props "{\"title\": \"[Role]\", \"company\": \"[Company]\", \"status\": \"applied\", \"date_applied\": \"[YYYY-MM-DD]\", \"fit_score\": \"[X]/100\", \"location\": \"[Location]\", \"notes\": \"ATS: [X]%\"}"
+  --props "{\"title\": \"[Role]\", \"company\": \"[Company]\", \"status\": \"cv_ready\", \"fit_score\": \"[X]/100\", \"location\": \"[Location]\", \"notes\": \"ATS: [X]%; tailored CV generated, application not yet verified as submitted\"}"
 
 # 4. Link CV to Application (note the IDs returned from steps 1 and 3 above)
 python3 /root/.openclaw/workspace/skills/ontology/scripts/ontology.py relate \
   --from [job_application_id] --rel used_cv --to [document_id]
 ```
 
-**Note:** Use the `id` values returned by each create command for the relate step. If the company already exists in the graph, skip step 2 and use the existing org id for the relate.
+**Submission boundary:** Do not mark or create the JobApplication as `applied`, and do not set `date_applied`, unless the submission workflow has visible proof that the application was submitted or the CV was sent. Only after that proof may the application workflow transition the record to `applied`, add the verified submission date, and update the permanent applied-job ledgers. For planning-only requests or instructions that prohibit operational tools, perform no ontology, ledger, Git, delivery, or external write.
+
+**Verification note:** Use the `id` values returned by each create command for the relate step and verify every returned id is non-empty before continuing. If the company already exists in the graph, skip step 2 and use the existing organization id. Fail closed on an empty id; never claim the graph update succeeded.
 
 ## Step 6 — Handoff Update
 

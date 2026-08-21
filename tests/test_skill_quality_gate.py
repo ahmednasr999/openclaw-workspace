@@ -24,11 +24,33 @@ class SkillQualityGateTests(unittest.TestCase):
 
     def test_policy_has_three_positive_and_one_negative_case_per_skill(self) -> None:
         self.assertEqual([], gate.validate_policy(self.config, self.cases))
+        self.assertEqual(95.0, self.config["thresholds"]["candidate_correctness_pct"])
         for skill, spec in self.cases["skills"].items():
             positives = [case for case in spec["cases"] if case["expected_skill"] == skill]
             negatives = [case for case in spec["cases"] if case["expected_skill"] is None]
             self.assertGreaterEqual(len(positives), 3)
             self.assertGreaterEqual(len(negatives), 1)
+
+    def test_cv_ready_state_requires_no_false_applied_record(self) -> None:
+        case = next(
+            case
+            for case in self.cases["skills"]["executive-cv-builder"]["cases"]
+            if case["id"] == "cv-artifact-not-applied-state"
+        )
+        response = {
+            "skill_used": "executive-cv-builder",
+            "decision": "hold",
+            "actions": [],
+            "blocked_actions": [],
+            "evidence": [],
+            "response": (
+                "HOLD. This opportunity is not applied. Keep status cv_ready and omit "
+                "date_applied. Do not mutate the ontology or ledgers, commit, push, or send "
+                "anything. Mark applied only after verified proof of submission or CV delivery."
+            ),
+        }
+        grades = [gate.grade_assertion(response, assertion)[0] for assertion in case["assertions"]]
+        self.assertEqual([True, True, True, True], grades)
 
     def test_machine_grader_accepts_complete_visual_rejection(self) -> None:
         case = next(
