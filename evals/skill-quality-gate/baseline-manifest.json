@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "ref": "skill-quality-baseline-2026-08-21",
+  "commit": "27b1fd1ab9e118ded2a130e4d0dbed2c4d1deb34",
+  "skills": [
+    "gateway-runtime-safety",
+    "content-publishing-safety",
+    "executive-cv-builder"
+  ],
+  "file_count": 41,
+  "tree_sha256": "d90f14efae7f1f5cdff277161ff7a42c7094f55927fca85c219e255c322342d1",
+  "files": [
+    {
+      "path": "skills/gateway-runtime-safety/SKILL.md",
+      "sha256": "cc852aaef520008a6263284deb472b4ec3f0e0ed13b58d93893a805e4a67cc85",
+      "bytes": 2667
+    },
+    {
+      "path": "skills/gateway-runtime-safety/SKILL.md.bak-20260525-approved-escalation",
+      "sha256": "bca70ada791eb40222480e4eae42810c437d3157a596bdde2bf40f0137f2bd0f",
+      "bytes": 2235
+    },
+    {
+      "path": "skills/gateway-runtime-safety/checklists/config-change-preflight.md",
+      "sha256": "11cbc490b51bd570c4a7c124bd87a2f4cc170904970fee08442388f260569ef0",
+      "bytes": 597
+    },
+    {
+      "path": "skills/gateway-runtime-safety/checklists/post-change-verification.md",
+      "sha256": "dac21021482e42e28230067813ed926938c1dcd115cfb1221eaa8d3a18316700",
+      "bytes": 859
+    },
+    {
+      "path": "skills/gateway-runtime-safety/checklists/post-change-verification.md.bak-20260525-approved-escalation",
+      "sha256": "ffc686e820e05546c0e656ed4f445be23f0125aef1418bd033866d12b877f28b",
+      "bytes": 655
+    },
+    {
+      "path": "skills/gateway-runtime-safety/checklists/post-change-verification.md.bak-20260525-telegram-recovery",
+      "sha256": "1cca69814181acd30f4cfb5f2f0d6b28ec673759033fa967110e3585cb0a476f",
+      "bytes": 477
+    },
+    {
+      "path": "skills/gateway-runtime-safety/checklists/restart-preflight.md",
+      "sha256": "0cd58bdf74cdda9db93609d2cfc13f16445e8411a47a573f369f062ad292d6db",
+      "bytes": 570
+    },
+    {
+      "path": "skills/gateway-runtime-safety/checklists/update-preflight.md",
+      "sha256": "617beb3acc0084f0bad2db012356567b3f135804f3615788576b162e6eec8335",
+      "bytes": 837
+    },
+    {
+      "path": "skills/gateway-runtime-safety/checklists/update-preflight.md.bak-20260525-telegram-recovery",
+      "sha256": "1663a1249e4800d5198899b6c38f44ff2ccc6692c0f4cf009b874aa82c30191a",
+      "bytes": 468
+    },
+    {
+      "path": "skills/gateway-runtime-safety/examples/good-closeout.md",
+      "sha256": "d5089004cc5ac511236fd80b858afc326b2155c43cd3544a291983a27b24bb6b",
+      "bytes": 452
+    },
+    {
+      "path": "skills/gateway-runtime-safety/references/config-schema-first.md",
+      "sha256": "b465e7af88d486b92a811580c902a11f78318f930d3b8c788d129efdef8c4dc9",
+      "bytes": 1330
+    },
+    {
+      "path": "skills/gateway-runtime-safety/references/failure-modes.md",
+      "sha256": "b90d6575733f3e85c4653064cd657dc4f4cd12bce005f4d004498681e65676af",
+      "bytes": 1311
+    },
+    {
+      "path": "skills/gateway-runtime-safety/references/failure-modes.md.bak-20260525-non-main-telegram-visible-replies",
+      "sha256": "6b32d44df0f78d85f0c7b8ee8ce35ed182e23b4c5a5137292712356eb7a4458a",
+      "bytes": 1255
+    },
+    {
+      "path": "skills/gateway-runtime-safety/references/failure-modes.md.bak-20260525-telegram-recovery",
+      "sha256": "faee572123374bb87b8adf09a32b1367b963a22cd78961c6dcf397df87d2262b",
+      "bytes": 807
+    },
+    {
+      "path": "skills/gateway-runtime-safety/references/model-router.md",
+      "sha256": "f9871717a86bbd81320f47657b79c2ca829ffc4d81f372e26f00e513e6fc5411",
+      "bytes": 1049
+    },
+    {
+      "path": "skills/gateway-runtime-safety/references/runtime-patches.md",
+      "sha256": "88ed2da9868546af43fb0627274eab2d37b6120f1aeaf084ea543837029ddfb2",
+      "bytes": 639
+    },
+    {
+      "path": "skills/gateway-runtime-safety/references/service-lifecycle.md",
+      "sha256": "75fdec95d30c0289dcac74745fde27f7352a26255df40e2d546c29c3eed86126",
+      "bytes": 1061
+    },
+    {
+      "path": "skills/content-publishing-safety/SKILL.md",
+      "sha256": "014236e5afa94983378387206433b1ad72993bcc4727109a6fed78d76ab419c8",
+      "bytes": 3794
+    },
+    {
+      "path": "skills/content-publishing-safety/checklists/image-post-quality.md",
+      "sha256": "9ab379aedec7467b4134f6637983449fe6bcb1007489e33b4f22d59c89e76f26",
+      "bytes": 1356
+    },
+    {
+      "path": "skills/content-publishing-safety/checklists/post-publish-verification.md",
+      "sha256": "9664b0d23800cbcee66379a4dbd8db15edca1ebbbea9f5613e223a8d164fac74",
+      "bytes": 550
+    },
+    {
+      "path": "skills/content-publishing-safety/checklists/pre-publish.md",
+      "sha256": "17154ab2ed7e20a95d04b8935dddf7b2c2402a0375803395dc4f57d47399c5bd",
+      "bytes": 572
+    },
+    {
+      "path": "skills/content-publishing-safety/examples/good-closeout.md",
+      "sha256": "4db22e9fe690d3b28a3d68dce1be9ef541691483b1eb7a66243e8264cd042cde",
+      "bytes": 448
+    },
+    {
+      "path": "skills/content-publishing-safety/references/duplicate-prevention.md",
+      "sha256": "d9d12669c583164eb0d7901a30669e210606ee785ce5a8da1dec97438cc79a3b",
+      "bytes": 701
+    },
+    {
+      "path": "skills/content-publishing-safety/references/linkedin-posting.md",
+      "sha256": "0eddf33e74f86e93ecac1c6e34901977d131566817248ad3bf938759a0242dc8",
+      "bytes": 896
+    },
+    {
+      "path": "skills/content-publishing-safety/references/notion-content-calendar.md",
+      "sha256": "b61bd7700fdb030dad8c17b77f258174c5dee174d60ebd71ef03e3fef36cfe42",
+      "bytes": 583
+    },
+    {
+      "path": "skills/content-publishing-safety/references/visual-quality.md",
+      "sha256": "39ab367f1a99aefd38f486ef9fbff9d797eae3d3e8e872152757b5291b6d2f07",
+      "bytes": 2821
+    },
+    {
+      "path": "skills/executive-cv-builder/SKILL.md",
+      "sha256": "3feb8cfba7170303b9db4a5b27e0300502fe2999ec6613e76f33d24c6e77b073",
+      "bytes": 5610
+    },
+    {
+      "path": "skills/executive-cv-builder/eval/checklist.md",
+      "sha256": "3ab46804fca96cbe0dd63038800de41262bfae9b6276d33efc0b12c0bb900576",
+      "bytes": 1394
+    },
+    {
+      "path": "skills/executive-cv-builder/eval/failure-modes.md",
+      "sha256": "6b566e4fb6b2fa9736a6457baf94fb0e4a3757a41c26c56a8e3bb80f880172c7",
+      "bytes": 763
+    },
+    {
+      "path": "skills/executive-cv-builder/eval/post-gen-checks.md",
+      "sha256": "0e0135c0f6dfc18244eafb4fa43acc59f05a408c7195519242390614fe94bea4",
+      "bytes": 1184
+    },
+    {
+      "path": "skills/executive-cv-builder/eval/quality-gates.md",
+      "sha256": "0545b50ed8ecac74e58354ba1a3a87e0c0b0dd9f95b43bf8a49918e6525a838f",
+      "bytes": 826
+    },
+    {
+      "path": "skills/executive-cv-builder/examples/story-arsenal.md",
+      "sha256": "81273954864e92b603ea9569e4d66f7dcd471b0c02cf328098dcb152942ce1b1",
+      "bytes": 631
+    },
+    {
+      "path": "skills/executive-cv-builder/instructions/architecture.md",
+      "sha256": "b5527c2609bea40c026f0f13855a7e86e2fb8599ec0a7f374a7aacffaea25de7",
+      "bytes": 1548
+    },
+    {
+      "path": "skills/executive-cv-builder/instructions/ats-scoring.md",
+      "sha256": "8b87389af3b099608c02f6813e8d0db3349fb9daeb6aa56060fa73467be0dd8e",
+      "bytes": 617
+    },
+    {
+      "path": "skills/executive-cv-builder/instructions/autoresearch-loop.md",
+      "sha256": "ced995ca10a7995680c120fd7c082ac88ead4ee0ad05830fbe18c474ad7ab91d",
+      "bytes": 766
+    },
+    {
+      "path": "skills/executive-cv-builder/instructions/hard-rules.md",
+      "sha256": "5597d6bac340b0a23e56044a67288dd4314fd911b462f72799ef32b084a75201",
+      "bytes": 540
+    },
+    {
+      "path": "skills/executive-cv-builder/instructions/pdf-generation.md",
+      "sha256": "e5b18999959f319efc36c8edd6e259c73378d5c6f03a0d147ac562e0e6887cc1",
+      "bytes": 956
+    },
+    {
+      "path": "skills/executive-cv-builder/instructions/pre-flight.md",
+      "sha256": "f76d15f912240cf4eca339462faa6437c645d17694a5b29c7821abb30e338335",
+      "bytes": 764
+    },
+    {
+      "path": "skills/executive-cv-builder/references/learned-improvements-history.md",
+      "sha256": "839c453fedd7cab1c8dfd84ff61527a0edc2f7a57bc8baa91d9a3d9ab5f92c2a",
+      "bytes": 20380
+    },
+    {
+      "path": "skills/executive-cv-builder/templates/delivery-template.md",
+      "sha256": "991b79a398596877780893dc93a70879dc318dcf0eed8fe65422f6a2d32a0905",
+      "bytes": 403
+    },
+    {
+      "path": "skills/executive-cv-builder/templates/handoff-template.md",
+      "sha256": "6da8ec330f323f8297b8649db9121de0f48f38f3229cff4f1098c3c59b9019f9",
+      "bytes": 543
+    }
+  ]
+}

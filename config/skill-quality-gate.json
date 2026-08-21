@@ -6,7 +6,7 @@
   "baseline": {
     "tag": "skill-quality-baseline-2026-08-21",
     "commit": "27b1fd1ab",
-    "manifest": "output/skill-quality-gate/baselines/2026-08-21/manifest.json"
+    "manifest": "evals/skill-quality-gate/baseline-manifest.json"
   },
   "cases": "evals/skill-quality-gate/cases.json",
   "response_schema": "evals/skill-quality-gate/response-schema.json",

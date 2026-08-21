@@ -7,8 +7,9 @@ Use before gateway restart or lifecycle action.
 3. Capture current status/version if relevant.
 4. Run `python3 scripts/check-memory-heist-security-suite.py`; `19/19` is a hard gate.
 5. Identify what must be verified after boot.
-6. Use first-class `gateway restart` when possible.
-7. Include a clear continuation message.
-8. After restart, rerun the security gate, verify gateway health, and verify the original issue.
+6. Route execution through the approved maintenance lane or a detached bounded job; never restart the live gateway from the same user-facing turn.
+7. Use first-class `gateway restart` when possible.
+8. Include a clear continuation message.
+9. After restart, rerun the security gate, verify gateway health, and verify the original issue.
 
 Do not use stop/start as a restart substitute.

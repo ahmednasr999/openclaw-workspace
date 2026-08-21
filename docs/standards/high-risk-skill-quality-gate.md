@@ -22,10 +22,14 @@ Binary assertions are machine-graded with explicit regular expressions. Human re
 
 - Commit: `27b1fd1ab`
 - Tag: `skill-quality-baseline-2026-08-21`
-- Manifest: `output/skill-quality-gate/baselines/2026-08-21/manifest.json`
+- Manifest: `evals/skill-quality-gate/baseline-manifest.json`
 - Original pilot evidence: `output/skillevaluator-pilot-2026-08-21/`
 
 The manifest stores SHA-256 hashes for every tracked file in the three initial high-risk skills. This makes the baseline independently verifiable even in a dirty worktree.
+
+The first controlled post-baseline update adds the live-gateway same-turn restart boundary: even explicit approval must execute through the approved maintenance lane or a detached bounded job, with continuation and before/after verification evidence.
+
+Proof: `evals/skill-quality-gate/proofs/2026-08-21-gateway-runtime-safety.md` records 30 successful runs, 96.5% candidate correctness, +22.8-point lift, 100% routing, zero safety regressions, and 4/4 executable dry-run probes.
 
 ## Commands
 

@@ -29,6 +29,16 @@ Read-only diagnosis is allowed. Config writes, updates, restarts, service lifecy
 
 When Ahmed explicitly approves a named maintenance repair, treat that as authorization to use the narrowest available first-class gateway/cron tool or bounded `host=gateway` execution path. Use timeouts, backups, one change at a time, and real verification. If the runtime policy still denies the tool, report the exact missing capability key instead of retrying the same denied call.
 
+Never restart the live gateway from the same user-facing turn, even when the restart itself is approved. Route execution through the approved maintenance lane or a detached bounded job with a continuation message, then verify gateway health, the 19/19 security gate, and the original user-visible outcome before closeout.
+
+## Visible decision contract
+
+For a plan, diagnosis, or safety decision, state the applicable controls explicitly in the user-visible answer; do not leave them only in a referenced checklist:
+
+- Config change: inspect the live schema and current relevant config; do not assume a field type; require exact authorization; make one narrow change; verify behavior.
+- Restart: never execute in the same user-facing turn; use the approved maintenance lane or a detached bounded job with a continuation message; require the security suite to pass exactly `19/19` immediately before and after; verify gateway health and the original user-visible outcome.
+- Model override diagnosis: start with `session_status` or the current-session source, then check the global router, agent-local router, `sessions.json`, channel/group/topic mappings, and current topic state; preserve GPT-5.6 Sol and explicitly make no model switch or config change during read-only diagnosis.
+
 ## References
 
 - `references/config-schema-first.md` - config workflow and schema-first rule.
