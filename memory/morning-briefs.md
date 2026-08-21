@@ -5631,3 +5631,43 @@ _(provider: searxng)_
 ## Calendar - Today's Events
 missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
 
+=== Morning Brief - 2026-08-21 07:05 AM ===
+
+## Claude 2x Usage Reminder
+
+## Open Work
+- Closed: LinkedIn +30 verified application campaign - 30/30. Verified closure recorded.
+
+## Job Radar (from Tavily)
+[search-router] Tavily unavailable, falling back to local SearXNG: Tavily Search failed (401): {"detail":{"error":"Unauthorized: missing or invalid API key."}}
+## Sources
+
+_(provider: searxng)_
+
+- **Digital Transformation Summit UAE 2026 | Technology Event**
+  https://digitransformationsummit.com/uae/
+  Global data and AI leader with 30+ years across healthcare and tech.
+
+- **Mazin Gadir PhD MSc BEng PMP Prosci LSSGB EBAS Agile - Alvarez & Marsal | LinkedIn**
+  https://ae.linkedin.com/in/mazin-gadir-phd-msc-beng-b4a4533
+  Dr Mazin Gadir is Director with Alvarez & Marsal’s Healthcare and Life Sciences division… · Experience: Alvarez & Marsal · Education: Harvard Medical School · Location: United Arab Emirates · 500+ connections on LinkedIn.
+
+- **Digital Health Transformation in the UAE: DHA and DoH.**
+  https://sbs-me.com/digital-health-transformation-in-the-uae-dha-and-doh/
+  In 2026, Dubai and Abu Dhabi are taking complementary approaches to modernize healthcare systems, emphasizing telemedicine, AI-driven workforce frameworks, and robust data governance.
+
+- **Global Health Care PM — AI, Compliance & Transformation at MedNet Global Healthcare Solutions LLC – Dubai – Apply Now! – Jooble**
+  https://ae.jooble.org/jdp/7854048451110630323
+  ...Experience 8–10 years of experience in tax compliance, regulatory affairs, financial governance, or a related field. Required skills UAE VAT and Corporate Tax, Tax Compliance, FTA Regulations, Tax Return Preparation, Regulatory Reporting, ...
+
+- **UAE at the Helm of Health Innovation: Shaping Future Healthcare at Arab Health 2024 | Ministry of Health and Prevention - UAE**
+  https://mohap.gov.ae/en/w/uae-at-the-helm-of-health-innovation-shaping-future-healthcare-at-arab-health-2024
+  The Ministry of Health and Prevention (MoHAP) in collaboration with the Department of Health – Abu Dhabi, and the Dubai Health Authority (DHA) are jointly showcasing a suite of innovative initiatives and digital health services at Arab Health 2024.
+
+## Gmail - Career Monitor
+- Real-time career monitor: unavailable - scheduled reconciliation remains the fallback
+- Scheduled reconciliation: unavailable - investigate Gmail fallback coverage
+
+## Calendar - Today's Events
+missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
+
