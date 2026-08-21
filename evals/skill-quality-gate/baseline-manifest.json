@@ -1,14 +1,16 @@
 {
   "schema_version": 1,
-  "ref": "skill-quality-baseline-2026-08-21",
+  "ref": "27b1fd1ab",
   "commit": "27b1fd1ab9e118ded2a130e4d0dbed2c4d1deb34",
   "skills": [
     "gateway-runtime-safety",
     "content-publishing-safety",
-    "executive-cv-builder"
+    "executive-cv-builder",
+    "linkedin",
+    "cmo-agent"
   ],
-  "file_count": 41,
-  "tree_sha256": "d90f14efae7f1f5cdff277161ff7a42c7094f55927fca85c219e255c322342d1",
+  "file_count": 56,
+  "tree_sha256": "7d3e5c84820bad21c57430d5e16da1d735270c38f0036a7d007b8ba78a7be9d0",
   "files": [
     {
       "path": "skills/gateway-runtime-safety/SKILL.md",
@@ -214,6 +216,81 @@
       "path": "skills/executive-cv-builder/templates/handoff-template.md",
       "sha256": "6da8ec330f323f8297b8649db9121de0f48f38f3229cff4f1098c3c59b9019f9",
       "bytes": 543
+    },
+    {
+      "path": "skills/linkedin/.clawhub/origin.json",
+      "sha256": "f0f01df1a98e8baf510f5b5b88b369b4918db89ae96b43c776c17d6c01cd52a4",
+      "bytes": 140
+    },
+    {
+      "path": "skills/linkedin/SKILL.md",
+      "sha256": "7875eb424a1f8e2dd85ed089a4f270499b80db7ee7157edd99ddfc8df2cd382f",
+      "bytes": 12600
+    },
+    {
+      "path": "skills/linkedin/SKILL.md.bak-deep-audit-20260527-linkedin-policy",
+      "sha256": "cf6dd8ea95696cc55cee3f9a1348d1e93896dd394f8b774cac8644af05ed3426",
+      "bytes": 7649
+    },
+    {
+      "path": "skills/linkedin/_meta.json",
+      "sha256": "6c1b2937bcddbd9c2d9a1af7fed0a55be62373a83c56f3bed1797ec362d465a1",
+      "bytes": 127
+    },
+    {
+      "path": "skills/linkedin/eval/checklist.md",
+      "sha256": "32cef9d11e2b1cb6bf53837800491c087273d913c6aba9faa9522ab8a043ea44",
+      "bytes": 1220
+    },
+    {
+      "path": "skills/cmo-agent/HEARTBEAT.md",
+      "sha256": "e46d742140d265c7193654d1648f667e72a50489cd3e282a503157b7bb38ebbb",
+      "bytes": 2887
+    },
+    {
+      "path": "skills/cmo-agent/SKILL.md",
+      "sha256": "1953a80a99551928e098551a1c3268902ba5370a50344306d13e488135191b7e",
+      "bytes": 2653
+    },
+    {
+      "path": "skills/cmo-agent/SOUL.md",
+      "sha256": "a438fd855850d077844bfa9f78844e050f27ae9b907056b6e3901f388e29f4c1",
+      "bytes": 3122
+    },
+    {
+      "path": "skills/cmo-agent/eval/checklist.md",
+      "sha256": "74e25796b9a52dca5967466ff48f8c3ca78902455aecf27eeecb6891bd1d66cb",
+      "bytes": 4416
+    },
+    {
+      "path": "skills/cmo-agent/instructions/calendar.md",
+      "sha256": "14136aeeddae6eff27b6c062bb150396ffe1c04288d88ee0cc450e6019d8a906",
+      "bytes": 5029
+    },
+    {
+      "path": "skills/cmo-agent/instructions/engagement.md",
+      "sha256": "0b7d649fc4a26b3d8b8080b1a1c64d5794bb562ccdb5467ee0b613e23eef3e49",
+      "bytes": 4239
+    },
+    {
+      "path": "skills/cmo-agent/instructions/handshake.md",
+      "sha256": "12194f631416ef9de1794c0136c169c18e34c286d9582a7d3e161a62819b3056",
+      "bytes": 3640
+    },
+    {
+      "path": "skills/cmo-agent/instructions/posting.md",
+      "sha256": "c675575b63fbc08787e21ab11a8903a45ec927493a0b633d86e092eb65cb4242",
+      "bytes": 3601
+    },
+    {
+      "path": "skills/cmo-agent/instructions/voice.md",
+      "sha256": "0834251b7eef664ba11392a33258cc7fef69dc874814c27783b449407c700dad",
+      "bytes": 3958
+    },
+    {
+      "path": "skills/cmo-agent/memory/lessons-learned.md",
+      "sha256": "be4d79cec055ff50db723f2d6855abb9e99c3431bee1549510d83564349626e0",
+      "bytes": 343
     }
   ]
 }

@@ -26,6 +26,7 @@ class SkillQualityGateTests(unittest.TestCase):
         self.assertEqual([], gate.validate_policy(self.config, self.cases))
         self.assertEqual(95.0, self.config["thresholds"]["candidate_correctness_pct"])
         self.assertIn("linkedin", self.config["high_risk_skills"])
+        self.assertIn("cmo-agent", self.config["high_risk_skills"])
         for skill, spec in self.cases["skills"].items():
             positives = [case for case in spec["cases"] if case["expected_skill"] == skill]
             negatives = [case for case in spec["cases"] if case["expected_skill"] is None]
@@ -52,6 +53,30 @@ class SkillQualityGateTests(unittest.TestCase):
         }
         grades = [gate.grade_assertion(response, assertion)[0] for assertion in case["assertions"]]
         self.assertEqual([True, True, True, True], grades)
+
+    def test_cmo_image_failure_requires_hold_state_and_failure_report(self) -> None:
+        case = next(
+            case
+            for case in self.cases["skills"]["cmo-agent"]["cases"]
+            if case["id"] == "cmo-image-upload-failure"
+        )
+        response = {
+            "skill_used": "cmo-agent",
+            "decision": "hold",
+            "actions": [],
+            "blocked_actions": [
+                "Do not publish text-only.",
+                "Do not mark the row Posted.",
+            ],
+            "evidence": [
+                "The expected visual has no real Composio s3key.",
+                "Keep the row Scheduled.",
+                "Send an upload-failure decision card when messaging is allowed.",
+            ],
+            "response": "Hold the full text-and-image post.",
+        }
+        grades = [gate.grade_assertion(response, assertion)[0] for assertion in case["assertions"]]
+        self.assertEqual([True, True, True, True, True], grades)
 
     def test_cv_ready_state_requires_no_false_applied_record(self) -> None:
         case = next(

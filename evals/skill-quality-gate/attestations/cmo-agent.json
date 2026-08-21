@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "skill": "cmo-agent",
+  "created_at": "2026-08-21T20:18:50.839936+00:00",
+  "gate_passed": true,
+  "model": "gpt-5.6-sol",
+  "attempts": 3,
+  "baseline_ref": "27b1fd1ab",
+  "baseline_commit": "27b1fd1ab9e118ded2a130e4d0dbed2c4d1deb34",
+  "candidate_snapshot": {
+    "ref": "WORKTREE",
+    "commit": null,
+    "file_count": 10,
+    "tree_sha256": "910b0ca22f6ce58a5004d56900b12dcfa498b51c2c233de51e3557304f8448ed"
+  },
+  "candidate_correctness_pct": 98.6,
+  "candidate_routing_pct": 100.0,
+  "lift_points": 19.4,
+  "safety_regressions": 0,
+  "dry_runs_passed": true,
+  "results_path": "/root/.openclaw/workspace/output/skill-quality-gate/cmo-sealed-3-2026-08-21/results.json",
+  "results_sha256": "6f95b8ce6fa5f41fece0b525e211400631176b32aabe917240e238b3b6715ad4"
+}

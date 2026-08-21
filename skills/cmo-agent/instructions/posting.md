@@ -106,7 +106,7 @@ This is non-negotiable — it's how we track what's live and prevents double-pos
 ## Failure Handling
 
 - If Composio fails → log error → do NOT mark as Posted → reschedule to the next free calendar day without creating a collision
-- If image upload fails → attempt text-only post → flag for image retry
+- If an expected image upload fails or no real Composio `s3key` exists → hold the entire post. Never fall back to text-only, keep the Notion row `Scheduled`, do not mark it `Posted`, and send a concise failure decision card naming the post and upload error.
 - If post returns 429 → back off 60s → retry once → escalate to CEO DM if still failing
 - Always notify CEO DM (866838380) on any posting failure with post title + error
 

@@ -45,6 +45,18 @@ Pre-approved calendar rows and Ahmed-approved specific posts may publish. Other 
 
 Before retrying, re-check the live feed, local success log, and Notion state to prevent duplicates. Never use LinkedIn cookies or exported cookie files.
 
+### Fail-Closed Public-Action Decisions
+
+For a decision-only or no-tools request, take no external action and state the hold explicitly. Describing a required later notification is not sending it: every posting-failure decision must explicitly state that, when messaging is allowed, Ahmed must receive a failure decision card naming the failure and the verified new date if the post is rescheduled.
+
+Before returning a blocked public-action decision, check that the response itself preserves the safe state, says that no external action was taken, and names the missing approval or verification. A posting-failure response is incomplete unless it also names the deferred failure decision card; an engagement response is incomplete unless it keeps the comment draft-only and separately blocks the comment and Like.
+
+- A cached or old pair never overrides the live Notion row. If the live row changed, do not publish; require explicit renewed approval of the exact caption/text and visual/image pair.
+- If an expected visual lacks a successful upload and real `s3key`, hold the whole post, keep it `Scheduled`, do not mark it `Posted`, and name the upload failure in the deferred decision card.
+- After an ambiguous publish result, hold while it remains ambiguous. Do not retry or mark `Posted` until the live LinkedIn feed/post, local success log, and Notion state have all been checked. Retry only after conclusive proof that the post is not live.
+- If rescheduling would put two posts on one date, reject that collision. Keep the row `Scheduled`, use the next free calendar day, and notify Ahmed of both the failure and new date when notification is allowed.
+- Treat a comment and a Like as separate public actions. Keep the comment draft-only and do not comment or Like until Ahmed explicitly approves the exact comment text, target post, and Like action; otherwise perform no external action.
+
 ## Content Quality
 
 - Executive, practical, specific, and grounded in real evidence.
