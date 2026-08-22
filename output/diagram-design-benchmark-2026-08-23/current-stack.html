@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenClaw trusted execution path — current stack</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --fg: #172033;
+      --muted: #5b6475;
+      --line: #64748b;
+      --neutral: #e2e8f0;
+      --input: #dbeafe;
+      --process: #e0e7ff;
+      --storage: #ccfbf1;
+      --external: #fef3c7;
+      --risk: #fee2e2;
+      --ok: #0f766e;
+      --danger: #b91c1c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 14px/1.4 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main { max-width: 1320px; margin: 28px auto; padding: 0 20px; }
+    .kicker { color: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { margin: 6px 0 4px; font-size: 32px; line-height: 1.15; }
+    .subtitle { margin: 0 0 18px; color: var(--muted); font-size: 15px; }
+    svg { width: 100%; height: auto; display: block; }
+    .zone { fill: none; stroke: var(--line); stroke-width: 1; stroke-dasharray: 7 6; opacity: .55; }
+    .zone-label { fill: var(--muted); font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+    .node { stroke: var(--line); stroke-width: 1.2; }
+    .input { fill: var(--input); }
+    .process { fill: var(--process); }
+    .storage { fill: var(--storage); }
+    .external { fill: var(--external); }
+    .risk { fill: var(--risk); stroke: var(--danger); stroke-dasharray: 6 4; }
+    .label { fill: var(--fg); font-size: 16px; font-weight: 700; }
+    .small { fill: var(--muted); font-size: 12px; }
+    .edge { fill: none; stroke: var(--line); stroke-width: 2; }
+    .edge.primary { stroke: #2563eb; stroke-width: 3; }
+    .edge.control { stroke: var(--ok); stroke-width: 2.5; }
+    .edge.blocked { stroke: var(--danger); stroke-dasharray: 8 6; }
+    .edge-label { fill: var(--muted); font-size: 12px; font-weight: 700; }
+    .blocked-label { fill: var(--danger); font-size: 12px; font-weight: 800; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="kicker">Architecture · Current OpenClaw diagram stack</div>
+    <h1>OpenClaw trusted execution path</h1>
+    <p class="subtitle">Trusted Telegram traffic enters; unsafe ingress and blind recovery stop at the boundary.</p>
+
+    <svg viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="current-stack-title current-stack-desc">
+      <title id="current-stack-title">OpenClaw trusted execution path</title>
+      <desc id="current-stack-desc">Architecture diagram showing Telegram entering through the gateway, the isolated agent runtime, security evidence, rotated credentials, guarded recovery, and two blocked paths.</desc>
+      <defs>
+        <marker id="current-arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+          <polygon points="0 0, 10 4, 0 8" fill="#64748b" />
+        </marker>
+        <marker id="current-arrow-primary" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+          <polygon points="0 0, 10 4, 0 8" fill="#2563eb" />
+        </marker>
+        <marker id="current-arrow-control" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+          <polygon points="0 0, 10 4, 0 8" fill="#0f766e" />
+        </marker>
+      </defs>
+
+      <rect width="1280" height="720" fill="#f8fafc" />
+
+      <rect class="zone" x="40" y="76" width="244" height="468" rx="12" />
+      <text class="zone-label" x="60" y="104">EXTERNAL</text>
+      <rect class="zone" x="320" y="76" width="620" height="468" rx="12" />
+      <text class="zone-label" x="340" y="104">PROTECTED RUNTIME</text>
+      <rect class="zone" x="980" y="76" width="260" height="468" rx="12" />
+      <text class="zone-label" x="1000" y="104">EVIDENCE</text>
+
+      <!-- Connectors are deliberately drawn before nodes. -->
+      <line class="edge primary" x1="244" y1="288" x2="360" y2="288" marker-end="url(#current-arrow-primary)" />
+      <line class="edge primary" x1="540" y1="288" x2="700" y2="288" marker-end="url(#current-arrow-primary)" />
+      <line class="edge" x1="880" y1="288" x2="1020" y2="288" marker-end="url(#current-arrow)" />
+      <line class="edge control" x1="450" y1="196" x2="450" y2="240" marker-end="url(#current-arrow-control)" />
+      <line class="edge control" x1="790" y1="400" x2="790" y2="336" marker-end="url(#current-arrow-control)" />
+      <line class="edge blocked" x1="244" y1="448" x2="304" y2="448" />
+      <path class="edge blocked" d="M 540 448 H 616 Q 624 448 624 440 V 364" />
+
+      <text class="edge-label" x="302" y="270" text-anchor="middle">TRUSTED INTAKE</text>
+      <text class="edge-label" x="620" y="270" text-anchor="middle">ROUTE</text>
+      <text class="edge-label" x="950" y="270" text-anchor="middle">PROVE</text>
+      <text class="edge-label" x="464" y="220">ROTATED</text>
+      <text class="edge-label" x="804" y="372">GUARDED</text>
+      <text class="blocked-label" x="252" y="430">DISABLED</text>
+      <text class="blocked-label" x="560" y="430">BLIND RESET DENIED</text>
+
+      <circle cx="304" cy="448" r="10" fill="#f8fafc" stroke="#b91c1c" stroke-width="2" />
+      <path d="M 298 442 L 310 454 M 310 442 L 298 454" stroke="#b91c1c" stroke-width="2" />
+      <circle cx="624" cy="364" r="10" fill="#f8fafc" stroke="#b91c1c" stroke-width="2" />
+      <path d="M 618 358 L 630 370 M 630 358 L 618 370" stroke="#b91c1c" stroke-width="2" />
+
+      <rect class="node input" x="80" y="240" width="164" height="96" rx="10" />
+      <text class="label" x="162" y="282" text-anchor="middle">Telegram DM</text>
+      <text class="small" x="162" y="306" text-anchor="middle">Ahmed identity</text>
+
+      <rect class="node risk" x="80" y="400" width="164" height="96" rx="10" />
+      <text class="label" x="162" y="442" text-anchor="middle">Public webhook</text>
+      <text class="small" x="162" y="466" text-anchor="middle">hooks.enabled = false</text>
+
+      <rect class="node process" x="360" y="240" width="180" height="96" rx="10" />
+      <text class="label" x="450" y="282" text-anchor="middle">Gateway gate</text>
+      <text class="small" x="450" y="306" text-anchor="middle">loopback intake</text>
+
+      <rect class="node storage" x="360" y="116" width="180" height="80" rx="10" />
+      <text class="label" x="450" y="150" text-anchor="middle">Bearer secret</text>
+      <text class="small" x="450" y="174" text-anchor="middle">rotated · 0600</text>
+
+      <rect class="node process" x="700" y="240" width="180" height="96" rx="10" />
+      <text class="label" x="790" y="282" text-anchor="middle">Agent runtime</text>
+      <text class="small" x="790" y="306" text-anchor="middle">isolated execution</text>
+
+      <rect class="node storage" x="700" y="400" width="180" height="96" rx="10" />
+      <text class="label" x="790" y="442" text-anchor="middle">Recovery guard</text>
+      <text class="small" x="790" y="466" text-anchor="middle">evidence before reset</text>
+
+      <rect class="node external" x="1020" y="240" width="180" height="96" rx="10" />
+      <text class="label" x="1110" y="282" text-anchor="middle">Security proof</text>
+      <text class="small" x="1110" y="306" text-anchor="middle">19/19 · 0 fail</text>
+
+      <rect class="node risk" x="360" y="400" width="180" height="96" rx="10" />
+      <text class="label" x="450" y="442" text-anchor="middle">Force reset</text>
+      <text class="small" x="450" y="466" text-anchor="middle">removed from guard</text>
+
+      <line x1="40" y1="588" x2="1240" y2="588" stroke="#cbd5e1" />
+      <text class="zone-label" x="40" y="616">READING KEY</text>
+      <line class="edge primary" x1="184" y1="612" x2="228" y2="612" marker-end="url(#current-arrow-primary)" />
+      <text class="small" x="244" y="616">permitted path</text>
+      <line class="edge control" x1="396" y1="612" x2="440" y2="612" marker-end="url(#current-arrow-control)" />
+      <text class="small" x="456" y="616">privileged control</text>
+      <line class="edge blocked" x1="632" y1="612" x2="676" y2="612" />
+      <text class="small" x="692" y="616">blocked before boundary</text>
+      <rect x="924" y="598" width="20" height="20" rx="4" fill="#fef3c7" stroke="#64748b" />
+      <text class="small" x="956" y="616">evidence destination</text>
+    </svg>
+  </main>
+</body>
+</html>
